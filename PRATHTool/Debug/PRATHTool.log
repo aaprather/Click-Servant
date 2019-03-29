@@ -1,4 +1,6 @@
-﻿  MyForm.cpp
-c:\users\a\desktop\prathtool\prathtool\myform.cpp(7): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
-  MyForm.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  PRATHTool.vcxproj -> C:\Users\A\Desktop\PRATHTool\Debug\PRATHTool.exe
+﻿  InputTime.cpp
+  MouseInput.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winnt.h(154): fatal error C1189: #error:  "No Target Architecture"
+  MyForm.cpp
+c:\users\a\documents\github\prathtool\prathtool\myform.cpp(7): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
+  Generating Code...

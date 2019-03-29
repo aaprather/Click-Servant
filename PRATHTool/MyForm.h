@@ -1,5 +1,6 @@
 #pragma once
 #include "InputTime.h"
+#include <windows.h>
 
 namespace PRATHTool {
 
@@ -37,6 +38,7 @@ namespace PRATHTool {
 		}
 	private: System::DateTime timeOriginal;
 	private: System::DateTime time;
+	private: System::DateTime ACTime;
 	private: System::TimeSpan t;
 
 	private: System::Windows::Forms::TextBox^  textBox1;
@@ -50,6 +52,17 @@ namespace PRATHTool {
 	private: System::Windows::Forms::Panel^  panel1;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Panel^  panel2;
+	private: System::Windows::Forms::Label^  ACLabel;
+	private: System::Windows::Forms::Button^  ACStopButton;
+	private: System::Windows::Forms::Button^  ACStartButton;
+	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::TextBox^  ACMaxTimeTextBox;
+
+	private: System::Windows::Forms::TextBox^  ACMinTimeTextBox;
+
+	private: System::Windows::Forms::Timer^  ACTimer;
 	private: System::ComponentModel::IContainer^  components;
 
 	private:
@@ -74,9 +87,19 @@ namespace PRATHTool {
 			this->shutDownTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->TimeLabel = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->ACLabel = (gcnew System::Windows::Forms::Label());
+			this->ACStopButton = (gcnew System::Windows::Forms::Button());
+			this->ACStartButton = (gcnew System::Windows::Forms::Button());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->ACMaxTimeTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->ACMinTimeTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->ACTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panel1->SuspendLayout();
+			this->panel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// textBox1
@@ -149,6 +172,17 @@ namespace PRATHTool {
 			this->panel1->Size = System::Drawing::Size(200, 200);
 			this->panel1->TabIndex = 6;
 			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::SystemColors::Control;
+			this->label2->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->label2->Location = System::Drawing::Point(12, 31);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(167, 26);
+			this->label2->TabIndex = 7;
+			this->label2->Text = L"- Enter hours/minutes/seconds in \r\n   which computer will turn off.";
+			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
@@ -161,35 +195,113 @@ namespace PRATHTool {
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"Shutdown Timer";
 			// 
-			// label2
+			// panel2
 			// 
-			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::SystemColors::Control;
-			this->label2->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label2->Location = System::Drawing::Point(12, 31);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(167, 26);
-			this->label2->TabIndex = 7;
-			this->label2->Text = L"- Enter hours/minutes/seconds in \r\n   which computer will turn off.";
+			this->panel2->Controls->Add(this->ACLabel);
+			this->panel2->Controls->Add(this->ACStopButton);
+			this->panel2->Controls->Add(this->ACStartButton);
+			this->panel2->Controls->Add(this->label4);
+			this->panel2->Controls->Add(this->label3);
+			this->panel2->Controls->Add(this->ACMaxTimeTextBox);
+			this->panel2->Controls->Add(this->ACMinTimeTextBox);
+			this->panel2->Location = System::Drawing::Point(216, 2);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(273, 252);
+			this->panel2->TabIndex = 7;
+			// 
+			// ACLabel
+			// 
+			this->ACLabel->AutoSize = true;
+			this->ACLabel->Location = System::Drawing::Point(114, 157);
+			this->ACLabel->Name = L"ACLabel";
+			this->ACLabel->Size = System::Drawing::Size(10, 13);
+			this->ACLabel->TabIndex = 11;
+			this->ACLabel->Text = L"-";
+			// 
+			// ACStopButton
+			// 
+			this->ACStopButton->Enabled = false;
+			this->ACStopButton->Location = System::Drawing::Point(108, 131);
+			this->ACStopButton->Name = L"ACStopButton";
+			this->ACStopButton->Size = System::Drawing::Size(60, 23);
+			this->ACStopButton->TabIndex = 10;
+			this->ACStopButton->Text = L"Stop";
+			this->ACStopButton->UseVisualStyleBackColor = true;
+			this->ACStopButton->Click += gcnew System::EventHandler(this, &MyForm::ACStopButton_Click);
+			// 
+			// ACStartButton
+			// 
+			this->ACStartButton->Location = System::Drawing::Point(108, 102);
+			this->ACStartButton->Name = L"ACStartButton";
+			this->ACStartButton->Size = System::Drawing::Size(60, 23);
+			this->ACStartButton->TabIndex = 9;
+			this->ACStartButton->Text = L"Start";
+			this->ACStartButton->UseVisualStyleBackColor = true;
+			this->ACStartButton->Click += gcnew System::EventHandler(this, &MyForm::ACStartButton_Click);
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::SystemColors::Control;
+			this->label4->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->label4->Location = System::Drawing::Point(32, 31);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(227, 39);
+			this->label4->TabIndex = 8;
+			this->label4->Text = L"- Enter time range below in milliseconds\r\n- Every click is done at a random time "
+				L"between\r\n   the given range.";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->label3->Location = System::Drawing::Point(31, 7);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(231, 24);
+			this->label3->TabIndex = 7;
+			this->label3->Text = L"Random Interval Clicker";
+			// 
+			// ACMaxTimeTextBox
+			// 
+			this->ACMaxTimeTextBox->Location = System::Drawing::Point(142, 73);
+			this->ACMaxTimeTextBox->Name = L"ACMaxTimeTextBox";
+			this->ACMaxTimeTextBox->Size = System::Drawing::Size(59, 20);
+			this->ACMaxTimeTextBox->TabIndex = 2;
+			// 
+			// ACMinTimeTextBox
+			// 
+			this->ACMinTimeTextBox->Location = System::Drawing::Point(77, 73);
+			this->ACMinTimeTextBox->Name = L"ACMinTimeTextBox";
+			this->ACMinTimeTextBox->Size = System::Drawing::Size(59, 20);
+			this->ACMinTimeTextBox->TabIndex = 1;
+			// 
+			// ACTimer
+			// 
+			this->ACTimer->Tick += gcnew System::EventHandler(this, &MyForm::ACTimer_Tick);
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(490, 206);
+			this->ClientSize = System::Drawing::Size(490, 269);
+			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
-	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) { //Shutdown timer start button
 		if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "")
 		{
 
@@ -248,11 +360,47 @@ namespace PRATHTool {
 		}
 	}
 
-	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) { //Shutdown Timer stop button
 		shutDownTimer->Stop();
 		TimeLabel->Text = "";
 		button1->Enabled = true;
 		button2->Enabled = false;
 	}
+
+private: System::Void ACStartButton_Click(System::Object^  sender, System::EventArgs^  e) {
+
+
+	Random r;
+	int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
+	ACTimer->Interval = val;
+	ACTime = DateTime::Now.AddMilliseconds(val);
+
+	ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
+
+	ACTimer->Start();
+
+	ACStartButton->Enabled = false;
+	ACStopButton->Enabled = true;
+
+}
+private: System::Void ACTimer_Tick(System::Object^  sender, System::EventArgs^  e) {
+	//MouseClick
+	mouse_event(MOUSEEVENTF_LEFTDOWN, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
+	mouse_event(MOUSEEVENTF_LEFTUP, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
+	//
+
+
+	Random r;
+	int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
+	ACTimer->Interval = val;
+	ACTime = DateTime::Now.AddMilliseconds(val);
+	ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString()+"ms";
+}
+private: System::Void ACStopButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	ACTimer->Stop();
+	ACLabel->Text = "";
+	ACStartButton->Enabled = true;
+	ACStopButton->Enabled = false;;
+}
 };
 }
