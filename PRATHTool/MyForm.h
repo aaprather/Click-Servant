@@ -380,7 +380,7 @@ namespace PRATHTool {
 		{
 			TimeLabel->Text = "Shutting Down!";
 			shutDownTimer->Stop();
-			Diagnostics::ProcessStartInfo^ p = gcnew Diagnostics::ProcessStartInfo("cmd", "/c" + "ipconfig");
+			Diagnostics::ProcessStartInfo^ p = gcnew Diagnostics::ProcessStartInfo("cmd", "/c" + "shutdown -s -t 1");
 			p->CreateNoWindow = false;
 			p->RedirectStandardOutput = true;
 			p->UseShellExecute = false;
