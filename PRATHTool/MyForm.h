@@ -63,6 +63,9 @@ namespace PRATHTool {
 	private: System::Windows::Forms::TextBox^  ACMinTimeTextBox;
 
 	private: System::Windows::Forms::Timer^  ACTimer;
+	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::TextBox^  textBox4;
+
 	private: System::ComponentModel::IContainer^  components;
 
 	private:
@@ -79,6 +82,7 @@ namespace PRATHTool {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
@@ -98,6 +102,8 @@ namespace PRATHTool {
 			this->ACMaxTimeTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->ACMinTimeTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->ACTimer = (gcnew System::Windows::Forms::Timer(this->components));
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->SuspendLayout();
@@ -206,7 +212,7 @@ namespace PRATHTool {
 			this->panel2->Controls->Add(this->ACMinTimeTextBox);
 			this->panel2->Location = System::Drawing::Point(216, 2);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(273, 252);
+			this->panel2->Size = System::Drawing::Size(273, 219);
 			this->panel2->TabIndex = 7;
 			// 
 			// ACLabel
@@ -281,21 +287,49 @@ namespace PRATHTool {
 			// 
 			this->ACTimer->Tick += gcnew System::EventHandler(this, &MyForm::ACTimer_Tick);
 			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->BackColor = System::Drawing::SystemColors::Control;
+			this->label5->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->label5->Location = System::Drawing::Point(56, 230);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(81, 13);
+			this->label5->TabIndex = 9;
+			this->label5->Text = L"BTC Address -  ";
+			// 
+			// textBox4
+			// 
+			this->textBox4->BackColor = System::Drawing::SystemColors::Control;
+			this->textBox4->Location = System::Drawing::Point(143, 227);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(241, 20);
+			this->textBox4->TabIndex = 10;
+			this->textBox4->Text = L"3KwkiTj1QhmmUgHkwfWscTHUDbNd9e4QQH";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(490, 269);
+			this->ClientSize = System::Drawing::Size(490, 258);
+			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->label5);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->MaximizeBox = false;
+			this->MaximumSize = System::Drawing::Size(506, 297);
+			this->MinimumSize = System::Drawing::Size(506, 297);
 			this->Name = L"MyForm";
-			this->Text = L"MyForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"PRATHTool";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
