@@ -300,6 +300,7 @@ namespace PRATHTool {
 		}
 #pragma endregion
 	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
+
 	}
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) { //Shutdown timer start button
 		if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "")
@@ -310,9 +311,9 @@ namespace PRATHTool {
 		{
 			InputTime IT(textBox1->Text, textBox2->Text, textBox3->Text); //Create our InputTime object
 
-			if(IT.Hours == 0 && IT.Minutes == 0 && IT.Seconds == 0)
+			if (IT.Hours == 0 && IT.Minutes == 0 && IT.Seconds == 0)
 			{
-				
+
 			}
 			else
 			{
@@ -332,12 +333,12 @@ namespace PRATHTool {
 				shutDownTimer->Interval = 1000;
 				shutDownTimer->Start();
 			}
-			
+
 		}
 
 	}
 	private: System::Void shutDownTimer_Tick(System::Object^  sender, System::EventArgs^  e) {
-		
+
 		time = time.AddSeconds(-1);
 		t = time - timeOriginal;
 
@@ -367,40 +368,63 @@ namespace PRATHTool {
 		button2->Enabled = false;
 	}
 
-private: System::Void ACStartButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void ACStartButton_Click(System::Object^  sender, System::EventArgs^  e) {
+
+		if (checkACValues(ACMinTimeTextBox->Text, ACMaxTimeTextBox->Text) == true)
+		{
+			Random r;
+			int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
+			ACTimer->Interval = val;
+			ACTime = DateTime::Now.AddMilliseconds(val);
+
+			ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
+
+			ACTimer->Start();
+
+			ACStartButton->Enabled = false;
+			ACStopButton->Enabled = true;
+		}
 
 
-	Random r;
-	int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
-	ACTimer->Interval = val;
-	ACTime = DateTime::Now.AddMilliseconds(val);
-
-	ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
-
-	ACTimer->Start();
-
-	ACStartButton->Enabled = false;
-	ACStopButton->Enabled = true;
-
-}
-private: System::Void ACTimer_Tick(System::Object^  sender, System::EventArgs^  e) {
-	//MouseClick
-	mouse_event(MOUSEEVENTF_LEFTDOWN, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
-	mouse_event(MOUSEEVENTF_LEFTUP, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
-	//
+	}
+	private: System::Void ACTimer_Tick(System::Object^  sender, System::EventArgs^  e) {
+		//MouseClick
+		mouse_event(MOUSEEVENTF_LEFTDOWN, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
+		mouse_event(MOUSEEVENTF_LEFTUP, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
+		//
 
 
-	Random r;
-	int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
-	ACTimer->Interval = val;
-	ACTime = DateTime::Now.AddMilliseconds(val);
-	ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString()+"ms";
-}
-private: System::Void ACStopButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	ACTimer->Stop();
-	ACLabel->Text = "";
-	ACStartButton->Enabled = true;
-	ACStopButton->Enabled = false;;
-}
-};
+		Random r;
+		int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
+		ACTimer->Interval = val;
+		ACTime = DateTime::Now.AddMilliseconds(val);
+		ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
+	}
+	private: System::Void ACStopButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		ACTimer->Stop();
+		ACLabel->Text = "";
+		ACStartButton->Enabled = true;
+		ACStopButton->Enabled = false;;
+	}
+
+	private: bool checkACValues(System::String^ min, System::String^ max)
+	{
+		bool valuesAreGood;
+		int i, j;
+		try
+		{
+			i = Convert::ToInt32(min);
+			j = Convert::ToInt32(max);
+			if (i >= j)
+				valuesAreGood = false;
+			else
+				valuesAreGood = true;
+		}
+		catch (...)
+		{
+			valuesAreGood = false;
+		}
+		return valuesAreGood;
+	}
+	};
 }

@@ -3,10 +3,11 @@ using namespace System;
 using namespace System::Windows::Forms;
 
 [STAThread]
-void main(array<String^>^ args)
+void main()
 {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 	PRATHTool::MyForm form;
 	Application::Run(%form);
+
 }
