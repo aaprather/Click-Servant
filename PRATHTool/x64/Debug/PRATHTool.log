@@ -1,6 +1,4 @@
-﻿  InputTime.cpp
-  MyForm.cpp
+﻿  MyForm.cpp
 c:\users\a\documents\github\prathtool\prathtool\myform.cpp(7): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
-  Generating Code...
   InputTime.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   PRATHTool.vcxproj -> C:\Users\A\Documents\GitHub\PRATHTool\x64\Debug\PRATHTool.exe
