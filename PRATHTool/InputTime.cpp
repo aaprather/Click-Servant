@@ -1,19 +1,19 @@
 #include "InputTime.h"
 
 
-InputTime::InputTime(std::string h, std::string m, std::string s)
+InputTime::InputTime(System::String^ h, System::String^ m, System::String^ s)
 {
 	Hours = parseText(h);
 	Minutes = parseText(m);
 	Seconds = parseText(s);
 }
 
-int InputTime::parseText(std::string text)
+int InputTime::parseText(System::String^ text)
 {
 	int ret;
 	try
 	{
-		ret = std::stoi(text);
+		ret = System::Convert::ToInt32(text);
 	}
 	catch (...)
 	{
