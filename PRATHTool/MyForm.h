@@ -726,7 +726,7 @@ namespace PRATHTool {
 					AKStartButton->PerformClick();
 				}
 
-				System::Threading::Thread::Sleep(500);
+				System::Threading::Thread::Sleep(350);
 				keyPressCheckTimer->Start();
 
 			}
@@ -770,8 +770,6 @@ namespace PRATHTool {
 		}
 	}
 	private: System::Void AKStopButton_Click(System::Object^  sender, System::EventArgs^  e) {
-		label8->BackColor = SystemColors::Control;
-		label8->BackColor = SystemColors::Control;
 		label8->BackColor = SystemColors::Control;
 		AKTimer->Stop();
 		AKLabel->Text = "";
