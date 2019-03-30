@@ -65,6 +65,8 @@ namespace PRATHTool {
 	private: System::Windows::Forms::Timer^  ACTimer;
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::TextBox^  textBox4;
+	private: System::Windows::Forms::CheckBox^  ACHotkeyCheckBox;
+	private: System::Windows::Forms::Timer^  keyPressCheckTimer;
 
 	private: System::ComponentModel::IContainer^  components;
 
@@ -94,6 +96,7 @@ namespace PRATHTool {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->ACHotkeyCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->ACLabel = (gcnew System::Windows::Forms::Label());
 			this->ACStopButton = (gcnew System::Windows::Forms::Button());
 			this->ACStartButton = (gcnew System::Windows::Forms::Button());
@@ -104,6 +107,7 @@ namespace PRATHTool {
 			this->ACTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->keyPressCheckTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->SuspendLayout();
@@ -203,6 +207,7 @@ namespace PRATHTool {
 			// 
 			// panel2
 			// 
+			this->panel2->Controls->Add(this->ACHotkeyCheckBox);
 			this->panel2->Controls->Add(this->ACLabel);
 			this->panel2->Controls->Add(this->ACStopButton);
 			this->panel2->Controls->Add(this->ACStartButton);
@@ -212,8 +217,18 @@ namespace PRATHTool {
 			this->panel2->Controls->Add(this->ACMinTimeTextBox);
 			this->panel2->Location = System::Drawing::Point(216, 2);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(273, 219);
+			this->panel2->Size = System::Drawing::Size(296, 215);
 			this->panel2->TabIndex = 7;
+			// 
+			// ACHotkeyCheckBox
+			// 
+			this->ACHotkeyCheckBox->AutoSize = true;
+			this->ACHotkeyCheckBox->Location = System::Drawing::Point(174, 115);
+			this->ACHotkeyCheckBox->Name = L"ACHotkeyCheckBox";
+			this->ACHotkeyCheckBox->Size = System::Drawing::Size(102, 17);
+			this->ACHotkeyCheckBox->TabIndex = 12;
+			this->ACHotkeyCheckBox->Text = L"R-CTRL Hotkey";
+			this->ACHotkeyCheckBox->UseVisualStyleBackColor = true;
 			// 
 			// ACLabel
 			// 
@@ -292,7 +307,7 @@ namespace PRATHTool {
 			this->label5->AutoSize = true;
 			this->label5->BackColor = System::Drawing::SystemColors::Control;
 			this->label5->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label5->Location = System::Drawing::Point(56, 230);
+			this->label5->Location = System::Drawing::Point(61, 226);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(81, 13);
 			this->label5->TabIndex = 9;
@@ -301,24 +316,28 @@ namespace PRATHTool {
 			// textBox4
 			// 
 			this->textBox4->BackColor = System::Drawing::SystemColors::Control;
-			this->textBox4->Location = System::Drawing::Point(143, 227);
+			this->textBox4->Location = System::Drawing::Point(148, 223);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(241, 20);
 			this->textBox4->TabIndex = 10;
 			this->textBox4->Text = L"3KwkiTj1QhmmUgHkwfWscTHUDbNd9e4QQH";
 			// 
+			// keyPressCheckTimer
+			// 
+			this->keyPressCheckTimer->Interval = 1;
+			this->keyPressCheckTimer->Tick += gcnew System::EventHandler(this, &MyForm::keyPressCheckTimer_Tick);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(490, 258);
+			this->ClientSize = System::Drawing::Size(517, 258);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(506, 297);
 			this->MinimumSize = System::Drawing::Size(506, 297);
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -334,6 +353,7 @@ namespace PRATHTool {
 		}
 #pragma endregion
 	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
+		keyPressCheckTimer->Start();
 
 	}
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) { //Shutdown timer start button
@@ -459,6 +479,29 @@ namespace PRATHTool {
 			valuesAreGood = false;
 		}
 		return valuesAreGood;
+	}
+	private: System::Void keyPressCheckTimer_Tick(System::Object^  sender, System::EventArgs^  e) {
+
+		if (ACHotkeyCheckBox->Checked == true)
+		{
+			if (GetKeyState(VK_RCONTROL) & 0x8000)
+			{
+				keyPressCheckTimer->Stop();
+
+				if (ACStartButton->Enabled == false) //Clicker is running
+				{
+					ACStopButton->PerformClick();
+				}
+				else if (ACStopButton->Enabled == false) //Clicker is stopped
+				{
+					ACStartButton->PerformClick();
+				}
+
+				System::Threading::Thread::Sleep(500);
+				keyPressCheckTimer->Start();
+
+			}
+		}
 	}
 	};
 }
