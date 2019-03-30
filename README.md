@@ -12,3 +12,5 @@ Also includes a shut down timer that will turn off your pc after a specified amo
 ![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/Screenshot_2.jpg)
 ![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/Screenshot_3.jpg)
 </p>
+
+Updated executable link - https://github.com/aaprather/PRATHTool/raw/master/PRATHTool.exe
