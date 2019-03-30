@@ -79,6 +79,12 @@ namespace PRATHTool {
 	private: System::Windows::Forms::TextBox^  AKMinTextBox;
 	private: System::Windows::Forms::Timer^  AKTimer;
 	private: System::Windows::Forms::ComboBox^  AKDropDown;
+	private: System::Windows::Forms::PictureBox^  pictureBox1;
+	private: System::Windows::Forms::PictureBox^  pictureBox2;
+	private: System::Windows::Forms::PictureBox^  pictureBox3;
+
+
+
 
 
 	private: System::ComponentModel::IContainer^  components;
@@ -132,9 +138,15 @@ namespace PRATHTool {
 			this->AKMaxTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->AKMinTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->AKTimer = (gcnew System::Windows::Forms::Timer(this->components));
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->panel3->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// textBox1
@@ -232,6 +244,7 @@ namespace PRATHTool {
 			// 
 			// panel2
 			// 
+			this->panel2->BackColor = System::Drawing::SystemColors::Control;
 			this->panel2->Controls->Add(this->ACHotkeyCheckBox);
 			this->panel2->Controls->Add(this->ACLabel);
 			this->panel2->Controls->Add(this->ACStopButton);
@@ -240,7 +253,7 @@ namespace PRATHTool {
 			this->panel2->Controls->Add(this->label3);
 			this->panel2->Controls->Add(this->ACMaxTimeTextBox);
 			this->panel2->Controls->Add(this->ACMinTimeTextBox);
-			this->panel2->Location = System::Drawing::Point(216, 4);
+			this->panel2->Location = System::Drawing::Point(226, 4);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(296, 215);
 			this->panel2->TabIndex = 7;
@@ -300,6 +313,7 @@ namespace PRATHTool {
 			// label3
 			// 
 			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::SystemColors::Control;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
@@ -332,7 +346,7 @@ namespace PRATHTool {
 			this->label5->AutoSize = true;
 			this->label5->BackColor = System::Drawing::SystemColors::Control;
 			this->label5->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label5->Location = System::Drawing::Point(101, 453);
+			this->label5->Location = System::Drawing::Point(99, 478);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(81, 13);
 			this->label5->TabIndex = 9;
@@ -341,7 +355,7 @@ namespace PRATHTool {
 			// textBox4
 			// 
 			this->textBox4->BackColor = System::Drawing::SystemColors::Control;
-			this->textBox4->Location = System::Drawing::Point(188, 450);
+			this->textBox4->Location = System::Drawing::Point(186, 475);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(241, 20);
 			this->textBox4->TabIndex = 10;
@@ -363,7 +377,7 @@ namespace PRATHTool {
 			this->panel3->Controls->Add(this->label8);
 			this->panel3->Controls->Add(this->AKMaxTextBox);
 			this->panel3->Controls->Add(this->AKMinTextBox);
-			this->panel3->Location = System::Drawing::Point(216, 226);
+			this->panel3->Location = System::Drawing::Point(226, 238);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(296, 215);
 			this->panel3->TabIndex = 11;
@@ -459,11 +473,44 @@ namespace PRATHTool {
 			// 
 			this->AKTimer->Tick += gcnew System::EventHandler(this, &MyForm::AKTimer_Tick);
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(215, -5);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(10, 478);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 12;
+			this->pictureBox1->TabStop = false;
+			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
+			this->pictureBox2->Location = System::Drawing::Point(-1, 222);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(538, 10);
+			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox2->TabIndex = 13;
+			this->pictureBox2->TabStop = false;
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+			this->pictureBox3->Location = System::Drawing::Point(3, 463);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(538, 10);
+			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox3->TabIndex = 14;
+			this->pictureBox3->TabStop = false;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(517, 475);
+			this->ClientSize = System::Drawing::Size(534, 498);
+			this->Controls->Add(this->pictureBox3);
+			this->Controls->Add(this->pictureBox2);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->label5);
@@ -482,6 +529,9 @@ namespace PRATHTool {
 			this->panel2->PerformLayout();
 			this->panel3->ResumeLayout(false);
 			this->panel3->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -491,6 +541,9 @@ namespace PRATHTool {
 		keyPressCheckTimer->Start();
 
 	}
+
+
+		/*BEGIN SHUTDOWN TIMER SECTION*/
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) { //Shutdown timer start button
 		if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "")
 		{
@@ -506,6 +559,7 @@ namespace PRATHTool {
 			}
 			else
 			{
+				label1->BackColor = Color::Chartreuse;
 				button1->Enabled = false;
 				button2->Enabled = true;
 				textBox1->Text = "";
@@ -551,22 +605,24 @@ namespace PRATHTool {
 	}
 
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) { //Shutdown Timer stop button
+		label1->BackColor = SystemColors::Control;
 		shutDownTimer->Stop();
 		TimeLabel->Text = "";
 		button1->Enabled = true;
 		button2->Enabled = false;
 	}
+			 /*END SHUTDOWNTIMER SECTION*/
 
 
 
 
 
-
-		/*BEGIN Clicker section*/
+			 /*BEGIN Clicker section*/
 	private: System::Void ACStartButton_Click(System::Object^  sender, System::EventArgs^  e) {
 
 		if (checkACValues(ACMinTimeTextBox->Text, ACMaxTimeTextBox->Text) == true)
 		{
+			label3->BackColor = Color::Chartreuse;
 			Random r;
 			int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
 			ACTimer->Interval = val;
@@ -596,6 +652,7 @@ namespace PRATHTool {
 		ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
 	}
 	private: System::Void ACStopButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		label3->BackColor = SystemColors::Control;
 		ACTimer->Stop();
 		ACLabel->Text = "";
 		ACStartButton->Enabled = true;
@@ -694,6 +751,8 @@ namespace PRATHTool {
 	private: System::Void AKStartButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (checkACValues(AKMinTextBox->Text, AKMaxTextBox->Text) == true && AKDropDown->SelectedIndex > -1)
 		{
+			label8->BackColor = Color::Chartreuse;
+
 			Key tk(AKDropDown->SelectedIndex);
 			KeyToPress = tk.KeyToString;
 
@@ -710,23 +769,26 @@ namespace PRATHTool {
 			AKStopButton->Enabled = true;
 		}
 	}
-private: System::Void AKStopButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	AKTimer->Stop();
-	AKLabel->Text = "";
-	AKStartButton->Enabled = true;
-	AKStopButton->Enabled = false;
-}
-private: System::Void AKTimer_Tick(System::Object^  sender, System::EventArgs^  e) {
-	//Keypress
-	SendKeys::Send(KeyToPress);
-	//
+	private: System::Void AKStopButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		label8->BackColor = SystemColors::Control;
+		label8->BackColor = SystemColors::Control;
+		label8->BackColor = SystemColors::Control;
+		AKTimer->Stop();
+		AKLabel->Text = "";
+		AKStartButton->Enabled = true;
+		AKStopButton->Enabled = false;
+	}
+	private: System::Void AKTimer_Tick(System::Object^  sender, System::EventArgs^  e) {
+		//Keypress
+		SendKeys::Send(KeyToPress);
+		//
 
-	Random r;
-	int val = r.Next(Convert::ToInt32(AKMinTextBox->Text), Convert::ToInt32(AKMaxTextBox->Text));
-	AKTimer->Interval = val;
-	AKTime = DateTime::Now.AddMilliseconds(val);
-	AKLabel->Text = "Next click at\n" + AKTime.ToLongDateString() + "\n" + AKTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
-}
-		 /*END AUTOKEY SECTION*/
-};
+		Random r;
+		int val = r.Next(Convert::ToInt32(AKMinTextBox->Text), Convert::ToInt32(AKMaxTextBox->Text));
+		AKTimer->Interval = val;
+		AKTime = DateTime::Now.AddMilliseconds(val);
+		AKLabel->Text = "Next click at\n" + AKTime.ToLongDateString() + "\n" + AKTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
+	}
+			 /*END AUTOKEY SECTION*/
+	};
 }
