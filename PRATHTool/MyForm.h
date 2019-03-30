@@ -214,7 +214,7 @@ namespace PRATHTool {
 			this->panel1->Controls->Add(this->button2);
 			this->panel1->Controls->Add(this->textBox3);
 			this->panel1->Controls->Add(this->button1);
-			this->panel1->Location = System::Drawing::Point(3, 4);
+			this->panel1->Location = System::Drawing::Point(9, 4);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(200, 200);
 			this->panel1->TabIndex = 6;
@@ -559,12 +559,16 @@ namespace PRATHTool {
 			}
 			else
 			{
+
 				label1->BackColor = Color::Chartreuse;
 				button1->Enabled = false;
 				button2->Enabled = true;
 				textBox1->Text = "";
 				textBox2->Text = "";
 				textBox3->Text = "";
+				textBox1->Enabled = false;
+				textBox2->Enabled = false;
+				textBox3->Enabled = false;
 
 				timeOriginal = System::DateTime::Now;
 				time = timeOriginal.AddHours(IT.Hours).AddMinutes(IT.Minutes).AddSeconds(IT.Seconds);
@@ -605,6 +609,9 @@ namespace PRATHTool {
 	}
 
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) { //Shutdown Timer stop button
+		textBox1->Enabled = true;
+		textBox2->Enabled = true;
+		textBox3->Enabled = true;
 		label1->BackColor = SystemColors::Control;
 		shutDownTimer->Stop();
 		TimeLabel->Text = "";
@@ -622,7 +629,10 @@ namespace PRATHTool {
 
 		if (checkACValues(ACMinTimeTextBox->Text, ACMaxTimeTextBox->Text) == true)
 		{
+
 			label3->BackColor = Color::Chartreuse;
+			ACMinTimeTextBox->Enabled = false;
+			ACMaxTimeTextBox->Enabled = false;
 			Random r;
 			int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
 			ACTimer->Interval = val;
@@ -653,6 +663,8 @@ namespace PRATHTool {
 	}
 	private: System::Void ACStopButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		label3->BackColor = SystemColors::Control;
+		ACMinTimeTextBox->Enabled = true;
+		ACMaxTimeTextBox->Enabled = true;
 		ACTimer->Stop();
 		ACLabel->Text = "";
 		ACStartButton->Enabled = true;
@@ -726,7 +738,7 @@ namespace PRATHTool {
 					AKStartButton->PerformClick();
 				}
 
-				System::Threading::Thread::Sleep(350);
+				System::Threading::Thread::Sleep(300);
 				keyPressCheckTimer->Start();
 
 			}
@@ -752,7 +764,8 @@ namespace PRATHTool {
 		if (checkACValues(AKMinTextBox->Text, AKMaxTextBox->Text) == true && AKDropDown->SelectedIndex > -1)
 		{
 			label8->BackColor = Color::Chartreuse;
-
+			AKMinTextBox->Enabled = false;
+			AKMaxTextBox->Enabled = false;
 			Key tk(AKDropDown->SelectedIndex);
 			KeyToPress = tk.KeyToString;
 
@@ -771,6 +784,8 @@ namespace PRATHTool {
 	}
 	private: System::Void AKStopButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		label8->BackColor = SystemColors::Control;
+		AKMinTextBox->Enabled = true;
+		AKMaxTextBox->Enabled = true;
 		AKTimer->Stop();
 		AKLabel->Text = "";
 		AKStartButton->Enabled = true;
