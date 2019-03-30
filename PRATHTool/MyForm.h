@@ -1,6 +1,7 @@
 #pragma once
 #include "InputTime.h"
 #include <windows.h>
+#include "Key.h"
 
 namespace PRATHTool {
 
@@ -67,6 +68,18 @@ namespace PRATHTool {
 	private: System::Windows::Forms::TextBox^  textBox4;
 	private: System::Windows::Forms::CheckBox^  ACHotkeyCheckBox;
 	private: System::Windows::Forms::Timer^  keyPressCheckTimer;
+	private: System::Windows::Forms::Panel^  panel3;
+	private: System::Windows::Forms::CheckBox^  AKHotkeyCheckBox;
+	private: System::Windows::Forms::Label^  AKLabel;
+	private: System::Windows::Forms::Button^  AKStopButton;
+	private: System::Windows::Forms::Button^  AKStartButton;
+	private: System::Windows::Forms::Label^  label7;
+	private: System::Windows::Forms::Label^  label8;
+	private: System::Windows::Forms::TextBox^  AKMaxTextBox;
+	private: System::Windows::Forms::TextBox^  AKMinTextBox;
+	private: System::Windows::Forms::Timer^  AKTimer;
+	private: System::Windows::Forms::ComboBox^  AKDropDown;
+
 
 	private: System::ComponentModel::IContainer^  components;
 
@@ -108,8 +121,20 @@ namespace PRATHTool {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->keyPressCheckTimer = (gcnew System::Windows::Forms::Timer(this->components));
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->AKDropDown = (gcnew System::Windows::Forms::ComboBox());
+			this->AKHotkeyCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->AKLabel = (gcnew System::Windows::Forms::Label());
+			this->AKStopButton = (gcnew System::Windows::Forms::Button());
+			this->AKStartButton = (gcnew System::Windows::Forms::Button());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->AKMaxTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->AKMinTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->AKTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
+			this->panel3->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// textBox1
@@ -177,7 +202,7 @@ namespace PRATHTool {
 			this->panel1->Controls->Add(this->button2);
 			this->panel1->Controls->Add(this->textBox3);
 			this->panel1->Controls->Add(this->button1);
-			this->panel1->Location = System::Drawing::Point(1, 2);
+			this->panel1->Location = System::Drawing::Point(3, 4);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(200, 200);
 			this->panel1->TabIndex = 6;
@@ -215,7 +240,7 @@ namespace PRATHTool {
 			this->panel2->Controls->Add(this->label3);
 			this->panel2->Controls->Add(this->ACMaxTimeTextBox);
 			this->panel2->Controls->Add(this->ACMinTimeTextBox);
-			this->panel2->Location = System::Drawing::Point(216, 2);
+			this->panel2->Location = System::Drawing::Point(216, 4);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(296, 215);
 			this->panel2->TabIndex = 7;
@@ -307,7 +332,7 @@ namespace PRATHTool {
 			this->label5->AutoSize = true;
 			this->label5->BackColor = System::Drawing::SystemColors::Control;
 			this->label5->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label5->Location = System::Drawing::Point(61, 226);
+			this->label5->Location = System::Drawing::Point(101, 453);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(81, 13);
 			this->label5->TabIndex = 9;
@@ -316,7 +341,7 @@ namespace PRATHTool {
 			// textBox4
 			// 
 			this->textBox4->BackColor = System::Drawing::SystemColors::Control;
-			this->textBox4->Location = System::Drawing::Point(148, 223);
+			this->textBox4->Location = System::Drawing::Point(188, 450);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(241, 20);
 			this->textBox4->TabIndex = 10;
@@ -327,11 +352,119 @@ namespace PRATHTool {
 			this->keyPressCheckTimer->Interval = 1;
 			this->keyPressCheckTimer->Tick += gcnew System::EventHandler(this, &MyForm::keyPressCheckTimer_Tick);
 			// 
+			// panel3
+			// 
+			this->panel3->Controls->Add(this->AKDropDown);
+			this->panel3->Controls->Add(this->AKHotkeyCheckBox);
+			this->panel3->Controls->Add(this->AKLabel);
+			this->panel3->Controls->Add(this->AKStopButton);
+			this->panel3->Controls->Add(this->AKStartButton);
+			this->panel3->Controls->Add(this->label7);
+			this->panel3->Controls->Add(this->label8);
+			this->panel3->Controls->Add(this->AKMaxTextBox);
+			this->panel3->Controls->Add(this->AKMinTextBox);
+			this->panel3->Location = System::Drawing::Point(216, 226);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(296, 215);
+			this->panel3->TabIndex = 11;
+			// 
+			// AKDropDown
+			// 
+			this->AKDropDown->FormattingEnabled = true;
+			this->AKDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Escape" });
+			this->AKDropDown->Location = System::Drawing::Point(14, 104);
+			this->AKDropDown->Name = L"AKDropDown";
+			this->AKDropDown->Size = System::Drawing::Size(76, 21);
+			this->AKDropDown->TabIndex = 13;
+			// 
+			// AKHotkeyCheckBox
+			// 
+			this->AKHotkeyCheckBox->AutoSize = true;
+			this->AKHotkeyCheckBox->Location = System::Drawing::Point(174, 115);
+			this->AKHotkeyCheckBox->Name = L"AKHotkeyCheckBox";
+			this->AKHotkeyCheckBox->Size = System::Drawing::Size(105, 17);
+			this->AKHotkeyCheckBox->TabIndex = 12;
+			this->AKHotkeyCheckBox->Text = L"R-SHIFT Hotkey";
+			this->AKHotkeyCheckBox->UseVisualStyleBackColor = true;
+			// 
+			// AKLabel
+			// 
+			this->AKLabel->AutoSize = true;
+			this->AKLabel->Location = System::Drawing::Point(114, 157);
+			this->AKLabel->Name = L"AKLabel";
+			this->AKLabel->Size = System::Drawing::Size(10, 13);
+			this->AKLabel->TabIndex = 11;
+			this->AKLabel->Text = L"-";
+			// 
+			// AKStopButton
+			// 
+			this->AKStopButton->Enabled = false;
+			this->AKStopButton->Location = System::Drawing::Point(108, 131);
+			this->AKStopButton->Name = L"AKStopButton";
+			this->AKStopButton->Size = System::Drawing::Size(60, 23);
+			this->AKStopButton->TabIndex = 10;
+			this->AKStopButton->Text = L"Stop";
+			this->AKStopButton->UseVisualStyleBackColor = true;
+			this->AKStopButton->Click += gcnew System::EventHandler(this, &MyForm::AKStopButton_Click);
+			// 
+			// AKStartButton
+			// 
+			this->AKStartButton->Location = System::Drawing::Point(108, 102);
+			this->AKStartButton->Name = L"AKStartButton";
+			this->AKStartButton->Size = System::Drawing::Size(60, 23);
+			this->AKStartButton->TabIndex = 9;
+			this->AKStartButton->Text = L"Start";
+			this->AKStartButton->UseVisualStyleBackColor = true;
+			this->AKStartButton->Click += gcnew System::EventHandler(this, &MyForm::AKStartButton_Click);
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->BackColor = System::Drawing::SystemColors::Control;
+			this->label7->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->label7->Location = System::Drawing::Point(26, 31);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(250, 39);
+			this->label7->TabIndex = 8;
+			this->label7->Text = L"- Enter time range below in milliseconds\r\n- Every key press is done at a random t"
+				L"ime between\r\n   the given range.";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label8->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->label8->Location = System::Drawing::Point(10, 7);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(279, 24);
+			this->label8->TabIndex = 7;
+			this->label8->Text = L"Random Interval Key Presser";
+			// 
+			// AKMaxTextBox
+			// 
+			this->AKMaxTextBox->Location = System::Drawing::Point(142, 73);
+			this->AKMaxTextBox->Name = L"AKMaxTextBox";
+			this->AKMaxTextBox->Size = System::Drawing::Size(59, 20);
+			this->AKMaxTextBox->TabIndex = 2;
+			// 
+			// AKMinTextBox
+			// 
+			this->AKMinTextBox->Location = System::Drawing::Point(77, 73);
+			this->AKMinTextBox->Name = L"AKMinTextBox";
+			this->AKMinTextBox->Size = System::Drawing::Size(59, 20);
+			this->AKMinTextBox->TabIndex = 1;
+			// 
+			// AKTimer
+			// 
+			this->AKTimer->Tick += gcnew System::EventHandler(this, &MyForm::AKTimer_Tick);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(517, 258);
+			this->ClientSize = System::Drawing::Size(517, 475);
+			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->panel2);
@@ -347,6 +480,8 @@ namespace PRATHTool {
 			this->panel1->PerformLayout();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
+			this->panel3->ResumeLayout(false);
+			this->panel3->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -422,6 +557,12 @@ namespace PRATHTool {
 		button2->Enabled = false;
 	}
 
+
+
+
+
+
+		/*BEGIN Clicker section*/
 	private: System::Void ACStartButton_Click(System::Object^  sender, System::EventArgs^  e) {
 
 		if (checkACValues(ACMinTimeTextBox->Text, ACMaxTimeTextBox->Text) == true)
@@ -458,7 +599,7 @@ namespace PRATHTool {
 		ACTimer->Stop();
 		ACLabel->Text = "";
 		ACStartButton->Enabled = true;
-		ACStopButton->Enabled = false;;
+		ACStopButton->Enabled = false;
 	}
 
 	private: bool checkACValues(System::String^ min, System::String^ max)
@@ -480,6 +621,16 @@ namespace PRATHTool {
 		}
 		return valuesAreGood;
 	}
+
+			 /*END Clicker section*/
+
+
+
+
+
+
+
+		/*BEGIN Hotkey detection*/
 	private: System::Void keyPressCheckTimer_Tick(System::Object^  sender, System::EventArgs^  e) {
 
 		if (ACHotkeyCheckBox->Checked == true)
@@ -502,6 +653,80 @@ namespace PRATHTool {
 
 			}
 		}
+
+		if (AKHotkeyCheckBox->Checked == true)
+		{
+			if (GetKeyState(VK_RSHIFT) & 0x8000)
+			{
+				keyPressCheckTimer->Stop();
+
+				if (AKStartButton->Enabled == false) //Key presser is running
+				{
+					AKStopButton->PerformClick();
+				}
+				else if (AKStopButton->Enabled == false) //key presser is stopped
+				{
+					AKStartButton->PerformClick();
+				}
+
+				System::Threading::Thread::Sleep(500);
+				keyPressCheckTimer->Start();
+
+			}
+		}
+
 	}
-	};
+			 /*END Hotkey detection*/
+
+
+
+
+
+
+
+
+
+
+			 /*BEGIN AUTOKEY SECTION*/
+	private: DateTime AKTime;
+	private: System::String^ KeyToPress;
+
+	private: System::Void AKStartButton_Click(System::Object^  sender, System::EventArgs^  e) {
+		if (checkACValues(AKMinTextBox->Text, AKMaxTextBox->Text) == true && AKDropDown->SelectedIndex > -1)
+		{
+			Key tk(AKDropDown->SelectedIndex);
+			KeyToPress = tk.KeyToString;
+
+			Random r;
+			int val = r.Next(Convert::ToInt32(AKMinTextBox->Text), Convert::ToInt32(AKMaxTextBox->Text));
+			AKTimer->Interval = val;
+			AKTime = DateTime::Now.AddMilliseconds(val);
+
+			AKLabel->Text = "Next key at\n" + AKTime.ToLongDateString() + "\n" + AKTime.ToLongTimeString() + "\nNext key interval: " + val.ToString() + "ms";
+
+			AKTimer->Start();
+
+			AKStartButton->Enabled = false;
+			AKStopButton->Enabled = true;
+		}
+	}
+private: System::Void AKStopButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	AKTimer->Stop();
+	AKLabel->Text = "";
+	AKStartButton->Enabled = true;
+	AKStopButton->Enabled = false;
+}
+private: System::Void AKTimer_Tick(System::Object^  sender, System::EventArgs^  e) {
+	//Keypress
+	SendKeys::Send(KeyToPress);
+	//
+
+	Random r;
+	int val = r.Next(Convert::ToInt32(AKMinTextBox->Text), Convert::ToInt32(AKMaxTextBox->Text));
+	AKTimer->Interval = val;
+	AKTime = DateTime::Now.AddMilliseconds(val);
+	AKLabel->Text = "Next click at\n" + AKTime.ToLongDateString() + "\n" + AKTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
+}
+		 /*END AUTOKEY SECTION*/
+};
 }

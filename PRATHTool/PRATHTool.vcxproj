@@ -139,10 +139,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="InputTime.cpp" />
+    <ClCompile Include="Key.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputTime.h" />
+    <ClInclude Include="Key.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
