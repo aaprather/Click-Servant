@@ -14,10 +14,10 @@
 
 <br></br>
 <br></br>
-![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/Screenshot_1.jpg)
+![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/Screenshot_4.jpg)
 
-![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/Screenshot_2.jpg)
+![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/Screenshot_5.jpg)
 
-![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/Screenshot_3.jpg)
+![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/Screenshot_6.jpg)
 
 </p>
