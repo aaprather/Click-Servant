@@ -518,7 +518,8 @@ namespace PRATHTool {
 			this->Controls->Add(this->panel1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
-			this->MinimumSize = System::Drawing::Size(506, 297);
+			this->MaximumSize = System::Drawing::Size(550, 537);
+			this->MinimumSize = System::Drawing::Size(550, 537);
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"PRATHTool";
