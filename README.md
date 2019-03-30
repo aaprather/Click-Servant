@@ -13,9 +13,6 @@
 ----[**Updated executable link**](https://github.com/aaprather/PRATHTool/raw/master/PRATHTool.exe)----
 
 <br></br>
-Screenshots - 
-
-<br></br>
 <br></br>
 ![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/Screenshot_1.jpg)
 
