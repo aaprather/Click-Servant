@@ -554,7 +554,7 @@ namespace PRATHTool {
 			// 
 			this->saveProfileAsToolStripMenuItem->BackColor = System::Drawing::SystemColors::ControlLight;
 			this->saveProfileAsToolStripMenuItem->Name = L"saveProfileAsToolStripMenuItem";
-			this->saveProfileAsToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->saveProfileAsToolStripMenuItem->Size = System::Drawing::Size(160, 22);
 			this->saveProfileAsToolStripMenuItem->Text = L"Save Profile As...";
 			this->saveProfileAsToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::saveProfileAsToolStripMenuItem_Click);
 			// 
@@ -562,7 +562,7 @@ namespace PRATHTool {
 			// 
 			this->loadProfileToolStripMenuItem->BackColor = System::Drawing::SystemColors::ControlLight;
 			this->loadProfileToolStripMenuItem->Name = L"loadProfileToolStripMenuItem";
-			this->loadProfileToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->loadProfileToolStripMenuItem->Size = System::Drawing::Size(160, 22);
 			this->loadProfileToolStripMenuItem->Text = L"Load Profile";
 			this->loadProfileToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::loadProfileToolStripMenuItem_Click);
 			// 
@@ -601,7 +601,10 @@ namespace PRATHTool {
 			this->Controls->Add(this->panel1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
+			this->MaximumSize = System::Drawing::Size(551, 584);
+			this->MinimumSize = System::Drawing::Size(551, 584);
 			this->Name = L"MyForm";
+			this->Opacity = 0.99;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"PRATHTool";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
