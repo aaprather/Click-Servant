@@ -141,6 +141,7 @@
     <ClCompile Include="InputTime.cpp" />
     <ClCompile Include="Key.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Profile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputTime.h" />
@@ -148,6 +149,7 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Profile.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>

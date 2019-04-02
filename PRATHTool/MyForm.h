@@ -2,6 +2,7 @@
 #include "InputTime.h"
 #include <windows.h>
 #include "Key.h"
+#include "Profile.h"
 
 namespace PRATHTool {
 
@@ -37,10 +38,9 @@ namespace PRATHTool {
 				delete components;
 			}
 		}
-	private: System::DateTime timeOriginal;
-	private: System::DateTime time;
-	private: System::DateTime ACTime;
-	private: System::TimeSpan t;
+
+
+
 
 	private: System::Windows::Forms::TextBox^  textBox1;
 	protected:
@@ -82,6 +82,20 @@ namespace PRATHTool {
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
 	private: System::Windows::Forms::PictureBox^  pictureBox2;
 	private: System::Windows::Forms::PictureBox^  pictureBox3;
+	private: System::Windows::Forms::ToolStrip^  toolStrip1;
+	private: System::Windows::Forms::ToolStripDropDownButton^  toolStripDropDownButton1;
+	private: System::Windows::Forms::ToolStripMenuItem^  saveProfileAsToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  loadProfileToolStripMenuItem;
+	private: System::Windows::Forms::SaveFileDialog^  SaveProfileDialog;
+	private: System::Windows::Forms::PictureBox^  pictureBox4;
+	private: System::Windows::Forms::OpenFileDialog^  OpenProfileDialog;
+
+
+
+
+
+
+
 
 
 
@@ -141,12 +155,21 @@ namespace PRATHTool {
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
+			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
+			this->toolStripDropDownButton1 = (gcnew System::Windows::Forms::ToolStripDropDownButton());
+			this->saveProfileAsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->loadProfileToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->SaveProfileDialog = (gcnew System::Windows::Forms::SaveFileDialog());
+			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
+			this->OpenProfileDialog = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->panel3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
+			this->toolStrip1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// textBox1
@@ -214,7 +237,7 @@ namespace PRATHTool {
 			this->panel1->Controls->Add(this->button2);
 			this->panel1->Controls->Add(this->textBox3);
 			this->panel1->Controls->Add(this->button1);
-			this->panel1->Location = System::Drawing::Point(9, 4);
+			this->panel1->Location = System::Drawing::Point(12, 44);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(200, 200);
 			this->panel1->TabIndex = 6;
@@ -253,7 +276,7 @@ namespace PRATHTool {
 			this->panel2->Controls->Add(this->label3);
 			this->panel2->Controls->Add(this->ACMaxTimeTextBox);
 			this->panel2->Controls->Add(this->ACMinTimeTextBox);
-			this->panel2->Location = System::Drawing::Point(226, 4);
+			this->panel2->Location = System::Drawing::Point(229, 44);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(296, 215);
 			this->panel2->TabIndex = 7;
@@ -346,7 +369,7 @@ namespace PRATHTool {
 			this->label5->AutoSize = true;
 			this->label5->BackColor = System::Drawing::SystemColors::Control;
 			this->label5->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label5->Location = System::Drawing::Point(99, 478);
+			this->label5->Location = System::Drawing::Point(102, 518);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(81, 13);
 			this->label5->TabIndex = 9;
@@ -355,7 +378,7 @@ namespace PRATHTool {
 			// textBox4
 			// 
 			this->textBox4->BackColor = System::Drawing::SystemColors::Control;
-			this->textBox4->Location = System::Drawing::Point(186, 475);
+			this->textBox4->Location = System::Drawing::Point(189, 515);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(241, 20);
 			this->textBox4->TabIndex = 10;
@@ -377,7 +400,7 @@ namespace PRATHTool {
 			this->panel3->Controls->Add(this->label8);
 			this->panel3->Controls->Add(this->AKMaxTextBox);
 			this->panel3->Controls->Add(this->AKMinTextBox);
-			this->panel3->Location = System::Drawing::Point(226, 238);
+			this->panel3->Location = System::Drawing::Point(229, 278);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(296, 215);
 			this->panel3->TabIndex = 11;
@@ -476,7 +499,7 @@ namespace PRATHTool {
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(215, -5);
+			this->pictureBox1->Location = System::Drawing::Point(218, 35);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(10, 478);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -486,7 +509,7 @@ namespace PRATHTool {
 			// pictureBox2
 			// 
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(-1, 222);
+			this->pictureBox2->Location = System::Drawing::Point(2, 262);
 			this->pictureBox2->Name = L"pictureBox2";
 			this->pictureBox2->Size = System::Drawing::Size(538, 10);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -496,18 +519,78 @@ namespace PRATHTool {
 			// pictureBox3
 			// 
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
-			this->pictureBox3->Location = System::Drawing::Point(3, 463);
+			this->pictureBox3->Location = System::Drawing::Point(-5, 503);
 			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(538, 10);
+			this->pictureBox3->Size = System::Drawing::Size(549, 10);
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox3->TabIndex = 14;
 			this->pictureBox3->TabStop = false;
+			// 
+			// toolStrip1
+			// 
+			this->toolStrip1->BackColor = System::Drawing::SystemColors::Control;
+			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->toolStripDropDownButton1 });
+			this->toolStrip1->Location = System::Drawing::Point(0, 0);
+			this->toolStrip1->Name = L"toolStrip1";
+			this->toolStrip1->Size = System::Drawing::Size(535, 25);
+			this->toolStrip1->TabIndex = 15;
+			this->toolStrip1->Text = L"toolStrip1";
+			// 
+			// toolStripDropDownButton1
+			// 
+			this->toolStripDropDownButton1->BackColor = System::Drawing::SystemColors::Control;
+			this->toolStripDropDownButton1->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Text;
+			this->toolStripDropDownButton1->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->saveProfileAsToolStripMenuItem,
+					this->loadProfileToolStripMenuItem
+			});
+			this->toolStripDropDownButton1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripDropDownButton1.Image")));
+			this->toolStripDropDownButton1->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripDropDownButton1->Name = L"toolStripDropDownButton1";
+			this->toolStripDropDownButton1->Size = System::Drawing::Size(38, 22);
+			this->toolStripDropDownButton1->Text = L"File";
+			// 
+			// saveProfileAsToolStripMenuItem
+			// 
+			this->saveProfileAsToolStripMenuItem->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->saveProfileAsToolStripMenuItem->Name = L"saveProfileAsToolStripMenuItem";
+			this->saveProfileAsToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->saveProfileAsToolStripMenuItem->Text = L"Save Profile As...";
+			this->saveProfileAsToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::saveProfileAsToolStripMenuItem_Click);
+			// 
+			// loadProfileToolStripMenuItem
+			// 
+			this->loadProfileToolStripMenuItem->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->loadProfileToolStripMenuItem->Name = L"loadProfileToolStripMenuItem";
+			this->loadProfileToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->loadProfileToolStripMenuItem->Text = L"Load Profile";
+			this->loadProfileToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::loadProfileToolStripMenuItem_Click);
+			// 
+			// SaveProfileDialog
+			// 
+			this->SaveProfileDialog->FileOk += gcnew System::ComponentModel::CancelEventHandler(this, &MyForm::SaveProfileDialog_FileOk);
+			// 
+			// pictureBox4
+			// 
+			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
+			this->pictureBox4->Location = System::Drawing::Point(-5, 28);
+			this->pictureBox4->Name = L"pictureBox4";
+			this->pictureBox4->Size = System::Drawing::Size(549, 10);
+			this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox4->TabIndex = 16;
+			this->pictureBox4->TabStop = false;
+			// 
+			// OpenProfileDialog
+			// 
+			this->OpenProfileDialog->FileOk += gcnew System::ComponentModel::CancelEventHandler(this, &MyForm::OpenProfileDialog_FileOk);
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(534, 498);
+			this->ClientSize = System::Drawing::Size(535, 545);
+			this->Controls->Add(this->pictureBox4);
+			this->Controls->Add(this->toolStrip1);
 			this->Controls->Add(this->pictureBox3);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->pictureBox1);
@@ -518,8 +601,6 @@ namespace PRATHTool {
 			this->Controls->Add(this->panel1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(550, 537);
-			this->MinimumSize = System::Drawing::Size(550, 537);
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"PRATHTool";
@@ -533,6 +614,9 @@ namespace PRATHTool {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
+			this->toolStrip1->ResumeLayout(false);
+			this->toolStrip1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -544,7 +628,11 @@ namespace PRATHTool {
 	}
 
 
-		/*BEGIN SHUTDOWN TIMER SECTION*/
+			 /*BEGIN SHUTDOWN TIMER SECTION*/
+
+	private: System::DateTime timeOriginal;
+	private: System::DateTime time;
+	private: System::TimeSpan t;
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) { //Shutdown timer start button
 		if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "")
 		{
@@ -564,9 +652,6 @@ namespace PRATHTool {
 				label1->BackColor = Color::Chartreuse;
 				button1->Enabled = false;
 				button2->Enabled = true;
-				textBox1->Text = "";
-				textBox2->Text = "";
-				textBox3->Text = "";
 				textBox1->Enabled = false;
 				textBox2->Enabled = false;
 				textBox3->Enabled = false;
@@ -626,6 +711,7 @@ namespace PRATHTool {
 
 
 			 /*BEGIN Clicker section*/
+	private: System::DateTime ACTime;
 	private: System::Void ACStartButton_Click(System::Object^  sender, System::EventArgs^  e) {
 
 		if (checkACValues(ACMinTimeTextBox->Text, ACMaxTimeTextBox->Text) == true)
@@ -718,7 +804,7 @@ namespace PRATHTool {
 					ACStartButton->PerformClick();
 				}
 
-				System::Threading::Thread::Sleep(500);
+				System::Threading::Thread::Sleep(300);
 				keyPressCheckTimer->Start();
 
 			}
@@ -804,5 +890,46 @@ namespace PRATHTool {
 		AKLabel->Text = "Next click at\n" + AKTime.ToLongDateString() + "\n" + AKTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
 	}
 			 /*END AUTOKEY SECTION*/
-	};
+
+
+
+
+
+
+
+
+
+
+		/*START SAVE PROFILE SECTION*/
+	private: System::Void saveProfileAsToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		SaveProfileDialog->AddExtension = true;
+		SaveProfileDialog->OverwritePrompt = true;
+		SaveProfileDialog->Filter = "PRATHTool Profile (*.PTP)|*.PTP";
+		SaveProfileDialog->ShowDialog();
+
+	}
+	private: System::Void SaveProfileDialog_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+
+		Profile profile(textBox1->Text, textBox2->Text, textBox3->Text, ACMinTimeTextBox->Text, ACMaxTimeTextBox->Text, ACHotkeyCheckBox->Checked, AKMinTextBox->Text,
+			AKMaxTextBox->Text, AKHotkeyCheckBox->Checked, AKDropDown->SelectedIndex);
+
+		profile.SaveProfileAs(SaveProfileDialog->FileName);
+	}
+			 /*END SAVE PROFILE SECTION*/
+
+
+
+		/*START OPEN PROFILE SECTION*/
+	private: System::Void loadProfileToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		OpenProfileDialog->AddExtension = true;
+		OpenProfileDialog->Filter = "PRATHTool Profile (*.PTP)|*.PTP";
+		OpenProfileDialog->ShowDialog();
+	}
+private: System::Void OpenProfileDialog_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+	Profile loadedProfile;
+	loadedProfile.LoadProfile(OpenProfileDialog->FileName);
+	MessageBox::Show(loadedProfile.HOUR +" " + loadedProfile.MINUTE + " " + loadedProfile.SECOND);
+
+}
+};
 }
