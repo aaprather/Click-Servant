@@ -925,11 +925,24 @@ namespace PRATHTool {
 		OpenProfileDialog->Filter = "PRATHTool Profile (*.PTP)|*.PTP";
 		OpenProfileDialog->ShowDialog();
 	}
-private: System::Void OpenProfileDialog_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-	Profile loadedProfile;
-	loadedProfile.LoadProfile(OpenProfileDialog->FileName);
-	MessageBox::Show(loadedProfile.HOUR +" " + loadedProfile.MINUTE + " " + loadedProfile.SECOND);
+	private: System::Void OpenProfileDialog_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+		Profile loadedProfile;
+		loadedProfile.LoadProfile(OpenProfileDialog->FileName);
+		textBox1->Text = loadedProfile.HOUR;
+		textBox2->Text = loadedProfile.MINUTE;
+		textBox3->Text = loadedProfile.SECOND;
 
-}
-};
+		ACMinTimeTextBox->Text = loadedProfile.ACMIN;
+		ACMaxTimeTextBox->Text = loadedProfile.ACMAX;
+		ACHotkeyCheckBox->Checked = loadedProfile.ACHOTKEY;
+
+		AKMinTextBox->Text = loadedProfile.AKMIN;
+		AKMaxTextBox->Text = loadedProfile.AKMAX;
+		AKHotkeyCheckBox->Checked = loadedProfile.AKHOTKEY;
+		AKDropDown->SelectedIndex = loadedProfile.AKDROPDOWN;
+
+
+
+	}
+	};
 }

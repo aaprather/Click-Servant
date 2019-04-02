@@ -16,5 +16,9 @@ public:
 	System::String^ AKMAX;
 	int AKHOTKEY;
 	int AKDROPDOWN;
+private:
+	void LoadShutdownTime(System::String^ fileText);
+	void LoadAutoClickerVals(System::String^ fileText);
+	void LoadAutoKeyerVals(System::String^ fileText);
 };
 
