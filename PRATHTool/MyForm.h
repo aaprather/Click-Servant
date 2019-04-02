@@ -547,8 +547,8 @@ namespace PRATHTool {
 			this->toolStripDropDownButton1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripDropDownButton1.Image")));
 			this->toolStripDropDownButton1->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->toolStripDropDownButton1->Name = L"toolStripDropDownButton1";
-			this->toolStripDropDownButton1->Size = System::Drawing::Size(38, 22);
-			this->toolStripDropDownButton1->Text = L"File";
+			this->toolStripDropDownButton1->Size = System::Drawing::Size(54, 22);
+			this->toolStripDropDownButton1->Text = L"Profile";
 			// 
 			// saveProfileAsToolStripMenuItem
 			// 
@@ -716,21 +716,28 @@ namespace PRATHTool {
 
 		if (checkACValues(ACMinTimeTextBox->Text, ACMaxTimeTextBox->Text) == true)
 		{
+			try
+			{
+				label3->BackColor = Color::Chartreuse;
+				ACMinTimeTextBox->Enabled = false;
+				ACMaxTimeTextBox->Enabled = false;
+				Random r;
+				int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
+				ACTimer->Interval = val;
+				ACTime = DateTime::Now.AddMilliseconds(val);
 
-			label3->BackColor = Color::Chartreuse;
-			ACMinTimeTextBox->Enabled = false;
-			ACMaxTimeTextBox->Enabled = false;
-			Random r;
-			int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
-			ACTimer->Interval = val;
-			ACTime = DateTime::Now.AddMilliseconds(val);
+				ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
 
-			ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
+				ACTimer->Start();
 
-			ACTimer->Start();
-
-			ACStartButton->Enabled = false;
-			ACStopButton->Enabled = true;
+				ACStartButton->Enabled = false;
+				ACStopButton->Enabled = true;
+			}
+			catch (...)
+			{
+				ACStopButton->Enabled = true;
+				ACStopButton->PerformClick();
+			}
 		}
 
 
@@ -850,23 +857,32 @@ namespace PRATHTool {
 	private: System::Void AKStartButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (checkACValues(AKMinTextBox->Text, AKMaxTextBox->Text) == true && AKDropDown->SelectedIndex > -1)
 		{
-			label8->BackColor = Color::Chartreuse;
-			AKMinTextBox->Enabled = false;
-			AKMaxTextBox->Enabled = false;
-			Key tk(AKDropDown->SelectedIndex);
-			KeyToPress = tk.KeyToString;
+			try
+			{
+				label8->BackColor = Color::Chartreuse;
+				AKMinTextBox->Enabled = false;
+				AKMaxTextBox->Enabled = false;
+				Key tk(AKDropDown->SelectedIndex);
+				KeyToPress = tk.KeyToString;
 
-			Random r;
-			int val = r.Next(Convert::ToInt32(AKMinTextBox->Text), Convert::ToInt32(AKMaxTextBox->Text));
-			AKTimer->Interval = val;
-			AKTime = DateTime::Now.AddMilliseconds(val);
+				Random r;
+				int val = r.Next(Convert::ToInt32(AKMinTextBox->Text), Convert::ToInt32(AKMaxTextBox->Text));
+				AKTimer->Interval = val;
+				AKTime = DateTime::Now.AddMilliseconds(val);
 
-			AKLabel->Text = "Next key at\n" + AKTime.ToLongDateString() + "\n" + AKTime.ToLongTimeString() + "\nNext key interval: " + val.ToString() + "ms";
+				AKLabel->Text = "Next key at\n" + AKTime.ToLongDateString() + "\n" + AKTime.ToLongTimeString() + "\nNext key interval: " + val.ToString() + "ms";
 
-			AKTimer->Start();
+				AKTimer->Start();
 
-			AKStartButton->Enabled = false;
-			AKStopButton->Enabled = true;
+				AKStartButton->Enabled = false;
+				AKStopButton->Enabled = true;
+			}
+			catch(...)
+			{
+				AKStopButton->Enabled = true;
+				AKStopButton->PerformClick();
+			}
+			
 		}
 	}
 	private: System::Void AKStopButton_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -919,6 +935,10 @@ namespace PRATHTool {
 
 
 
+
+
+
+
 		/*START OPEN PROFILE SECTION*/
 	private: System::Void loadProfileToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		OpenProfileDialog->AddExtension = true;
@@ -940,9 +960,10 @@ namespace PRATHTool {
 		AKMaxTextBox->Text = loadedProfile.AKMAX;
 		AKHotkeyCheckBox->Checked = loadedProfile.AKHOTKEY;
 		AKDropDown->SelectedIndex = loadedProfile.AKDROPDOWN;
-
-
-
 	}
+			 /*END OPEN PROFILE SECTION*/
+
+
+
 	};
 }
