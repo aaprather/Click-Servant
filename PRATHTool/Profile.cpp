@@ -45,15 +45,7 @@ void Profile::LoadProfile(System::String^ PATH)
 	LoadAutoClickerVals(SavedProf);
 	SavedProf = SavedProf->Replace("@" + ACMIN + "-" + ACMAX + "-" + ACHOTKEY + "@", "");
 	LoadAutoKeyerVals(SavedProf);
-
-
 }
-
-
-
-
-
-
 
 
 void Profile::LoadShutdownTime(System::String^ fileText)
