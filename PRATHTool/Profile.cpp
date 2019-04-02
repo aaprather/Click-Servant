@@ -66,6 +66,7 @@ void Profile::LoadShutdownTime(System::String^ fileText)
 			switch (part)
 			{
 			case 1:
+
 				HOUR = temp;
 				part++;
 				temp = "";
@@ -136,7 +137,10 @@ void Profile::LoadAutoKeyerVals(System::String^ fileText)
 	{
 		if (fileText[i] == '_')
 		{
-			AKDROPDOWN = System::Convert::ToInt32(temp);
+			if (temp == "X")
+				AKDROPDOWN = -1;
+			else
+				AKDROPDOWN = System::Convert::ToInt32(temp);
 			break;
 		}
 		else if (fileText[i] == '-')

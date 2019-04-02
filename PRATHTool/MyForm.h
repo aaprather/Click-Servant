@@ -951,16 +951,16 @@ namespace PRATHTool {
 	private: System::Void OpenProfileDialog_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
 		Profile loadedProfile;
 		loadedProfile.LoadProfile(OpenProfileDialog->FileName);
-		textBox1->Text = loadedProfile.HOUR;
-		textBox2->Text = loadedProfile.MINUTE;
-		textBox3->Text = loadedProfile.SECOND;
+		textBox1->Text = loadedProfile.HOUR->Replace("X","");
+		textBox2->Text = loadedProfile.MINUTE->Replace("X", "");
+		textBox3->Text = loadedProfile.SECOND->Replace("X", "");
 
-		ACMinTimeTextBox->Text = loadedProfile.ACMIN;
-		ACMaxTimeTextBox->Text = loadedProfile.ACMAX;
+		ACMinTimeTextBox->Text = loadedProfile.ACMIN->Replace("X", "");
+		ACMaxTimeTextBox->Text = loadedProfile.ACMAX->Replace("X", "");
 		ACHotkeyCheckBox->Checked = loadedProfile.ACHOTKEY;
 
-		AKMinTextBox->Text = loadedProfile.AKMIN;
-		AKMaxTextBox->Text = loadedProfile.AKMAX;
+		AKMinTextBox->Text = loadedProfile.AKMIN->Replace("X", "");
+		AKMaxTextBox->Text = loadedProfile.AKMAX->Replace("X", "");
 		AKHotkeyCheckBox->Checked = loadedProfile.AKHOTKEY;
 		AKDropDown->SelectedIndex = loadedProfile.AKDROPDOWN;
 	}
