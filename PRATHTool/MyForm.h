@@ -67,7 +67,8 @@ namespace PRATHTool {
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ textBox4;
 	private: System::Windows::Forms::CheckBox^ ACHotkeyCheckBox;
-	private: System::Windows::Forms::Timer^ keyPressCheckTimer;
+	private: System::Windows::Forms::Timer^ ACKeyPressCheckTimer;
+
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::CheckBox^ AKHotkeyCheckBox;
 	private: System::Windows::Forms::Label^ AKLabel;
@@ -89,6 +90,7 @@ namespace PRATHTool {
 	private: System::Windows::Forms::SaveFileDialog^ SaveProfileDialog;
 	private: System::Windows::Forms::PictureBox^ pictureBox4;
 	private: System::Windows::Forms::OpenFileDialog^ OpenProfileDialog;
+	private: System::Windows::Forms::Timer^ AKKeyPressCheckTimer;
 
 
 
@@ -140,7 +142,7 @@ namespace PRATHTool {
 			this->ACTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->keyPressCheckTimer = (gcnew System::Windows::Forms::Timer(this->components));
+			this->ACKeyPressCheckTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->AKDropDown = (gcnew System::Windows::Forms::ComboBox());
 			this->AKHotkeyCheckBox = (gcnew System::Windows::Forms::CheckBox());
@@ -162,6 +164,7 @@ namespace PRATHTool {
 			this->SaveProfileDialog = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->OpenProfileDialog = (gcnew System::Windows::Forms::OpenFileDialog());
+			this->AKKeyPressCheckTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->panel3->SuspendLayout();
@@ -384,10 +387,10 @@ namespace PRATHTool {
 			this->textBox4->TabIndex = 10;
 			this->textBox4->Text = L"3KwkiTj1QhmmUgHkwfWscTHUDbNd9e4QQH";
 			// 
-			// keyPressCheckTimer
+			// ACKeyPressCheckTimer
 			// 
-			this->keyPressCheckTimer->Interval = 1;
-			this->keyPressCheckTimer->Tick += gcnew System::EventHandler(this, &MyForm::keyPressCheckTimer_Tick);
+			this->ACKeyPressCheckTimer->Interval = 1;
+			this->ACKeyPressCheckTimer->Tick += gcnew System::EventHandler(this, &MyForm::ACKeyPressCheckTimer_Tick);
 			// 
 			// panel3
 			// 
@@ -584,6 +587,11 @@ namespace PRATHTool {
 			// 
 			this->OpenProfileDialog->FileOk += gcnew System::ComponentModel::CancelEventHandler(this, &MyForm::OpenProfileDialog_FileOk);
 			// 
+			// AKKeyPressCheckTimer
+			// 
+			this->AKKeyPressCheckTimer->Interval = 1;
+			this->AKKeyPressCheckTimer->Tick += gcnew System::EventHandler(this, &MyForm::AKKeyPressCheckTimer_Tick);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -626,7 +634,8 @@ namespace PRATHTool {
 		}
 #pragma endregion
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		keyPressCheckTimer->Start();
+		ACKeyPressCheckTimer->Start();
+		AKKeyPressCheckTimer->Start();
 
 	}
 
@@ -797,13 +806,13 @@ namespace PRATHTool {
 
 
 		/*BEGIN Hotkey detection*/
-	private: System::Void keyPressCheckTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
-
+	private: System::Void ACKeyPressCheckTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
+		ACKeyPressCheckTimer->Interval = 1;
 		if (ACHotkeyCheckBox->Checked == true)
 		{
 			if (GetKeyState(VK_RCONTROL) & 0x8000)
 			{
-				keyPressCheckTimer->Stop();
+				ACKeyPressCheckTimer->Stop();
 
 				if (ACStartButton->Enabled == false) //Clicker is running
 				{
@@ -814,17 +823,19 @@ namespace PRATHTool {
 					ACStartButton->PerformClick();
 				}
 
-				System::Threading::Thread::Sleep(150);
-				keyPressCheckTimer->Start();
+				ACKeyPressCheckTimer->Interval = 300;
+				ACKeyPressCheckTimer->Start();
 
 			}
 		}
-
+	}
+	private: System::Void AKKeyPressCheckTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
+		AKKeyPressCheckTimer->Interval = 1;
 		if (AKHotkeyCheckBox->Checked == true)
 		{
 			if (GetKeyState(VK_RSHIFT) & 0x8000)
 			{
-				keyPressCheckTimer->Stop();
+				AKKeyPressCheckTimer->Stop();
 
 				if (AKStartButton->Enabled == false) //Key presser is running
 				{
@@ -835,12 +846,11 @@ namespace PRATHTool {
 					AKStartButton->PerformClick();
 				}
 
-				System::Threading::Thread::Sleep(150);
-				keyPressCheckTimer->Start();
+				AKKeyPressCheckTimer->Interval = 300;
+				AKKeyPressCheckTimer->Start();
 
 			}
 		}
-
 	}
 			 /*END Hotkey detection*/
 
