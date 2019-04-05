@@ -814,7 +814,7 @@ namespace PRATHTool {
 					ACStartButton->PerformClick();
 				}
 
-				System::Threading::Thread::Sleep(300);
+				System::Threading::Thread::Sleep(150);
 				keyPressCheckTimer->Start();
 
 			}
@@ -835,7 +835,7 @@ namespace PRATHTool {
 					AKStartButton->PerformClick();
 				}
 
-				System::Threading::Thread::Sleep(300);
+				System::Threading::Thread::Sleep(150);
 				keyPressCheckTimer->Start();
 
 			}
