@@ -633,6 +633,7 @@ namespace PRATHTool {
 
 		}
 #pragma endregion
+	private: Random r;
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		ACKeyPressCheckTimer->Start();
 		AKKeyPressCheckTimer->Start();
@@ -724,7 +725,6 @@ namespace PRATHTool {
 
 			 /*BEGIN Clicker section*/
 	private: System::DateTime ACTime;
-	private: Random ACRandom;
 	private: System::Void ACStartButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
 
 		if (checkACValues(ACMinTimeTextBox->Text, ACMaxTimeTextBox->Text) == true)
@@ -734,7 +734,6 @@ namespace PRATHTool {
 				label3->BackColor = Color::Chartreuse;
 				ACMinTimeTextBox->Enabled = false;
 				ACMaxTimeTextBox->Enabled = false;
-				Random r;
 				int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
 				ACTimer->Interval = val;
 				ACTime = DateTime::Now.AddMilliseconds(val);
@@ -762,7 +761,7 @@ namespace PRATHTool {
 		//
 
 
-		int val = ACRandom.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
+		int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
 		ACTimer->Interval = val;
 		ACTime = DateTime::Now.AddMilliseconds(val);
 		ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
@@ -866,7 +865,6 @@ namespace PRATHTool {
 			 /*BEGIN AUTOKEY SECTION*/
 	private: DateTime AKTime;
 	private: System::String^ KeyToPress;
-	private: Random AKRandom;
 	private: System::Void AKStartButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		if (checkACValues(AKMinTextBox->Text, AKMaxTextBox->Text) == true && AKDropDown->SelectedIndex > -1)
 		{
@@ -878,7 +876,7 @@ namespace PRATHTool {
 				Key tk(AKDropDown->SelectedIndex);
 				KeyToPress = tk.KeyToString;
 
-				int val = AKRandom.Next(Convert::ToInt32(AKMinTextBox->Text), Convert::ToInt32(AKMaxTextBox->Text));
+				int val = r.Next(Convert::ToInt32(AKMinTextBox->Text), Convert::ToInt32(AKMaxTextBox->Text));
 				AKTimer->Interval = val;
 				AKTime = DateTime::Now.AddMilliseconds(val);
 
@@ -911,7 +909,6 @@ namespace PRATHTool {
 		SendKeys::Send(KeyToPress);
 		//
 
-		Random r;
 		int val = r.Next(Convert::ToInt32(AKMinTextBox->Text), Convert::ToInt32(AKMaxTextBox->Text));
 		AKTimer->Interval = val;
 		AKTime = DateTime::Now.AddMilliseconds(val);
