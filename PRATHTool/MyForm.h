@@ -42,55 +42,53 @@ namespace PRATHTool {
 
 
 
-	private: System::Windows::Forms::TextBox^  textBox1;
+	private: System::Windows::Forms::TextBox^ textBox1;
 	protected:
-	private: System::Windows::Forms::TextBox^  textBox2;
-	private: System::Windows::Forms::TextBox^  textBox3;
-	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::Button^  button2;
-	private: System::Windows::Forms::Timer^  shutDownTimer;
-	private: System::Windows::Forms::Label^  TimeLabel;
-	private: System::Windows::Forms::Panel^  panel1;
-	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::Label^  label1;
-	private: System::Windows::Forms::Panel^  panel2;
-	private: System::Windows::Forms::Label^  ACLabel;
-	private: System::Windows::Forms::Button^  ACStopButton;
-	private: System::Windows::Forms::Button^  ACStartButton;
-	private: System::Windows::Forms::Label^  label4;
-	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::TextBox^  ACMaxTimeTextBox;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Timer^ shutDownTimer;
+	private: System::Windows::Forms::Label^ TimeLabel;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Label^ ACLabel;
+	private: System::Windows::Forms::Button^ ACStopButton;
+	private: System::Windows::Forms::Button^ ACStartButton;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::TextBox^ ACMaxTimeTextBox;
 
-	private: System::Windows::Forms::TextBox^  ACMinTimeTextBox;
+	private: System::Windows::Forms::TextBox^ ACMinTimeTextBox;
 
-	private: System::Windows::Forms::Timer^  ACTimer;
-	private: System::Windows::Forms::Label^  label5;
-	private: System::Windows::Forms::TextBox^  textBox4;
-	private: System::Windows::Forms::CheckBox^  ACHotkeyCheckBox;
-	private: System::Windows::Forms::Timer^  keyPressCheckTimer;
-	private: System::Windows::Forms::Panel^  panel3;
-	private: System::Windows::Forms::CheckBox^  AKHotkeyCheckBox;
-	private: System::Windows::Forms::Label^  AKLabel;
-	private: System::Windows::Forms::Button^  AKStopButton;
-	private: System::Windows::Forms::Button^  AKStartButton;
-	private: System::Windows::Forms::Label^  label7;
-	private: System::Windows::Forms::Label^  label8;
-	private: System::Windows::Forms::TextBox^  AKMaxTextBox;
-	private: System::Windows::Forms::TextBox^  AKMinTextBox;
-	private: System::Windows::Forms::Timer^  AKTimer;
-	private: System::Windows::Forms::ComboBox^  AKDropDown;
-	private: System::Windows::Forms::PictureBox^  pictureBox1;
-	private: System::Windows::Forms::PictureBox^  pictureBox2;
-	private: System::Windows::Forms::PictureBox^  pictureBox3;
-	private: System::Windows::Forms::ToolStrip^  toolStrip1;
-	private: System::Windows::Forms::ToolStripDropDownButton^  toolStripDropDownButton1;
-	private: System::Windows::Forms::ToolStripMenuItem^  saveProfileAsToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^  loadProfileToolStripMenuItem;
-	private: System::Windows::Forms::SaveFileDialog^  SaveProfileDialog;
-	private: System::Windows::Forms::PictureBox^  pictureBox4;
-	private: System::Windows::Forms::OpenFileDialog^  OpenProfileDialog;
-
-
+	private: System::Windows::Forms::Timer^ ACTimer;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::CheckBox^ ACHotkeyCheckBox;
+	private: System::Windows::Forms::Timer^ keyPressCheckTimer;
+	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::CheckBox^ AKHotkeyCheckBox;
+	private: System::Windows::Forms::Label^ AKLabel;
+	private: System::Windows::Forms::Button^ AKStopButton;
+	private: System::Windows::Forms::Button^ AKStartButton;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::TextBox^ AKMaxTextBox;
+	private: System::Windows::Forms::TextBox^ AKMinTextBox;
+	private: System::Windows::Forms::Timer^ AKTimer;
+	private: System::Windows::Forms::ComboBox^ AKDropDown;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+	private: System::Windows::Forms::ToolStrip^ toolStrip1;
+	private: System::Windows::Forms::ToolStripDropDownButton^ toolStripDropDownButton1;
+	private: System::Windows::Forms::ToolStripMenuItem^ saveProfileAsToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ loadProfileToolStripMenuItem;
+	private: System::Windows::Forms::SaveFileDialog^ SaveProfileDialog;
+	private: System::Windows::Forms::PictureBox^ pictureBox4;
+	private: System::Windows::Forms::OpenFileDialog^ OpenProfileDialog;
 
 
 
@@ -101,7 +99,9 @@ namespace PRATHTool {
 
 
 
-	private: System::ComponentModel::IContainer^  components;
+
+
+	private: System::ComponentModel::IContainer^ components;
 
 	private:
 		/// <summary>
@@ -117,7 +117,7 @@ namespace PRATHTool {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
@@ -625,7 +625,7 @@ namespace PRATHTool {
 
 		}
 #pragma endregion
-	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		keyPressCheckTimer->Start();
 
 	}
@@ -636,7 +636,7 @@ namespace PRATHTool {
 	private: System::DateTime timeOriginal;
 	private: System::DateTime time;
 	private: System::TimeSpan t;
-	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) { //Shutdown timer start button
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) { //Shutdown timer start button
 		if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "")
 		{
 
@@ -673,7 +673,7 @@ namespace PRATHTool {
 		}
 
 	}
-	private: System::Void shutDownTimer_Tick(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void shutDownTimer_Tick(System::Object^ sender, System::EventArgs^ e) {
 
 		time = time.AddSeconds(-1);
 		t = time - timeOriginal;
@@ -686,7 +686,7 @@ namespace PRATHTool {
 			p->CreateNoWindow = false;
 			p->RedirectStandardOutput = true;
 			p->UseShellExecute = false;
-			Diagnostics::Process^ pc = gcnew Diagnostics::Process();
+			Diagnostics::Process ^ pc = gcnew Diagnostics::Process();
 			pc->StartInfo = p;
 			pc->Start();
 			MessageBox::Show(pc->StandardOutput->ReadToEnd());
@@ -697,7 +697,7 @@ namespace PRATHTool {
 		}
 	}
 
-	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) { //Shutdown Timer stop button
+	private: System::Void button2_Click(System::Object ^ sender, System::EventArgs ^ e) { //Shutdown Timer stop button
 		textBox1->Enabled = true;
 		textBox2->Enabled = true;
 		textBox3->Enabled = true;
@@ -715,7 +715,8 @@ namespace PRATHTool {
 
 			 /*BEGIN Clicker section*/
 	private: System::DateTime ACTime;
-	private: System::Void ACStartButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: Random ACRandom;
+	private: System::Void ACStartButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
 
 		if (checkACValues(ACMinTimeTextBox->Text, ACMaxTimeTextBox->Text) == true)
 		{
@@ -745,20 +746,19 @@ namespace PRATHTool {
 
 
 	}
-	private: System::Void ACTimer_Tick(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void ACTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
 		//MouseClick
 		mouse_event(MOUSEEVENTF_LEFTDOWN, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
 		mouse_event(MOUSEEVENTF_LEFTUP, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
 		//
 
 
-		Random r;
-		int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
+		int val = ACRandom.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
 		ACTimer->Interval = val;
 		ACTime = DateTime::Now.AddMilliseconds(val);
 		ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
 	}
-	private: System::Void ACStopButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void ACStopButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		label3->BackColor = SystemColors::Control;
 		ACMinTimeTextBox->Enabled = true;
 		ACMaxTimeTextBox->Enabled = true;
@@ -768,7 +768,7 @@ namespace PRATHTool {
 		ACStopButton->Enabled = false;
 	}
 
-	private: bool checkACValues(System::String^ min, System::String^ max)
+	private: bool checkACValues(System::String ^ min, System::String ^ max)
 	{
 		bool valuesAreGood;
 		int i, j;
@@ -797,7 +797,7 @@ namespace PRATHTool {
 
 
 		/*BEGIN Hotkey detection*/
-	private: System::Void keyPressCheckTimer_Tick(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void keyPressCheckTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
 
 		if (ACHotkeyCheckBox->Checked == true)
 		{
@@ -856,8 +856,8 @@ namespace PRATHTool {
 			 /*BEGIN AUTOKEY SECTION*/
 	private: DateTime AKTime;
 	private: System::String^ KeyToPress;
-
-	private: System::Void AKStartButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: Random AKRandom;
+	private: System::Void AKStartButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		if (checkACValues(AKMinTextBox->Text, AKMaxTextBox->Text) == true && AKDropDown->SelectedIndex > -1)
 		{
 			try
@@ -868,8 +868,7 @@ namespace PRATHTool {
 				Key tk(AKDropDown->SelectedIndex);
 				KeyToPress = tk.KeyToString;
 
-				Random r;
-				int val = r.Next(Convert::ToInt32(AKMinTextBox->Text), Convert::ToInt32(AKMaxTextBox->Text));
+				int val = AKRandom.Next(Convert::ToInt32(AKMinTextBox->Text), Convert::ToInt32(AKMaxTextBox->Text));
 				AKTimer->Interval = val;
 				AKTime = DateTime::Now.AddMilliseconds(val);
 
@@ -880,15 +879,15 @@ namespace PRATHTool {
 				AKStartButton->Enabled = false;
 				AKStopButton->Enabled = true;
 			}
-			catch(...)
+			catch (...)
 			{
 				AKStopButton->Enabled = true;
 				AKStopButton->PerformClick();
 			}
-			
+
 		}
 	}
-	private: System::Void AKStopButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void AKStopButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		label8->BackColor = SystemColors::Control;
 		AKMinTextBox->Enabled = true;
 		AKMaxTextBox->Enabled = true;
@@ -897,7 +896,7 @@ namespace PRATHTool {
 		AKStartButton->Enabled = true;
 		AKStopButton->Enabled = false;
 	}
-	private: System::Void AKTimer_Tick(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void AKTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
 		//Keypress
 		SendKeys::Send(KeyToPress);
 		//
@@ -920,14 +919,14 @@ namespace PRATHTool {
 
 
 		/*START SAVE PROFILE SECTION*/
-	private: System::Void saveProfileAsToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void saveProfileAsToolStripMenuItem_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		SaveProfileDialog->AddExtension = true;
 		SaveProfileDialog->OverwritePrompt = true;
 		SaveProfileDialog->Filter = "PRATHTool Profile (*.PTP)|*.PTP";
 		SaveProfileDialog->ShowDialog();
 
 	}
-	private: System::Void SaveProfileDialog_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+	private: System::Void SaveProfileDialog_FileOk(System::Object ^ sender, System::ComponentModel::CancelEventArgs ^ e) {
 
 		Profile profile(textBox1->Text, textBox2->Text, textBox3->Text, ACMinTimeTextBox->Text, ACMaxTimeTextBox->Text, ACHotkeyCheckBox->Checked, AKMinTextBox->Text,
 			AKMaxTextBox->Text, AKHotkeyCheckBox->Checked, AKDropDown->SelectedIndex);
@@ -943,15 +942,15 @@ namespace PRATHTool {
 
 
 		/*START OPEN PROFILE SECTION*/
-	private: System::Void loadProfileToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void loadProfileToolStripMenuItem_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		OpenProfileDialog->AddExtension = true;
 		OpenProfileDialog->Filter = "PRATHTool Profile (*.PTP)|*.PTP";
 		OpenProfileDialog->ShowDialog();
 	}
-	private: System::Void OpenProfileDialog_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+	private: System::Void OpenProfileDialog_FileOk(System::Object ^ sender, System::ComponentModel::CancelEventArgs ^ e) {
 		Profile loadedProfile;
 		loadedProfile.LoadProfile(OpenProfileDialog->FileName);
-		textBox1->Text = loadedProfile.HOUR->Replace("X","");
+		textBox1->Text = loadedProfile.HOUR->Replace("X", "");
 		textBox2->Text = loadedProfile.MINUTE->Replace("X", "");
 		textBox3->Text = loadedProfile.SECOND->Replace("X", "");
 
