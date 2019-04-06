@@ -21,5 +21,4 @@
 
 ![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/Screenshot_3.jpg)
 ![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/Screenshot_4.jpg)
-![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/Screenshot_5.jpg)
 </p>
