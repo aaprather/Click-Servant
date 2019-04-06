@@ -3,6 +3,7 @@
 #include <windows.h>
 #include "Key.h"
 #include "Profile.h"
+#include "ClickerSettings.h"
 
 namespace PRATHTool {
 
@@ -18,6 +19,7 @@ namespace PRATHTool {
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
+	private: Profile _PROFILE;
 	public:
 		MyForm(void)
 		{
@@ -91,6 +93,9 @@ namespace PRATHTool {
 	private: System::Windows::Forms::PictureBox^ pictureBox4;
 	private: System::Windows::Forms::OpenFileDialog^ OpenProfileDialog;
 	private: System::Windows::Forms::Timer^ AKKeyPressCheckTimer;
+	private: System::Windows::Forms::LinkLabel^ linkLabel1;
+	private: System::Windows::Forms::Timer^ RandomClicksTimer;
+	private: System::Windows::Forms::Label^ SubClickLabel;
 
 
 
@@ -131,6 +136,7 @@ namespace PRATHTool {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			this->ACHotkeyCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->ACLabel = (gcnew System::Windows::Forms::Label());
 			this->ACStopButton = (gcnew System::Windows::Forms::Button());
@@ -165,6 +171,8 @@ namespace PRATHTool {
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->OpenProfileDialog = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->AKKeyPressCheckTimer = (gcnew System::Windows::Forms::Timer(this->components));
+			this->RandomClicksTimer = (gcnew System::Windows::Forms::Timer(this->components));
+			this->SubClickLabel = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->panel3->SuspendLayout();
@@ -271,6 +279,8 @@ namespace PRATHTool {
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::SystemColors::Control;
+			this->panel2->Controls->Add(this->SubClickLabel);
+			this->panel2->Controls->Add(this->linkLabel1);
 			this->panel2->Controls->Add(this->ACHotkeyCheckBox);
 			this->panel2->Controls->Add(this->ACLabel);
 			this->panel2->Controls->Add(this->ACStopButton);
@@ -279,15 +289,26 @@ namespace PRATHTool {
 			this->panel2->Controls->Add(this->label3);
 			this->panel2->Controls->Add(this->ACMaxTimeTextBox);
 			this->panel2->Controls->Add(this->ACMinTimeTextBox);
-			this->panel2->Location = System::Drawing::Point(229, 44);
+			this->panel2->Location = System::Drawing::Point(229, 35);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(296, 215);
+			this->panel2->Size = System::Drawing::Size(310, 221);
 			this->panel2->TabIndex = 7;
+			// 
+			// linkLabel1
+			// 
+			this->linkLabel1->AutoSize = true;
+			this->linkLabel1->Location = System::Drawing::Point(124, 57);
+			this->linkLabel1->Name = L"linkLabel1";
+			this->linkLabel1->Size = System::Drawing::Size(94, 13);
+			this->linkLabel1->TabIndex = 13;
+			this->linkLabel1->TabStop = true;
+			this->linkLabel1->Text = L"Additional Settings";
+			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &MyForm::LinkLabel1_LinkClicked);
 			// 
 			// ACHotkeyCheckBox
 			// 
 			this->ACHotkeyCheckBox->AutoSize = true;
-			this->ACHotkeyCheckBox->Location = System::Drawing::Point(174, 115);
+			this->ACHotkeyCheckBox->Location = System::Drawing::Point(174, 113);
 			this->ACHotkeyCheckBox->Name = L"ACHotkeyCheckBox";
 			this->ACHotkeyCheckBox->Size = System::Drawing::Size(102, 17);
 			this->ACHotkeyCheckBox->TabIndex = 12;
@@ -297,7 +318,7 @@ namespace PRATHTool {
 			// ACLabel
 			// 
 			this->ACLabel->AutoSize = true;
-			this->ACLabel->Location = System::Drawing::Point(114, 157);
+			this->ACLabel->Location = System::Drawing::Point(105, 156);
 			this->ACLabel->Name = L"ACLabel";
 			this->ACLabel->Size = System::Drawing::Size(10, 13);
 			this->ACLabel->TabIndex = 11;
@@ -306,7 +327,7 @@ namespace PRATHTool {
 			// ACStopButton
 			// 
 			this->ACStopButton->Enabled = false;
-			this->ACStopButton->Location = System::Drawing::Point(108, 131);
+			this->ACStopButton->Location = System::Drawing::Point(108, 128);
 			this->ACStopButton->Name = L"ACStopButton";
 			this->ACStopButton->Size = System::Drawing::Size(60, 23);
 			this->ACStopButton->TabIndex = 10;
@@ -316,7 +337,7 @@ namespace PRATHTool {
 			// 
 			// ACStartButton
 			// 
-			this->ACStartButton->Location = System::Drawing::Point(108, 102);
+			this->ACStartButton->Location = System::Drawing::Point(108, 99);
 			this->ACStartButton->Name = L"ACStartButton";
 			this->ACStartButton->Size = System::Drawing::Size(60, 23);
 			this->ACStartButton->TabIndex = 9;
@@ -592,6 +613,19 @@ namespace PRATHTool {
 			this->AKKeyPressCheckTimer->Interval = 1;
 			this->AKKeyPressCheckTimer->Tick += gcnew System::EventHandler(this, &MyForm::AKKeyPressCheckTimer_Tick);
 			// 
+			// RandomClicksTimer
+			// 
+			this->RandomClicksTimer->Tick += gcnew System::EventHandler(this, &MyForm::RandomClicksTimer_Tick);
+			// 
+			// SubClickLabel
+			// 
+			this->SubClickLabel->AutoSize = true;
+			this->SubClickLabel->Location = System::Drawing::Point(11, 105);
+			this->SubClickLabel->Name = L"SubClickLabel";
+			this->SubClickLabel->Size = System::Drawing::Size(10, 13);
+			this->SubClickLabel->TabIndex = 14;
+			this->SubClickLabel->Text = L"-";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -609,7 +643,6 @@ namespace PRATHTool {
 			this->Controls->Add(this->panel1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(551, 584);
 			this->MinimumSize = System::Drawing::Size(551, 584);
 			this->Name = L"MyForm";
 			this->Opacity = 0.99;
@@ -725,6 +758,8 @@ namespace PRATHTool {
 
 			 /*BEGIN Clicker section*/
 	private: System::DateTime ACTime;
+	private: int RandomClickCounter;
+	private: int INCCOUNTER = 0;
 	private: System::Void ACStartButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
 
 		if (checkACValues(ACMinTimeTextBox->Text, ACMaxTimeTextBox->Text) == true)
@@ -740,6 +775,8 @@ namespace PRATHTool {
 
 				ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
 
+
+
 				ACTimer->Start();
 
 				ACStartButton->Enabled = false;
@@ -754,26 +791,63 @@ namespace PRATHTool {
 
 
 	}
+	private: System::Void RandomClicksTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
+
+		if (INCCOUNTER < RandomClickCounter) //Loop until we click X times
+		{
+			mouse_event(MOUSEEVENTF_LEFTDOWN, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
+			mouse_event(MOUSEEVENTF_LEFTUP, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
+			RandomClicksTimer->Interval = r.Next(Convert::ToInt32(_PROFILE.RANDDELAYMIN), Convert::ToInt32(_PROFILE.RANDDELAYMAX));
+			SubClickLabel->Text = RandomClicksTimer->Interval + "ms\nUntil next\nsub click";
+			INCCOUNTER++;
+		}
+		else //We finished sub-click looping, lets reset everything and start the next main click loop.
+		{
+			INCCOUNTER = 0; //MAKE SURE TO RESET THIS OR ELSE IT WONT LOOP AGAIN!
+			SubClickLabel->Text = "-";
+
+			int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
+			ACTimer->Interval = val;
+			ACTime = DateTime::Now.AddMilliseconds(val);
+			ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
+
+			RandomClicksTimer->Stop();
+			ACTimer->Start();
+
+		}
+
+	}
 	private: System::Void ACTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
-		//MouseClick
-		mouse_event(MOUSEEVENTF_LEFTDOWN, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
-		mouse_event(MOUSEEVENTF_LEFTUP, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
-		//
+		if (_PROFILE.RANDCLICK == 1) //User wants multiple clicks per tick
+		{
+			RandomClickCounter = r.Next(Convert::ToInt32(_PROFILE.RANDCLICKMIN), Convert::ToInt32(_PROFILE.RANDCLICKMAX));
+			ACTimer->Stop();
+			RandomClicksTimer->Start();
+		}
+		else //User only wants 1 click
+		{
+			//MouseClick
+			mouse_event(MOUSEEVENTF_LEFTDOWN, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
+			mouse_event(MOUSEEVENTF_LEFTUP, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
+			//
+			int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
+			ACTimer->Interval = val;
+			ACTime = DateTime::Now.AddMilliseconds(val);
+			ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
+		}
 
 
-		int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
-		ACTimer->Interval = val;
-		ACTime = DateTime::Now.AddMilliseconds(val);
-		ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
+
 	}
 	private: System::Void ACStopButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		label3->BackColor = SystemColors::Control;
 		ACMinTimeTextBox->Enabled = true;
 		ACMaxTimeTextBox->Enabled = true;
 		ACTimer->Stop();
-		ACLabel->Text = "";
+		ACLabel->Text = "-";
 		ACStartButton->Enabled = true;
 		ACStopButton->Enabled = false;
+		SubClickLabel->Text = "-";
 	}
 
 	private: bool checkACValues(System::String ^ min, System::String ^ max)
@@ -873,6 +947,7 @@ namespace PRATHTool {
 				label8->BackColor = Color::Chartreuse;
 				AKMinTextBox->Enabled = false;
 				AKMaxTextBox->Enabled = false;
+				AKDropDown->Enabled = false;
 				Key tk(AKDropDown->SelectedIndex);
 				KeyToPress = tk.KeyToString;
 
@@ -903,6 +978,7 @@ namespace PRATHTool {
 		AKLabel->Text = "";
 		AKStartButton->Enabled = true;
 		AKStopButton->Enabled = false;
+		AKDropDown->Enabled = true;
 	}
 	private: System::Void AKTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
 		//Keypress
@@ -935,11 +1011,41 @@ namespace PRATHTool {
 	}
 	private: System::Void SaveProfileDialog_FileOk(System::Object ^ sender, System::ComponentModel::CancelEventArgs ^ e) {
 
-		Profile profile(textBox1->Text, textBox2->Text, textBox3->Text, ACMinTimeTextBox->Text, ACMaxTimeTextBox->Text, ACHotkeyCheckBox->Checked, AKMinTextBox->Text,
-			AKMaxTextBox->Text, AKHotkeyCheckBox->Checked, AKDropDown->SelectedIndex);
-
-		profile.SaveProfileAs(SaveProfileDialog->FileName);
+		SaveSettingsToPROFILE();
+		_PROFILE.SaveProfileAs(SaveProfileDialog->FileName);
 	}
+
+	private: void SaveSettingsToPROFILE()
+	{
+		/*Shutdown*/
+		_PROFILE.HOUR = textBox1->Text;
+		_PROFILE.MINUTE = textBox2->Text;
+		_PROFILE.SECOND = textBox3->Text;
+		/**/
+
+		/*Clicker*/
+		_PROFILE.ACMIN = ACMinTimeTextBox->Text;
+		_PROFILE.ACMAX = ACMaxTimeTextBox->Text;
+		_PROFILE.ACHOTKEY = ACHotkeyCheckBox->Checked;
+		if (System::String::IsNullOrEmpty(_PROFILE.RANDCLICKMAX))
+			_PROFILE.RANDCLICKMAX = "";
+		if (System::String::IsNullOrEmpty(_PROFILE.RANDCLICKMIN))
+			_PROFILE.RANDCLICKMIN = "";
+		if (System::String::IsNullOrEmpty(_PROFILE.RANDDELAYMIN))
+			_PROFILE.RANDDELAYMIN = "";
+		if (System::String::IsNullOrEmpty(_PROFILE.RANDDELAYMAX))
+			_PROFILE.RANDDELAYMAX = "";
+		/**/
+
+		/*Keyer*/
+		_PROFILE.AKMIN = AKMinTextBox->Text;
+		_PROFILE.AKMAX = AKMaxTextBox->Text;
+		_PROFILE.AKHOTKEY = AKHotkeyCheckBox->Checked;
+		_PROFILE.AKDROPDOWN = AKDropDown->SelectedIndex;
+
+
+	}
+
 			 /*END SAVE PROFILE SECTION*/
 
 
@@ -964,6 +1070,12 @@ namespace PRATHTool {
 		ACMinTimeTextBox->Text = loadedProfile.ACMIN->Replace("X", "");
 		ACMaxTimeTextBox->Text = loadedProfile.ACMAX->Replace("X", "");
 		ACHotkeyCheckBox->Checked = loadedProfile.ACHOTKEY;
+		_PROFILE.RANDCLICKMAX = loadedProfile.RANDCLICKMAX;
+		_PROFILE.RANDCLICKMIN = loadedProfile.RANDCLICKMIN;
+		_PROFILE.RANDCLICK = loadedProfile.RANDCLICK;
+		_PROFILE.RANDDELAYMIN = loadedProfile.RANDDELAYMIN;
+		_PROFILE.RANDDELAYMAX = loadedProfile.RANDDELAYMAX;
+
 
 		AKMinTextBox->Text = loadedProfile.AKMIN->Replace("X", "");
 		AKMaxTextBox->Text = loadedProfile.AKMAX->Replace("X", "");
@@ -973,6 +1085,12 @@ namespace PRATHTool {
 			 /*END OPEN PROFILE SECTION*/
 
 
+
+	private: System::Void LinkLabel1_LinkClicked(System::Object ^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs ^ e) {
+		ClickerSettings CS(% _PROFILE);
+		CS.ShowDialog();
+
+	}
 
 	};
 }

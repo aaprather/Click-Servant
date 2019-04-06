@@ -138,12 +138,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ClickerSettings.cpp" />
     <ClCompile Include="InputTime.cpp" />
     <ClCompile Include="Key.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Profile.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClickerSettings.h">
+      <FileType>CppForm</FileType>
+      <DeploymentContent>false</DeploymentContent>
+    </ClInclude>
     <ClInclude Include="InputTime.h" />
     <ClInclude Include="Key.h" />
     <ClInclude Include="MyForm.h">
@@ -153,6 +158,9 @@
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ClickerSettings.resx">
+      <DependentUpon>ClickerSettings.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>

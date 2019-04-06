@@ -2,26 +2,19 @@
 
 
 
+
 Profile::Profile()
 {
 }
-Profile::Profile(System::String^ hour, System::String^ minute, System::String^ second, System::String^ ACMin, System::String^ ACMax, int ACHotkey, System::String^ AKMin, System::String^ AKMax, int AKHotkey, int AKDropdown)
-{
-	HOUR = hour;
-	MINUTE = minute;
-	SECOND = second;
-	ACMIN = ACMin;
-	ACMAX = ACMax;
-	ACHOTKEY = ACHotkey;
-	AKMIN = AKMin;
-	AKMAX = AKMax;
-	AKHOTKEY = AKHotkey;
-	AKDROPDOWN = AKDropdown;
-}
+
+
+
+
+
 
 void Profile::SaveProfileAs(System::String^ PATH)
 {
-	array<System::String^>^ profProps = { HOUR,MINUTE,SECOND,ACMIN,ACMAX,ACHOTKEY.ToString(),AKMIN,AKMAX,AKHOTKEY.ToString(),AKDROPDOWN.ToString() };
+	array<System::String^>^ profProps = { HOUR,MINUTE,SECOND,ACMIN,ACMAX,ACHOTKEY.ToString(),RANDCLICKMIN,RANDCLICKMAX,RANDCLICK.ToString(),RANDDELAYMIN,RANDDELAYMAX,AKMIN,AKMAX,AKHOTKEY.ToString(),AKDROPDOWN.ToString() };
 	for (int i = 0; i < profProps->Length; i++)
 	{
 		if (profProps[i]->Length < 1)
@@ -31,24 +24,24 @@ void Profile::SaveProfileAs(System::String^ PATH)
 	}
 
 
-	System::String^ writeString = "!" + profProps[0] + "-" + profProps[1] + "-" + profProps[2] + "!@" + profProps[3] + "-" + profProps[4] + "-" + profProps[5] + "@#" + profProps[6] + "-" + profProps[7] + "-" + profProps[8] + "-" + profProps[9] + "#_";
+	System::String^ writeString = "!" + profProps[0] + "-" + profProps[1] + "-" + profProps[2] + "!@" + profProps[3] + "-" + profProps[4] + "-" + profProps[5] + "-" + profProps[6] + "-" + profProps[7] + "-" + profProps[8] + "-" + profProps[9] + "-" + profProps[10] + "@#" + profProps[11] + "-" + profProps[12] + "-" + profProps[13] + "-" + profProps[14] + "#_";
 
 	System::IO::File::WriteAllText(PATH, writeString);
 
 }
-void Profile::LoadProfile(System::String^ PATH)
+void Profile::LoadProfile(System::String ^ PATH)
 {
 	System::String^ SavedProf = System::IO::File::ReadAllText(PATH);
 	//Get shutdown hour, minute,second
 	LoadShutdownTime(SavedProf);
 	SavedProf = SavedProf->Replace("!" + HOUR + "-" + MINUTE + "-" + SECOND + "!", "");
 	LoadAutoClickerVals(SavedProf);
-	SavedProf = SavedProf->Replace("@" + ACMIN + "-" + ACMAX + "-" + ACHOTKEY + "@", "");
+	SavedProf = SavedProf->Replace("@" + ACMIN + "-" + ACMAX + "-" + ACHOTKEY + "-" + RANDCLICKMIN + "-" + RANDCLICKMAX + "-" + RANDCLICK + "-" + RANDDELAYMIN + "-" + RANDDELAYMAX + "@", "");
 	LoadAutoKeyerVals(SavedProf);
 }
 
 
-void Profile::LoadShutdownTime(System::String^ fileText)
+void Profile::LoadShutdownTime(System::String ^ fileText)
 {
 	System::String^ temp;
 	int part = 1;
@@ -90,7 +83,9 @@ void Profile::LoadShutdownTime(System::String^ fileText)
 	}
 	/*END SHUTDOWN TIMER*/
 }
-void Profile::LoadAutoClickerVals(System::String^ fileText)
+
+/*START CLICKER*/
+void Profile::LoadAutoClickerVals(System::String ^ fileText)
 {
 	System::String^ temp;
 	int part = 1;
@@ -99,7 +94,7 @@ void Profile::LoadAutoClickerVals(System::String^ fileText)
 	{
 		if (fileText[i] == '#')
 		{
-			ACHOTKEY = System::Convert::ToInt32(temp);
+			RANDDELAYMAX = temp;
 			break;
 		}
 		else if (fileText[i] == '-')
@@ -116,7 +111,31 @@ void Profile::LoadAutoClickerVals(System::String^ fileText)
 				part++;
 				temp = "";
 				break;
-
+			case 3:
+				ACHOTKEY = System::Convert::ToInt32(temp);
+				part++;
+				temp = "";
+				break;
+			case 4:
+				RANDCLICKMIN = temp;
+				part++;
+				temp = "";
+				break;
+			case 5:
+				RANDCLICKMAX = temp;
+				part++;
+				temp = "";
+				break;
+			case 6:
+				RANDCLICK = System::Convert::ToInt32(temp);
+				part++;
+				temp = "";
+				break;
+			case 7:
+				RANDDELAYMIN = temp;
+				part++;
+				temp = "";
+				break;
 			default:
 				break;
 			}
@@ -128,7 +147,8 @@ void Profile::LoadAutoClickerVals(System::String^ fileText)
 		}
 	}
 }
-void Profile::LoadAutoKeyerVals(System::String^ fileText)
+/*START KEYER*/
+void Profile::LoadAutoKeyerVals(System::String ^ fileText)
 {
 	System::String^ temp;
 	int part = 1;
