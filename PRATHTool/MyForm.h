@@ -136,6 +136,7 @@ namespace PRATHTool {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->SubClickLabel = (gcnew System::Windows::Forms::Label());
 			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			this->ACHotkeyCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->ACLabel = (gcnew System::Windows::Forms::Label());
@@ -172,7 +173,6 @@ namespace PRATHTool {
 			this->OpenProfileDialog = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->AKKeyPressCheckTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->RandomClicksTimer = (gcnew System::Windows::Forms::Timer(this->components));
-			this->SubClickLabel = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->panel3->SuspendLayout();
@@ -293,6 +293,15 @@ namespace PRATHTool {
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(310, 221);
 			this->panel2->TabIndex = 7;
+			// 
+			// SubClickLabel
+			// 
+			this->SubClickLabel->AutoSize = true;
+			this->SubClickLabel->Location = System::Drawing::Point(11, 105);
+			this->SubClickLabel->Name = L"SubClickLabel";
+			this->SubClickLabel->Size = System::Drawing::Size(10, 13);
+			this->SubClickLabel->TabIndex = 14;
+			this->SubClickLabel->Text = L"-";
 			// 
 			// linkLabel1
 			// 
@@ -617,15 +626,6 @@ namespace PRATHTool {
 			// 
 			this->RandomClicksTimer->Tick += gcnew System::EventHandler(this, &MyForm::RandomClicksTimer_Tick);
 			// 
-			// SubClickLabel
-			// 
-			this->SubClickLabel->AutoSize = true;
-			this->SubClickLabel->Location = System::Drawing::Point(11, 105);
-			this->SubClickLabel->Name = L"SubClickLabel";
-			this->SubClickLabel->Size = System::Drawing::Size(10, 13);
-			this->SubClickLabel->TabIndex = 14;
-			this->SubClickLabel->Text = L"-";
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -643,6 +643,7 @@ namespace PRATHTool {
 			this->Controls->Add(this->panel1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
+			this->MaximumSize = System::Drawing::Size(551, 584);
 			this->MinimumSize = System::Drawing::Size(551, 584);
 			this->Name = L"MyForm";
 			this->Opacity = 0.99;
