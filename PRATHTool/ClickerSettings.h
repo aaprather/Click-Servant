@@ -218,7 +218,9 @@ namespace PRATHTool {
 			this->Controls->Add(this->RandClicksCheckBox);
 			this->Controls->Add(this->RandClicksMaxTimeTextBox);
 			this->Controls->Add(this->RandClicksMinTimeTextBox);
+			this->MaximizeBox = false;
 			this->MaximumSize = System::Drawing::Size(157, 223);
+			this->MinimizeBox = false;
 			this->MinimumSize = System::Drawing::Size(157, 223);
 			this->Name = L"ClickerSettings";
 			this->ShowIcon = false;
