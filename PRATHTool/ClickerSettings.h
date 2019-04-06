@@ -246,6 +246,11 @@ namespace PRATHTool {
 					countError++;
 					MessageBox::Show("Upper range integer for # of clicks must be greater than the lower range!");
 				}
+				else if(Convert::ToInt32(RandClicksMinTimeTextBox->Text) < 1)
+				{
+					countError++;
+					MessageBox::Show("Lower range must be greater or equal to 1!");
+				}
 				else
 				{
 					prof->RANDCLICKMAX = RandClicksMaxTimeTextBox->Text;
@@ -281,19 +286,6 @@ namespace PRATHTool {
 		{
 			MessageBox::Show("Please correctly enter your settings!");
 		}
-		
-
-
-
-
-		
-		
-
-
-
-
-
-		
 
 	}
 	private: System::Void RandClickCancelButton_Click(System::Object^ sender, System::EventArgs^ e) {
