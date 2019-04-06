@@ -761,6 +761,7 @@ namespace PRATHTool {
 	private: System::DateTime ACTime;
 	private: int RandomClickCounter;
 	private: int INCCOUNTER = 0;
+	private: int val;
 	private: System::Void ACStartButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
 
 		if (checkACValues(ACMinTimeTextBox->Text, ACMaxTimeTextBox->Text) == true)
@@ -770,13 +771,7 @@ namespace PRATHTool {
 				label3->BackColor = Color::Chartreuse;
 				ACMinTimeTextBox->Enabled = false;
 				ACMaxTimeTextBox->Enabled = false;
-				int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
-				ACTimer->Interval = val;
-				ACTime = DateTime::Now.AddMilliseconds(val);
-
-				ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
-
-
+				updateNextClick();
 
 				ACTimer->Start();
 
@@ -796,8 +791,7 @@ namespace PRATHTool {
 
 		if (INCCOUNTER < RandomClickCounter) //Loop until we click X times
 		{
-			mouse_event(MOUSEEVENTF_LEFTDOWN, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
-			mouse_event(MOUSEEVENTF_LEFTUP, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
+			sendMouseClick();
 			RandomClicksTimer->Interval = r.Next(Convert::ToInt32(_PROFILE.RANDDELAYMIN), Convert::ToInt32(_PROFILE.RANDDELAYMAX));
 			SubClickLabel->Text = RandomClicksTimer->Interval + "ms\nUntil next\nsub click";
 			INCCOUNTER++;
@@ -807,10 +801,7 @@ namespace PRATHTool {
 			INCCOUNTER = 0; //MAKE SURE TO RESET THIS OR ELSE IT WONT LOOP AGAIN!
 			SubClickLabel->Text = "-";
 
-			int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
-			ACTimer->Interval = val;
-			ACTime = DateTime::Now.AddMilliseconds(val);
-			ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
+			updateNextClick();
 
 			RandomClicksTimer->Stop();
 			ACTimer->Start();
@@ -827,17 +818,9 @@ namespace PRATHTool {
 		}
 		else //User only wants 1 click
 		{
-			//MouseClick
-			mouse_event(MOUSEEVENTF_LEFTDOWN, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
-			mouse_event(MOUSEEVENTF_LEFTUP, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
-			//
-			int val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
-			ACTimer->Interval = val;
-			ACTime = DateTime::Now.AddMilliseconds(val);
-			ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
+			sendMouseClick();
+			updateNextClick();
 		}
-
-
 
 	}
 	private: System::Void ACStopButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
@@ -871,11 +854,20 @@ namespace PRATHTool {
 		return valuesAreGood;
 	}
 
+
+	private: void sendMouseClick()
+	{
+		mouse_event(MOUSEEVENTF_LEFTDOWN, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
+		mouse_event(MOUSEEVENTF_LEFTUP, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
+	}
+	private:void updateNextClick()
+	{
+		val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
+		ACTimer->Interval = val;
+		ACTime = DateTime::Now.AddMilliseconds(val);
+		ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
+	}
 			 /*END Clicker section*/
-
-
-
-
 
 
 
@@ -927,14 +919,6 @@ namespace PRATHTool {
 		}
 	}
 			 /*END Hotkey detection*/
-
-
-
-
-
-
-
-
 
 
 			 /*BEGIN AUTOKEY SECTION*/

@@ -1,16 +1,8 @@
 #include "Profile.h"
 
-
-
-
 Profile::Profile()
 {
 }
-
-
-
-
-
 
 void Profile::SaveProfileAs(System::String^ PATH)
 {
@@ -195,7 +187,3 @@ void Profile::LoadAutoKeyerVals(System::String ^ fileText)
 	}
 	/*END AUTOKEYER*/
 }
-
-
-
-
