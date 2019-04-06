@@ -674,35 +674,34 @@ namespace PRATHTool {
 
 	}
 
-
-			 /*BEGIN SHUTDOWN TIMER SECTION*/
+			 /*::.........................::BEGIN SHUTDOWN SECTION::.........................::*/
+		/*
+		 *	-This section of the code contains all the variables and methods used for the
+		 *	 shutdown function.
+		 *
+		 *	 -Any modifications to the shutdown function need to be within this code block
+		 *	  this includes any new methods or variables.
+		 *
+		 ::.........................::::.........................::::.........................::*/
 
 	private: System::DateTime timeOriginal;
 	private: System::DateTime time;
 	private: System::TimeSpan t;
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) { //Shutdown timer start button
-		if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "")
-		{
-
-		}
+		if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "") {}
 		else
 		{
 			InputTime IT(textBox1->Text, textBox2->Text, textBox3->Text); //Create our InputTime object
 
-			if (IT.Hours == 0 && IT.Minutes == 0 && IT.Seconds == 0)
-			{
-
-			}
+			if (IT.Hours == 0 && IT.Minutes == 0 && IT.Seconds == 0) {}
 			else
 			{
-
 				label1->BackColor = Color::Chartreuse;
 				button1->Enabled = false;
 				button2->Enabled = true;
 				textBox1->Enabled = false;
 				textBox2->Enabled = false;
 				textBox3->Enabled = false;
-
 				timeOriginal = System::DateTime::Now;
 				time = timeOriginal.AddHours(IT.Hours).AddMinutes(IT.Minutes).AddSeconds(IT.Seconds);
 				t = time - timeOriginal;
@@ -713,12 +712,9 @@ namespace PRATHTool {
 				shutDownTimer->Interval = 1000;
 				shutDownTimer->Start();
 			}
-
 		}
-
 	}
 	private: System::Void shutDownTimer_Tick(System::Object^ sender, System::EventArgs^ e) {
-
 		time = time.AddSeconds(-1);
 		t = time - timeOriginal;
 
@@ -736,9 +732,7 @@ namespace PRATHTool {
 			MessageBox::Show(pc->StandardOutput->ReadToEnd());
 		}
 		else
-		{
 			TimeLabel->Text = "Shutdown in\n" + t.Hours + " : " + t.Minutes + " : " + t.Seconds;
-		}
 	}
 
 	private: System::Void button2_Click(System::Object ^ sender, System::EventArgs ^ e) { //Shutdown Timer stop button
@@ -751,30 +745,40 @@ namespace PRATHTool {
 		button1->Enabled = true;
 		button2->Enabled = false;
 	}
-			 /*END SHUTDOWNTIMER SECTION*/
+			 /*--------------------------------------------------------------------------------------
+			::.........................::::.........................::::.........................::*/
+			 /*::.........................::END SHUTDOWN SECTION::.........................::*/
+			/*--------------------------------------------------------------------------------------
+			 ::.........................::::.........................::::.........................::*/
 
 
 
 
+			 /*::.........................::BEGIN CLICKER SECTION::.........................::*/
+		/*
+		 *	-This section of the code contains all the variables and methods used for the
+		 *	 clicker function.
+		 *
+		 *	 -Any modifications to the clicker function need to be within this code block
+		 *	  this includes any new methods or variables.
+		 *
+		 ::.........................::::.........................::::.........................::*/
 
-			 /*BEGIN Clicker section*/
 	private: System::DateTime ACTime;
 	private: int RandomClickCounter;
 	private: int INCCOUNTER = 0;
 	private: int val;
 	private: System::Void ACStartButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
-
 		if (checkACValues(ACMinTimeTextBox->Text, ACMaxTimeTextBox->Text) == true)
 		{
 			try
 			{
+				linkLabel1->Enabled = false;
 				label3->BackColor = Color::Chartreuse;
 				ACMinTimeTextBox->Enabled = false;
 				ACMaxTimeTextBox->Enabled = false;
-				updateNextClick();
-
+				updateNextMainClick();
 				ACTimer->Start();
-
 				ACStartButton->Enabled = false;
 				ACStopButton->Enabled = true;
 			}
@@ -784,9 +788,21 @@ namespace PRATHTool {
 				ACStopButton->PerformClick();
 			}
 		}
-
-
 	}
+	private: System::Void ACTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
+		if (_PROFILE.RANDCLICK == 1) //User wants multiple clicks per tick
+		{
+			RandomClickCounter = r.Next(Convert::ToInt32(_PROFILE.RANDCLICKMIN), Convert::ToInt32(_PROFILE.RANDCLICKMAX));
+			ACTimer->Stop();
+			RandomClicksTimer->Start();
+		}
+		else //User only wants 1 click
+		{
+			sendMouseClick();
+			updateNextMainClick();
+		}
+	}
+
 	private: System::Void RandomClicksTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
 
 		if (INCCOUNTER < RandomClickCounter) //Loop until we click X times
@@ -800,30 +816,14 @@ namespace PRATHTool {
 		{
 			INCCOUNTER = 0; //MAKE SURE TO RESET THIS OR ELSE IT WONT LOOP AGAIN!
 			SubClickLabel->Text = "-";
-
-			updateNextClick();
-
+			updateNextMainClick();
 			RandomClicksTimer->Stop();
 			ACTimer->Start();
-
 		}
-
 	}
-	private: System::Void ACTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
-		if (_PROFILE.RANDCLICK == 1) //User wants multiple clicks per tick
-		{
-			RandomClickCounter = r.Next(Convert::ToInt32(_PROFILE.RANDCLICKMIN), Convert::ToInt32(_PROFILE.RANDCLICKMAX));
-			ACTimer->Stop();
-			RandomClicksTimer->Start();
-		}
-		else //User only wants 1 click
-		{
-			sendMouseClick();
-			updateNextClick();
-		}
 
-	}
 	private: System::Void ACStopButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
+		linkLabel1->Enabled = true;
 		label3->BackColor = SystemColors::Control;
 		ACMinTimeTextBox->Enabled = true;
 		ACMaxTimeTextBox->Enabled = true;
@@ -853,25 +853,39 @@ namespace PRATHTool {
 		}
 		return valuesAreGood;
 	}
+	private: System::Void LinkLabel1_LinkClicked(System::Object ^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs ^ e) {
+		ClickerSettings CS(% _PROFILE); //Additional Settings link button pop-up
+		CS.ShowDialog();
 
-
+	}
 	private: void sendMouseClick()
 	{
 		mouse_event(MOUSEEVENTF_LEFTDOWN, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
 		mouse_event(MOUSEEVENTF_LEFTUP, System::Windows::Forms::Cursor::Position.X, System::Windows::Forms::Cursor::Position.Y, 0, 0);
 	}
-	private:void updateNextClick()
+	private:void updateNextMainClick()
 	{
 		val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
 		ACTimer->Interval = val;
 		ACTime = DateTime::Now.AddMilliseconds(val);
 		ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
 	}
-			 /*END Clicker section*/
+			/*--------------------------------------------------------------------------------------
+			::.........................::::.........................::::.........................::*/
+			/*::.........................::END CLICKER SECTION::.........................::*/
+			/*--------------------------------------------------------------------------------------
+			 ::.........................::::.........................::::.........................::*/
 
 
-
-		/*BEGIN Hotkey detection*/
+			/*::.........................::BEGIN HOTKEY DETECTION SECTION::.........................::*/
+		/*
+		 *	-This section of the code contains all the variables and methods used for the
+		 *	 hotkey detection feature.
+		 *
+		 *	 -Any modifications to the this feature need to be within this code block
+		 *	  this includes any new methods or variables.
+		 *
+		 ::.........................::::.........................::::.........................::*/
 	private: System::Void ACKeyPressCheckTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
 		ACKeyPressCheckTimer->Interval = 1;
 		if (ACHotkeyCheckBox->Checked == true)
@@ -918,10 +932,22 @@ namespace PRATHTool {
 			}
 		}
 	}
-			 /*END Hotkey detection*/
+			 /*--------------------------------------------------------------------------------------
+			 ::.........................::::.........................::::.........................::*/
+			 /*::.........................::END HOTKEY DETECTION SECTION::.........................::*/
+			/*--------------------------------------------------------------------------------------
+			 ::.........................::::.........................::::.........................::*/
 
 
-			 /*BEGIN AUTOKEY SECTION*/
+			 /*::.........................::BEGIN KEYER SECTION::.........................::*/
+		/*
+		 *	-This section of the code contains all the variables and methods used for the
+		 *	 key press function.
+		 *
+		 *	 -Any modifications to the key press function need to be within this code block
+		 *	  this includes any new methods or variables.
+		 *
+		 ::.........................::::.........................::::.........................::*/
 	private: DateTime AKTime;
 	private: System::String^ KeyToPress;
 	private: System::Void AKStartButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
@@ -975,18 +1001,24 @@ namespace PRATHTool {
 		AKTime = DateTime::Now.AddMilliseconds(val);
 		AKLabel->Text = "Next click at\n" + AKTime.ToLongDateString() + "\n" + AKTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
 	}
-			 /*END AUTOKEY SECTION*/
+			 /*--------------------------------------------------------------------------------------
+			::.........................::::.........................::::.........................::*/
+			 /*::.........................::END KEYER SECTION::.........................::*/
+			/*--------------------------------------------------------------------------------------
+			 ::.........................::::.........................::::.........................::*/
 
 
 
 
-
-
-
-
-
-
-		/*START SAVE PROFILE SECTION*/
+			/*::.........................::START SAVE PROFILE SECTION::.........................::*/
+		/*
+		 *	-This section of the code contains all the variables and methods used for the
+		 *	 profile saving feature.
+		 *
+		 *	 -Any modifications to the this feature need to be within this code block
+		 *	  this includes any new methods or variables.
+		 *
+		 ::.........................::::.........................::::.........................::*/
 	private: System::Void saveProfileAsToolStripMenuItem_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		SaveProfileDialog->AddExtension = true;
 		SaveProfileDialog->OverwritePrompt = true;
@@ -1030,16 +1062,23 @@ namespace PRATHTool {
 
 
 	}
-
-			 /*END SAVE PROFILE SECTION*/
-
-
-
-
-
+			 /*--------------------------------------------------------------------------------------
+			::.........................::::.........................::::.........................::*/
+			 /*::.........................::END SAVE PROFILE SECTION::.........................::*/
+			/*--------------------------------------------------------------------------------------
+			 ::.........................::::.........................::::.........................::*/
 
 
-		/*START OPEN PROFILE SECTION*/
+
+			/*::.........................::START LOAD PROFILE SECTION::.........................::*/
+		/*
+		 *	-This section of the code contains all the variables and methods used for the
+		 *	 profile loading feature.
+		 *
+		 *	 -Any modifications to this feature need to be within this code block
+		 *	  this includes any new methods or variables.
+		 *
+		 ::.........................::::.........................::::.........................::*/
 	private: System::Void loadProfileToolStripMenuItem_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		OpenProfileDialog->AddExtension = true;
 		OpenProfileDialog->Filter = "PRATHTool Profile (*.PTP)|*.PTP";
@@ -1067,15 +1106,14 @@ namespace PRATHTool {
 		AKHotkeyCheckBox->Checked = loadedProfile.AKHOTKEY;
 		AKDropDown->SelectedIndex = loadedProfile.AKDROPDOWN;
 	}
-			 /*END OPEN PROFILE SECTION*/
+			 /*--------------------------------------------------------------------------------------
+			::.........................::::.........................::::.........................::*/
+			 /*::.........................::END LOAD PROFILE SECTION::.........................::*/
+			/*--------------------------------------------------------------------------------------
+			 ::.........................::::.........................::::.........................::*/
 
 
 
-	private: System::Void LinkLabel1_LinkClicked(System::Object ^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs ^ e) {
-		ClickerSettings CS(% _PROFILE);
-		CS.ShowDialog();
-
-	}
 
 	};
 }
