@@ -959,6 +959,7 @@ namespace PRATHTool {
 				AKMinTextBox->Enabled = false;
 				AKMaxTextBox->Enabled = false;
 				AKDropDown->Enabled = false;
+				
 				Key tk(AKDropDown->SelectedIndex);
 				KeyToPress = tk.KeyToString;
 
@@ -1040,7 +1041,7 @@ namespace PRATHTool {
 		_PROFILE.SECOND = textBox3->Text;
 		/**/
 
-		/*Clicker*/
+		/*Clicker | -The _PROFILE settings for additional clicks will either be set or NULL, so we have a default value in place just in case its NULL*/
 		_PROFILE.ACMIN = ACMinTimeTextBox->Text;
 		_PROFILE.ACMAX = ACMaxTimeTextBox->Text;
 		_PROFILE.ACHOTKEY = ACHotkeyCheckBox->Checked;
@@ -1087,10 +1088,14 @@ namespace PRATHTool {
 	private: System::Void OpenProfileDialog_FileOk(System::Object ^ sender, System::ComponentModel::CancelEventArgs ^ e) {
 		Profile loadedProfile;
 		loadedProfile.LoadProfile(OpenProfileDialog->FileName);
+
+		/*Shutdown*/
 		textBox1->Text = loadedProfile.HOUR->Replace("X", "");
 		textBox2->Text = loadedProfile.MINUTE->Replace("X", "");
 		textBox3->Text = loadedProfile.SECOND->Replace("X", "");
+		/**/
 
+		/*Clicker | - because some of these settings exist in a separate form, we just set the _PROFILE values.*/
 		ACMinTimeTextBox->Text = loadedProfile.ACMIN->Replace("X", "");
 		ACMaxTimeTextBox->Text = loadedProfile.ACMAX->Replace("X", "");
 		ACHotkeyCheckBox->Checked = loadedProfile.ACHOTKEY;
@@ -1099,12 +1104,14 @@ namespace PRATHTool {
 		_PROFILE.RANDCLICK = loadedProfile.RANDCLICK;
 		_PROFILE.RANDDELAYMIN = loadedProfile.RANDDELAYMIN;
 		_PROFILE.RANDDELAYMAX = loadedProfile.RANDDELAYMAX;
+		/**/
 
-
+		/*Keyer*/
 		AKMinTextBox->Text = loadedProfile.AKMIN->Replace("X", "");
 		AKMaxTextBox->Text = loadedProfile.AKMAX->Replace("X", "");
 		AKHotkeyCheckBox->Checked = loadedProfile.AKHOTKEY;
 		AKDropDown->SelectedIndex = loadedProfile.AKDROPDOWN;
+		/**/
 	}
 			 /*--------------------------------------------------------------------------------------
 			::.........................::::.........................::::.........................::*/

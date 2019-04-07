@@ -24,8 +24,9 @@ namespace PRATHTool {
 			InitializeComponent();
 			toolTip1->SetToolTip(this->RandClicksRangeLabel, "The program will pick a number between the given range and click X many times.");
 			toolTip1->SetToolTip(this->RandDelayLabel, "Enter a range in milliseconds. This is the amount of delay between each click.");
-			//
+
 			prof = f;
+
 			if (!System::String::IsNullOrEmpty(prof->RANDCLICKMAX))
 				RandClicksMaxTimeTextBox->Text = prof->RANDCLICKMAX->Replace("X", "");
 			else
@@ -225,6 +226,7 @@ namespace PRATHTool {
 			this->Name = L"ClickerSettings";
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
+			this->Load += gcnew System::EventHandler(this, &ClickerSettings::ClickerSettings_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -309,5 +311,7 @@ namespace PRATHTool {
 			
 	}
 
+private: System::Void ClickerSettings_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

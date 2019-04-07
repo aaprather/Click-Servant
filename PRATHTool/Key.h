@@ -1,4 +1,6 @@
 #pragma once
+
+
 ref class Key
 {
 public:
