@@ -1,8 +1,10 @@
 #include "Profile.h"
+#include <cstddef>
 
 Profile::Profile()
 {
 }
+
 
 void Profile::SaveProfileAs(System::String^ PATH)
 {
@@ -23,167 +25,35 @@ void Profile::SaveProfileAs(System::String^ PATH)
 }
 void Profile::LoadProfile(System::String ^ PATH)
 {
-	System::String^ SavedProf = System::IO::File::ReadAllText(PATH);
-	//Get shutdown hour, minute,second
-	LoadShutdownTime(SavedProf);
-	SavedProf = SavedProf->Replace("!" + HOUR + "-" + MINUTE + "-" + SECOND + "!", "");
-	LoadAutoClickerVals(SavedProf);
-	SavedProf = SavedProf->Replace("@" + ACMIN + "-" + ACMAX + "-" + ACHOTKEY + "-" + RANDCLICKMIN + "-" + RANDCLICKMAX + "-" + RANDCLICK + "-" + RANDDELAYMIN + "-" + RANDDELAYMAX + "@", "");
-	LoadAutoKeyerVals(SavedProf);
-}
-
-
-void Profile::LoadShutdownTime(System::String ^ fileText)
-{
-	System::String^ temp;
-	int part = 1;
-	/*START SHUTDOWN TIMER*/
-	for (int i = 0; i < fileText->Length; i++)
+	auto lines = System::IO::File::ReadAllLines(PATH);
+	int counter = 0;
+	while (lines[counter] != "")
 	{
-
-		if (fileText[i] == '@')
+		try
 		{
-			SECOND = temp;
-			break;
+			if (lines[counter]->Contains("HOUR=")) { HOUR = lines[counter]->Replace("HOUR=", ""); }
+			if (lines[counter]->Contains("MINUTE=")) { MINUTE = lines[counter]->Replace("MINUTE=", ""); }
+			if (lines[counter]->Contains("SECOND=")) { SECOND = lines[counter]->Replace("SECOND=", ""); }
+			if (lines[counter]->Contains("ACMIN=")) { ACMIN = lines[counter]->Replace("ACMIN=", ""); }
+			if (lines[counter]->Contains("ACMAX=")) { ACMAX = lines[counter]->Replace("ACMAX=", ""); }
+			if (lines[counter]->Contains("ACHOTKEY=")) { ACHOTKEY = System::Convert::ToInt32(lines[counter]->Replace("ACHOTKEY=", "")); }
+			if (lines[counter]->Contains("RANDCLICKMIN=")) { RANDCLICKMIN = lines[counter]->Replace("RANDCLICKMIN=", ""); }
+			if (lines[counter]->Contains("RANDCLICKMAX=")) { RANDCLICKMAX = lines[counter]->Replace("RANDCLICKMAX=", ""); }
+			if (lines[counter]->Contains("RANDCLICK=")) { RANDCLICK = System::Convert::ToInt32(lines[counter]->Replace("RANDCLICK=", "")); }
+			if (lines[counter]->Contains("RANDDELAYMIN=")) { RANDDELAYMIN = lines[counter]->Replace("RANDDELAYMIN=", ""); }
+			if (lines[counter]->Contains("RANDDELAYMAX=")) { RANDDELAYMAX = lines[counter]->Replace("RANDDELAYMAX=", ""); }
+			if (lines[counter]->Contains("AKMIN=")) { AKMIN = lines[counter]->Replace("AKMIN=", ""); }
+			if (lines[counter]->Contains("AKMAX=")) { AKMAX = lines[counter]->Replace("AKMAX=", ""); }
+			if (lines[counter]->Contains("AKHOTKEY=")) { AKHOTKEY = System::Convert::ToInt32(lines[counter]->Replace("AKHOTKEY=", "")); }
+			if (lines[counter]->Contains("AKDROPDOWN=")) { AKDROPDOWN = System::Convert::ToInt32(lines[counter]->Replace("AKDROPDOWN=", "")); }
 		}
-		else if (fileText[i] == '-')
+		catch (...)
 		{
-			switch (part)
-			{
-			case 1:
-
-				HOUR = temp;
-				part++;
-				temp = "";
-				break;
-			case 2:
-				MINUTE = temp;
-				part++;
-				temp = "";
-				break;
-
-			default:
-				break;
-			}
+			if (lines[counter]->Contains("ACHOTKEY=")) { ACHOTKEY = 0; }
+			if (lines[counter]->Contains("RANDCLICK=")) { RANDCLICK = 0; }
+			if (lines[counter]->Contains("AKHOTKEY=")) { AKHOTKEY = 0; }
+			if (lines[counter]->Contains("AKDROPDOWN=")) { AKDROPDOWN = -1; }
 		}
-		else if (fileText[i] != '!')
-		{
-			temp += fileText[i];
-
-		}
-
+		counter++;
 	}
-	/*END SHUTDOWN TIMER*/
-}
-
-/*START CLICKER*/
-void Profile::LoadAutoClickerVals(System::String ^ fileText)
-{
-	System::String^ temp;
-	int part = 1;
-
-	for (int i = 0; i < fileText->Length; i++)
-	{
-		if (fileText[i] == '#')
-		{
-			RANDDELAYMAX = temp;
-			break;
-		}
-		else if (fileText[i] == '-')
-		{
-			switch (part)
-			{
-			case 1:
-				ACMIN = temp;
-				part++;
-				temp = "";
-				break;
-			case 2:
-				ACMAX = temp;
-				part++;
-				temp = "";
-				break;
-			case 3:
-				ACHOTKEY = System::Convert::ToInt32(temp);
-				part++;
-				temp = "";
-				break;
-			case 4:
-				RANDCLICKMIN = temp;
-				part++;
-				temp = "";
-				break;
-			case 5:
-				RANDCLICKMAX = temp;
-				part++;
-				temp = "";
-				break;
-			case 6:
-				RANDCLICK = System::Convert::ToInt32(temp);
-				part++;
-				temp = "";
-				break;
-			case 7:
-				RANDDELAYMIN = temp;
-				part++;
-				temp = "";
-				break;
-			default:
-				break;
-			}
-		}
-		else if (fileText[i] != '@')
-		{
-			temp += fileText[i];
-
-		}
-	}
-}
-/*START KEYER*/
-void Profile::LoadAutoKeyerVals(System::String ^ fileText)
-{
-	System::String^ temp;
-	int part = 1;
-
-	for (int i = 0; i < fileText->Length; i++)
-	{
-		if (fileText[i] == '_')
-		{
-			if (temp == "X")
-				AKDROPDOWN = -1;
-			else
-				AKDROPDOWN = System::Convert::ToInt32(temp);
-			break;
-		}
-		else if (fileText[i] == '-')
-		{
-			switch (part)
-			{
-			case 1:
-				AKMIN = temp;
-				part++;
-				temp = "";
-				break;
-			case 2:
-				AKMAX = temp;
-				part++;
-				temp = "";
-				break;
-			case 3:
-				AKHOTKEY = System::Convert::ToInt32(temp);
-				part++;
-				temp = "";
-				break;
-
-			default:
-				break;
-			}
-		}
-		else if (fileText[i] != '#')
-		{
-			temp += fileText[i];
-
-		}
-	}
-	/*END AUTOKEYER*/
 }

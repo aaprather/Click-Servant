@@ -37,8 +37,5 @@ public:
 	/**/
 
 private:
-	void LoadShutdownTime(System::String^ fileText); //Load shutdown settings from file
-	void LoadAutoClickerVals(System::String^ fileText); //Load clicker settings from file
-	void LoadAutoKeyerVals(System::String^ fileText); //Load keyer settings from file
 };
 

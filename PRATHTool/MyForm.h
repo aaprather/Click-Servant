@@ -747,22 +747,22 @@ namespace PRATHTool {
 	}
 			 /*--------------------------------------------------------------------------------------
 			::.........................::::.........................::::.........................::*/
-			 /*::.........................::END SHUTDOWN SECTION::.........................::*/
-			/*--------------------------------------------------------------------------------------
-			 ::.........................::::.........................::::.........................::*/
+			/*::.........................::END SHUTDOWN SECTION::.........................::*/
+		   /*--------------------------------------------------------------------------------------
+			::.........................::::.........................::::.........................::*/
 
 
 
 
-			 /*::.........................::BEGIN CLICKER SECTION::.........................::*/
-		/*
-		 *	-This section of the code contains all the variables and methods used for the
-		 *	 clicker function.
-		 *
-		 *	 -Any modifications to the clicker function need to be within this code block
-		 *	  this includes any new methods or variables.
-		 *
-		 ::.........................::::.........................::::.........................::*/
+			/*::.........................::BEGIN CLICKER SECTION::.........................::*/
+	   /*
+		*	-This section of the code contains all the variables and methods used for the
+		*	 clicker function.
+		*
+		*	 -Any modifications to the clicker function need to be within this code block
+		*	  this includes any new methods or variables.
+		*
+		::.........................::::.........................::::.........................::*/
 
 	private: System::DateTime ACTime;
 	private: int RandomClickCounter;
@@ -877,15 +877,15 @@ namespace PRATHTool {
 			 ::.........................::::.........................::::.........................::*/
 
 
-			/*::.........................::BEGIN HOTKEY DETECTION SECTION::.........................::*/
-		/*
-		 *	-This section of the code contains all the variables and methods used for the
-		 *	 hotkey detection feature.
-		 *
-		 *	 -Any modifications to the this feature need to be within this code block
-		 *	  this includes any new methods or variables.
-		 *
-		 ::.........................::::.........................::::.........................::*/
+			 /*::.........................::BEGIN HOTKEY DETECTION SECTION::.........................::*/
+		 /*
+		  *	-This section of the code contains all the variables and methods used for the
+		  *	 hotkey detection feature.
+		  *
+		  *	 -Any modifications to the this feature need to be within this code block
+		  *	  this includes any new methods or variables.
+		  *
+		  ::.........................::::.........................::::.........................::*/
 	private: System::Void ACKeyPressCheckTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
 		ACKeyPressCheckTimer->Interval = 1;
 		if (ACHotkeyCheckBox->Checked == true)
@@ -959,7 +959,7 @@ namespace PRATHTool {
 				AKMinTextBox->Enabled = false;
 				AKMaxTextBox->Enabled = false;
 				AKDropDown->Enabled = false;
-				
+
 				Key tk(AKDropDown->SelectedIndex);
 				KeyToPress = tk.KeyToString;
 
@@ -1004,9 +1004,9 @@ namespace PRATHTool {
 	}
 			 /*--------------------------------------------------------------------------------------
 			::.........................::::.........................::::.........................::*/
-			 /*::.........................::END KEYER SECTION::.........................::*/
-			/*--------------------------------------------------------------------------------------
-			 ::.........................::::.........................::::.........................::*/
+			/*::.........................::END KEYER SECTION::.........................::*/
+		   /*--------------------------------------------------------------------------------------
+			::.........................::::.........................::::.........................::*/
 
 
 
@@ -1065,9 +1065,9 @@ namespace PRATHTool {
 	}
 			 /*--------------------------------------------------------------------------------------
 			::.........................::::.........................::::.........................::*/
-			 /*::.........................::END SAVE PROFILE SECTION::.........................::*/
-			/*--------------------------------------------------------------------------------------
-			 ::.........................::::.........................::::.........................::*/
+			/*::.........................::END SAVE PROFILE SECTION::.........................::*/
+		   /*--------------------------------------------------------------------------------------
+			::.........................::::.........................::::.........................::*/
 
 
 
@@ -1088,16 +1088,17 @@ namespace PRATHTool {
 	private: System::Void OpenProfileDialog_FileOk(System::Object ^ sender, System::ComponentModel::CancelEventArgs ^ e) {
 		Profile loadedProfile;
 		loadedProfile.LoadProfile(OpenProfileDialog->FileName);
+		CleanseProfileValues(% loadedProfile);
 
 		/*Shutdown*/
-		textBox1->Text = loadedProfile.HOUR->Replace("X", "");
-		textBox2->Text = loadedProfile.MINUTE->Replace("X", "");
-		textBox3->Text = loadedProfile.SECOND->Replace("X", "");
+		textBox1->Text = loadedProfile.HOUR;
+		textBox2->Text = loadedProfile.MINUTE;
+		textBox3->Text = loadedProfile.SECOND;
 		/**/
 
 		/*Clicker | - because some of these settings exist in a separate form, we just set the _PROFILE values.*/
-		ACMinTimeTextBox->Text = loadedProfile.ACMIN->Replace("X", "");
-		ACMaxTimeTextBox->Text = loadedProfile.ACMAX->Replace("X", "");
+		ACMinTimeTextBox->Text = loadedProfile.ACMIN;
+		ACMaxTimeTextBox->Text = loadedProfile.ACMAX;
 		ACHotkeyCheckBox->Checked = loadedProfile.ACHOTKEY;
 		_PROFILE.RANDCLICKMAX = loadedProfile.RANDCLICKMAX;
 		_PROFILE.RANDCLICKMIN = loadedProfile.RANDCLICKMIN;
@@ -1107,17 +1108,29 @@ namespace PRATHTool {
 		/**/
 
 		/*Keyer*/
-		AKMinTextBox->Text = loadedProfile.AKMIN->Replace("X", "");
-		AKMaxTextBox->Text = loadedProfile.AKMAX->Replace("X", "");
+		AKMinTextBox->Text = loadedProfile.AKMIN;
+		AKMaxTextBox->Text = loadedProfile.AKMAX;
 		AKHotkeyCheckBox->Checked = loadedProfile.AKHOTKEY;
 		AKDropDown->SelectedIndex = loadedProfile.AKDROPDOWN;
 		/**/
 	}
+	private: void CleanseProfileValues(Profile ^ p)
+	{
+		p->HOUR = p->HOUR->Replace("X", "");
+		p->MINUTE = p->MINUTE->Replace("X", "");
+		p->SECOND = p->SECOND->Replace("X", "");
+
+		p->ACMIN = p->ACMIN->Replace("X", "");
+		p->ACMAX = p->ACMAX->Replace("X", "");
+
+		p->AKMIN = p->AKMIN->Replace("X", "");
+		p->AKMAX = p->AKMAX->Replace("X", "");
+	}
 			 /*--------------------------------------------------------------------------------------
 			::.........................::::.........................::::.........................::*/
-			 /*::.........................::END LOAD PROFILE SECTION::.........................::*/
-			/*--------------------------------------------------------------------------------------
-			 ::.........................::::.........................::::.........................::*/
+			/*::.........................::END LOAD PROFILE SECTION::.........................::*/
+		   /*--------------------------------------------------------------------------------------
+			::.........................::::.........................::::.........................::*/
 
 
 
