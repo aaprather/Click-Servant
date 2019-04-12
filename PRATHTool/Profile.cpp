@@ -10,12 +10,12 @@ Profile::Profile()
 void Profile::SaveProfileAs(System::String^ PATH)
 {
 	array<System::String^>^ fileLines = { "SHUTDOWN","_______",
-										"HOUR=" + HOUR,"MINUTE=" + MINUTE, "SECOND=" + SECOND,
-										"CLICKER","_______",
-										"ACMIN=" + ACMIN,"ACMAX=" + ACMAX,"ACHOTKEY=" + ACHOTKEY,"RANDCLICKMIN=" + RANDCLICKMIN,"RANDCLICKMAX=" + RANDCLICKMAX,"RANDCLICK=" + RANDCLICK,"RANDDELAYMIN=" + RANDDELAYMIN,"RANDDELAYMAX=" + RANDDELAYMAX,
-										"KEYER","_______",
-										"AKMIN=" + AKMIN,"AKMAX=" + AKMAX,"AKHOTKEY=" + AKHOTKEY,"AKDROPDOWN=" + AKDROPDOWN,
-										"","" };
+	"HOUR=" + HOUR,"MINUTE=" + MINUTE, "SECOND=" + SECOND,
+	"CLICKER","_______",
+	"ACMIN=" + ACMIN,"ACMAX=" + ACMAX,"ACHOTKEY=" + ACHOTKEY,"RANDCLICKMIN=" + RANDCLICKMIN,"RANDCLICKMAX=" + RANDCLICKMAX,"RANDCLICK=" + RANDCLICK,"RANDDELAYMIN=" + RANDDELAYMIN,"RANDDELAYMAX=" + RANDDELAYMAX,
+	"KEYER","_______",
+	"AKMIN=" + AKMIN,"AKMAX=" + AKMAX,"AKHOTKEY=" + AKHOTKEY,"AKDROPDOWN=" + AKDROPDOWN,
+	"","" };
 
 	System::IO::File::WriteAllLines(PATH, fileLines);
 
@@ -46,8 +46,21 @@ void Profile::LoadProfile(System::String^ PATH)
 		}
 		catch (...)
 		{
+			if (lines[counter]->Contains("HOUR=")) { HOUR = "X"; }
+			if (lines[counter]->Contains("MINUTE=")) { MINUTE = "X"; }
+			if (lines[counter]->Contains("SECOND=")) { SECOND = "X"; }
+
+			if (lines[counter]->Contains("ACMIN=")) { ACMIN = "X"; }
+			if (lines[counter]->Contains("ACMAX=")) { ACMAX = "X"; }
+			if (lines[counter]->Contains("RANDCLICKMIN=")) { RANDCLICKMIN = "X"; }
+			if (lines[counter]->Contains("RANDCLICKMAX=")) { RANDCLICKMAX = "X"; }
+			if (lines[counter]->Contains("RANDDELAYMIN=")) { RANDDELAYMIN = "X"; }
+			if (lines[counter]->Contains("RANDDELAYMAX=")) { RANDDELAYMAX = "X"; }
 			if (lines[counter]->Contains("ACHOTKEY=")) { ACHOTKEY = 0; }
 			if (lines[counter]->Contains("RANDCLICK=")) { RANDCLICK = 0; }
+
+			if (lines[counter]->Contains("AKMIN=")) { AKMIN = "X"; }
+			if (lines[counter]->Contains("AKMAX=")) { AKMAX = "X"; }
 			if (lines[counter]->Contains("AKHOTKEY=")) { AKHOTKEY = 0; }
 			if (lines[counter]->Contains("AKDROPDOWN=")) { AKDROPDOWN = -1; }
 		}
