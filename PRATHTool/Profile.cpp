@@ -6,24 +6,21 @@ Profile::Profile()
 }
 
 
+
 void Profile::SaveProfileAs(System::String^ PATH)
 {
-	array<System::String^>^ profProps = { HOUR,MINUTE,SECOND,ACMIN,ACMAX,ACHOTKEY.ToString(),RANDCLICKMIN,RANDCLICKMAX,RANDCLICK.ToString(),RANDDELAYMIN,RANDDELAYMAX,AKMIN,AKMAX,AKHOTKEY.ToString(),AKDROPDOWN.ToString() };
-	for (int i = 0; i < profProps->Length; i++)
-	{
-		if (profProps[i]->Length < 1)
-			profProps[i] = "X";
-		if (profProps[i] == "-1")
-			profProps[i] = "X";
-	}
+	array<System::String^>^ fileLines = { "SHUTDOWN","_______",
+										"HOUR=" + HOUR,"MINUTE=" + MINUTE, "SECOND=" + SECOND,
+										"CLICKER","_______",
+										"ACMIN=" + ACMIN,"ACMAX=" + ACMAX,"ACHOTKEY=" + ACHOTKEY,"RANDCLICKMIN=" + RANDCLICKMIN,"RANDCLICKMAX=" + RANDCLICKMAX,"RANDCLICK=" + RANDCLICK,"RANDDELAYMIN=" + RANDDELAYMIN,"RANDDELAYMAX=" + RANDDELAYMAX,
+										"KEYER","_______",
+										"AKMIN=" + AKMIN,"AKMAX=" + AKMAX,"AKHOTKEY=" + AKHOTKEY,"AKDROPDOWN=" + AKDROPDOWN,
+										"","" };
 
-
-	System::String^ writeString = "!" + profProps[0] + "-" + profProps[1] + "-" + profProps[2] + "!@" + profProps[3] + "-" + profProps[4] + "-" + profProps[5] + "-" + profProps[6] + "-" + profProps[7] + "-" + profProps[8] + "-" + profProps[9] + "-" + profProps[10] + "@#" + profProps[11] + "-" + profProps[12] + "-" + profProps[13] + "-" + profProps[14] + "#_";
-
-	System::IO::File::WriteAllText(PATH, writeString);
+	System::IO::File::WriteAllLines(PATH, fileLines);
 
 }
-void Profile::LoadProfile(System::String ^ PATH)
+void Profile::LoadProfile(System::String^ PATH)
 {
 	auto lines = System::IO::File::ReadAllLines(PATH);
 	int counter = 0;
