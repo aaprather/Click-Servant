@@ -1088,7 +1088,6 @@ namespace PRATHTool {
 	private: System::Void OpenProfileDialog_FileOk(System::Object ^ sender, System::ComponentModel::CancelEventArgs ^ e) {
 		Profile loadedProfile;
 		loadedProfile.LoadProfile(OpenProfileDialog->FileName);
-		CleanseProfileValues(% loadedProfile);
 
 		/*Shutdown*/
 		textBox1->Text = loadedProfile.HOUR;
@@ -1114,18 +1113,7 @@ namespace PRATHTool {
 		AKDropDown->SelectedIndex = loadedProfile.AKDROPDOWN;
 		/**/
 	}
-	private: void CleanseProfileValues(Profile ^ p)
-	{
-		p->HOUR = p->HOUR->Replace("X", "");
-		p->MINUTE = p->MINUTE->Replace("X", "");
-		p->SECOND = p->SECOND->Replace("X", "");
 
-		p->ACMIN = p->ACMIN->Replace("X", "");
-		p->ACMAX = p->ACMAX->Replace("X", "");
-
-		p->AKMIN = p->AKMIN->Replace("X", "");
-		p->AKMAX = p->AKMAX->Replace("X", "");
-	}
 			 /*--------------------------------------------------------------------------------------
 			::.........................::::.........................::::.........................::*/
 			/*::.........................::END LOAD PROFILE SECTION::.........................::*/
