@@ -4,6 +4,7 @@
 #include "Key.h"
 #include "Profile.h"
 #include "ClickerSettings.h"
+#include "KeyerSettings.h"
 
 namespace PRATHTool {
 
@@ -72,16 +73,16 @@ namespace PRATHTool {
 	private: System::Windows::Forms::Timer^ ACKeyPressCheckTimer;
 
 	private: System::Windows::Forms::Panel^ panel3;
-	private: System::Windows::Forms::CheckBox^ AKHotkeyCheckBox;
+
 	private: System::Windows::Forms::Label^ AKLabel;
 	private: System::Windows::Forms::Button^ AKStopButton;
 	private: System::Windows::Forms::Button^ AKStartButton;
-	private: System::Windows::Forms::Label^ label7;
+
 	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ AKMaxTextBox;
-	private: System::Windows::Forms::TextBox^ AKMinTextBox;
+
+
 	private: System::Windows::Forms::Timer^ AKTimer;
-	private: System::Windows::Forms::ComboBox^ AKDropDown;
+
 
 
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
@@ -101,6 +102,7 @@ namespace PRATHTool {
 
 	private: System::Windows::Forms::Timer^ mouseUpdateTimer;
 	private: System::Windows::Forms::Label^ mousePOSLabel;
+	private: System::Windows::Forms::LinkLabel^ linkLabel2;
 
 
 
@@ -141,9 +143,9 @@ namespace PRATHTool {
 			this->shutDownTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->TimeLabel = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->mousePOSLabel = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->mousePOSLabel = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->SubClickLabel = (gcnew System::Windows::Forms::Label());
 			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
@@ -156,15 +158,11 @@ namespace PRATHTool {
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->ACKeyPressCheckTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->AKDropDown = (gcnew System::Windows::Forms::ComboBox());
-			this->AKHotkeyCheckBox = (gcnew System::Windows::Forms::CheckBox());
+			this->linkLabel2 = (gcnew System::Windows::Forms::LinkLabel());
 			this->AKLabel = (gcnew System::Windows::Forms::Label());
 			this->AKStopButton = (gcnew System::Windows::Forms::Button());
 			this->AKStartButton = (gcnew System::Windows::Forms::Button());
-			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->AKMaxTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->AKMinTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->AKTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
@@ -255,17 +253,6 @@ namespace PRATHTool {
 			this->panel1->Size = System::Drawing::Size(219, 200);
 			this->panel1->TabIndex = 6;
 			// 
-			// mousePOSLabel
-			// 
-			this->mousePOSLabel->AutoSize = true;
-			this->mousePOSLabel->BackColor = System::Drawing::SystemColors::Control;
-			this->mousePOSLabel->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->mousePOSLabel->Location = System::Drawing::Point(93, 79);
-			this->mousePOSLabel->Name = L"mousePOSLabel";
-			this->mousePOSLabel->Size = System::Drawing::Size(10, 13);
-			this->mousePOSLabel->TabIndex = 20;
-			this->mousePOSLabel->Text = L"-";
-			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
@@ -288,6 +275,17 @@ namespace PRATHTool {
 			this->label1->Size = System::Drawing::Size(163, 24);
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"Shutdown Timer";
+			// 
+			// mousePOSLabel
+			// 
+			this->mousePOSLabel->AutoSize = true;
+			this->mousePOSLabel->BackColor = System::Drawing::SystemColors::Control;
+			this->mousePOSLabel->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->mousePOSLabel->Location = System::Drawing::Point(93, 79);
+			this->mousePOSLabel->Name = L"mousePOSLabel";
+			this->mousePOSLabel->Size = System::Drawing::Size(10, 13);
+			this->mousePOSLabel->TabIndex = 20;
+			this->mousePOSLabel->Text = L"-";
 			// 
 			// panel2
 			// 
@@ -402,52 +400,42 @@ namespace PRATHTool {
 			// 
 			// panel3
 			// 
-			this->panel3->Controls->Add(this->AKDropDown);
-			this->panel3->Controls->Add(this->AKHotkeyCheckBox);
+			this->panel3->Controls->Add(this->linkLabel2);
 			this->panel3->Controls->Add(this->AKLabel);
 			this->panel3->Controls->Add(this->AKStopButton);
 			this->panel3->Controls->Add(this->AKStartButton);
-			this->panel3->Controls->Add(this->label7);
 			this->panel3->Controls->Add(this->label8);
-			this->panel3->Controls->Add(this->AKMaxTextBox);
-			this->panel3->Controls->Add(this->AKMinTextBox);
 			this->panel3->Location = System::Drawing::Point(310, 44);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(296, 215);
+			this->panel3->Size = System::Drawing::Size(296, 103);
 			this->panel3->TabIndex = 11;
 			// 
-			// AKDropDown
+			// linkLabel2
 			// 
-			this->AKDropDown->FormattingEnabled = true;
-			this->AKDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Escape" });
-			this->AKDropDown->Location = System::Drawing::Point(14, 104);
-			this->AKDropDown->Name = L"AKDropDown";
-			this->AKDropDown->Size = System::Drawing::Size(76, 21);
-			this->AKDropDown->TabIndex = 13;
-			// 
-			// AKHotkeyCheckBox
-			// 
-			this->AKHotkeyCheckBox->AutoSize = true;
-			this->AKHotkeyCheckBox->Location = System::Drawing::Point(174, 115);
-			this->AKHotkeyCheckBox->Name = L"AKHotkeyCheckBox";
-			this->AKHotkeyCheckBox->Size = System::Drawing::Size(105, 17);
-			this->AKHotkeyCheckBox->TabIndex = 12;
-			this->AKHotkeyCheckBox->Text = L"R-SHIFT Hotkey";
-			this->AKHotkeyCheckBox->UseVisualStyleBackColor = true;
+			this->linkLabel2->AutoSize = true;
+			this->linkLabel2->Location = System::Drawing::Point(123, 31);
+			this->linkLabel2->Name = L"linkLabel2";
+			this->linkLabel2->Size = System::Drawing::Size(45, 13);
+			this->linkLabel2->TabIndex = 14;
+			this->linkLabel2->TabStop = true;
+			this->linkLabel2->Text = L"Settings";
+			this->linkLabel2->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &MyForm::LinkLabel2_LinkClicked);
 			// 
 			// AKLabel
 			// 
 			this->AKLabel->AutoSize = true;
-			this->AKLabel->Location = System::Drawing::Point(114, 157);
+			this->AKLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AKLabel->Location = System::Drawing::Point(3, 45);
 			this->AKLabel->Name = L"AKLabel";
-			this->AKLabel->Size = System::Drawing::Size(10, 13);
+			this->AKLabel->Size = System::Drawing::Size(8, 12);
 			this->AKLabel->TabIndex = 11;
 			this->AKLabel->Text = L"-";
 			// 
 			// AKStopButton
 			// 
 			this->AKStopButton->Enabled = false;
-			this->AKStopButton->Location = System::Drawing::Point(108, 131);
+			this->AKStopButton->Location = System::Drawing::Point(149, 48);
 			this->AKStopButton->Name = L"AKStopButton";
 			this->AKStopButton->Size = System::Drawing::Size(60, 23);
 			this->AKStopButton->TabIndex = 10;
@@ -457,25 +445,13 @@ namespace PRATHTool {
 			// 
 			// AKStartButton
 			// 
-			this->AKStartButton->Location = System::Drawing::Point(108, 102);
+			this->AKStartButton->Location = System::Drawing::Point(83, 47);
 			this->AKStartButton->Name = L"AKStartButton";
 			this->AKStartButton->Size = System::Drawing::Size(60, 23);
 			this->AKStartButton->TabIndex = 9;
 			this->AKStartButton->Text = L"Start";
 			this->AKStartButton->UseVisualStyleBackColor = true;
 			this->AKStartButton->Click += gcnew System::EventHandler(this, &MyForm::AKStartButton_Click);
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->BackColor = System::Drawing::SystemColors::Control;
-			this->label7->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label7->Location = System::Drawing::Point(26, 31);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(250, 39);
-			this->label7->TabIndex = 8;
-			this->label7->Text = L"- Enter time range below in milliseconds\r\n- Every key press is done at a random t"
-				L"ime between\r\n   the given range.";
 			// 
 			// label8
 			// 
@@ -488,20 +464,6 @@ namespace PRATHTool {
 			this->label8->Size = System::Drawing::Size(279, 24);
 			this->label8->TabIndex = 7;
 			this->label8->Text = L"Random Interval Key Presser";
-			// 
-			// AKMaxTextBox
-			// 
-			this->AKMaxTextBox->Location = System::Drawing::Point(142, 73);
-			this->AKMaxTextBox->Name = L"AKMaxTextBox";
-			this->AKMaxTextBox->Size = System::Drawing::Size(59, 20);
-			this->AKMaxTextBox->TabIndex = 2;
-			// 
-			// AKMinTextBox
-			// 
-			this->AKMinTextBox->Location = System::Drawing::Point(77, 73);
-			this->AKMinTextBox->Name = L"AKMinTextBox";
-			this->AKMinTextBox->Size = System::Drawing::Size(59, 20);
-			this->AKMinTextBox->TabIndex = 1;
 			// 
 			// AKTimer
 			// 
@@ -871,7 +833,7 @@ namespace PRATHTool {
 	}
 	private: System::Void AKKeyPressCheckTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
 		AKKeyPressCheckTimer->Interval = 1;
-		if (AKHotkeyCheckBox->Checked == true)
+		if (_PROFILE.AKHOTKEY == true)
 		{
 			if (GetKeyState(VK_RSHIFT) & 0x8000)
 			{
@@ -911,23 +873,24 @@ namespace PRATHTool {
 	private: DateTime AKTime;
 	private: System::String^ KeyToPress;
 	private: System::Void AKStartButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
-		if (checkACValues(AKMinTextBox->Text, AKMaxTextBox->Text) == true && AKDropDown->SelectedIndex > -1)
+		if (checkACValues(_PROFILE.AKMIN, _PROFILE.AKMAX) == true && _PROFILE.AKDROPDOWN > -1)
 		{
 			try
 			{
 				label8->BackColor = Color::Chartreuse;
-				AKMinTextBox->Enabled = false;
-				AKMaxTextBox->Enabled = false;
-				AKDropDown->Enabled = false;
+				//AKMinTextBox->Enabled = false;
+				//AKMaxTextBox->Enabled = false;
+				//AKDropDown->Enabled = false;
+				linkLabel2->Enabled = false;
 
-				Key tk(AKDropDown->SelectedIndex);
+				Key tk(_PROFILE.AKDROPDOWN);
 				KeyToPress = tk.KeyToString;
 
-				int val = r.Next(Convert::ToInt32(AKMinTextBox->Text), Convert::ToInt32(AKMaxTextBox->Text));
+				int val = r.Next(Convert::ToInt32(_PROFILE.AKMIN), Convert::ToInt32(_PROFILE.AKMAX));
 				AKTimer->Interval = val;
 				AKTime = DateTime::Now.AddMilliseconds(val);
 
-				AKLabel->Text = "Next key at\n" + AKTime.ToLongDateString() + "\n" + AKTime.ToLongTimeString() + "\nNext key interval: " + val.ToString() + "ms";
+				AKLabel->Text = "Next key at\n" + AKTime.ToLongTimeString() + "\nInterval: " + val.ToString() + "ms";
 
 				AKTimer->Start();
 
@@ -943,24 +906,25 @@ namespace PRATHTool {
 		}
 	}
 	private: System::Void AKStopButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
+		linkLabel2->Enabled = true;
 		label8->BackColor = SystemColors::Control;
-		AKMinTextBox->Enabled = true;
-		AKMaxTextBox->Enabled = true;
+		//AKMinTextBox->Enabled = true;
+		//AKMaxTextBox->Enabled = true;
 		AKTimer->Stop();
 		AKLabel->Text = "";
 		AKStartButton->Enabled = true;
 		AKStopButton->Enabled = false;
-		AKDropDown->Enabled = true;
+		//AKDropDown->Enabled = true;
 	}
 	private: System::Void AKTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
 		//Keypress
 		SendKeys::Send(KeyToPress);
 		//
 
-		int val = r.Next(Convert::ToInt32(AKMinTextBox->Text), Convert::ToInt32(AKMaxTextBox->Text));
+		int val = r.Next(Convert::ToInt32(_PROFILE.AKMIN), Convert::ToInt32(_PROFILE.AKMAX));
 		AKTimer->Interval = val;
 		AKTime = DateTime::Now.AddMilliseconds(val);
-		AKLabel->Text = "Next click at\n" + AKTime.ToLongDateString() + "\n" + AKTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
+		AKLabel->Text = "Next click at\n" + AKTime.ToLongTimeString() + "\nInterval: " + val.ToString() + "ms";
 	}
 			 /*--------------------------------------------------------------------------------------
 			::.........................::::.........................::::.........................::*/
@@ -1020,10 +984,15 @@ namespace PRATHTool {
 		/**/
 
 		/*Keyer*/
-		_PROFILE.AKMIN = AKMinTextBox->Text;
-		_PROFILE.AKMAX = AKMaxTextBox->Text;
-		_PROFILE.AKHOTKEY = AKHotkeyCheckBox->Checked;
-		_PROFILE.AKDROPDOWN = AKDropDown->SelectedIndex;
+		if (System::String::IsNullOrEmpty(_PROFILE.AKMAX))
+			_PROFILE.AKMAX = "";
+		if (System::String::IsNullOrEmpty(_PROFILE.AKMIN))
+			_PROFILE.AKMIN = "";
+		if (System::String::IsNullOrEmpty(Convert::ToString(_PROFILE.AKHOTKEY)))
+			_PROFILE.AKHOTKEY = 0;
+		if (System::String::IsNullOrEmpty(Convert::ToString(_PROFILE.AKDROPDOWN)))
+			_PROFILE.AKDROPDOWN = -1;
+
 
 
 	}
@@ -1071,10 +1040,10 @@ namespace PRATHTool {
 		/**/
 
 		/*Keyer*/
-		AKMinTextBox->Text = loadedProfile.AKMIN;
-		AKMaxTextBox->Text = loadedProfile.AKMAX;
-		AKHotkeyCheckBox->Checked = loadedProfile.AKHOTKEY;
-		AKDropDown->SelectedIndex = loadedProfile.AKDROPDOWN;
+		_PROFILE.AKMIN = loadedProfile.AKMIN;
+		_PROFILE.AKMAX = loadedProfile.AKMAX;
+		_PROFILE.AKHOTKEY = loadedProfile.AKHOTKEY;
+		_PROFILE.AKDROPDOWN = loadedProfile.AKDROPDOWN;
 		/**/
 	}
 
@@ -1097,5 +1066,9 @@ namespace PRATHTool {
 	}
 
 
-	};
+	private: System::Void LinkLabel2_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+		KeyerSettings KS(% _PROFILE); //Additional Settings link button pop-up
+		KS.ShowDialog();
+	}
+};
 }

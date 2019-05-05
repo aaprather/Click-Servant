@@ -141,6 +141,7 @@
     <ClCompile Include="ClickerSettings.cpp" />
     <ClCompile Include="InputTime.cpp" />
     <ClCompile Include="Key.cpp" />
+    <ClCompile Include="KeyerSettings.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Profile.cpp" />
   </ItemGroup>
@@ -151,6 +152,9 @@
     </ClInclude>
     <ClInclude Include="InputTime.h" />
     <ClInclude Include="Key.h" />
+    <ClInclude Include="KeyerSettings.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -160,6 +164,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ClickerSettings.resx">
       <DependentUpon>ClickerSettings.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KeyerSettings.resx">
+      <DependentUpon>KeyerSettings.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
