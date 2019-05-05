@@ -9,12 +9,8 @@ Profile::Profile()
 
 void Profile::SaveProfileAs(System::String^ PATH)
 {
-	array<System::String^>^ fileLines = { "SHUTDOWN","_______",
-	"HOUR=" + HOUR,"MINUTE=" + MINUTE, "SECOND=" + SECOND,
-	"CLICKER","_______",
-	"ACMIN=" + ACMIN,"ACMAX=" + ACMAX,"ACHOTKEY=" + ACHOTKEY,"RANDCLICKMIN=" + RANDCLICKMIN,"RANDCLICKMAX=" + RANDCLICKMAX,"RANDCLICK=" + RANDCLICK,"RANDDELAYMIN=" + RANDDELAYMIN,"RANDDELAYMAX=" + RANDDELAYMAX,
-	"KEYER","_______",
-	"AKMIN=" + AKMIN,"AKMAX=" + AKMAX,"AKHOTKEY=" + AKHOTKEY,"AKDROPDOWN=" + AKDROPDOWN,
+	array<System::String^>^ fileLines = { "CLICKER","_______","ACMIN=" + ACMIN,"ACMAX=" + ACMAX,"ACHOTKEY=" + ACHOTKEY,"RANDCLICKMIN=" + RANDCLICKMIN,"RANDCLICKMAX=" + RANDCLICKMAX,"RANDCLICK=" + RANDCLICK,"RANDDELAYMIN=" + RANDDELAYMIN,"RANDDELAYMAX=" + RANDDELAYMAX,
+	"KEYER","_______","AKMIN=" + AKMIN,"AKMAX=" + AKMAX,"AKHOTKEY=" + AKHOTKEY,"AKDROPDOWN=" + AKDROPDOWN,
 	"","" };
 
 	System::IO::File::WriteAllLines(PATH, fileLines);
@@ -26,9 +22,6 @@ void Profile::LoadProfile(System::String^ PATH)
 	int counter = 0;
 	while (lines[counter] != "")
 	{
-		if (lines[counter]->Contains("HOUR=")) { HOUR = lines[counter]->Replace("HOUR=", ""); }
-		if (lines[counter]->Contains("MINUTE=")) { MINUTE = lines[counter]->Replace("MINUTE=", ""); }
-		if (lines[counter]->Contains("SECOND=")) { SECOND = lines[counter]->Replace("SECOND=", ""); }
 		if (lines[counter]->Contains("ACMIN=")) { ACMIN = lines[counter]->Replace("ACMIN=", ""); }
 		if (lines[counter]->Contains("ACMAX=")) { ACMAX = lines[counter]->Replace("ACMAX=", ""); }
 		if (lines[counter]->Contains("ACHOTKEY=")) { ACHOTKEY = System::Convert::ToInt32(lines[counter]->Replace("ACHOTKEY=", "")); }

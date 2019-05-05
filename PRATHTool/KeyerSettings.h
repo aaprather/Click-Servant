@@ -164,8 +164,9 @@ namespace PRATHTool {
 			this->MaximumSize = System::Drawing::Size(287, 220);
 			this->MinimumSize = System::Drawing::Size(287, 220);
 			this->Name = L"KeyerSettings";
+			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
-			this->Text = L"KeyerSettings";
+			this->Text = L"Interval Keyer Settings";
 			this->Load += gcnew System::EventHandler(this, &KeyerSettings::KeyerSettings_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();

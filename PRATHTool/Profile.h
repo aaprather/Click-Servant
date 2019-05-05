@@ -7,12 +7,6 @@ public:
 	void SaveProfileAs(System::String^ PATH);
 	void LoadProfile(System::String^ PATH);
 
-	/*Shutdown settings*/
-	System::String^ HOUR;
-	System::String^ MINUTE;
-	System::String^ SECOND;
-	/**/
-
 	/*Clicker settings*/
 	System::String^ ACMIN;
 	System::String^ ACMAX;

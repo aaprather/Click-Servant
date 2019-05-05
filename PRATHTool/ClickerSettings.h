@@ -292,10 +292,13 @@ namespace PRATHTool {
 			this->Controls->Add(this->RandClicksMaxTimeTextBox);
 			this->Controls->Add(this->RandClicksMinTimeTextBox);
 			this->MaximizeBox = false;
+			this->MaximumSize = System::Drawing::Size(494, 223);
 			this->MinimizeBox = false;
+			this->MinimumSize = System::Drawing::Size(494, 223);
 			this->Name = L"ClickerSettings";
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
+			this->Text = L"Interval Clicker Settings";
 			this->Load += gcnew System::EventHandler(this, &ClickerSettings::ClickerSettings_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
