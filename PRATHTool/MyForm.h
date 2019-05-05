@@ -59,16 +59,16 @@ namespace PRATHTool {
 	private: System::Windows::Forms::Label^ ACLabel;
 	private: System::Windows::Forms::Button^ ACStopButton;
 	private: System::Windows::Forms::Button^ ACStartButton;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::TextBox^ ACMaxTimeTextBox;
 
-	private: System::Windows::Forms::TextBox^ ACMinTimeTextBox;
+	private: System::Windows::Forms::Label^ label3;
+
+
+
 
 	private: System::Windows::Forms::Timer^ ACTimer;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::CheckBox^ ACHotkeyCheckBox;
+
 	private: System::Windows::Forms::Timer^ ACKeyPressCheckTimer;
 
 	private: System::Windows::Forms::Panel^ panel3;
@@ -82,8 +82,8 @@ namespace PRATHTool {
 	private: System::Windows::Forms::TextBox^ AKMinTextBox;
 	private: System::Windows::Forms::Timer^ AKTimer;
 	private: System::Windows::Forms::ComboBox^ AKDropDown;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	private: System::Windows::Forms::PictureBox^ pictureBox2;
+
+
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
 	private: System::Windows::Forms::ToolStrip^ toolStrip1;
 	private: System::Windows::Forms::ToolStripDropDownButton^ toolStripDropDownButton1;
@@ -96,6 +96,14 @@ namespace PRATHTool {
 	private: System::Windows::Forms::LinkLabel^ linkLabel1;
 	private: System::Windows::Forms::Timer^ RandomClicksTimer;
 	private: System::Windows::Forms::Label^ SubClickLabel;
+
+
+
+	private: System::Windows::Forms::Timer^ mouseUpdateTimer;
+	private: System::Windows::Forms::Label^ mousePOSLabel;
+
+
+
 
 
 
@@ -133,19 +141,16 @@ namespace PRATHTool {
 			this->shutDownTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->TimeLabel = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->mousePOSLabel = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->SubClickLabel = (gcnew System::Windows::Forms::Label());
 			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
-			this->ACHotkeyCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->ACLabel = (gcnew System::Windows::Forms::Label());
 			this->ACStopButton = (gcnew System::Windows::Forms::Button());
 			this->ACStartButton = (gcnew System::Windows::Forms::Button());
-			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->ACMaxTimeTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->ACMinTimeTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->ACTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
@@ -161,8 +166,6 @@ namespace PRATHTool {
 			this->AKMaxTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->AKMinTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->AKTimer = (gcnew System::Windows::Forms::Timer(this->components));
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
 			this->toolStripDropDownButton1 = (gcnew System::Windows::Forms::ToolStripDropDownButton());
@@ -173,11 +176,10 @@ namespace PRATHTool {
 			this->OpenProfileDialog = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->AKKeyPressCheckTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->RandomClicksTimer = (gcnew System::Windows::Forms::Timer(this->components));
+			this->mouseUpdateTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->panel3->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->toolStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
@@ -248,10 +250,21 @@ namespace PRATHTool {
 			this->panel1->Controls->Add(this->button2);
 			this->panel1->Controls->Add(this->textBox3);
 			this->panel1->Controls->Add(this->button1);
-			this->panel1->Location = System::Drawing::Point(12, 44);
+			this->panel1->Location = System::Drawing::Point(621, 44);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(200, 200);
+			this->panel1->Size = System::Drawing::Size(219, 200);
 			this->panel1->TabIndex = 6;
+			// 
+			// mousePOSLabel
+			// 
+			this->mousePOSLabel->AutoSize = true;
+			this->mousePOSLabel->BackColor = System::Drawing::SystemColors::Control;
+			this->mousePOSLabel->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->mousePOSLabel->Location = System::Drawing::Point(93, 79);
+			this->mousePOSLabel->Name = L"mousePOSLabel";
+			this->mousePOSLabel->Size = System::Drawing::Size(10, 13);
+			this->mousePOSLabel->TabIndex = 20;
+			this->mousePOSLabel->Text = L"-";
 			// 
 			// label2
 			// 
@@ -279,64 +292,55 @@ namespace PRATHTool {
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::SystemColors::Control;
+			this->panel2->Controls->Add(this->mousePOSLabel);
 			this->panel2->Controls->Add(this->SubClickLabel);
 			this->panel2->Controls->Add(this->linkLabel1);
-			this->panel2->Controls->Add(this->ACHotkeyCheckBox);
 			this->panel2->Controls->Add(this->ACLabel);
 			this->panel2->Controls->Add(this->ACStopButton);
 			this->panel2->Controls->Add(this->ACStartButton);
-			this->panel2->Controls->Add(this->label4);
 			this->panel2->Controls->Add(this->label3);
-			this->panel2->Controls->Add(this->ACMaxTimeTextBox);
-			this->panel2->Controls->Add(this->ACMinTimeTextBox);
-			this->panel2->Location = System::Drawing::Point(229, 35);
+			this->panel2->Location = System::Drawing::Point(15, 44);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(310, 221);
+			this->panel2->Size = System::Drawing::Size(289, 103);
 			this->panel2->TabIndex = 7;
 			// 
 			// SubClickLabel
 			// 
 			this->SubClickLabel->AutoSize = true;
-			this->SubClickLabel->Location = System::Drawing::Point(11, 105);
+			this->SubClickLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->SubClickLabel->Location = System::Drawing::Point(220, 28);
 			this->SubClickLabel->Name = L"SubClickLabel";
-			this->SubClickLabel->Size = System::Drawing::Size(10, 13);
+			this->SubClickLabel->Size = System::Drawing::Size(8, 12);
 			this->SubClickLabel->TabIndex = 14;
 			this->SubClickLabel->Text = L"-";
 			// 
 			// linkLabel1
 			// 
 			this->linkLabel1->AutoSize = true;
-			this->linkLabel1->Location = System::Drawing::Point(124, 57);
+			this->linkLabel1->Location = System::Drawing::Point(117, 24);
 			this->linkLabel1->Name = L"linkLabel1";
-			this->linkLabel1->Size = System::Drawing::Size(94, 13);
+			this->linkLabel1->Size = System::Drawing::Size(45, 13);
 			this->linkLabel1->TabIndex = 13;
 			this->linkLabel1->TabStop = true;
-			this->linkLabel1->Text = L"Additional Settings";
+			this->linkLabel1->Text = L"Settings";
 			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &MyForm::LinkLabel1_LinkClicked);
-			// 
-			// ACHotkeyCheckBox
-			// 
-			this->ACHotkeyCheckBox->AutoSize = true;
-			this->ACHotkeyCheckBox->Location = System::Drawing::Point(174, 113);
-			this->ACHotkeyCheckBox->Name = L"ACHotkeyCheckBox";
-			this->ACHotkeyCheckBox->Size = System::Drawing::Size(102, 17);
-			this->ACHotkeyCheckBox->TabIndex = 12;
-			this->ACHotkeyCheckBox->Text = L"R-CTRL Hotkey";
-			this->ACHotkeyCheckBox->UseVisualStyleBackColor = true;
 			// 
 			// ACLabel
 			// 
 			this->ACLabel->AutoSize = true;
-			this->ACLabel->Location = System::Drawing::Point(105, 156);
+			this->ACLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ACLabel->Location = System::Drawing::Point(5, 29);
 			this->ACLabel->Name = L"ACLabel";
-			this->ACLabel->Size = System::Drawing::Size(10, 13);
+			this->ACLabel->Size = System::Drawing::Size(8, 12);
 			this->ACLabel->TabIndex = 11;
 			this->ACLabel->Text = L"-";
 			// 
 			// ACStopButton
 			// 
 			this->ACStopButton->Enabled = false;
-			this->ACStopButton->Location = System::Drawing::Point(108, 128);
+			this->ACStopButton->Location = System::Drawing::Point(144, 43);
 			this->ACStopButton->Name = L"ACStopButton";
 			this->ACStopButton->Size = System::Drawing::Size(60, 23);
 			this->ACStopButton->TabIndex = 10;
@@ -346,25 +350,13 @@ namespace PRATHTool {
 			// 
 			// ACStartButton
 			// 
-			this->ACStartButton->Location = System::Drawing::Point(108, 99);
+			this->ACStartButton->Location = System::Drawing::Point(78, 43);
 			this->ACStartButton->Name = L"ACStartButton";
 			this->ACStartButton->Size = System::Drawing::Size(60, 23);
 			this->ACStartButton->TabIndex = 9;
 			this->ACStartButton->Text = L"Start";
 			this->ACStartButton->UseVisualStyleBackColor = true;
 			this->ACStartButton->Click += gcnew System::EventHandler(this, &MyForm::ACStartButton_Click);
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->BackColor = System::Drawing::SystemColors::Control;
-			this->label4->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label4->Location = System::Drawing::Point(32, 31);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(227, 39);
-			this->label4->TabIndex = 8;
-			this->label4->Text = L"- Enter time range below in milliseconds\r\n- Every click is done at a random time "
-				L"between\r\n   the given range.";
 			// 
 			// label3
 			// 
@@ -373,25 +365,11 @@ namespace PRATHTool {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label3->Location = System::Drawing::Point(31, 7);
+			this->label3->Location = System::Drawing::Point(34, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(231, 24);
 			this->label3->TabIndex = 7;
 			this->label3->Text = L"Random Interval Clicker";
-			// 
-			// ACMaxTimeTextBox
-			// 
-			this->ACMaxTimeTextBox->Location = System::Drawing::Point(142, 73);
-			this->ACMaxTimeTextBox->Name = L"ACMaxTimeTextBox";
-			this->ACMaxTimeTextBox->Size = System::Drawing::Size(59, 20);
-			this->ACMaxTimeTextBox->TabIndex = 2;
-			// 
-			// ACMinTimeTextBox
-			// 
-			this->ACMinTimeTextBox->Location = System::Drawing::Point(77, 73);
-			this->ACMinTimeTextBox->Name = L"ACMinTimeTextBox";
-			this->ACMinTimeTextBox->Size = System::Drawing::Size(59, 20);
-			this->ACMinTimeTextBox->TabIndex = 1;
 			// 
 			// ACTimer
 			// 
@@ -402,7 +380,7 @@ namespace PRATHTool {
 			this->label5->AutoSize = true;
 			this->label5->BackColor = System::Drawing::SystemColors::Control;
 			this->label5->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->label5->Location = System::Drawing::Point(102, 518);
+			this->label5->Location = System::Drawing::Point(244, 284);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(81, 13);
 			this->label5->TabIndex = 9;
@@ -411,7 +389,7 @@ namespace PRATHTool {
 			// textBox4
 			// 
 			this->textBox4->BackColor = System::Drawing::SystemColors::Control;
-			this->textBox4->Location = System::Drawing::Point(189, 515);
+			this->textBox4->Location = System::Drawing::Point(324, 281);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(241, 20);
 			this->textBox4->TabIndex = 10;
@@ -433,7 +411,7 @@ namespace PRATHTool {
 			this->panel3->Controls->Add(this->label8);
 			this->panel3->Controls->Add(this->AKMaxTextBox);
 			this->panel3->Controls->Add(this->AKMinTextBox);
-			this->panel3->Location = System::Drawing::Point(229, 278);
+			this->panel3->Location = System::Drawing::Point(310, 44);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(296, 215);
 			this->panel3->TabIndex = 11;
@@ -529,32 +507,12 @@ namespace PRATHTool {
 			// 
 			this->AKTimer->Tick += gcnew System::EventHandler(this, &MyForm::AKTimer_Tick);
 			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(218, 35);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(10, 478);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox1->TabIndex = 12;
-			this->pictureBox1->TabStop = false;
-			// 
-			// pictureBox2
-			// 
-			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(2, 262);
-			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(538, 10);
-			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox2->TabIndex = 13;
-			this->pictureBox2->TabStop = false;
-			// 
 			// pictureBox3
 			// 
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
-			this->pictureBox3->Location = System::Drawing::Point(-5, 503);
+			this->pictureBox3->Location = System::Drawing::Point(-5, 265);
 			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(549, 10);
+			this->pictureBox3->Size = System::Drawing::Size(877, 10);
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox3->TabIndex = 14;
 			this->pictureBox3->TabStop = false;
@@ -565,7 +523,7 @@ namespace PRATHTool {
 			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->toolStripDropDownButton1 });
 			this->toolStrip1->Location = System::Drawing::Point(0, 0);
 			this->toolStrip1->Name = L"toolStrip1";
-			this->toolStrip1->Size = System::Drawing::Size(535, 25);
+			this->toolStrip1->Size = System::Drawing::Size(849, 25);
 			this->toolStrip1->TabIndex = 15;
 			this->toolStrip1->Text = L"toolStrip1";
 			// 
@@ -608,7 +566,7 @@ namespace PRATHTool {
 			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
 			this->pictureBox4->Location = System::Drawing::Point(-5, 28);
 			this->pictureBox4->Name = L"pictureBox4";
-			this->pictureBox4->Size = System::Drawing::Size(549, 10);
+			this->pictureBox4->Size = System::Drawing::Size(892, 13);
 			this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox4->TabIndex = 16;
 			this->pictureBox4->TabStop = false;
@@ -626,16 +584,19 @@ namespace PRATHTool {
 			// 
 			this->RandomClicksTimer->Tick += gcnew System::EventHandler(this, &MyForm::RandomClicksTimer_Tick);
 			// 
+			// mouseUpdateTimer
+			// 
+			this->mouseUpdateTimer->Interval = 20;
+			this->mouseUpdateTimer->Tick += gcnew System::EventHandler(this, &MyForm::MouseUpdateTimer_Tick);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(535, 545);
+			this->ClientSize = System::Drawing::Size(849, 307);
 			this->Controls->Add(this->pictureBox4);
 			this->Controls->Add(this->toolStrip1);
 			this->Controls->Add(this->pictureBox3);
-			this->Controls->Add(this->pictureBox2);
-			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->label5);
@@ -643,8 +604,6 @@ namespace PRATHTool {
 			this->Controls->Add(this->panel1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(551, 584);
-			this->MinimumSize = System::Drawing::Size(551, 584);
 			this->Name = L"MyForm";
 			this->Opacity = 0.99;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -656,8 +615,6 @@ namespace PRATHTool {
 			this->panel2->PerformLayout();
 			this->panel3->ResumeLayout(false);
 			this->panel3->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->toolStrip1->ResumeLayout(false);
 			this->toolStrip1->PerformLayout();
@@ -671,6 +628,8 @@ namespace PRATHTool {
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		ACKeyPressCheckTimer->Start();
 		AKKeyPressCheckTimer->Start();
+
+		mouseUpdateTimer->Start(); //todo
 
 	}
 
@@ -769,14 +728,14 @@ namespace PRATHTool {
 	private: int INCCOUNTER = 0;
 	private: int val;
 	private: System::Void ACStartButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
-		if (checkACValues(ACMinTimeTextBox->Text, ACMaxTimeTextBox->Text) == true)
+		if (checkACValues(_PROFILE.ACMIN, _PROFILE.ACMAX) == true)
 		{
 			try
 			{
 				linkLabel1->Enabled = false;
 				label3->BackColor = Color::Chartreuse;
-				ACMinTimeTextBox->Enabled = false;
-				ACMaxTimeTextBox->Enabled = false;
+				//ACMinTimeTextBox->Enabled = false;
+				//ACMaxTimeTextBox->Enabled = false;
 				updateNextMainClick();
 				ACTimer->Start();
 				ACStartButton->Enabled = false;
@@ -809,7 +768,7 @@ namespace PRATHTool {
 		{
 			sendMouseClick();
 			RandomClicksTimer->Interval = r.Next(Convert::ToInt32(_PROFILE.RANDDELAYMIN), Convert::ToInt32(_PROFILE.RANDDELAYMAX));
-			SubClickLabel->Text = RandomClicksTimer->Interval + "ms\nUntil next\nsub click";
+			SubClickLabel->Text = "Sub click in - \n"+RandomClicksTimer->Interval + "ms";
 			INCCOUNTER++;
 		}
 		else //We finished sub-click looping, lets reset everything and start the next main click loop.
@@ -825,8 +784,9 @@ namespace PRATHTool {
 	private: System::Void ACStopButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		linkLabel1->Enabled = true;
 		label3->BackColor = SystemColors::Control;
-		ACMinTimeTextBox->Enabled = true;
-		ACMaxTimeTextBox->Enabled = true;
+		//ACMinTimeTextBox->Enabled = true;
+		//ACMaxTimeTextBox->Enabled = true;
+		RandomClicksTimer->Stop();
 		ACTimer->Stop();
 		ACLabel->Text = "-";
 		ACStartButton->Enabled = true;
@@ -865,10 +825,10 @@ namespace PRATHTool {
 	}
 	private:void updateNextMainClick()
 	{
-		val = r.Next(Convert::ToInt32(ACMinTimeTextBox->Text), Convert::ToInt32(ACMaxTimeTextBox->Text));
+		val = r.Next(Convert::ToInt32(_PROFILE.ACMIN), Convert::ToInt32(_PROFILE.ACMAX));
 		ACTimer->Interval = val;
 		ACTime = DateTime::Now.AddMilliseconds(val);
-		ACLabel->Text = "Next click at\n" + ACTime.ToLongDateString() + "\n" + ACTime.ToLongTimeString() + "\nNext click interval: " + val.ToString() + "ms";
+		ACLabel->Text = "\nNext click at\n" + ACTime.ToLongTimeString() + "\nInterval: " + val.ToString() + "ms";
 	}
 			/*--------------------------------------------------------------------------------------
 			::.........................::::.........................::::.........................::*/
@@ -888,7 +848,7 @@ namespace PRATHTool {
 		  ::.........................::::.........................::::.........................::*/
 	private: System::Void ACKeyPressCheckTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
 		ACKeyPressCheckTimer->Interval = 1;
-		if (ACHotkeyCheckBox->Checked == true)
+		if (_PROFILE.ACHOTKEY == true)
 		{
 			if (GetKeyState(VK_RCONTROL) & 0x8000)
 			{
@@ -1042,9 +1002,13 @@ namespace PRATHTool {
 		/**/
 
 		/*Clicker | -The _PROFILE settings for additional clicks will either be set or NULL, so we have a default value in place just in case its NULL*/
-		_PROFILE.ACMIN = ACMinTimeTextBox->Text;
-		_PROFILE.ACMAX = ACMaxTimeTextBox->Text;
-		_PROFILE.ACHOTKEY = ACHotkeyCheckBox->Checked;
+
+		if (System::String::IsNullOrEmpty(_PROFILE.ACMAX))
+			_PROFILE.ACMAX = "";
+		if (System::String::IsNullOrEmpty(_PROFILE.ACMIN))
+			_PROFILE.ACMIN= "";
+		if (System::String::IsNullOrEmpty(Convert::ToString(_PROFILE.ACHOTKEY)))
+			_PROFILE.ACHOTKEY = 0;
 		if (System::String::IsNullOrEmpty(_PROFILE.RANDCLICKMAX))
 			_PROFILE.RANDCLICKMAX = "";
 		if (System::String::IsNullOrEmpty(_PROFILE.RANDCLICKMIN))
@@ -1096,9 +1060,9 @@ namespace PRATHTool {
 		/**/
 
 		/*Clicker | - because some of these settings exist in a separate form, we just set the _PROFILE values.*/
-		ACMinTimeTextBox->Text = loadedProfile.ACMIN;
-		ACMaxTimeTextBox->Text = loadedProfile.ACMAX;
-		ACHotkeyCheckBox->Checked = loadedProfile.ACHOTKEY;
+		_PROFILE.ACMIN = loadedProfile.ACMIN;
+		_PROFILE.ACMAX = loadedProfile.ACMAX;
+		_PROFILE.ACHOTKEY = loadedProfile.ACHOTKEY;
 		_PROFILE.RANDCLICKMAX = loadedProfile.RANDCLICKMAX;
 		_PROFILE.RANDCLICKMIN = loadedProfile.RANDCLICKMIN;
 		_PROFILE.RANDCLICK = loadedProfile.RANDCLICK;
@@ -1121,6 +1085,16 @@ namespace PRATHTool {
 			::.........................::::.........................::::.........................::*/
 
 
+
+
+	private: System::Void MoveMouseLocButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
+
+		SetCursorPos(2, 2);
+
+	}
+	private: System::Void MouseUpdateTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
+		mousePOSLabel->Text = "X: " + System::Windows::Forms::Cursor::Position.X + " | Y: " + System::Windows::Forms::Cursor::Position.Y;
+	}
 
 
 	};
