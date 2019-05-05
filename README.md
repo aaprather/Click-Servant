@@ -11,11 +11,11 @@
 
 <br></br>
 <br></br>
-![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/1.png)
+![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/s1.png)
 
-![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/2.png)
+![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/s2.png)
 
-![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/3.png)
-![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/4.png)
-![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/5.png)
+![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/s3.png)
+![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/s4.png)
+![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/s5.png)
 </p>
