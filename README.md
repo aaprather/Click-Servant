@@ -17,5 +17,5 @@
 
 ![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/3.png)
 ![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/4.png)
-![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/4.png)
+![ScreenShot](https://github.com/aaprather/PRATHTool/blob/master/5.png)
 </p>
