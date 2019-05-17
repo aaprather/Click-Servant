@@ -123,7 +123,11 @@ namespace PRATHTool {
 			// AKDropDown
 			// 
 			this->AKDropDown->FormattingEnabled = true;
-			this->AKDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Escape" });
+			this->AKDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(21) {
+				L"Escape", L"BackSpace", L"End", L"Home", L"F1",
+					L"F2", L"F3", L"F4", L"F5", L"F6", L"F7", L"F8", L"F9", L"F10", L"F11", L"F12", L"Tab", L"Up Arrow", L"Down Arrow", L"Left Arrow",
+					L"Right Arrow"
+			});
 			this->AKDropDown->Location = System::Drawing::Point(98, 87);
 			this->AKDropDown->Name = L"AKDropDown";
 			this->AKDropDown->Size = System::Drawing::Size(76, 21);
