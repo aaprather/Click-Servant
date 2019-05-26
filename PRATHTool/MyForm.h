@@ -777,7 +777,7 @@ namespace PRATHTool {
 		int val = r.Next(Convert::ToInt32(_PROFILE.AKMIN), Convert::ToInt32(_PROFILE.AKMAX));
 		AKTimer->Interval = val;
 		AKTime = DateTime::Now.AddMilliseconds(val);
-		AKLabel->Text = "Next click at\n" + AKTime.ToLongTimeString() + "\nInterval: " + val.ToString() + "ms";
+		AKLabel->Text = "Next key at\n" + AKTime.ToLongTimeString() + "\nInterval: " + val.ToString() + "ms";
 	}
 			 /*--------------------------------------------------------------------------------------
 			::.........................::::.........................::::.........................::*/
