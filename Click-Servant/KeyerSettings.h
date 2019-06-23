@@ -87,7 +87,7 @@ namespace PRATHTool {
 			// 
 			// AKHotkeyCheckBox
 			// 
-			this->AKHotkeyCheckBox->AutoSize = true;
+			this->AKHotkeyCheckBox->AutoSize = TRUE;
 			this->AKHotkeyCheckBox->BackColor = System::Drawing::Color::Transparent;
 			this->AKHotkeyCheckBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->AKHotkeyCheckBox->Location = System::Drawing::Point(69, 114);
@@ -95,11 +95,11 @@ namespace PRATHTool {
 			this->AKHotkeyCheckBox->Size = System::Drawing::Size(141, 17);
 			this->AKHotkeyCheckBox->TabIndex = 13;
 			this->AKHotkeyCheckBox->Text = L"Enable R-SHIFT Hotkey";
-			this->AKHotkeyCheckBox->UseVisualStyleBackColor = false;
+			this->AKHotkeyCheckBox->UseVisualStyleBackColor = FALSE;
 			// 
 			// label7
 			// 
-			this->label7->AutoSize = true;
+			this->label7->AutoSize = TRUE;
 			this->label7->BackColor = System::Drawing::Color::Transparent;
 			this->label7->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->label7->Location = System::Drawing::Point(12, 9);
@@ -125,7 +125,7 @@ namespace PRATHTool {
 			// 
 			// AKDropDown
 			// 
-			this->AKDropDown->FormattingEnabled = true;
+			this->AKDropDown->FormattingEnabled = TRUE;
 			this->AKDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(21) {
 				L"Escape", L"BackSpace", L"End", L"Home", L"F1",
 					L"F2", L"F3", L"F4", L"F5", L"F6", L"F7", L"F8", L"F9", L"F10", L"F11", L"F12", L"Tab", L"Up Arrow", L"Down Arrow", L"Left Arrow",
@@ -147,7 +147,7 @@ namespace PRATHTool {
 			this->KeyerSave->Size = System::Drawing::Size(60, 23);
 			this->KeyerSave->TabIndex = 18;
 			this->KeyerSave->Text = L"Save";
-			this->KeyerSave->UseVisualStyleBackColor = true;
+			this->KeyerSave->UseVisualStyleBackColor = TRUE;
 			this->KeyerSave->Click += gcnew System::EventHandler(this, &KeyerSettings::KeyerSave_Click);
 			// 
 			// KeyerCancel
@@ -161,7 +161,7 @@ namespace PRATHTool {
 			this->KeyerCancel->Size = System::Drawing::Size(60, 23);
 			this->KeyerCancel->TabIndex = 19;
 			this->KeyerCancel->Text = L"Cancel";
-			this->KeyerCancel->UseVisualStyleBackColor = true;
+			this->KeyerCancel->UseVisualStyleBackColor = TRUE;
 			this->KeyerCancel->Click += gcnew System::EventHandler(this, &KeyerSettings::KeyerCancel_Click);
 			// 
 			// KeyerSettings
@@ -178,15 +178,15 @@ namespace PRATHTool {
 			this->Controls->Add(this->AKMinTextBox);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->AKHotkeyCheckBox);
-			this->DoubleBuffered = true;
+			this->DoubleBuffered = TRUE;
 			this->MaximumSize = System::Drawing::Size(287, 220);
 			this->MinimumSize = System::Drawing::Size(287, 220);
 			this->Name = L"KeyerSettings";
-			this->ShowIcon = false;
+			this->ShowIcon = FALSE;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"Interval Keyer Settings";
 			this->Load += gcnew System::EventHandler(this, &KeyerSettings::KeyerSettings_Load);
-			this->ResumeLayout(false);
+			this->ResumeLayout(FALSE);
 			this->PerformLayout();
 
 		}
