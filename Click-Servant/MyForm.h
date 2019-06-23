@@ -531,6 +531,8 @@ namespace PRATHTool {
 		ACKeyPressCheckTimer->Start();
 		AKKeyPressCheckTimer->Start();
 		mouseUpdateTimer->Start();
+		toolStripDropDownButton1->AutoToolTip = FALSE;
+		toolStripDropDownButton2->AutoToolTip = FALSE;
 
 	}
 
