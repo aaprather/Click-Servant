@@ -506,7 +506,7 @@ namespace PRATHTool {
 			this->Name = L"MyForm";
 			this->Opacity = 0.99;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Click-Servant  | 2.1 |";
+			this->Text = L"Click-Servant  | 2.1.2 |";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
