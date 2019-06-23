@@ -182,9 +182,8 @@ namespace PRATHTool {
 			this->mousePOSLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->mousePOSLabel->Location = System::Drawing::Point(133, 92);
 			this->mousePOSLabel->Name = L"mousePOSLabel";
-			this->mousePOSLabel->Size = System::Drawing::Size(10, 13);
+			this->mousePOSLabel->Size = System::Drawing::Size(0, 13);
 			this->mousePOSLabel->TabIndex = 20;
-			this->mousePOSLabel->Text = L"-";
 			// 
 			// panel2
 			// 
@@ -219,9 +218,8 @@ namespace PRATHTool {
 			this->SubClickLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->SubClickLabel->Location = System::Drawing::Point(251, 51);
 			this->SubClickLabel->Name = L"SubClickLabel";
-			this->SubClickLabel->Size = System::Drawing::Size(8, 12);
+			this->SubClickLabel->Size = System::Drawing::Size(0, 12);
 			this->SubClickLabel->TabIndex = 14;
-			this->SubClickLabel->Text = L"-";
 			// 
 			// linkLabel1
 			// 
@@ -243,9 +241,8 @@ namespace PRATHTool {
 			this->ACLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->ACLabel->Location = System::Drawing::Point(1, 51);
 			this->ACLabel->Name = L"ACLabel";
-			this->ACLabel->Size = System::Drawing::Size(8, 12);
+			this->ACLabel->Size = System::Drawing::Size(0, 12);
 			this->ACLabel->TabIndex = 11;
-			this->ACLabel->Text = L"-";
 			// 
 			// ACStopButton
 			// 
@@ -331,9 +328,8 @@ namespace PRATHTool {
 			this->AKLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->AKLabel->Location = System::Drawing::Point(6, 64);
 			this->AKLabel->Name = L"AKLabel";
-			this->AKLabel->Size = System::Drawing::Size(8, 12);
+			this->AKLabel->Size = System::Drawing::Size(0, 12);
 			this->AKLabel->TabIndex = 11;
-			this->AKLabel->Text = L"-";
 			// 
 			// AKStopButton
 			// 
@@ -402,7 +398,7 @@ namespace PRATHTool {
 			this->saveProfileAsToolStripMenuItem->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"saveProfileAsToolStripMenuItem.BackgroundImage")));
 			this->saveProfileAsToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->saveProfileAsToolStripMenuItem->Name = L"saveProfileAsToolStripMenuItem";
-			this->saveProfileAsToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->saveProfileAsToolStripMenuItem->Size = System::Drawing::Size(160, 22);
 			this->saveProfileAsToolStripMenuItem->Text = L"Save Profile As...";
 			this->saveProfileAsToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::saveProfileAsToolStripMenuItem_Click);
 			// 
@@ -412,7 +408,7 @@ namespace PRATHTool {
 			this->loadProfileToolStripMenuItem->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"loadProfileToolStripMenuItem.BackgroundImage")));
 			this->loadProfileToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->loadProfileToolStripMenuItem->Name = L"loadProfileToolStripMenuItem";
-			this->loadProfileToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->loadProfileToolStripMenuItem->Size = System::Drawing::Size(160, 22);
 			this->loadProfileToolStripMenuItem->Text = L"Load Profile";
 			this->loadProfileToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::loadProfileToolStripMenuItem_Click);
 			// 
@@ -437,7 +433,7 @@ namespace PRATHTool {
 			this->aboutToolStripMenuItem->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->aboutToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(173, 22);
 			this->aboutToolStripMenuItem->Text = L"About";
 			// 
 			// checkForUpdatesToolStripMenuItem
@@ -447,7 +443,7 @@ namespace PRATHTool {
 			this->checkForUpdatesToolStripMenuItem->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->checkForUpdatesToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->checkForUpdatesToolStripMenuItem->Name = L"checkForUpdatesToolStripMenuItem";
-			this->checkForUpdatesToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->checkForUpdatesToolStripMenuItem->Size = System::Drawing::Size(173, 22);
 			this->checkForUpdatesToolStripMenuItem->Text = L"Check For Updates";
 			this->checkForUpdatesToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::CheckForUpdatesToolStripMenuItem_Click);
 			// 
@@ -595,7 +591,7 @@ namespace PRATHTool {
 		else //We finished sub-click looping, lets reset everything and start the next main click loop.
 		{
 			INCCOUNTER = 0; //MAKE SURE TO RESET THIS OR ELSE IT WONT LOOP AGAIN!
-			SubClickLabel->Text = "-";
+			SubClickLabel->Text = "";
 			updateNextMainClick();
 			RandomClicksTimer->Stop();
 			ACTimer->Start();
@@ -607,10 +603,10 @@ namespace PRATHTool {
 		//label3->BackColor = SystemColors::Control;
 		RandomClicksTimer->Stop();
 		ACTimer->Stop();
-		ACLabel->Text = "-";
+		ACLabel->Text = "";
 		ACStartButton->Enabled = true;
 		ACStopButton->Enabled = false;
-		SubClickLabel->Text = "-";
+		SubClickLabel->Text = "";
 	}
 
 	private: bool checkACValues(System::String ^ min, System::String ^ max)
@@ -801,7 +797,7 @@ namespace PRATHTool {
 	private: System::Void saveProfileAsToolStripMenuItem_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		SaveProfileDialog->AddExtension = true;
 		SaveProfileDialog->OverwritePrompt = true;
-		SaveProfileDialog->Filter = "PRATHTool Profile (*.PTP)|*.PTP";
+		SaveProfileDialog->Filter = "Click-Servant Profile (*.csp)|*.csp";
 		SaveProfileDialog->ShowDialog();
 
 	}
@@ -865,7 +861,7 @@ namespace PRATHTool {
 		 ::.........................::::.........................::::.........................::*/
 	private: System::Void loadProfileToolStripMenuItem_Click(System::Object ^ sender, System::EventArgs ^ e) {
 		OpenProfileDialog->AddExtension = true;
-		OpenProfileDialog->Filter = "PRATHTool Profile (*.PTP)|*.PTP";
+		OpenProfileDialog->Filter = "Click-Servant Profile (*.csp)|*.csp";
 		OpenProfileDialog->ShowDialog();
 	}
 	private: System::Void OpenProfileDialog_FileOk(System::Object ^ sender, System::ComponentModel::CancelEventArgs ^ e) {
@@ -889,7 +885,7 @@ namespace PRATHTool {
 		_PROFILE.AKHOTKEY = loadedProfile.AKHOTKEY;
 		_PROFILE.AKDROPDOWN = loadedProfile.AKDROPDOWN;
 		/**/
-		toolStripProfileLabel->Text = "Profile Name: "+OpenProfileDialog->SafeFileName->Replace(".PTP","");
+		toolStripProfileLabel->Text = "Profile Name: "+OpenProfileDialog->SafeFileName->Replace(".csp","");
 	}
 
 			 /*--------------------------------------------------------------------------------------
