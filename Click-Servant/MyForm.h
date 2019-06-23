@@ -177,7 +177,7 @@ namespace PRATHTool {
 			// 
 			// mousePOSLabel
 			// 
-			this->mousePOSLabel->AutoSize = TRUE;
+			this->mousePOSLabel->AutoSize = true;
 			this->mousePOSLabel->BackColor = System::Drawing::Color::Transparent;
 			this->mousePOSLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->mousePOSLabel->Location = System::Drawing::Point(133, 92);
@@ -209,11 +209,11 @@ namespace PRATHTool {
 			this->pictureBox2->Size = System::Drawing::Size(307, 35);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox2->TabIndex = 17;
-			this->pictureBox2->TabStop = FALSE;
+			this->pictureBox2->TabStop = false;
 			// 
 			// SubClickLabel
 			// 
-			this->SubClickLabel->AutoSize = TRUE;
+			this->SubClickLabel->AutoSize = true;
 			this->SubClickLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->SubClickLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
@@ -225,19 +225,19 @@ namespace PRATHTool {
 			// 
 			// linkLabel1
 			// 
-			this->linkLabel1->AutoSize = TRUE;
+			this->linkLabel1->AutoSize = true;
 			this->linkLabel1->LinkColor = System::Drawing::Color::DeepSkyBlue;
 			this->linkLabel1->Location = System::Drawing::Point(148, 45);
 			this->linkLabel1->Name = L"linkLabel1";
 			this->linkLabel1->Size = System::Drawing::Size(45, 13);
 			this->linkLabel1->TabIndex = 13;
-			this->linkLabel1->TabStop = TRUE;
+			this->linkLabel1->TabStop = true;
 			this->linkLabel1->Text = L"Settings";
 			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &MyForm::LinkLabel1_LinkClicked);
 			// 
 			// ACLabel
 			// 
-			this->ACLabel->AutoSize = TRUE;
+			this->ACLabel->AutoSize = true;
 			this->ACLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ACLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
@@ -251,7 +251,7 @@ namespace PRATHTool {
 			// 
 			this->ACStopButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ACStopButton.BackgroundImage")));
 			this->ACStopButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ACStopButton->Enabled = FALSE;
+			this->ACStopButton->Enabled = false;
 			this->ACStopButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ACStopButton->Location = System::Drawing::Point(175, 66);
@@ -259,7 +259,7 @@ namespace PRATHTool {
 			this->ACStopButton->Size = System::Drawing::Size(60, 23);
 			this->ACStopButton->TabIndex = 10;
 			this->ACStopButton->Text = L"Stop";
-			this->ACStopButton->UseVisualStyleBackColor = TRUE;
+			this->ACStopButton->UseVisualStyleBackColor = true;
 			this->ACStopButton->Click += gcnew System::EventHandler(this, &MyForm::ACStopButton_Click);
 			// 
 			// ACStartButton
@@ -274,7 +274,7 @@ namespace PRATHTool {
 			this->ACStartButton->Size = System::Drawing::Size(60, 23);
 			this->ACStartButton->TabIndex = 9;
 			this->ACStartButton->Text = L"Start";
-			this->ACStartButton->UseVisualStyleBackColor = TRUE;
+			this->ACStartButton->UseVisualStyleBackColor = true;
 			this->ACStartButton->Click += gcnew System::EventHandler(this, &MyForm::ACStartButton_Click);
 			// 
 			// ACTimer
@@ -307,24 +307,24 @@ namespace PRATHTool {
 			this->pictureBox3->Size = System::Drawing::Size(307, 35);
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox3->TabIndex = 18;
-			this->pictureBox3->TabStop = FALSE;
+			this->pictureBox3->TabStop = false;
 			// 
 			// linkLabel2
 			// 
-			this->linkLabel2->AutoSize = TRUE;
+			this->linkLabel2->AutoSize = true;
 			this->linkLabel2->BackColor = System::Drawing::Color::Transparent;
 			this->linkLabel2->LinkColor = System::Drawing::Color::DeepSkyBlue;
 			this->linkLabel2->Location = System::Drawing::Point(172, 45);
 			this->linkLabel2->Name = L"linkLabel2";
 			this->linkLabel2->Size = System::Drawing::Size(45, 13);
 			this->linkLabel2->TabIndex = 14;
-			this->linkLabel2->TabStop = TRUE;
+			this->linkLabel2->TabStop = true;
 			this->linkLabel2->Text = L"Settings";
 			this->linkLabel2->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &MyForm::LinkLabel2_LinkClicked);
 			// 
 			// AKLabel
 			// 
-			this->AKLabel->AutoSize = TRUE;
+			this->AKLabel->AutoSize = true;
 			this->AKLabel->BackColor = System::Drawing::Color::Transparent;
 			this->AKLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -339,7 +339,7 @@ namespace PRATHTool {
 			// 
 			this->AKStopButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"AKStopButton.BackgroundImage")));
 			this->AKStopButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->AKStopButton->Enabled = FALSE;
+			this->AKStopButton->Enabled = false;
 			this->AKStopButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->AKStopButton->Location = System::Drawing::Point(198, 67);
@@ -347,7 +347,7 @@ namespace PRATHTool {
 			this->AKStopButton->Size = System::Drawing::Size(60, 23);
 			this->AKStopButton->TabIndex = 10;
 			this->AKStopButton->Text = L"Stop";
-			this->AKStopButton->UseVisualStyleBackColor = TRUE;
+			this->AKStopButton->UseVisualStyleBackColor = true;
 			this->AKStopButton->Click += gcnew System::EventHandler(this, &MyForm::AKStopButton_Click);
 			// 
 			// AKStartButton
@@ -361,7 +361,7 @@ namespace PRATHTool {
 			this->AKStartButton->Size = System::Drawing::Size(60, 23);
 			this->AKStartButton->TabIndex = 9;
 			this->AKStartButton->Text = L"Start";
-			this->AKStartButton->UseVisualStyleBackColor = TRUE;
+			this->AKStartButton->UseVisualStyleBackColor = true;
 			this->AKStartButton->Click += gcnew System::EventHandler(this, &MyForm::AKStartButton_Click);
 			// 
 			// AKTimer
@@ -491,7 +491,7 @@ namespace PRATHTool {
 			this->pictureBox1->Size = System::Drawing::Size(849, 10);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 16;
-			this->pictureBox1->TabStop = FALSE;
+			this->pictureBox1->TabStop = false;
 			// 
 			// MyForm
 			// 
@@ -504,24 +504,24 @@ namespace PRATHTool {
 			this->Controls->Add(this->toolStrip1);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel2);
-			this->DoubleBuffered = TRUE;
+			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->MaximizeBox = FALSE;
+			this->MaximizeBox = false;
 			this->Name = L"MyForm";
 			this->Opacity = 0.99;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Click-Servant  | 2.1 |";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
-			this->panel2->ResumeLayout(FALSE);
+			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
-			this->panel3->ResumeLayout(FALSE);
+			this->panel3->ResumeLayout(false);
 			this->panel3->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
-			this->toolStrip1->ResumeLayout(FALSE);
+			this->toolStrip1->ResumeLayout(false);
 			this->toolStrip1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			this->ResumeLayout(FALSE);
+			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
@@ -531,8 +531,8 @@ namespace PRATHTool {
 		ACKeyPressCheckTimer->Start();
 		AKKeyPressCheckTimer->Start();
 		mouseUpdateTimer->Start();
-		toolStripDropDownButton1->AutoToolTip = FALSE;
-		toolStripDropDownButton2->AutoToolTip = FALSE;
+		toolStripDropDownButton1->AutoToolTip = false;
+		toolStripDropDownButton2->AutoToolTip = false;
 
 	}
 
@@ -551,20 +551,20 @@ namespace PRATHTool {
 	private: int INCCOUNTER = 0;
 	private: int val;
 	private: System::Void ACStartButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
-		if (checkACValues(_PROFILE.ACMIN, _PROFILE.ACMAX) == TRUE)
+		if (checkACValues(_PROFILE.ACMIN, _PROFILE.ACMAX) == true)
 		{
 			try
 			{
-				linkLabel1->Enabled = FALSE;
+				linkLabel1->Enabled = false;
 				//label3->BackColor = Color::Chartreuse;
 				updateNextMainClick();
 				ACTimer->Start();
-				ACStartButton->Enabled = FALSE;
-				ACStopButton->Enabled = TRUE;
+				ACStartButton->Enabled = false;
+				ACStopButton->Enabled = true;
 			}
 			catch (...)
 			{
-				ACStopButton->Enabled = TRUE;
+				ACStopButton->Enabled = true;
 				ACStopButton->PerformClick();
 			}
 		}
@@ -603,13 +603,13 @@ namespace PRATHTool {
 	}
 
 	private: System::Void ACStopButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
-		linkLabel1->Enabled = TRUE;
+		linkLabel1->Enabled = true;
 		//label3->BackColor = SystemColors::Control;
 		RandomClicksTimer->Stop();
 		ACTimer->Stop();
 		ACLabel->Text = "-";
-		ACStartButton->Enabled = TRUE;
-		ACStopButton->Enabled = FALSE;
+		ACStartButton->Enabled = true;
+		ACStopButton->Enabled = false;
 		SubClickLabel->Text = "-";
 	}
 
@@ -622,13 +622,13 @@ namespace PRATHTool {
 			i = Convert::ToInt32(min);
 			j = Convert::ToInt32(max);
 			if (i >= j)
-				valuesAreGood = FALSE;
+				valuesAreGood = false;
 			else
-				valuesAreGood = TRUE;
+				valuesAreGood = true;
 		}
 		catch (...)
 		{
-			valuesAreGood = FALSE;
+			valuesAreGood = false;
 		}
 		return valuesAreGood;
 	}
@@ -667,17 +667,17 @@ namespace PRATHTool {
 		  ::.........................::::.........................::::.........................::*/
 	private: System::Void ACKeyPressCheckTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
 		ACKeyPressCheckTimer->Interval = 1;
-		if (_PROFILE.ACHOTKEY == TRUE)
+		if (_PROFILE.ACHOTKEY == true)
 		{
 			if (GetKeyState(VK_RCONTROL) & 0x8000)
 			{
 				ACKeyPressCheckTimer->Stop();
 
-				if (ACStartButton->Enabled == FALSE) //Clicker is running
+				if (ACStartButton->Enabled == false) //Clicker is running
 				{
 					ACStopButton->PerformClick();
 				}
-				else if (ACStopButton->Enabled == FALSE) //Clicker is stopped
+				else if (ACStopButton->Enabled == false) //Clicker is stopped
 				{
 					ACStartButton->PerformClick();
 				}
@@ -690,17 +690,17 @@ namespace PRATHTool {
 	}
 	private: System::Void AKKeyPressCheckTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
 		AKKeyPressCheckTimer->Interval = 1;
-		if (_PROFILE.AKHOTKEY == TRUE)
+		if (_PROFILE.AKHOTKEY == true)
 		{
 			if (GetKeyState(VK_RSHIFT) & 0x8000)
 			{
 				AKKeyPressCheckTimer->Stop();
 
-				if (AKStartButton->Enabled == FALSE) //Key presser is running
+				if (AKStartButton->Enabled == false) //Key presser is running
 				{
 					AKStopButton->PerformClick();
 				}
-				else if (AKStopButton->Enabled == FALSE) //key presser is stopped
+				else if (AKStopButton->Enabled == false) //key presser is stopped
 				{
 					AKStartButton->PerformClick();
 				}
@@ -730,15 +730,15 @@ namespace PRATHTool {
 	private: DateTime AKTime;
 	private: System::String^ KeyToPress;
 	private: System::Void AKStartButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
-		if (checkACValues(_PROFILE.AKMIN, _PROFILE.AKMAX) == TRUE && _PROFILE.AKDROPDOWN > -1)
+		if (checkACValues(_PROFILE.AKMIN, _PROFILE.AKMAX) == true && _PROFILE.AKDROPDOWN > -1)
 		{
 			try
 			{
 				//label8->BackColor = Color::Chartreuse;
-				//AKMinTextBox->Enabled = FALSE;
-				//AKMaxTextBox->Enabled = FALSE;
-				//AKDropDown->Enabled = FALSE;
-				linkLabel2->Enabled = FALSE;
+				//AKMinTextBox->Enabled = false;
+				//AKMaxTextBox->Enabled = false;
+				//AKDropDown->Enabled = false;
+				linkLabel2->Enabled = false;
 
 				Key tk(_PROFILE.AKDROPDOWN);
 				KeyToPress = tk.KeyToString;
@@ -751,24 +751,24 @@ namespace PRATHTool {
 
 				AKTimer->Start();
 
-				AKStartButton->Enabled = FALSE;
-				AKStopButton->Enabled = TRUE;
+				AKStartButton->Enabled = false;
+				AKStopButton->Enabled = true;
 			}
 			catch (...)
 			{
-				AKStopButton->Enabled = TRUE;
+				AKStopButton->Enabled = true;
 				AKStopButton->PerformClick();
 			}
 
 		}
 	}
 	private: System::Void AKStopButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
-		linkLabel2->Enabled = TRUE;
+		linkLabel2->Enabled = true;
 		//label8->BackColor = SystemColors::Control;
 		AKTimer->Stop();
 		AKLabel->Text = "";
-		AKStartButton->Enabled = TRUE;
-		AKStopButton->Enabled = FALSE;
+		AKStartButton->Enabled = true;
+		AKStopButton->Enabled = false;
 	}
 	private: System::Void AKTimer_Tick(System::Object ^ sender, System::EventArgs ^ e) {
 		//Keypress
@@ -799,8 +799,8 @@ namespace PRATHTool {
 		 *
 		 ::.........................::::.........................::::.........................::*/
 	private: System::Void saveProfileAsToolStripMenuItem_Click(System::Object ^ sender, System::EventArgs ^ e) {
-		SaveProfileDialog->AddExtension = TRUE;
-		SaveProfileDialog->OverwritePrompt = TRUE;
+		SaveProfileDialog->AddExtension = true;
+		SaveProfileDialog->OverwritePrompt = true;
 		SaveProfileDialog->Filter = "PRATHTool Profile (*.PTP)|*.PTP";
 		SaveProfileDialog->ShowDialog();
 
@@ -864,7 +864,7 @@ namespace PRATHTool {
 		 *
 		 ::.........................::::.........................::::.........................::*/
 	private: System::Void loadProfileToolStripMenuItem_Click(System::Object ^ sender, System::EventArgs ^ e) {
-		OpenProfileDialog->AddExtension = TRUE;
+		OpenProfileDialog->AddExtension = true;
 		OpenProfileDialog->Filter = "PRATHTool Profile (*.PTP)|*.PTP";
 		OpenProfileDialog->ShowDialog();
 	}

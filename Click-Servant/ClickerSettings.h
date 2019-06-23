@@ -154,7 +154,7 @@ namespace PRATHTool {
 			// 
 			// RandClicksMaxTimeTextBox
 			// 
-			this->RandClicksMaxTimeTextBox->Enabled = FALSE;
+			this->RandClicksMaxTimeTextBox->Enabled = false;
 			this->RandClicksMaxTimeTextBox->Location = System::Drawing::Point(383, 40);
 			this->RandClicksMaxTimeTextBox->Name = L"RandClicksMaxTimeTextBox";
 			this->RandClicksMaxTimeTextBox->Size = System::Drawing::Size(39, 20);
@@ -162,7 +162,7 @@ namespace PRATHTool {
 			// 
 			// RandClicksMinTimeTextBox
 			// 
-			this->RandClicksMinTimeTextBox->Enabled = FALSE;
+			this->RandClicksMinTimeTextBox->Enabled = false;
 			this->RandClicksMinTimeTextBox->Location = System::Drawing::Point(338, 40);
 			this->RandClicksMinTimeTextBox->Name = L"RandClicksMinTimeTextBox";
 			this->RandClicksMinTimeTextBox->Size = System::Drawing::Size(39, 20);
@@ -171,7 +171,7 @@ namespace PRATHTool {
 			// 
 			// RandClicksCheckBox
 			// 
-			this->RandClicksCheckBox->AutoSize = TRUE;
+			this->RandClicksCheckBox->AutoSize = true;
 			this->RandClicksCheckBox->BackColor = System::Drawing::Color::Transparent;
 			this->RandClicksCheckBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->RandClicksCheckBox->Location = System::Drawing::Point(319, 17);
@@ -179,12 +179,12 @@ namespace PRATHTool {
 			this->RandClicksCheckBox->Size = System::Drawing::Size(127, 17);
 			this->RandClicksCheckBox->TabIndex = 13;
 			this->RandClicksCheckBox->Text = L"Enable multiple clicks";
-			this->RandClicksCheckBox->UseVisualStyleBackColor = FALSE;
+			this->RandClicksCheckBox->UseVisualStyleBackColor = false;
 			this->RandClicksCheckBox->CheckedChanged += gcnew System::EventHandler(this, &ClickerSettings::RandClicksCheckBox_CheckedChanged);
 			// 
 			// RandClicksRangeLabel
 			// 
-			this->RandClicksRangeLabel->AutoSize = TRUE;
+			this->RandClicksRangeLabel->AutoSize = true;
 			this->RandClicksRangeLabel->BackColor = System::Drawing::Color::Transparent;
 			this->RandClicksRangeLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->RandClicksRangeLabel->Location = System::Drawing::Point(331, 67);
@@ -204,7 +204,7 @@ namespace PRATHTool {
 			this->RandClickSaveButton->Size = System::Drawing::Size(60, 23);
 			this->RandClickSaveButton->TabIndex = 15;
 			this->RandClickSaveButton->Text = L"Save";
-			this->RandClickSaveButton->UseVisualStyleBackColor = TRUE;
+			this->RandClickSaveButton->UseVisualStyleBackColor = true;
 			this->RandClickSaveButton->Click += gcnew System::EventHandler(this, &ClickerSettings::RandClickSaveButton_Click);
 			// 
 			// RandClickCancelButton
@@ -218,12 +218,12 @@ namespace PRATHTool {
 			this->RandClickCancelButton->Size = System::Drawing::Size(60, 23);
 			this->RandClickCancelButton->TabIndex = 16;
 			this->RandClickCancelButton->Text = L"Cancel";
-			this->RandClickCancelButton->UseVisualStyleBackColor = TRUE;
+			this->RandClickCancelButton->UseVisualStyleBackColor = true;
 			this->RandClickCancelButton->Click += gcnew System::EventHandler(this, &ClickerSettings::RandClickCancelButton_Click);
 			// 
 			// RandDelayLabel
 			// 
-			this->RandDelayLabel->AutoSize = TRUE;
+			this->RandDelayLabel->AutoSize = true;
 			this->RandDelayLabel->BackColor = System::Drawing::Color::Transparent;
 			this->RandDelayLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->RandDelayLabel->Location = System::Drawing::Point(331, 129);
@@ -234,7 +234,7 @@ namespace PRATHTool {
 			// 
 			// RandDelayMaxTextBox
 			// 
-			this->RandDelayMaxTextBox->Enabled = FALSE;
+			this->RandDelayMaxTextBox->Enabled = false;
 			this->RandDelayMaxTextBox->Location = System::Drawing::Point(383, 103);
 			this->RandDelayMaxTextBox->Name = L"RandDelayMaxTextBox";
 			this->RandDelayMaxTextBox->Size = System::Drawing::Size(39, 20);
@@ -242,7 +242,7 @@ namespace PRATHTool {
 			// 
 			// RandDelayMinTextBox
 			// 
-			this->RandDelayMinTextBox->Enabled = FALSE;
+			this->RandDelayMinTextBox->Enabled = false;
 			this->RandDelayMinTextBox->Location = System::Drawing::Point(338, 103);
 			this->RandDelayMinTextBox->Name = L"RandDelayMinTextBox";
 			this->RandDelayMinTextBox->Size = System::Drawing::Size(39, 20);
@@ -269,7 +269,7 @@ namespace PRATHTool {
 			// 
 			// label4
 			// 
-			this->label4->AutoSize = TRUE;
+			this->label4->AutoSize = true;
 			this->label4->BackColor = System::Drawing::Color::Transparent;
 			this->label4->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->label4->Location = System::Drawing::Point(11, 12);
@@ -281,7 +281,7 @@ namespace PRATHTool {
 			// 
 			// ACHotkeyCheckBox
 			// 
-			this->ACHotkeyCheckBox->AutoSize = TRUE;
+			this->ACHotkeyCheckBox->AutoSize = true;
 			this->ACHotkeyCheckBox->BackColor = System::Drawing::Color::Transparent;
 			this->ACHotkeyCheckBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->ACHotkeyCheckBox->Location = System::Drawing::Point(45, 97);
@@ -289,7 +289,7 @@ namespace PRATHTool {
 			this->ACHotkeyCheckBox->Size = System::Drawing::Size(142, 17);
 			this->ACHotkeyCheckBox->TabIndex = 23;
 			this->ACHotkeyCheckBox->Text = L"Enable R-CTRL Hot-Key\r\n";
-			this->ACHotkeyCheckBox->UseVisualStyleBackColor = FALSE;
+			this->ACHotkeyCheckBox->UseVisualStyleBackColor = false;
 			// 
 			// ClickerSettings
 			// 
@@ -311,17 +311,17 @@ namespace PRATHTool {
 			this->Controls->Add(this->RandClicksCheckBox);
 			this->Controls->Add(this->RandClicksMaxTimeTextBox);
 			this->Controls->Add(this->RandClicksMinTimeTextBox);
-			this->DoubleBuffered = TRUE;
-			this->MaximizeBox = FALSE;
+			this->DoubleBuffered = true;
+			this->MaximizeBox = false;
 			this->MaximumSize = System::Drawing::Size(494, 223);
-			this->MinimizeBox = FALSE;
+			this->MinimizeBox = false;
 			this->MinimumSize = System::Drawing::Size(494, 223);
 			this->Name = L"ClickerSettings";
-			this->ShowIcon = FALSE;
+			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"Interval Clicker Settings";
 			this->Load += gcnew System::EventHandler(this, &ClickerSettings::ClickerSettings_Load);
-			this->ResumeLayout(FALSE);
+			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
@@ -335,13 +335,13 @@ namespace PRATHTool {
 				i = Convert::ToInt32(min);
 				j = Convert::ToInt32(max);
 				if (i >= j)
-					valuesAreGood = FALSE;
+					valuesAreGood = false;
 				else
-					valuesAreGood = TRUE;
+					valuesAreGood = true;
 			}
 			catch (...)
 			{
-				valuesAreGood = FALSE;
+				valuesAreGood = false;
 			}
 			return valuesAreGood;
 		}
@@ -388,7 +388,7 @@ namespace PRATHTool {
 					prof->RANDDELAYMAX = RandDelayMaxTextBox->Text;
 				}
 				//Check time interval
-				if(checkACValues(ACMinTimeTextBox->Text,ACMaxTimeTextBox->Text) != TRUE)
+				if(checkACValues(ACMinTimeTextBox->Text,ACMaxTimeTextBox->Text) != true)
 				{
 					countError++;
 					MessageBox::Show("Invalid interval range!");
@@ -432,17 +432,17 @@ namespace PRATHTool {
 	private: System::Void RandClicksCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 		if (RandClicksCheckBox->Checked == 1)
 		{
-			RandClicksMinTimeTextBox->Enabled = TRUE;
-			RandClicksMaxTimeTextBox->Enabled = TRUE;
-			RandDelayMinTextBox->Enabled = TRUE;
-			RandDelayMaxTextBox->Enabled = TRUE;
+			RandClicksMinTimeTextBox->Enabled = true;
+			RandClicksMaxTimeTextBox->Enabled = true;
+			RandDelayMinTextBox->Enabled = true;
+			RandDelayMaxTextBox->Enabled = true;
 		}
 		else
 		{
-			RandClicksMinTimeTextBox->Enabled = FALSE;
-			RandClicksMaxTimeTextBox->Enabled = FALSE;
-			RandDelayMinTextBox->Enabled = FALSE;
-			RandDelayMaxTextBox->Enabled = FALSE;
+			RandClicksMinTimeTextBox->Enabled = false;
+			RandClicksMaxTimeTextBox->Enabled = false;
+			RandDelayMinTextBox->Enabled = false;
+			RandDelayMaxTextBox->Enabled = false;
 		}
 			
 	}
