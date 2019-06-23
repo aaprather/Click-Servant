@@ -75,6 +75,7 @@ namespace PRATHTool {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(KeyerSettings::typeid));
 			this->AKHotkeyCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->AKMaxTextBox = (gcnew System::Windows::Forms::TextBox());
@@ -87,18 +88,20 @@ namespace PRATHTool {
 			// AKHotkeyCheckBox
 			// 
 			this->AKHotkeyCheckBox->AutoSize = true;
-			this->AKHotkeyCheckBox->Location = System::Drawing::Point(89, 114);
+			this->AKHotkeyCheckBox->BackColor = System::Drawing::Color::Transparent;
+			this->AKHotkeyCheckBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->AKHotkeyCheckBox->Location = System::Drawing::Point(69, 114);
 			this->AKHotkeyCheckBox->Name = L"AKHotkeyCheckBox";
-			this->AKHotkeyCheckBox->Size = System::Drawing::Size(105, 17);
+			this->AKHotkeyCheckBox->Size = System::Drawing::Size(141, 17);
 			this->AKHotkeyCheckBox->TabIndex = 13;
-			this->AKHotkeyCheckBox->Text = L"R-SHIFT Hotkey";
-			this->AKHotkeyCheckBox->UseVisualStyleBackColor = true;
+			this->AKHotkeyCheckBox->Text = L"Enable R-SHIFT Hotkey";
+			this->AKHotkeyCheckBox->UseVisualStyleBackColor = false;
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->BackColor = System::Drawing::SystemColors::Control;
-			this->label7->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
+			this->label7->BackColor = System::Drawing::Color::Transparent;
+			this->label7->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->label7->Location = System::Drawing::Point(12, 9);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(250, 39);
@@ -135,6 +138,8 @@ namespace PRATHTool {
 			// 
 			// KeyerSave
 			// 
+			this->KeyerSave->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"KeyerSave.BackgroundImage")));
+			this->KeyerSave->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->KeyerSave->Location = System::Drawing::Point(69, 146);
 			this->KeyerSave->Name = L"KeyerSave";
 			this->KeyerSave->Size = System::Drawing::Size(60, 23);
@@ -145,6 +150,8 @@ namespace PRATHTool {
 			// 
 			// KeyerCancel
 			// 
+			this->KeyerCancel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"KeyerCancel.BackgroundImage")));
+			this->KeyerCancel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->KeyerCancel->Location = System::Drawing::Point(145, 146);
 			this->KeyerCancel->Name = L"KeyerCancel";
 			this->KeyerCancel->Size = System::Drawing::Size(60, 23);
@@ -157,6 +164,8 @@ namespace PRATHTool {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(271, 181);
 			this->Controls->Add(this->KeyerCancel);
 			this->Controls->Add(this->KeyerSave);
@@ -165,6 +174,7 @@ namespace PRATHTool {
 			this->Controls->Add(this->AKMinTextBox);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->AKHotkeyCheckBox);
+			this->DoubleBuffered = true;
 			this->MaximumSize = System::Drawing::Size(287, 220);
 			this->MinimumSize = System::Drawing::Size(287, 220);
 			this->Name = L"KeyerSettings";

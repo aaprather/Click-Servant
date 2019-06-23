@@ -173,7 +173,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="PRATHTool.rc" />
+    <ResourceCompile Include="Click-Servant.rc" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\Downloads\asd(1).ico" />
