@@ -503,6 +503,8 @@ namespace PRATHTool {
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
+			this->MaximumSize = System::Drawing::Size(730, 209);
+			this->MinimumSize = System::Drawing::Size(730, 209);
 			this->Name = L"MyForm";
 			this->Opacity = 0.99;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
