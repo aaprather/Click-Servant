@@ -68,10 +68,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\asd(1).ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\..\Desktop\toolStripDropDownButton2.Image.png">
+    <Image Include="..\..\..\..\Desktop\poicso.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
