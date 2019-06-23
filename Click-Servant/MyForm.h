@@ -252,6 +252,8 @@ namespace PRATHTool {
 			this->ACStopButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ACStopButton.BackgroundImage")));
 			this->ACStopButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ACStopButton->Enabled = false;
+			this->ACStopButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->ACStopButton->Location = System::Drawing::Point(175, 66);
 			this->ACStopButton->Name = L"ACStopButton";
 			this->ACStopButton->Size = System::Drawing::Size(60, 23);
@@ -264,6 +266,8 @@ namespace PRATHTool {
 			// 
 			this->ACStartButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ACStartButton.BackgroundImage")));
 			this->ACStartButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ACStartButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->ACStartButton->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->ACStartButton->Location = System::Drawing::Point(109, 66);
 			this->ACStartButton->Name = L"ACStartButton";
@@ -336,6 +340,8 @@ namespace PRATHTool {
 			this->AKStopButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"AKStopButton.BackgroundImage")));
 			this->AKStopButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->AKStopButton->Enabled = false;
+			this->AKStopButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->AKStopButton->Location = System::Drawing::Point(198, 67);
 			this->AKStopButton->Name = L"AKStopButton";
 			this->AKStopButton->Size = System::Drawing::Size(60, 23);
@@ -348,6 +354,8 @@ namespace PRATHTool {
 			// 
 			this->AKStartButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"AKStartButton.BackgroundImage")));
 			this->AKStartButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->AKStartButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->AKStartButton->Location = System::Drawing::Point(132, 66);
 			this->AKStartButton->Name = L"AKStartButton";
 			this->AKStartButton->Size = System::Drawing::Size(60, 23);
@@ -394,7 +402,7 @@ namespace PRATHTool {
 			this->saveProfileAsToolStripMenuItem->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"saveProfileAsToolStripMenuItem.BackgroundImage")));
 			this->saveProfileAsToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->saveProfileAsToolStripMenuItem->Name = L"saveProfileAsToolStripMenuItem";
-			this->saveProfileAsToolStripMenuItem->Size = System::Drawing::Size(160, 22);
+			this->saveProfileAsToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->saveProfileAsToolStripMenuItem->Text = L"Save Profile As...";
 			this->saveProfileAsToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::saveProfileAsToolStripMenuItem_Click);
 			// 
@@ -404,7 +412,7 @@ namespace PRATHTool {
 			this->loadProfileToolStripMenuItem->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"loadProfileToolStripMenuItem.BackgroundImage")));
 			this->loadProfileToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->loadProfileToolStripMenuItem->Name = L"loadProfileToolStripMenuItem";
-			this->loadProfileToolStripMenuItem->Size = System::Drawing::Size(160, 22);
+			this->loadProfileToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->loadProfileToolStripMenuItem->Text = L"Load Profile";
 			this->loadProfileToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::loadProfileToolStripMenuItem_Click);
 			// 
@@ -429,7 +437,7 @@ namespace PRATHTool {
 			this->aboutToolStripMenuItem->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->aboutToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(173, 22);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->aboutToolStripMenuItem->Text = L"About";
 			// 
 			// checkForUpdatesToolStripMenuItem
@@ -439,7 +447,7 @@ namespace PRATHTool {
 			this->checkForUpdatesToolStripMenuItem->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->checkForUpdatesToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->checkForUpdatesToolStripMenuItem->Name = L"checkForUpdatesToolStripMenuItem";
-			this->checkForUpdatesToolStripMenuItem->Size = System::Drawing::Size(173, 22);
+			this->checkForUpdatesToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->checkForUpdatesToolStripMenuItem->Text = L"Check For Updates";
 			this->checkForUpdatesToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::CheckForUpdatesToolStripMenuItem_Click);
 			// 

@@ -197,6 +197,8 @@ namespace PRATHTool {
 			// 
 			this->RandClickSaveButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"RandClickSaveButton.BackgroundImage")));
 			this->RandClickSaveButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->RandClickSaveButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->RandClickSaveButton->Location = System::Drawing::Point(178, 149);
 			this->RandClickSaveButton->Name = L"RandClickSaveButton";
 			this->RandClickSaveButton->Size = System::Drawing::Size(60, 23);
@@ -209,6 +211,8 @@ namespace PRATHTool {
 			// 
 			this->RandClickCancelButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"RandClickCancelButton.BackgroundImage")));
 			this->RandClickCancelButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->RandClickCancelButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->RandClickCancelButton->Location = System::Drawing::Point(244, 149);
 			this->RandClickCancelButton->Name = L"RandClickCancelButton";
 			this->RandClickCancelButton->Size = System::Drawing::Size(60, 23);

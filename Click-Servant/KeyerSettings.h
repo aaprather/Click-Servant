@@ -140,6 +140,8 @@ namespace PRATHTool {
 			// 
 			this->KeyerSave->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"KeyerSave.BackgroundImage")));
 			this->KeyerSave->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->KeyerSave->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->KeyerSave->Location = System::Drawing::Point(69, 146);
 			this->KeyerSave->Name = L"KeyerSave";
 			this->KeyerSave->Size = System::Drawing::Size(60, 23);
@@ -152,6 +154,8 @@ namespace PRATHTool {
 			// 
 			this->KeyerCancel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"KeyerCancel.BackgroundImage")));
 			this->KeyerCancel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->KeyerCancel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->KeyerCancel->Location = System::Drawing::Point(145, 146);
 			this->KeyerCancel->Name = L"KeyerCancel";
 			this->KeyerCancel->Size = System::Drawing::Size(60, 23);
