@@ -176,9 +176,7 @@
     <ResourceCompile Include="Click-Servant.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\Desktop\poicso.ico">
-      <DeploymentContent>false</DeploymentContent>
-    </Image>
+    <Image Include="Rex\poico5.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -68,7 +68,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\Desktop\poicso.ico">
+    <Image Include="Rex\poico5.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
