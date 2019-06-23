@@ -176,6 +176,7 @@
     <ResourceCompile Include="Click-Servant.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\Desktop\toolStripDropDownButton2.Image.png" />
     <Image Include="..\..\..\..\Downloads\asd(1).ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
