@@ -82,7 +82,7 @@ namespace PRATHTool {
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
 
-	private: System::Windows::Forms::PictureBox^ pictureBox5;
+
 
 	private: System::Windows::Forms::PictureBox^ pictureBox6;
 
@@ -109,19 +109,22 @@ namespace PRATHTool {
 	private: System::Windows::Forms::ToolStripLabel^ toolStripLabel8;
 	private: System::Windows::Forms::ToolStripLabel^ toolStripLabel7;
 	private: System::Windows::Forms::ToolStripSeparator^ toolStripSeparator7;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
 	private: System::Windows::Forms::PictureBox^ pictureBox4;
 
 
 	private: System::Windows::Forms::PictureBox^ pictureBox9;
 
 	private: System::Windows::Forms::PictureBox^ pictureBox11;
+	private: System::Windows::Forms::ToolStripLabel^ keyTSLabel;
+
+	private: System::Windows::Forms::ToolStripSeparator^ toolStripSeparator8;
 
 
 
 
 
-	private: System::Windows::Forms::PictureBox^ pictureBox17;
+
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -166,7 +169,6 @@ namespace PRATHTool {
 			this->AKKeyPressCheckTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->RandomClicksTimer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->mouseUpdateTimer = (gcnew System::Windows::Forms::Timer(this->components));
-			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
 			this->toolStrip3 = (gcnew System::Windows::Forms::ToolStrip());
 			this->toolStripLabel2 = (gcnew System::Windows::Forms::ToolStripLabel());
@@ -176,6 +178,8 @@ namespace PRATHTool {
 			this->toolStripSeparator5 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->nextKeyTSLabel = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->toolStripSeparator6 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->keyTSLabel = (gcnew System::Windows::Forms::ToolStripLabel());
+			this->toolStripSeparator8 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->toolStripLabel6 = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->toolStrip2 = (gcnew System::Windows::Forms::ToolStrip());
 			this->toolStripLabel1 = (gcnew System::Windows::Forms::ToolStripLabel());
@@ -188,25 +192,20 @@ namespace PRATHTool {
 			this->cursorCoordsTSLabel = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->toolStripSeparator7 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->toolStripLabel5 = (gcnew System::Windows::Forms::ToolStripLabel());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox11 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox17 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->toolStrip1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
 			this->toolStrip3->SuspendLayout();
 			this->toolStrip2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox11))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox17))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel2
@@ -216,9 +215,9 @@ namespace PRATHTool {
 			this->panel2->Controls->Add(this->linkLabel1);
 			this->panel2->Controls->Add(this->ACStopButton);
 			this->panel2->Controls->Add(this->ACStartButton);
-			this->panel2->Location = System::Drawing::Point(38, 41);
+			this->panel2->Location = System::Drawing::Point(94, 35);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(172, 92);
+			this->panel2->Size = System::Drawing::Size(172, 83);
 			this->panel2->TabIndex = 7;
 			// 
 			// pictureBox2
@@ -292,9 +291,9 @@ namespace PRATHTool {
 			this->panel3->Controls->Add(this->linkLabel2);
 			this->panel3->Controls->Add(this->AKStopButton);
 			this->panel3->Controls->Add(this->AKStartButton);
-			this->panel3->Location = System::Drawing::Point(364, 41);
+			this->panel3->Location = System::Drawing::Point(291, 35);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(180, 92);
+			this->panel3->Size = System::Drawing::Size(180, 83);
 			this->panel3->TabIndex = 11;
 			// 
 			// pictureBox3
@@ -390,7 +389,7 @@ namespace PRATHTool {
 			this->saveProfileAsToolStripMenuItem->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"saveProfileAsToolStripMenuItem.BackgroundImage")));
 			this->saveProfileAsToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->saveProfileAsToolStripMenuItem->Name = L"saveProfileAsToolStripMenuItem";
-			this->saveProfileAsToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->saveProfileAsToolStripMenuItem->Size = System::Drawing::Size(166, 22);
 			this->saveProfileAsToolStripMenuItem->Text = L"Save Profile As...";
 			this->saveProfileAsToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::saveProfileAsToolStripMenuItem_Click);
 			// 
@@ -400,7 +399,7 @@ namespace PRATHTool {
 			this->loadProfileToolStripMenuItem->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"loadProfileToolStripMenuItem.BackgroundImage")));
 			this->loadProfileToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->loadProfileToolStripMenuItem->Name = L"loadProfileToolStripMenuItem";
-			this->loadProfileToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->loadProfileToolStripMenuItem->Size = System::Drawing::Size(166, 22);
 			this->loadProfileToolStripMenuItem->Text = L"Load Profile";
 			this->loadProfileToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::loadProfileToolStripMenuItem_Click);
 			// 
@@ -474,16 +473,6 @@ namespace PRATHTool {
 			this->mouseUpdateTimer->Interval = 1;
 			this->mouseUpdateTimer->Tick += gcnew System::EventHandler(this, &MyForm::MouseUpdateTimer_Tick);
 			// 
-			// pictureBox5
-			// 
-			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
-			this->pictureBox5->Location = System::Drawing::Point(-4, -6);
-			this->pictureBox5->Name = L"pictureBox5";
-			this->pictureBox5->Size = System::Drawing::Size(10, 38);
-			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox5->TabIndex = 21;
-			this->pictureBox5->TabStop = false;
-			// 
 			// pictureBox6
 			// 
 			this->pictureBox6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.Image")));
@@ -498,10 +487,10 @@ namespace PRATHTool {
 			// 
 			this->toolStrip3->BackColor = System::Drawing::Color::Transparent;
 			this->toolStrip3->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->toolStrip3->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(8) {
+			this->toolStrip3->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(10) {
 				this->toolStripLabel2,
 					this->toolStripLabel8, this->toolStripSeparator4, this->keyIntervalTSLabel, this->toolStripSeparator5, this->nextKeyTSLabel,
-					this->toolStripSeparator6, this->toolStripLabel6
+					this->toolStripSeparator6, this->keyTSLabel, this->toolStripSeparator8, this->toolStripLabel6
 			});
 			this->toolStrip3->Location = System::Drawing::Point(0, 172);
 			this->toolStrip3->Name = L"toolStrip3";
@@ -554,6 +543,19 @@ namespace PRATHTool {
 			// 
 			this->toolStripSeparator6->Name = L"toolStripSeparator6";
 			this->toolStripSeparator6->Size = System::Drawing::Size(6, 25);
+			// 
+			// keyTSLabel
+			// 
+			this->keyTSLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
+			this->keyTSLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->keyTSLabel->Name = L"keyTSLabel";
+			this->keyTSLabel->Size = System::Drawing::Size(65, 22);
+			this->keyTSLabel->Text = L"[Key]:  ESC";
+			// 
+			// toolStripSeparator8
+			// 
+			this->toolStripSeparator8->Name = L"toolStripSeparator8";
+			this->toolStripSeparator8->Size = System::Drawing::Size(6, 25);
 			// 
 			// toolStripLabel6
 			// 
@@ -641,17 +643,6 @@ namespace PRATHTool {
 			this->toolStripLabel5->Name = L"toolStripLabel5";
 			this->toolStripLabel5->Size = System::Drawing::Size(16, 22);
 			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(232, 47);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(112, 86);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox1->TabIndex = 28;
-			this->pictureBox1->TabStop = false;
-			// 
 			// pictureBox4
 			// 
 			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
@@ -682,16 +673,6 @@ namespace PRATHTool {
 			this->pictureBox11->TabIndex = 34;
 			this->pictureBox11->TabStop = false;
 			// 
-			// pictureBox17
-			// 
-			this->pictureBox17->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox17.Image")));
-			this->pictureBox17->Location = System::Drawing::Point(579, -15);
-			this->pictureBox17->Name = L"pictureBox17";
-			this->pictureBox17->Size = System::Drawing::Size(10, 38);
-			this->pictureBox17->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox17->TabIndex = 40;
-			this->pictureBox17->TabStop = false;
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -699,14 +680,11 @@ namespace PRATHTool {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(584, 197);
-			this->Controls->Add(this->pictureBox17);
 			this->Controls->Add(this->pictureBox11);
 			this->Controls->Add(this->pictureBox9);
 			this->Controls->Add(this->pictureBox4);
-			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->toolStrip2);
 			this->Controls->Add(this->toolStrip3);
-			this->Controls->Add(this->pictureBox5);
 			this->Controls->Add(this->pictureBox6);
 			this->Controls->Add(this->toolStrip1);
 			this->Controls->Add(this->panel3);
@@ -729,17 +707,14 @@ namespace PRATHTool {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->toolStrip1->ResumeLayout(false);
 			this->toolStrip1->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
 			this->toolStrip3->ResumeLayout(false);
 			this->toolStrip3->PerformLayout();
 			this->toolStrip2->ResumeLayout(false);
 			this->toolStrip2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox11))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox17))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1130,6 +1105,10 @@ namespace PRATHTool {
 
 	private: System::Void MouseUpdateTimer_Tick(System::Object^ sender, System::EventArgs^ e) {
 		cursorCoordsTSLabel->Text = "(X: " + System::Windows::Forms::Cursor::Position.X + ", Y: " + System::Windows::Forms::Cursor::Position.Y + ")";
+
+		Key tk(_PROFILE.AKDROPDOWN);
+		keyTSLabel->Text = "[Key]: "+ (tk.KeyToString)->Replace("{","")->Replace("}","");
+		//_PROFILE.AKDROPDOWN
 
 		int nextClickTimeMs = -1;
 		switch (ACActive)
