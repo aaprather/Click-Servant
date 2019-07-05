@@ -154,7 +154,12 @@ namespace PRATHTool {
 			// 
 			// RandClicksMaxTimeTextBox
 			// 
+			this->RandClicksMaxTimeTextBox->BackColor = System::Drawing::SystemColors::WindowText;
+			this->RandClicksMaxTimeTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->RandClicksMaxTimeTextBox->Enabled = false;
+			this->RandClicksMaxTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->RandClicksMaxTimeTextBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->RandClicksMaxTimeTextBox->Location = System::Drawing::Point(383, 40);
 			this->RandClicksMaxTimeTextBox->Name = L"RandClicksMaxTimeTextBox";
 			this->RandClicksMaxTimeTextBox->Size = System::Drawing::Size(39, 20);
@@ -162,7 +167,12 @@ namespace PRATHTool {
 			// 
 			// RandClicksMinTimeTextBox
 			// 
+			this->RandClicksMinTimeTextBox->BackColor = System::Drawing::SystemColors::WindowText;
+			this->RandClicksMinTimeTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->RandClicksMinTimeTextBox->Enabled = false;
+			this->RandClicksMinTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->RandClicksMinTimeTextBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->RandClicksMinTimeTextBox->Location = System::Drawing::Point(338, 40);
 			this->RandClicksMinTimeTextBox->Name = L"RandClicksMinTimeTextBox";
 			this->RandClicksMinTimeTextBox->Size = System::Drawing::Size(39, 20);
@@ -173,10 +183,12 @@ namespace PRATHTool {
 			// 
 			this->RandClicksCheckBox->AutoSize = true;
 			this->RandClicksCheckBox->BackColor = System::Drawing::Color::Transparent;
+			this->RandClicksCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->RandClicksCheckBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->RandClicksCheckBox->Location = System::Drawing::Point(319, 17);
 			this->RandClicksCheckBox->Name = L"RandClicksCheckBox";
-			this->RandClicksCheckBox->Size = System::Drawing::Size(127, 17);
+			this->RandClicksCheckBox->Size = System::Drawing::Size(149, 17);
 			this->RandClicksCheckBox->TabIndex = 13;
 			this->RandClicksCheckBox->Text = L"Enable multiple clicks";
 			this->RandClicksCheckBox->UseVisualStyleBackColor = false;
@@ -234,7 +246,12 @@ namespace PRATHTool {
 			// 
 			// RandDelayMaxTextBox
 			// 
+			this->RandDelayMaxTextBox->BackColor = System::Drawing::SystemColors::WindowText;
+			this->RandDelayMaxTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->RandDelayMaxTextBox->Enabled = false;
+			this->RandDelayMaxTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->RandDelayMaxTextBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->RandDelayMaxTextBox->Location = System::Drawing::Point(383, 103);
 			this->RandDelayMaxTextBox->Name = L"RandDelayMaxTextBox";
 			this->RandDelayMaxTextBox->Size = System::Drawing::Size(39, 20);
@@ -242,7 +259,12 @@ namespace PRATHTool {
 			// 
 			// RandDelayMinTextBox
 			// 
+			this->RandDelayMinTextBox->BackColor = System::Drawing::SystemColors::WindowText;
+			this->RandDelayMinTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->RandDelayMinTextBox->Enabled = false;
+			this->RandDelayMinTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->RandDelayMinTextBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->RandDelayMinTextBox->Location = System::Drawing::Point(338, 103);
 			this->RandDelayMinTextBox->Name = L"RandDelayMinTextBox";
 			this->RandDelayMinTextBox->Size = System::Drawing::Size(39, 20);
@@ -254,6 +276,11 @@ namespace PRATHTool {
 			// 
 			// ACMaxTimeTextBox
 			// 
+			this->ACMaxTimeTextBox->BackColor = System::Drawing::SystemColors::WindowText;
+			this->ACMaxTimeTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->ACMaxTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ACMaxTimeTextBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->ACMaxTimeTextBox->Location = System::Drawing::Point(110, 60);
 			this->ACMaxTimeTextBox->Name = L"ACMaxTimeTextBox";
 			this->ACMaxTimeTextBox->Size = System::Drawing::Size(59, 20);
@@ -261,7 +288,11 @@ namespace PRATHTool {
 			// 
 			// ACMinTimeTextBox
 			// 
-			this->ACMinTimeTextBox->ForeColor = System::Drawing::SystemColors::WindowText;
+			this->ACMinTimeTextBox->BackColor = System::Drawing::SystemColors::WindowText;
+			this->ACMinTimeTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->ACMinTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ACMinTimeTextBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->ACMinTimeTextBox->Location = System::Drawing::Point(45, 60);
 			this->ACMinTimeTextBox->Name = L"ACMinTimeTextBox";
 			this->ACMinTimeTextBox->Size = System::Drawing::Size(59, 20);
@@ -283,10 +314,12 @@ namespace PRATHTool {
 			// 
 			this->ACHotkeyCheckBox->AutoSize = true;
 			this->ACHotkeyCheckBox->BackColor = System::Drawing::Color::Transparent;
+			this->ACHotkeyCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->ACHotkeyCheckBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->ACHotkeyCheckBox->Location = System::Drawing::Point(45, 97);
 			this->ACHotkeyCheckBox->Name = L"ACHotkeyCheckBox";
-			this->ACHotkeyCheckBox->Size = System::Drawing::Size(142, 17);
+			this->ACHotkeyCheckBox->Size = System::Drawing::Size(163, 17);
 			this->ACHotkeyCheckBox->TabIndex = 23;
 			this->ACHotkeyCheckBox->Text = L"Enable R-CTRL Hot-Key\r\n";
 			this->ACHotkeyCheckBox->UseVisualStyleBackColor = false;

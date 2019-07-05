@@ -89,10 +89,12 @@ namespace PRATHTool {
 			// 
 			this->AKHotkeyCheckBox->AutoSize = true;
 			this->AKHotkeyCheckBox->BackColor = System::Drawing::Color::Transparent;
+			this->AKHotkeyCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->AKHotkeyCheckBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->AKHotkeyCheckBox->Location = System::Drawing::Point(69, 114);
+			this->AKHotkeyCheckBox->Location = System::Drawing::Point(73, 114);
 			this->AKHotkeyCheckBox->Name = L"AKHotkeyCheckBox";
-			this->AKHotkeyCheckBox->Size = System::Drawing::Size(141, 17);
+			this->AKHotkeyCheckBox->Size = System::Drawing::Size(162, 17);
 			this->AKHotkeyCheckBox->TabIndex = 13;
 			this->AKHotkeyCheckBox->Text = L"Enable R-SHIFT Hotkey";
 			this->AKHotkeyCheckBox->UseVisualStyleBackColor = false;
@@ -101,8 +103,10 @@ namespace PRATHTool {
 			// 
 			this->label7->AutoSize = true;
 			this->label7->BackColor = System::Drawing::Color::Transparent;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->label7->Location = System::Drawing::Point(12, 9);
+			this->label7->Location = System::Drawing::Point(36, 9);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(250, 39);
 			this->label7->TabIndex = 14;
@@ -111,27 +115,41 @@ namespace PRATHTool {
 			// 
 			// AKMaxTextBox
 			// 
-			this->AKMaxTextBox->Location = System::Drawing::Point(135, 61);
+			this->AKMaxTextBox->BackColor = System::Drawing::SystemColors::WindowText;
+			this->AKMaxTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->AKMaxTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AKMaxTextBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->AKMaxTextBox->Location = System::Drawing::Point(154, 61);
 			this->AKMaxTextBox->Name = L"AKMaxTextBox";
 			this->AKMaxTextBox->Size = System::Drawing::Size(59, 20);
 			this->AKMaxTextBox->TabIndex = 16;
 			// 
 			// AKMinTextBox
 			// 
-			this->AKMinTextBox->Location = System::Drawing::Point(70, 61);
+			this->AKMinTextBox->BackColor = System::Drawing::SystemColors::WindowText;
+			this->AKMinTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->AKMinTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AKMinTextBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->AKMinTextBox->Location = System::Drawing::Point(89, 61);
 			this->AKMinTextBox->Name = L"AKMinTextBox";
 			this->AKMinTextBox->Size = System::Drawing::Size(59, 20);
 			this->AKMinTextBox->TabIndex = 15;
 			// 
 			// AKDropDown
 			// 
+			this->AKDropDown->BackColor = System::Drawing::SystemColors::WindowText;
+			this->AKDropDown->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AKDropDown->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->AKDropDown->FormattingEnabled = true;
 			this->AKDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(21) {
 				L"Escape", L"BackSpace", L"End", L"Home", L"F1",
 					L"F2", L"F3", L"F4", L"F5", L"F6", L"F7", L"F8", L"F9", L"F10", L"F11", L"F12", L"Tab", L"Up Arrow", L"Down Arrow", L"Left Arrow",
 					L"Right Arrow"
 			});
-			this->AKDropDown->Location = System::Drawing::Point(98, 87);
+			this->AKDropDown->Location = System::Drawing::Point(117, 87);
 			this->AKDropDown->Name = L"AKDropDown";
 			this->AKDropDown->Size = System::Drawing::Size(76, 21);
 			this->AKDropDown->TabIndex = 17;
@@ -142,7 +160,7 @@ namespace PRATHTool {
 			this->KeyerSave->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->KeyerSave->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->KeyerSave->Location = System::Drawing::Point(69, 146);
+			this->KeyerSave->Location = System::Drawing::Point(88, 146);
 			this->KeyerSave->Name = L"KeyerSave";
 			this->KeyerSave->Size = System::Drawing::Size(60, 23);
 			this->KeyerSave->TabIndex = 18;
@@ -156,7 +174,7 @@ namespace PRATHTool {
 			this->KeyerCancel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->KeyerCancel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->KeyerCancel->Location = System::Drawing::Point(145, 146);
+			this->KeyerCancel->Location = System::Drawing::Point(164, 146);
 			this->KeyerCancel->Name = L"KeyerCancel";
 			this->KeyerCancel->Size = System::Drawing::Size(60, 23);
 			this->KeyerCancel->TabIndex = 19;
@@ -170,7 +188,7 @@ namespace PRATHTool {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(271, 181);
+			this->ClientSize = System::Drawing::Size(309, 181);
 			this->Controls->Add(this->KeyerCancel);
 			this->Controls->Add(this->KeyerSave);
 			this->Controls->Add(this->AKDropDown);
@@ -179,8 +197,8 @@ namespace PRATHTool {
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->AKHotkeyCheckBox);
 			this->DoubleBuffered = true;
-			this->MaximumSize = System::Drawing::Size(287, 220);
-			this->MinimumSize = System::Drawing::Size(287, 220);
+			this->MaximumSize = System::Drawing::Size(325, 220);
+			this->MinimumSize = System::Drawing::Size(325, 220);
 			this->Name = L"KeyerSettings";
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
