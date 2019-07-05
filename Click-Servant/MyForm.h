@@ -119,6 +119,13 @@ namespace PRATHTool {
 	private: System::Windows::Forms::ToolStripLabel^ keyTSLabel;
 
 	private: System::Windows::Forms::ToolStripSeparator^ toolStripSeparator8;
+	private: System::Windows::Forms::ToolStripLabel^ toolStripLabel3;
+private: System::Windows::Forms::ToolStripLabel^ toolStripLabel4;
+private: System::Windows::Forms::ToolStripLabel^ toolStripLabel9;
+private: System::Windows::Forms::ToolStripLabel^ toolStripLabel10;
+private: System::Windows::Forms::ToolStripLabel^ toolStripLabel11;
+private: System::Windows::Forms::PictureBox^ pictureBox1;
+private: System::Windows::Forms::PictureBox^ pictureBox5;
 
 
 
@@ -174,10 +181,13 @@ namespace PRATHTool {
 			this->toolStripLabel2 = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->toolStripLabel8 = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->toolStripSeparator4 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->toolStripLabel9 = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->keyIntervalTSLabel = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->toolStripSeparator5 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->toolStripLabel10 = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->nextKeyTSLabel = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->toolStripSeparator6 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->toolStripLabel11 = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->keyTSLabel = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->toolStripSeparator8 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->toolStripLabel6 = (gcnew System::Windows::Forms::ToolStripLabel());
@@ -185,8 +195,10 @@ namespace PRATHTool {
 			this->toolStripLabel1 = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->toolStripLabel7 = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->toolStripSeparator1 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->toolStripLabel3 = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->clickIntervalTSLabel = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->toolStripSeparator2 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->toolStripLabel4 = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->nextClickTSLabel = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->toolStripSeparator3 = (gcnew System::Windows::Forms::ToolStripSeparator());
 			this->cursorCoordsTSLabel = (gcnew System::Windows::Forms::ToolStripLabel());
@@ -195,6 +207,8 @@ namespace PRATHTool {
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox11 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel3->SuspendLayout();
@@ -206,18 +220,21 @@ namespace PRATHTool {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox11))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::Color::Transparent;
+			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->panel2->Controls->Add(this->pictureBox2);
 			this->panel2->Controls->Add(this->linkLabel1);
 			this->panel2->Controls->Add(this->ACStopButton);
 			this->panel2->Controls->Add(this->ACStartButton);
 			this->panel2->Location = System::Drawing::Point(94, 35);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(172, 83);
+			this->panel2->Size = System::Drawing::Size(172, 98);
 			this->panel2->TabIndex = 7;
 			// 
 			// pictureBox2
@@ -287,19 +304,20 @@ namespace PRATHTool {
 			// panel3
 			// 
 			this->panel3->BackColor = System::Drawing::Color::Transparent;
+			this->panel3->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->panel3->Controls->Add(this->pictureBox3);
 			this->panel3->Controls->Add(this->linkLabel2);
 			this->panel3->Controls->Add(this->AKStopButton);
 			this->panel3->Controls->Add(this->AKStartButton);
 			this->panel3->Location = System::Drawing::Point(291, 35);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(180, 83);
+			this->panel3->Size = System::Drawing::Size(163, 98);
 			this->panel3->TabIndex = 11;
 			// 
 			// pictureBox3
 			// 
 			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
-			this->pictureBox3->Location = System::Drawing::Point(-60, 0);
+			this->pictureBox3->Location = System::Drawing::Point(-72, 0);
 			this->pictureBox3->Name = L"pictureBox3";
 			this->pictureBox3->Size = System::Drawing::Size(307, 35);
 			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -313,7 +331,7 @@ namespace PRATHTool {
 			this->linkLabel2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->linkLabel2->LinkColor = System::Drawing::Color::DeepSkyBlue;
-			this->linkLabel2->Location = System::Drawing::Point(74, 38);
+			this->linkLabel2->Location = System::Drawing::Point(58, 38);
 			this->linkLabel2->Name = L"linkLabel2";
 			this->linkLabel2->Size = System::Drawing::Size(53, 13);
 			this->linkLabel2->TabIndex = 14;
@@ -328,7 +346,7 @@ namespace PRATHTool {
 			this->AKStopButton->Enabled = false;
 			this->AKStopButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->AKStopButton->Location = System::Drawing::Point(100, 60);
+			this->AKStopButton->Location = System::Drawing::Point(84, 60);
 			this->AKStopButton->Name = L"AKStopButton";
 			this->AKStopButton->Size = System::Drawing::Size(60, 23);
 			this->AKStopButton->TabIndex = 10;
@@ -342,7 +360,7 @@ namespace PRATHTool {
 			this->AKStartButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->AKStartButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->AKStartButton->Location = System::Drawing::Point(34, 59);
+			this->AKStartButton->Location = System::Drawing::Point(18, 59);
 			this->AKStartButton->Name = L"AKStartButton";
 			this->AKStartButton->Size = System::Drawing::Size(60, 23);
 			this->AKStartButton->TabIndex = 9;
@@ -364,7 +382,7 @@ namespace PRATHTool {
 			this->toolStrip1->Location = System::Drawing::Point(0, 0);
 			this->toolStrip1->Name = L"toolStrip1";
 			this->toolStrip1->Padding = System::Windows::Forms::Padding(0);
-			this->toolStrip1->Size = System::Drawing::Size(584, 25);
+			this->toolStrip1->Size = System::Drawing::Size(548, 25);
 			this->toolStrip1->TabIndex = 15;
 			this->toolStrip1->Text = L"toolStrip1";
 			// 
@@ -425,7 +443,7 @@ namespace PRATHTool {
 			this->aboutToolStripMenuItem->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->aboutToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(173, 22);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->aboutToolStripMenuItem->Text = L"About";
 			// 
 			// checkForUpdatesToolStripMenuItem
@@ -435,7 +453,7 @@ namespace PRATHTool {
 			this->checkForUpdatesToolStripMenuItem->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->checkForUpdatesToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->checkForUpdatesToolStripMenuItem->Name = L"checkForUpdatesToolStripMenuItem";
-			this->checkForUpdatesToolStripMenuItem->Size = System::Drawing::Size(173, 22);
+			this->checkForUpdatesToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->checkForUpdatesToolStripMenuItem->Text = L"Check For Updates";
 			this->checkForUpdatesToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::CheckForUpdatesToolStripMenuItem_Click);
 			// 
@@ -487,15 +505,16 @@ namespace PRATHTool {
 			// 
 			this->toolStrip3->BackColor = System::Drawing::Color::Transparent;
 			this->toolStrip3->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->toolStrip3->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(10) {
+			this->toolStrip3->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(13) {
 				this->toolStripLabel2,
-					this->toolStripLabel8, this->toolStripSeparator4, this->keyIntervalTSLabel, this->toolStripSeparator5, this->nextKeyTSLabel,
-					this->toolStripSeparator6, this->keyTSLabel, this->toolStripSeparator8, this->toolStripLabel6
+					this->toolStripLabel8, this->toolStripSeparator4, this->toolStripLabel9, this->keyIntervalTSLabel, this->toolStripSeparator5,
+					this->toolStripLabel10, this->nextKeyTSLabel, this->toolStripSeparator6, this->toolStripLabel11, this->keyTSLabel, this->toolStripSeparator8,
+					this->toolStripLabel6
 			});
 			this->toolStrip3->Location = System::Drawing::Point(0, 172);
 			this->toolStrip3->Name = L"toolStrip3";
 			this->toolStrip3->Padding = System::Windows::Forms::Padding(0);
-			this->toolStrip3->Size = System::Drawing::Size(584, 25);
+			this->toolStrip3->Size = System::Drawing::Size(548, 25);
 			this->toolStrip3->TabIndex = 26;
 			this->toolStrip3->Tag = L"";
 			// 
@@ -518,39 +537,63 @@ namespace PRATHTool {
 			this->toolStripSeparator4->Name = L"toolStripSeparator4";
 			this->toolStripSeparator4->Size = System::Drawing::Size(6, 25);
 			// 
+			// toolStripLabel9
+			// 
+			this->toolStripLabel9->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
+			this->toolStripLabel9->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->toolStripLabel9->Name = L"toolStripLabel9";
+			this->toolStripLabel9->Size = System::Drawing::Size(86, 22);
+			this->toolStripLabel9->Text = L"[Key Interval]:";
+			// 
 			// keyIntervalTSLabel
 			// 
-			this->keyIntervalTSLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
-			this->keyIntervalTSLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->keyIntervalTSLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->keyIntervalTSLabel->ForeColor = System::Drawing::Color::LightBlue;
 			this->keyIntervalTSLabel->Name = L"keyIntervalTSLabel";
-			this->keyIntervalTSLabel->Size = System::Drawing::Size(164, 22);
-			this->keyIntervalTSLabel->Text = L"[Key Interval]:  Unscheduled";
+			this->keyIntervalTSLabel->Size = System::Drawing::Size(76, 22);
+			this->keyIntervalTSLabel->Text = L"Unscheduled";
 			// 
 			// toolStripSeparator5
 			// 
 			this->toolStripSeparator5->Name = L"toolStripSeparator5";
 			this->toolStripSeparator5->Size = System::Drawing::Size(6, 25);
 			// 
+			// toolStripLabel10
+			// 
+			this->toolStripLabel10->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
+			this->toolStripLabel10->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->toolStripLabel10->Name = L"toolStripLabel10";
+			this->toolStripLabel10->Size = System::Drawing::Size(70, 22);
+			this->toolStripLabel10->Text = L"[Next Key]:";
+			// 
 			// nextKeyTSLabel
 			// 
-			this->nextKeyTSLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
-			this->nextKeyTSLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->nextKeyTSLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->nextKeyTSLabel->ForeColor = System::Drawing::Color::LightBlue;
 			this->nextKeyTSLabel->Name = L"nextKeyTSLabel";
-			this->nextKeyTSLabel->Size = System::Drawing::Size(148, 22);
-			this->nextKeyTSLabel->Text = L"[Next Key]:  Unscheduled";
+			this->nextKeyTSLabel->Size = System::Drawing::Size(76, 22);
+			this->nextKeyTSLabel->Text = L"Unscheduled";
 			// 
 			// toolStripSeparator6
 			// 
 			this->toolStripSeparator6->Name = L"toolStripSeparator6";
 			this->toolStripSeparator6->Size = System::Drawing::Size(6, 25);
 			// 
+			// toolStripLabel11
+			// 
+			this->toolStripLabel11->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
+			this->toolStripLabel11->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->toolStripLabel11->Name = L"toolStripLabel11";
+			this->toolStripLabel11->Size = System::Drawing::Size(39, 22);
+			this->toolStripLabel11->Text = L"[Key]:";
+			// 
 			// keyTSLabel
 			// 
-			this->keyTSLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
-			this->keyTSLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->keyTSLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->keyTSLabel->ForeColor = System::Drawing::Color::LightBlue;
 			this->keyTSLabel->Name = L"keyTSLabel";
-			this->keyTSLabel->Size = System::Drawing::Size(65, 22);
-			this->keyTSLabel->Text = L"[Key]:  ESC";
+			this->keyTSLabel->Size = System::Drawing::Size(27, 22);
+			this->keyTSLabel->Text = L"ESC";
 			// 
 			// toolStripSeparator8
 			// 
@@ -567,15 +610,16 @@ namespace PRATHTool {
 			// 
 			this->toolStrip2->BackColor = System::Drawing::Color::Transparent;
 			this->toolStrip2->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->toolStrip2->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(10) {
+			this->toolStrip2->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(12) {
 				this->toolStripLabel1,
-					this->toolStripLabel7, this->toolStripSeparator1, this->clickIntervalTSLabel, this->toolStripSeparator2, this->nextClickTSLabel,
-					this->toolStripSeparator3, this->cursorCoordsTSLabel, this->toolStripSeparator7, this->toolStripLabel5
+					this->toolStripLabel7, this->toolStripSeparator1, this->toolStripLabel3, this->clickIntervalTSLabel, this->toolStripSeparator2,
+					this->toolStripLabel4, this->nextClickTSLabel, this->toolStripSeparator3, this->cursorCoordsTSLabel, this->toolStripSeparator7,
+					this->toolStripLabel5
 			});
 			this->toolStrip2->Location = System::Drawing::Point(0, 147);
 			this->toolStrip2->Name = L"toolStrip2";
 			this->toolStrip2->Padding = System::Windows::Forms::Padding(0);
-			this->toolStrip2->Size = System::Drawing::Size(584, 25);
+			this->toolStrip2->Size = System::Drawing::Size(548, 25);
 			this->toolStrip2->TabIndex = 27;
 			this->toolStrip2->Tag = L"";
 			// 
@@ -598,26 +642,42 @@ namespace PRATHTool {
 			this->toolStripSeparator1->Name = L"toolStripSeparator1";
 			this->toolStripSeparator1->Size = System::Drawing::Size(6, 25);
 			// 
+			// toolStripLabel3
+			// 
+			this->toolStripLabel3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
+			this->toolStripLabel3->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->toolStripLabel3->Name = L"toolStripLabel3";
+			this->toolStripLabel3->Size = System::Drawing::Size(91, 22);
+			this->toolStripLabel3->Text = L"[Click Interval]:";
+			// 
 			// clickIntervalTSLabel
 			// 
-			this->clickIntervalTSLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
-			this->clickIntervalTSLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->clickIntervalTSLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->clickIntervalTSLabel->ForeColor = System::Drawing::Color::LightBlue;
 			this->clickIntervalTSLabel->Name = L"clickIntervalTSLabel";
-			this->clickIntervalTSLabel->Size = System::Drawing::Size(169, 22);
-			this->clickIntervalTSLabel->Text = L"[Click Interval]:  Unscheduled";
+			this->clickIntervalTSLabel->Size = System::Drawing::Size(76, 22);
+			this->clickIntervalTSLabel->Text = L"Unscheduled";
 			// 
 			// toolStripSeparator2
 			// 
 			this->toolStripSeparator2->Name = L"toolStripSeparator2";
 			this->toolStripSeparator2->Size = System::Drawing::Size(6, 25);
 			// 
+			// toolStripLabel4
+			// 
+			this->toolStripLabel4->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
+			this->toolStripLabel4->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->toolStripLabel4->Name = L"toolStripLabel4";
+			this->toolStripLabel4->Size = System::Drawing::Size(75, 22);
+			this->toolStripLabel4->Text = L"[Next Click]:";
+			// 
 			// nextClickTSLabel
 			// 
-			this->nextClickTSLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
-			this->nextClickTSLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->nextClickTSLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->nextClickTSLabel->ForeColor = System::Drawing::Color::LightBlue;
 			this->nextClickTSLabel->Name = L"nextClickTSLabel";
-			this->nextClickTSLabel->Size = System::Drawing::Size(153, 22);
-			this->nextClickTSLabel->Text = L"[Next Click]:  Unscheduled";
+			this->nextClickTSLabel->Size = System::Drawing::Size(76, 22);
+			this->nextClickTSLabel->Text = L"Unscheduled";
 			// 
 			// toolStripSeparator3
 			// 
@@ -626,10 +686,10 @@ namespace PRATHTool {
 			// 
 			// cursorCoordsTSLabel
 			// 
-			this->cursorCoordsTSLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
-			this->cursorCoordsTSLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->cursorCoordsTSLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->cursorCoordsTSLabel->ForeColor = System::Drawing::Color::LightBlue;
 			this->cursorCoordsTSLabel->Name = L"cursorCoordsTSLabel";
-			this->cursorCoordsTSLabel->Size = System::Drawing::Size(90, 22);
+			this->cursorCoordsTSLabel->Size = System::Drawing::Size(83, 22);
 			this->cursorCoordsTSLabel->Text = L"(X: 100, Y: 100)";
 			// 
 			// toolStripSeparator7
@@ -673,13 +733,37 @@ namespace PRATHTool {
 			this->pictureBox11->TabIndex = 34;
 			this->pictureBox11->TabStop = false;
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(4, 38);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(88, 93);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 35;
+			this->pictureBox1->TabStop = false;
+			// 
+			// pictureBox5
+			// 
+			this->pictureBox5->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
+			this->pictureBox5->Location = System::Drawing::Point(459, 39);
+			this->pictureBox5->Name = L"pictureBox5";
+			this->pictureBox5->Size = System::Drawing::Size(88, 93);
+			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox5->TabIndex = 36;
+			this->pictureBox5->TabStop = false;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(584, 197);
+			this->ClientSize = System::Drawing::Size(548, 197);
+			this->Controls->Add(this->pictureBox5);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->pictureBox11);
 			this->Controls->Add(this->pictureBox9);
 			this->Controls->Add(this->pictureBox4);
@@ -692,8 +776,8 @@ namespace PRATHTool {
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(600, 236);
-			this->MinimumSize = System::Drawing::Size(600, 236);
+			this->MaximumSize = System::Drawing::Size(564, 236);
+			this->MinimumSize = System::Drawing::Size(564, 236);
 			this->Name = L"MyForm";
 			this->Opacity = 0.99;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -715,6 +799,8 @@ namespace PRATHTool {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox11))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -788,13 +874,13 @@ namespace PRATHTool {
 			sendMouseClick();
 			RandomClicksTimer->Interval = r.Next(Convert::ToInt32(_PROFILE.RANDDELAYMIN), Convert::ToInt32(_PROFILE.RANDDELAYMAX));
 			ACTime = DateTime::Now.AddMilliseconds(RandomClicksTimer->Interval);
-			clickIntervalTSLabel->Text = "[Click Interval]: " + RandomClicksTimer->Interval + "ms";
+			clickIntervalTSLabel->Text = RandomClicksTimer->Interval + "ms";
 			INCCOUNTER++;
 		}
 		else //We finished sub-click looping, lets reset everything and start the next main click loop.
 		{
 			INCCOUNTER = 0; //MAKE SURE TO RESET THIS OR ELSE IT WONT LOOP AGAIN!
-			clickIntervalTSLabel->Text = "[Click Interval]: Unscheduled";
+			clickIntervalTSLabel->Text = "Unscheduled";
 			updateNextMainClick();
 			RandomClicksTimer->Stop();
 			RandomClicksTimer->Interval = 1; //Reset randomclickTimer interval
@@ -808,7 +894,7 @@ namespace PRATHTool {
 		RandomClicksTimer->Interval = 1; //Reset randomclickTimer interval
 		INCCOUNTER = 0;
 		ACTimer->Stop();
-		clickIntervalTSLabel->Text = "[Click Interval]: Unscheduled";
+		clickIntervalTSLabel->Text = "Unscheduled";
 		ACStartButton->Enabled = true;
 		ACStopButton->Enabled = false;
 		ACActive = false;
@@ -850,7 +936,7 @@ namespace PRATHTool {
 		val = r.Next(Convert::ToInt32(_PROFILE.ACMIN), Convert::ToInt32(_PROFILE.ACMAX));
 		ACTimer->Interval = val;
 		ACTime = DateTime::Now.AddMilliseconds(val);
-		clickIntervalTSLabel->Text = "[Click Interval]: " + val.ToString() + "ms";
+		clickIntervalTSLabel->Text = val.ToString() + "ms";
 	}
 			/*--------------------------------------------------------------------------------------
 			::.........................::::.........................::::.........................::*/
@@ -947,7 +1033,7 @@ namespace PRATHTool {
 				AKTimer->Interval = val;
 				AKTime = DateTime::Now.AddMilliseconds(val);
 
-				keyIntervalTSLabel->Text = "[Key Interval]: " + val.ToString() + "ms";
+				keyIntervalTSLabel->Text = val.ToString() + "ms";
 
 				AKTimer->Start();
 
@@ -967,7 +1053,7 @@ namespace PRATHTool {
 	private: System::Void AKStopButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		linkLabel2->Enabled = true;
 		AKTimer->Stop();
-		keyIntervalTSLabel->Text = "[Key Interval]: Unscheduled";
+		keyIntervalTSLabel->Text = "Unscheduled";
 		AKStartButton->Enabled = true;
 		AKStopButton->Enabled = false;
 		AKActive = false;
@@ -980,7 +1066,7 @@ namespace PRATHTool {
 		int val = r.Next(Convert::ToInt32(_PROFILE.AKMIN), Convert::ToInt32(_PROFILE.AKMAX));
 		AKTimer->Interval = val;
 		AKTime = DateTime::Now.AddMilliseconds(val);
-		keyIntervalTSLabel->Text = "[Key Interval]: " + val.ToString() + "ms";
+		keyIntervalTSLabel->Text = val.ToString() + "ms";
 	}
 			 /*--------------------------------------------------------------------------------------
 			::.........................::::.........................::::.........................::*/
@@ -1107,7 +1193,7 @@ namespace PRATHTool {
 		cursorCoordsTSLabel->Text = "(X: " + System::Windows::Forms::Cursor::Position.X + ", Y: " + System::Windows::Forms::Cursor::Position.Y + ")";
 
 		Key tk(_PROFILE.AKDROPDOWN);
-		keyTSLabel->Text = "[Key]: "+ (tk.KeyToString)->Replace("{","")->Replace("}","");
+		keyTSLabel->Text = (tk.KeyToString)->Replace("{","")->Replace("}","");
 		//_PROFILE.AKDROPDOWN
 
 		int nextClickTimeMs = -1;
@@ -1115,11 +1201,11 @@ namespace PRATHTool {
 		{
 		case true:
 			nextClickTimeMs = Convert::ToInt32((ACTime - DateTime::Now).TotalMilliseconds);
-			nextClickTSLabel->Text = "[Next Click]: " + nextClickTimeMs.ToString() + "ms";
+			nextClickTSLabel->Text = nextClickTimeMs.ToString() + "ms";
 			break;
 		case false:
-			nextClickTSLabel->Text = "[Next Click]: Unscheduled";
-			clickIntervalTSLabel->Text = "[Click Interval]: Unscheduled";
+			nextClickTSLabel->Text = "Unscheduled";
+			clickIntervalTSLabel->Text = "Unscheduled";
 			break;
 		}
 
@@ -1128,11 +1214,11 @@ namespace PRATHTool {
 		{
 		case true:
 			nextKeyTimeMs = Convert::ToInt32((AKTime - DateTime::Now).TotalMilliseconds);
-			nextKeyTSLabel->Text = "[Next Key]: " + nextKeyTimeMs.ToString() + "ms";
+			nextKeyTSLabel->Text = nextKeyTimeMs.ToString() + "ms";
 			break;
 		case false:
-			nextKeyTSLabel->Text = "[Next Key]: Unscheduled";
-			keyIntervalTSLabel->Text = "[Key Interval]: Unscheduled";
+			nextKeyTSLabel->Text = "Unscheduled";
+			keyIntervalTSLabel->Text = "Unscheduled";
 			break;
 		}
 

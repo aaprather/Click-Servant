@@ -121,9 +121,9 @@ namespace PRATHTool {
 			// 
 			this->AKMaxTextBox->BackColor = System::Drawing::SystemColors::WindowText;
 			this->AKMaxTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->AKMaxTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->AKMaxTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->AKMaxTextBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->AKMaxTextBox->ForeColor = System::Drawing::Color::LightBlue;
 			this->AKMaxTextBox->Location = System::Drawing::Point(167, 48);
 			this->AKMaxTextBox->Name = L"AKMaxTextBox";
 			this->AKMaxTextBox->Size = System::Drawing::Size(59, 20);
@@ -133,9 +133,9 @@ namespace PRATHTool {
 			// 
 			this->AKMinTextBox->BackColor = System::Drawing::SystemColors::WindowText;
 			this->AKMinTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->AKMinTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->AKMinTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->AKMinTextBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->AKMinTextBox->ForeColor = System::Drawing::Color::LightBlue;
 			this->AKMinTextBox->Location = System::Drawing::Point(89, 48);
 			this->AKMinTextBox->Name = L"AKMinTextBox";
 			this->AKMinTextBox->Size = System::Drawing::Size(59, 20);
@@ -144,9 +144,9 @@ namespace PRATHTool {
 			// AKDropDown
 			// 
 			this->AKDropDown->BackColor = System::Drawing::SystemColors::WindowText;
-			this->AKDropDown->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->AKDropDown->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->AKDropDown->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->AKDropDown->ForeColor = System::Drawing::Color::LightBlue;
 			this->AKDropDown->FormattingEnabled = true;
 			this->AKDropDown->Items->AddRange(gcnew cli::array< System::Object^  >(21) {
 				L"Escape", L"BackSpace", L"End", L"Home", L"F1",

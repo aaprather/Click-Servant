@@ -165,9 +165,9 @@ namespace PRATHTool {
 			this->RandClicksMaxTimeTextBox->BackColor = System::Drawing::SystemColors::WindowText;
 			this->RandClicksMaxTimeTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->RandClicksMaxTimeTextBox->Enabled = false;
-			this->RandClicksMaxTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+			this->RandClicksMaxTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->RandClicksMaxTimeTextBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->RandClicksMaxTimeTextBox->ForeColor = System::Drawing::Color::LightBlue;
 			this->RandClicksMaxTimeTextBox->Location = System::Drawing::Point(403, 40);
 			this->RandClicksMaxTimeTextBox->Name = L"RandClicksMaxTimeTextBox";
 			this->RandClicksMaxTimeTextBox->Size = System::Drawing::Size(39, 20);
@@ -178,9 +178,9 @@ namespace PRATHTool {
 			this->RandClicksMinTimeTextBox->BackColor = System::Drawing::SystemColors::WindowText;
 			this->RandClicksMinTimeTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->RandClicksMinTimeTextBox->Enabled = false;
-			this->RandClicksMinTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+			this->RandClicksMinTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->RandClicksMinTimeTextBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->RandClicksMinTimeTextBox->ForeColor = System::Drawing::Color::LightBlue;
 			this->RandClicksMinTimeTextBox->Location = System::Drawing::Point(341, 40);
 			this->RandClicksMinTimeTextBox->Name = L"RandClicksMinTimeTextBox";
 			this->RandClicksMinTimeTextBox->Size = System::Drawing::Size(39, 20);
@@ -261,9 +261,9 @@ namespace PRATHTool {
 			this->RandDelayMaxTextBox->BackColor = System::Drawing::SystemColors::WindowText;
 			this->RandDelayMaxTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->RandDelayMaxTextBox->Enabled = false;
-			this->RandDelayMaxTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+			this->RandDelayMaxTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->RandDelayMaxTextBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->RandDelayMaxTextBox->ForeColor = System::Drawing::Color::LightBlue;
 			this->RandDelayMaxTextBox->Location = System::Drawing::Point(399, 103);
 			this->RandDelayMaxTextBox->Name = L"RandDelayMaxTextBox";
 			this->RandDelayMaxTextBox->Size = System::Drawing::Size(39, 20);
@@ -274,9 +274,9 @@ namespace PRATHTool {
 			this->RandDelayMinTextBox->BackColor = System::Drawing::SystemColors::WindowText;
 			this->RandDelayMinTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->RandDelayMinTextBox->Enabled = false;
-			this->RandDelayMinTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+			this->RandDelayMinTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->RandDelayMinTextBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->RandDelayMinTextBox->ForeColor = System::Drawing::Color::LightBlue;
 			this->RandDelayMinTextBox->Location = System::Drawing::Point(338, 103);
 			this->RandDelayMinTextBox->Name = L"RandDelayMinTextBox";
 			this->RandDelayMinTextBox->Size = System::Drawing::Size(39, 20);
@@ -290,9 +290,9 @@ namespace PRATHTool {
 			// 
 			this->ACMaxTimeTextBox->BackColor = System::Drawing::SystemColors::WindowText;
 			this->ACMaxTimeTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->ACMaxTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->ACMaxTimeTextBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->ACMaxTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->ACMaxTimeTextBox->ForeColor = System::Drawing::Color::LightBlue;
 			this->ACMaxTimeTextBox->Location = System::Drawing::Point(110, 60);
 			this->ACMaxTimeTextBox->Name = L"ACMaxTimeTextBox";
 			this->ACMaxTimeTextBox->Size = System::Drawing::Size(59, 20);
@@ -302,9 +302,9 @@ namespace PRATHTool {
 			// 
 			this->ACMinTimeTextBox->BackColor = System::Drawing::SystemColors::WindowText;
 			this->ACMinTimeTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->ACMinTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->ACMinTimeTextBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->ACMinTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->ACMinTimeTextBox->ForeColor = System::Drawing::Color::LightBlue;
 			this->ACMinTimeTextBox->Location = System::Drawing::Point(31, 60);
 			this->ACMinTimeTextBox->Name = L"ACMinTimeTextBox";
 			this->ACMinTimeTextBox->Size = System::Drawing::Size(59, 20);
