@@ -1254,7 +1254,7 @@ namespace PRATHTool {
 			break;
 		case false:
 			nextKeyTSLabel->Text = "[Next Key]: Unscheduled";
-			keyIntervalTSLabel->Text = "[Click Key]: Unscheduled";
+			keyIntervalTSLabel->Text = "[Key Interval]: Unscheduled";
 			break;
 		}
 
