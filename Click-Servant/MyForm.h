@@ -124,8 +124,13 @@ private: System::Windows::Forms::ToolStripLabel^ toolStripLabel4;
 private: System::Windows::Forms::ToolStripLabel^ toolStripLabel9;
 private: System::Windows::Forms::ToolStripLabel^ toolStripLabel10;
 private: System::Windows::Forms::ToolStripLabel^ toolStripLabel11;
-private: System::Windows::Forms::PictureBox^ pictureBox1;
-private: System::Windows::Forms::PictureBox^ pictureBox5;
+private: System::Windows::Forms::PictureBox^ cursorInactivePictureBox;
+private: System::Windows::Forms::PictureBox^ keyboardInactivePictureBox;
+
+
+
+private: System::Windows::Forms::PictureBox^ cursorActivePictureBox;
+private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 
 
 
@@ -207,8 +212,10 @@ private: System::Windows::Forms::PictureBox^ pictureBox5;
 			this->pictureBox4 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox9 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox11 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
+			this->cursorInactivePictureBox = (gcnew System::Windows::Forms::PictureBox());
+			this->keyboardInactivePictureBox = (gcnew System::Windows::Forms::PictureBox());
+			this->cursorActivePictureBox = (gcnew System::Windows::Forms::PictureBox());
+			this->keyboardActivePictureBox = (gcnew System::Windows::Forms::PictureBox());
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			this->panel3->SuspendLayout();
@@ -220,8 +227,10 @@ private: System::Windows::Forms::PictureBox^ pictureBox5;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox11))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->cursorInactivePictureBox))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->keyboardInactivePictureBox))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->cursorActivePictureBox))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->keyboardActivePictureBox))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel2
@@ -443,7 +452,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox5;
 			this->aboutToolStripMenuItem->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->aboutToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(173, 22);
 			this->aboutToolStripMenuItem->Text = L"About";
 			// 
 			// checkForUpdatesToolStripMenuItem
@@ -453,7 +462,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox5;
 			this->checkForUpdatesToolStripMenuItem->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->checkForUpdatesToolStripMenuItem->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->checkForUpdatesToolStripMenuItem->Name = L"checkForUpdatesToolStripMenuItem";
-			this->checkForUpdatesToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->checkForUpdatesToolStripMenuItem->Size = System::Drawing::Size(173, 22);
 			this->checkForUpdatesToolStripMenuItem->Text = L"Check For Updates";
 			this->checkForUpdatesToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::CheckForUpdatesToolStripMenuItem_Click);
 			// 
@@ -733,27 +742,51 @@ private: System::Windows::Forms::PictureBox^ pictureBox5;
 			this->pictureBox11->TabIndex = 34;
 			this->pictureBox11->TabStop = false;
 			// 
-			// pictureBox1
+			// cursorInactivePictureBox
 			// 
-			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(4, 38);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(88, 93);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox1->TabIndex = 35;
-			this->pictureBox1->TabStop = false;
+			this->cursorInactivePictureBox->BackColor = System::Drawing::Color::Transparent;
+			this->cursorInactivePictureBox->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"cursorInactivePictureBox.Image")));
+			this->cursorInactivePictureBox->Location = System::Drawing::Point(4, 38);
+			this->cursorInactivePictureBox->Name = L"cursorInactivePictureBox";
+			this->cursorInactivePictureBox->Size = System::Drawing::Size(88, 93);
+			this->cursorInactivePictureBox->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->cursorInactivePictureBox->TabIndex = 35;
+			this->cursorInactivePictureBox->TabStop = false;
 			// 
-			// pictureBox5
+			// keyboardInactivePictureBox
 			// 
-			this->pictureBox5->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.Image")));
-			this->pictureBox5->Location = System::Drawing::Point(459, 39);
-			this->pictureBox5->Name = L"pictureBox5";
-			this->pictureBox5->Size = System::Drawing::Size(88, 93);
-			this->pictureBox5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox5->TabIndex = 36;
-			this->pictureBox5->TabStop = false;
+			this->keyboardInactivePictureBox->BackColor = System::Drawing::Color::Transparent;
+			this->keyboardInactivePictureBox->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"keyboardInactivePictureBox.Image")));
+			this->keyboardInactivePictureBox->Location = System::Drawing::Point(459, 39);
+			this->keyboardInactivePictureBox->Name = L"keyboardInactivePictureBox";
+			this->keyboardInactivePictureBox->Size = System::Drawing::Size(88, 93);
+			this->keyboardInactivePictureBox->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->keyboardInactivePictureBox->TabIndex = 36;
+			this->keyboardInactivePictureBox->TabStop = false;
+			// 
+			// cursorActivePictureBox
+			// 
+			this->cursorActivePictureBox->BackColor = System::Drawing::Color::Transparent;
+			this->cursorActivePictureBox->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"cursorActivePictureBox.Image")));
+			this->cursorActivePictureBox->Location = System::Drawing::Point(4, 38);
+			this->cursorActivePictureBox->Name = L"cursorActivePictureBox";
+			this->cursorActivePictureBox->Size = System::Drawing::Size(88, 93);
+			this->cursorActivePictureBox->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->cursorActivePictureBox->TabIndex = 37;
+			this->cursorActivePictureBox->TabStop = false;
+			this->cursorActivePictureBox->Visible = false;
+			// 
+			// keyboardActivePictureBox
+			// 
+			this->keyboardActivePictureBox->BackColor = System::Drawing::Color::Transparent;
+			this->keyboardActivePictureBox->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"keyboardActivePictureBox.Image")));
+			this->keyboardActivePictureBox->Location = System::Drawing::Point(459, 39);
+			this->keyboardActivePictureBox->Name = L"keyboardActivePictureBox";
+			this->keyboardActivePictureBox->Size = System::Drawing::Size(88, 93);
+			this->keyboardActivePictureBox->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->keyboardActivePictureBox->TabIndex = 38;
+			this->keyboardActivePictureBox->TabStop = false;
+			this->keyboardActivePictureBox->Visible = false;
 			// 
 			// MyForm
 			// 
@@ -762,8 +795,10 @@ private: System::Windows::Forms::PictureBox^ pictureBox5;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(548, 197);
-			this->Controls->Add(this->pictureBox5);
-			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->keyboardActivePictureBox);
+			this->Controls->Add(this->cursorActivePictureBox);
+			this->Controls->Add(this->keyboardInactivePictureBox);
+			this->Controls->Add(this->cursorInactivePictureBox);
 			this->Controls->Add(this->pictureBox11);
 			this->Controls->Add(this->pictureBox9);
 			this->Controls->Add(this->pictureBox4);
@@ -799,8 +834,10 @@ private: System::Windows::Forms::PictureBox^ pictureBox5;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox9))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox11))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->cursorInactivePictureBox))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->keyboardInactivePictureBox))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->cursorActivePictureBox))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->keyboardActivePictureBox))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -844,6 +881,9 @@ private: System::Windows::Forms::PictureBox^ pictureBox5;
 				ACStopButton->Enabled = true;
 				ACActive = true;
 				toolStripDropDownButton1->Enabled = false;
+
+				cursorActivePictureBox->Visible = true;
+				cursorInactivePictureBox->Visible = false;
 			}
 			catch (...)
 			{
@@ -899,6 +939,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox5;
 		ACStopButton->Enabled = false;
 		ACActive = false;
 		toolStripDropDownButton1->Enabled = true;
+		cursorActivePictureBox->Visible = false;
+		cursorInactivePictureBox->Visible = true;
 
 	}
 
@@ -1040,6 +1082,9 @@ private: System::Windows::Forms::PictureBox^ pictureBox5;
 				AKStartButton->Enabled = false;
 				AKStopButton->Enabled = true;
 				AKActive = true;
+
+				keyboardActivePictureBox->Visible = true;
+				keyboardInactivePictureBox->Visible = false;
 			}
 			catch (...)
 			{
@@ -1057,6 +1102,8 @@ private: System::Windows::Forms::PictureBox^ pictureBox5;
 		AKStartButton->Enabled = true;
 		AKStopButton->Enabled = false;
 		AKActive = false;
+		keyboardActivePictureBox->Visible = false;
+		keyboardInactivePictureBox->Visible = true;
 	}
 	private: System::Void AKTimer_Tick(System::Object^ sender, System::EventArgs^ e) {
 		//Keypress
