@@ -1096,6 +1096,8 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 
 				AKStartButton->Visible = false;
 				AKStopButton->Visible = true;
+
+				toolStripDropDownButton1->Enabled = false;
 			}
 			catch (...)
 			{
@@ -1118,6 +1120,8 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 
 		AKStartButton->Visible = true;
 		AKStopButton->Visible = false;
+
+		toolStripDropDownButton1->Enabled = true;
 	}
 	private: System::Void AKTimer_Tick(System::Object^ sender, System::EventArgs^ e) {
 		//Keypress
