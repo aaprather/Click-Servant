@@ -277,12 +277,13 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 			this->ACStopButton->Enabled = false;
 			this->ACStopButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ACStopButton->Location = System::Drawing::Point(88, 59);
+			this->ACStopButton->Location = System::Drawing::Point(56, 60);
 			this->ACStopButton->Name = L"ACStopButton";
 			this->ACStopButton->Size = System::Drawing::Size(60, 23);
 			this->ACStopButton->TabIndex = 10;
 			this->ACStopButton->Text = L"Stop";
 			this->ACStopButton->UseVisualStyleBackColor = true;
+			this->ACStopButton->Visible = false;
 			this->ACStopButton->Click += gcnew System::EventHandler(this, &MyForm::ACStopButton_Click);
 			// 
 			// ACStartButton
@@ -292,7 +293,7 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 			this->ACStartButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ACStartButton->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->ACStartButton->Location = System::Drawing::Point(22, 59);
+			this->ACStartButton->Location = System::Drawing::Point(56, 59);
 			this->ACStartButton->Name = L"ACStartButton";
 			this->ACStartButton->Size = System::Drawing::Size(60, 23);
 			this->ACStartButton->TabIndex = 9;
@@ -355,12 +356,13 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 			this->AKStopButton->Enabled = false;
 			this->AKStopButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->AKStopButton->Location = System::Drawing::Point(84, 60);
+			this->AKStopButton->Location = System::Drawing::Point(54, 59);
 			this->AKStopButton->Name = L"AKStopButton";
 			this->AKStopButton->Size = System::Drawing::Size(60, 23);
 			this->AKStopButton->TabIndex = 10;
 			this->AKStopButton->Text = L"Stop";
 			this->AKStopButton->UseVisualStyleBackColor = true;
+			this->AKStopButton->Visible = false;
 			this->AKStopButton->Click += gcnew System::EventHandler(this, &MyForm::AKStopButton_Click);
 			// 
 			// AKStartButton
@@ -369,7 +371,7 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 			this->AKStartButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->AKStartButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->AKStartButton->Location = System::Drawing::Point(18, 59);
+			this->AKStartButton->Location = System::Drawing::Point(53, 60);
 			this->AKStartButton->Name = L"AKStartButton";
 			this->AKStartButton->Size = System::Drawing::Size(60, 23);
 			this->AKStartButton->TabIndex = 9;
@@ -882,6 +884,9 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 				ACActive = true;
 				toolStripDropDownButton1->Enabled = false;
 
+				ACStartButton->Visible = false;
+				ACStopButton->Visible = true;
+
 				cursorActivePictureBox->Visible = true;
 				cursorInactivePictureBox->Visible = false;
 			}
@@ -941,6 +946,9 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 		toolStripDropDownButton1->Enabled = true;
 		cursorActivePictureBox->Visible = false;
 		cursorInactivePictureBox->Visible = true;
+
+		ACStartButton->Visible = true;
+		ACStopButton->Visible = false;
 
 	}
 
@@ -1085,6 +1093,9 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 
 				keyboardActivePictureBox->Visible = true;
 				keyboardInactivePictureBox->Visible = false;
+
+				AKStartButton->Visible = false;
+				AKStopButton->Visible = true;
 			}
 			catch (...)
 			{
@@ -1104,6 +1115,9 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 		AKActive = false;
 		keyboardActivePictureBox->Visible = false;
 		keyboardInactivePictureBox->Visible = true;
+
+		AKStartButton->Visible = true;
+		AKStopButton->Visible = false;
 	}
 	private: System::Void AKTimer_Tick(System::Object^ sender, System::EventArgs^ e) {
 		//Keypress
