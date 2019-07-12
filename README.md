@@ -19,6 +19,5 @@
 ![ScreenShot](https://github.com/aaprather/Click-Servant/blob/master/Screenshots/s4.png)
 ![ScreenShot](https://github.com/aaprather/Click-Servant/blob/master/Screenshots/s5.png)
 ![ScreenShot](https://github.com/aaprather/Click-Servant/blob/master/Screenshots/s6.png)
-![ScreenShot](https://github.com/aaprather/Click-Servant/blob/master/Screenshots/s7.png)
 
 </p>
