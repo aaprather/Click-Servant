@@ -819,7 +819,7 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 			this->Name = L"MyForm";
 			this->Opacity = 0.99;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Click-Servant  | 2.1.3 |";
+			this->Text = L"Click-Servant  | 2.1.4 |";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
