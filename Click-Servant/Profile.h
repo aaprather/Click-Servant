@@ -17,7 +17,7 @@ public:
 	System::String^ AKMIN;
 	System::String^ AKMAX;
 	int AKHOTKEY;
-	int AKDROPDOWN;
+	int AKDROPDOWN = -1;
 	/**/
 
 	/*Extra Clicker settings*/
