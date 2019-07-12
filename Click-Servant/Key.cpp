@@ -10,6 +10,9 @@ void Key::parseKey(int ii)
 {
 	switch(ii)
 	{
+	case -1:
+		KeyToString = "Unselected";
+		break;
 	case 0: //ESCAPE KEY
 		KeyToString = "{ESC}";
 		break;
