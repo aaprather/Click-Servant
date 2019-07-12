@@ -138,6 +138,7 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 
 
 
+
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -603,8 +604,8 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 			this->keyTSLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
 			this->keyTSLabel->ForeColor = System::Drawing::Color::LightBlue;
 			this->keyTSLabel->Name = L"keyTSLabel";
-			this->keyTSLabel->Size = System::Drawing::Size(27, 22);
-			this->keyTSLabel->Text = L"ESC";
+			this->keyTSLabel->Size = System::Drawing::Size(65, 22);
+			this->keyTSLabel->Text = L"Unselected";
 			// 
 			// toolStripSeparator8
 			// 
@@ -973,7 +974,9 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 	}
 	private: System::Void LinkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		ClickerSettings CS(% _PROFILE); //Additional Settings link button pop-up
+		MyForm::Hide();
 		CS.ShowDialog();
+		MyForm::Show();
 
 	}
 	private: void sendMouseClick()
@@ -1292,7 +1295,9 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 
 	private: System::Void LinkLabel2_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		KeyerSettings KS(% _PROFILE); //Additional Settings link button pop-up
+		MyForm::Hide();
 		KS.ShowDialog();
+		MyForm::Show();
 	}
 	private: System::Void CheckForUpdatesToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		MessageBox::Show("No updates found", "Checking for updates...");
