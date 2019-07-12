@@ -22,8 +22,7 @@ namespace PRATHTool {
 		ClickerSettings(Profile^ f)
 		{
 			InitializeComponent();
-			toolTip1->SetToolTip(this->RandClicksRangeLabel, "The program will pick a number between the given range and click X many times.");
-			toolTip1->SetToolTip(this->RandDelayLabel, "Enter a range in milliseconds. This is the amount of delay between each click.");
+
 
 			prof = f;
 
@@ -65,7 +64,7 @@ namespace PRATHTool {
 
 
 
-			
+
 			//
 
 		}
@@ -93,10 +92,10 @@ namespace PRATHTool {
 
 	private: System::Windows::Forms::TextBox^ RandClicksMinTimeTextBox;
 	private: System::Windows::Forms::CheckBox^ RandClicksCheckBox;
-	private: System::Windows::Forms::Label^ RandClicksRangeLabel;
+
 	private: System::Windows::Forms::Button^ RandClickSaveButton;
 	private: System::Windows::Forms::Button^ RandClickCancelButton;
-	private: System::Windows::Forms::Label^ RandDelayLabel;
+
 	private: System::Windows::Forms::TextBox^ RandDelayMaxTextBox;
 
 
@@ -105,12 +104,24 @@ namespace PRATHTool {
 	private: System::Windows::Forms::ToolTip^ toolTip1;
 	private: System::Windows::Forms::TextBox^ ACMaxTimeTextBox;
 	private: System::Windows::Forms::TextBox^ ACMinTimeTextBox;
-	private: System::Windows::Forms::Label^ label4;
+
 	private: System::Windows::Forms::CheckBox^ ACHotkeyCheckBox;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label3;
+
 	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ label12;
+	private: System::Windows::Forms::Label^ label13;
+
 
 
 
@@ -143,32 +154,39 @@ namespace PRATHTool {
 			this->RandClicksMaxTimeTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->RandClicksMinTimeTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->RandClicksCheckBox = (gcnew System::Windows::Forms::CheckBox());
-			this->RandClicksRangeLabel = (gcnew System::Windows::Forms::Label());
 			this->RandClickSaveButton = (gcnew System::Windows::Forms::Button());
 			this->RandClickCancelButton = (gcnew System::Windows::Forms::Button());
-			this->RandDelayLabel = (gcnew System::Windows::Forms::Label());
 			this->RandDelayMaxTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->RandDelayMinTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->toolTip1 = (gcnew System::Windows::Forms::ToolTip(this->components));
 			this->ACMaxTimeTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->ACMinTimeTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->ACHotkeyCheckBox = (gcnew System::Windows::Forms::CheckBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// RandClicksMaxTimeTextBox
 			// 
-			this->RandClicksMaxTimeTextBox->BackColor = System::Drawing::SystemColors::WindowText;
+			this->RandClicksMaxTimeTextBox->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->RandClicksMaxTimeTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->RandClicksMaxTimeTextBox->Enabled = false;
 			this->RandClicksMaxTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->RandClicksMaxTimeTextBox->ForeColor = System::Drawing::Color::LightBlue;
-			this->RandClicksMaxTimeTextBox->Location = System::Drawing::Point(403, 40);
+			this->RandClicksMaxTimeTextBox->Location = System::Drawing::Point(131, 3);
 			this->RandClicksMaxTimeTextBox->Name = L"RandClicksMaxTimeTextBox";
 			this->RandClicksMaxTimeTextBox->Size = System::Drawing::Size(39, 20);
 			this->RandClicksMaxTimeTextBox->TabIndex = 4;
@@ -176,13 +194,12 @@ namespace PRATHTool {
 			// 
 			// RandClicksMinTimeTextBox
 			// 
-			this->RandClicksMinTimeTextBox->BackColor = System::Drawing::SystemColors::WindowText;
+			this->RandClicksMinTimeTextBox->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->RandClicksMinTimeTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->RandClicksMinTimeTextBox->Enabled = false;
 			this->RandClicksMinTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->RandClicksMinTimeTextBox->ForeColor = System::Drawing::Color::LightBlue;
-			this->RandClicksMinTimeTextBox->Location = System::Drawing::Point(341, 40);
+			this->RandClicksMinTimeTextBox->Location = System::Drawing::Point(31, 3);
 			this->RandClicksMinTimeTextBox->Name = L"RandClicksMinTimeTextBox";
 			this->RandClicksMinTimeTextBox->Size = System::Drawing::Size(39, 20);
 			this->RandClicksMinTimeTextBox->TabIndex = 3;
@@ -196,7 +213,7 @@ namespace PRATHTool {
 			this->RandClicksCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->RandClicksCheckBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->RandClicksCheckBox->Location = System::Drawing::Point(319, 17);
+			this->RandClicksCheckBox->Location = System::Drawing::Point(419, 0);
 			this->RandClicksCheckBox->Name = L"RandClicksCheckBox";
 			this->RandClicksCheckBox->Size = System::Drawing::Size(149, 17);
 			this->RandClicksCheckBox->TabIndex = 13;
@@ -204,26 +221,13 @@ namespace PRATHTool {
 			this->RandClicksCheckBox->UseVisualStyleBackColor = false;
 			this->RandClicksCheckBox->CheckedChanged += gcnew System::EventHandler(this, &ClickerSettings::RandClicksCheckBox_CheckedChanged);
 			// 
-			// RandClicksRangeLabel
-			// 
-			this->RandClicksRangeLabel->AutoSize = true;
-			this->RandClicksRangeLabel->BackColor = System::Drawing::Color::Transparent;
-			this->RandClicksRangeLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->RandClicksRangeLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->RandClicksRangeLabel->Location = System::Drawing::Point(325, 64);
-			this->RandClicksRangeLabel->Name = L"RandClicksRangeLabel";
-			this->RandClicksRangeLabel->Size = System::Drawing::Size(99, 26);
-			this->RandClicksRangeLabel->TabIndex = 14;
-			this->RandClicksRangeLabel->Text = L"       Click range\r\n        Eg. 1 - 5";
-			// 
 			// RandClickSaveButton
 			// 
 			this->RandClickSaveButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"RandClickSaveButton.BackgroundImage")));
 			this->RandClickSaveButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->RandClickSaveButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->RandClickSaveButton->Location = System::Drawing::Point(178, 149);
+			this->RandClickSaveButton->Location = System::Drawing::Point(218, 14);
 			this->RandClickSaveButton->Name = L"RandClickSaveButton";
 			this->RandClickSaveButton->Size = System::Drawing::Size(60, 23);
 			this->RandClickSaveButton->TabIndex = 15;
@@ -237,7 +241,7 @@ namespace PRATHTool {
 			this->RandClickCancelButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->RandClickCancelButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->RandClickCancelButton->Location = System::Drawing::Point(244, 149);
+			this->RandClickCancelButton->Location = System::Drawing::Point(218, 40);
 			this->RandClickCancelButton->Name = L"RandClickCancelButton";
 			this->RandClickCancelButton->Size = System::Drawing::Size(60, 23);
 			this->RandClickCancelButton->TabIndex = 16;
@@ -245,28 +249,14 @@ namespace PRATHTool {
 			this->RandClickCancelButton->UseVisualStyleBackColor = true;
 			this->RandClickCancelButton->Click += gcnew System::EventHandler(this, &ClickerSettings::RandClickCancelButton_Click);
 			// 
-			// RandDelayLabel
-			// 
-			this->RandDelayLabel->AutoSize = true;
-			this->RandDelayLabel->BackColor = System::Drawing::Color::Transparent;
-			this->RandDelayLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->RandDelayLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->RandDelayLabel->Location = System::Drawing::Point(331, 129);
-			this->RandDelayLabel->Name = L"RandDelayLabel";
-			this->RandDelayLabel->Size = System::Drawing::Size(125, 39);
-			this->RandDelayLabel->TabIndex = 19;
-			this->RandDelayLabel->Text = L"Delay in milliseconds\r\n     between clicks\r\n   Eg. 1000 - 5000";
-			// 
 			// RandDelayMaxTextBox
 			// 
-			this->RandDelayMaxTextBox->BackColor = System::Drawing::SystemColors::WindowText;
+			this->RandDelayMaxTextBox->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->RandDelayMaxTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->RandDelayMaxTextBox->Enabled = false;
 			this->RandDelayMaxTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->RandDelayMaxTextBox->ForeColor = System::Drawing::Color::LightBlue;
-			this->RandDelayMaxTextBox->Location = System::Drawing::Point(399, 103);
+			this->RandDelayMaxTextBox->Location = System::Drawing::Point(333, 6);
 			this->RandDelayMaxTextBox->Name = L"RandDelayMaxTextBox";
 			this->RandDelayMaxTextBox->Size = System::Drawing::Size(39, 20);
 			this->RandDelayMaxTextBox->TabIndex = 18;
@@ -274,13 +264,12 @@ namespace PRATHTool {
 			// 
 			// RandDelayMinTextBox
 			// 
-			this->RandDelayMinTextBox->BackColor = System::Drawing::SystemColors::WindowText;
+			this->RandDelayMinTextBox->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->RandDelayMinTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->RandDelayMinTextBox->Enabled = false;
 			this->RandDelayMinTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->RandDelayMinTextBox->ForeColor = System::Drawing::Color::LightBlue;
-			this->RandDelayMinTextBox->Location = System::Drawing::Point(338, 103);
+			this->RandDelayMinTextBox->Location = System::Drawing::Point(251, 5);
 			this->RandDelayMinTextBox->Name = L"RandDelayMinTextBox";
 			this->RandDelayMinTextBox->Size = System::Drawing::Size(39, 20);
 			this->RandDelayMinTextBox->TabIndex = 17;
@@ -289,15 +278,17 @@ namespace PRATHTool {
 			// toolTip1
 			// 
 			this->toolTip1->Tag = L"";
+			this->toolTip1->ToolTipIcon = System::Windows::Forms::ToolTipIcon::Info;
+			this->toolTip1->ToolTipTitle = L"General Interval Clicker Information";
 			// 
 			// ACMaxTimeTextBox
 			// 
-			this->ACMaxTimeTextBox->BackColor = System::Drawing::SystemColors::WindowText;
+			this->ACMaxTimeTextBox->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->ACMaxTimeTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->ACMaxTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->ACMaxTimeTextBox->ForeColor = System::Drawing::Color::LightBlue;
-			this->ACMaxTimeTextBox->Location = System::Drawing::Point(110, 60);
+			this->ACMaxTimeTextBox->Location = System::Drawing::Point(119, 6);
 			this->ACMaxTimeTextBox->Name = L"ACMaxTimeTextBox";
 			this->ACMaxTimeTextBox->Size = System::Drawing::Size(59, 20);
 			this->ACMaxTimeTextBox->TabIndex = 21;
@@ -305,30 +296,16 @@ namespace PRATHTool {
 			// 
 			// ACMinTimeTextBox
 			// 
-			this->ACMinTimeTextBox->BackColor = System::Drawing::SystemColors::WindowText;
+			this->ACMinTimeTextBox->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->ACMinTimeTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->ACMinTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->ACMinTimeTextBox->ForeColor = System::Drawing::Color::LightBlue;
-			this->ACMinTimeTextBox->Location = System::Drawing::Point(31, 60);
+			this->ACMinTimeTextBox->Location = System::Drawing::Point(8, 6);
 			this->ACMinTimeTextBox->Name = L"ACMinTimeTextBox";
 			this->ACMinTimeTextBox->Size = System::Drawing::Size(59, 20);
 			this->ACMinTimeTextBox->TabIndex = 20;
 			this->ACMinTimeTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->BackColor = System::Drawing::Color::Transparent;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->label4->Location = System::Drawing::Point(11, 12);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(273, 39);
-			this->label4->TabIndex = 22;
-			this->label4->Text = L"- Enter time range below in milliseconds\r\n- Every click is done at a random time "
-				L"between\r\n   the given range.";
 			// 
 			// ACHotkeyCheckBox
 			// 
@@ -337,7 +314,7 @@ namespace PRATHTool {
 			this->ACHotkeyCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ACHotkeyCheckBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->ACHotkeyCheckBox->Location = System::Drawing::Point(26, 106);
+			this->ACHotkeyCheckBox->Location = System::Drawing::Point(16, 55);
 			this->ACHotkeyCheckBox->Name = L"ACHotkeyCheckBox";
 			this->ACHotkeyCheckBox->Size = System::Drawing::Size(163, 17);
 			this->ACHotkeyCheckBox->TabIndex = 23;
@@ -351,7 +328,7 @@ namespace PRATHTool {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->label1->Location = System::Drawing::Point(386, 42);
+			this->label1->Location = System::Drawing::Point(93, 5);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(11, 13);
 			this->label1->TabIndex = 24;
@@ -364,24 +341,11 @@ namespace PRATHTool {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->label2->Location = System::Drawing::Point(95, 62);
+			this->label2->Location = System::Drawing::Point(96, 8);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(11, 13);
 			this->label2->TabIndex = 25;
 			this->label2->Text = L"-";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->label3->Location = System::Drawing::Point(50, 83);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(98, 13);
-			this->label3->TabIndex = 26;
-			this->label3->Text = L"Eg. 1000 - 5000";
 			// 
 			// label5
 			// 
@@ -390,11 +354,162 @@ namespace PRATHTool {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->label5->Location = System::Drawing::Point(383, 107);
+			this->label5->Location = System::Drawing::Point(316, 8);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(11, 13);
 			this->label5->TabIndex = 27;
 			this->label5->Text = L"-";
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::Transparent;
+			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel1->Controls->Add(this->label10);
+			this->panel1->Controls->Add(this->label11);
+			this->panel1->Controls->Add(this->label8);
+			this->panel1->Controls->Add(this->label9);
+			this->panel1->Controls->Add(this->label7);
+			this->panel1->Controls->Add(this->label6);
+			this->panel1->Controls->Add(this->RandClicksMinTimeTextBox);
+			this->panel1->Controls->Add(this->label5);
+			this->panel1->Controls->Add(this->RandClicksMaxTimeTextBox);
+			this->panel1->Controls->Add(this->label1);
+			this->panel1->Controls->Add(this->RandDelayMaxTextBox);
+			this->panel1->Controls->Add(this->RandDelayMinTextBox);
+			this->panel1->Location = System::Drawing::Point(288, 23);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(397, 54);
+			this->panel1->TabIndex = 28;
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->BackColor = System::Drawing::Color::Transparent;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label10->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->label10->Location = System::Drawing::Point(110, 27);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(104, 13);
+			this->label10->TabIndex = 32;
+			this->label10->Text = L"[Maximum Clicks]";
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->BackColor = System::Drawing::Color::Transparent;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label11->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->label11->Location = System::Drawing::Point(3, 27);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(101, 13);
+			this->label11->TabIndex = 31;
+			this->label11->Text = L"[Minimum Clicks]";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->BackColor = System::Drawing::Color::Transparent;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label8->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->label8->Location = System::Drawing::Point(326, 29);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(66, 13);
+			this->label8->TabIndex = 30;
+			this->label8->Text = L"[Maximum]";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->BackColor = System::Drawing::Color::Transparent;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label9->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->label9->Location = System::Drawing::Point(246, 28);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(63, 13);
+			this->label9->TabIndex = 29;
+			this->label9->Text = L"[Minimum]";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->BackColor = System::Drawing::Color::Transparent;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label7->ForeColor = System::Drawing::Color::LightBlue;
+			this->label7->Location = System::Drawing::Point(372, 12);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(20, 13);
+			this->label7->TabIndex = 30;
+			this->label7->Text = L"ms";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->BackColor = System::Drawing::Color::Transparent;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label6->ForeColor = System::Drawing::Color::LightBlue;
+			this->label6->Location = System::Drawing::Point(290, 10);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(20, 13);
+			this->label6->TabIndex = 29;
+			this->label6->Text = L"ms";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::Color::LightBlue;
+			this->label3->Location = System::Drawing::Point(69, 10);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(20, 13);
+			this->label3->TabIndex = 30;
+			this->label3->Text = L"ms";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::Transparent;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::Color::LightBlue;
+			this->label4->Location = System::Drawing::Point(179, 12);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(20, 13);
+			this->label4->TabIndex = 31;
+			this->label4->Text = L"ms";
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->BackColor = System::Drawing::Color::Transparent;
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label12->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->label12->Location = System::Drawing::Point(116, 32);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(66, 13);
+			this->label12->TabIndex = 33;
+			this->label12->Text = L"[Maximum]";
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->BackColor = System::Drawing::Color::Transparent;
+			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label13->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->label13->Location = System::Drawing::Point(8, 32);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(63, 13);
+			this->label13->TabIndex = 32;
+			this->label13->Text = L"[Minimum]";
 			// 
 			// ClickerSettings
 			// 
@@ -402,58 +517,55 @@ namespace PRATHTool {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(478, 184);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->ACHotkeyCheckBox);
+			this->ClientSize = System::Drawing::Size(690, 79);
+			this->Controls->Add(this->label12);
+			this->Controls->Add(this->label13);
 			this->Controls->Add(this->label4);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->ACHotkeyCheckBox);
 			this->Controls->Add(this->ACMaxTimeTextBox);
 			this->Controls->Add(this->ACMinTimeTextBox);
-			this->Controls->Add(this->RandDelayLabel);
-			this->Controls->Add(this->RandDelayMaxTextBox);
-			this->Controls->Add(this->RandDelayMinTextBox);
 			this->Controls->Add(this->RandClickCancelButton);
 			this->Controls->Add(this->RandClickSaveButton);
-			this->Controls->Add(this->RandClicksRangeLabel);
 			this->Controls->Add(this->RandClicksCheckBox);
-			this->Controls->Add(this->RandClicksMaxTimeTextBox);
-			this->Controls->Add(this->RandClicksMinTimeTextBox);
 			this->DoubleBuffered = true;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(494, 223);
+			this->MaximumSize = System::Drawing::Size(706, 118);
 			this->MinimizeBox = false;
-			this->MinimumSize = System::Drawing::Size(494, 223);
+			this->MinimumSize = System::Drawing::Size(706, 118);
 			this->Name = L"ClickerSettings";
-			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"Interval Clicker Settings";
 			this->Load += gcnew System::EventHandler(this, &ClickerSettings::ClickerSettings_Load);
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-		private: bool checkACValues(System::String^ min, System::String^ max)
+	private: bool checkACValues(System::String^ min, System::String^ max)
+	{
+		bool valuesAreGood;
+		int i, j;
+		try
 		{
-			bool valuesAreGood;
-			int i, j;
-			try
-			{
-				i = Convert::ToInt32(min);
-				j = Convert::ToInt32(max);
-				if (i >= j)
-					valuesAreGood = false;
-				else
-					valuesAreGood = true;
-			}
-			catch (...)
-			{
+			i = Convert::ToInt32(min);
+			j = Convert::ToInt32(max);
+			if (i >= j)
 				valuesAreGood = false;
-			}
-			return valuesAreGood;
+			else
+				valuesAreGood = true;
 		}
+		catch (...)
+		{
+			valuesAreGood = false;
+		}
+		return valuesAreGood;
+	}
 
 	private: System::Void RandClickSaveButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		try
@@ -462,19 +574,19 @@ namespace PRATHTool {
 			if (RandClicksCheckBox->Checked == 1)
 			{
 				//Check Random Upper is greater than 1
-				if (Convert::ToInt32(RandClicksMaxTimeTextBox->Text) < 1) 
+				if (Convert::ToInt32(RandClicksMaxTimeTextBox->Text) < 1)
 				{
 					countError++;
 					MessageBox::Show("Upper range integer for # of clicks must be a non-negative number!");
 				}
 				//Check Random Upper is greater than Random Lower
-				else if(Convert::ToInt32(RandClicksMaxTimeTextBox->Text) < Convert::ToInt32(RandClicksMinTimeTextBox->Text))
+				else if (Convert::ToInt32(RandClicksMaxTimeTextBox->Text) < Convert::ToInt32(RandClicksMinTimeTextBox->Text))
 				{
 					countError++;
 					MessageBox::Show("Upper range integer for # of clicks must be greater than the lower range!");
 				}
 				//Check Random Lower is greater than 1
-				else if(Convert::ToInt32(RandClicksMinTimeTextBox->Text) < 1)
+				else if (Convert::ToInt32(RandClicksMinTimeTextBox->Text) < 1)
 				{
 					countError++;
 					MessageBox::Show("Lower range must be greater or equal to 1!");
@@ -497,7 +609,7 @@ namespace PRATHTool {
 					prof->RANDDELAYMAX = RandDelayMaxTextBox->Text;
 				}
 				//Check time interval
-				if(checkACValues(ACMinTimeTextBox->Text,ACMaxTimeTextBox->Text) != true)
+				if (checkACValues(ACMinTimeTextBox->Text, ACMaxTimeTextBox->Text) != true)
 				{
 					countError++;
 					MessageBox::Show("Invalid interval range!");
@@ -529,7 +641,8 @@ namespace PRATHTool {
 				prof->ACHOTKEY = ACHotkeyCheckBox->Checked;
 				this->Close();
 			}
-		}catch(...)
+		}
+		catch (...)
 		{
 			MessageBox::Show("Please correctly enter your settings!");
 		}
@@ -539,24 +652,31 @@ namespace PRATHTool {
 		this->Close();
 	}
 	private: System::Void RandClicksCheckBox_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		CheckRandomClicksSetting();
+
+	}
+	private: void CheckRandomClicksSetting() {
 		if (RandClicksCheckBox->Checked == 1)
 		{
-			RandClicksMinTimeTextBox->Enabled = true;
-			RandClicksMaxTimeTextBox->Enabled = true;
-			RandDelayMinTextBox->Enabled = true;
-			RandDelayMaxTextBox->Enabled = true;
+			panel1->Enabled = true;
 		}
 		else
 		{
-			RandClicksMinTimeTextBox->Enabled = false;
-			RandClicksMaxTimeTextBox->Enabled = false;
-			RandDelayMinTextBox->Enabled = false;
-			RandDelayMaxTextBox->Enabled = false;
+			panel1->Enabled = false;
 		}
-			
 	}
 
-private: System::Void ClickerSettings_Load(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+	private: System::Void ClickerSettings_Load(System::Object^ sender, System::EventArgs^ e) {
+		CheckRandomClicksSetting();
+		toolTip1->SetToolTip(ACMinTimeTextBox, "Enter the lower range value of the desired click interval in milliseconds. For Example: 1000");
+		toolTip1->SetToolTip(ACMaxTimeTextBox, "Enter the upper range value of the desired click interval in milliseconds. For Example: 5000");
+		toolTip1->SetToolTip(ACHotkeyCheckBox, "Activate the Interval Clicker by pressing the Right-Ctrl button.");
+
+		toolTip1->SetToolTip(RandClicksMinTimeTextBox, "Enter the lower range value of the desired number of clicks per interval. For Example: 1");
+		toolTip1->SetToolTip(RandClicksMaxTimeTextBox, "Enter the upper range value of the desired number of clicks per interval. For Example: 15");
+
+		toolTip1->SetToolTip(RandDelayMinTextBox, "The interval for each click will be random. Enter the lower range value of the desired click interval in milliseconds. For Example: 1000");
+		toolTip1->SetToolTip(RandDelayMaxTextBox, "The interval for each click will be random. Enter the upper range value of the desired click interval in milliseconds. For Example: 5000");
+	}
+	};
 }
