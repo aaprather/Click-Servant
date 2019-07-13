@@ -35,9 +35,11 @@ namespace PRATHTool {
 			}
 		}
 	private: System::Windows::Forms::ToolStrip^ toolStrip1;
+	private: System::Windows::Forms::ToolStripButton^ bitCoinTSButton;
+	private: System::Windows::Forms::ToolStripButton^ liteCoinTSButton;
 	protected:
-	private: System::Windows::Forms::ToolStripButton^ toolStripButton1;
-	private: System::Windows::Forms::ToolStripButton^ toolStripButton2;
+
+
 
 	private: System::Windows::Forms::PictureBox^ bitCoinPicture;
 	private: System::Windows::Forms::TextBox^ bitCoinTextBox;
@@ -71,8 +73,8 @@ namespace PRATHTool {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Donate::typeid));
 			this->toolStrip1 = (gcnew System::Windows::Forms::ToolStrip());
-			this->toolStripButton1 = (gcnew System::Windows::Forms::ToolStripButton());
-			this->toolStripButton2 = (gcnew System::Windows::Forms::ToolStripButton());
+			this->bitCoinTSButton = (gcnew System::Windows::Forms::ToolStripButton());
+			this->liteCoinTSButton = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripButton3 = (gcnew System::Windows::Forms::ToolStripButton());
 			this->bitCoinAddress = (gcnew System::Windows::Forms::PictureBox());
 			this->bitCoinPicture = (gcnew System::Windows::Forms::PictureBox());
@@ -91,8 +93,8 @@ namespace PRATHTool {
 			// 
 			this->toolStrip1->BackColor = System::Drawing::Color::Transparent;
 			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->toolStripButton1,
-					this->toolStripButton2, this->toolStripButton3
+				this->bitCoinTSButton,
+					this->liteCoinTSButton, this->toolStripButton3
 			});
 			this->toolStrip1->Location = System::Drawing::Point(0, 0);
 			this->toolStrip1->Name = L"toolStrip1";
@@ -100,27 +102,28 @@ namespace PRATHTool {
 			this->toolStrip1->TabIndex = 0;
 			this->toolStrip1->Text = L"toolStrip1";
 			// 
-			// toolStripButton1
+			// bitCoinTSButton
 			// 
-			this->toolStripButton1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
-			this->toolStripButton1->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->toolStripButton1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton1.Image")));
-			this->toolStripButton1->ImageTransparentColor = System::Drawing::Color::Magenta;
-			this->toolStripButton1->Name = L"toolStripButton1";
-			this->toolStripButton1->Size = System::Drawing::Size(66, 22);
-			this->toolStripButton1->Text = L"Bitcoin";
-			this->toolStripButton1->Click += gcnew System::EventHandler(this, &Donate::ToolStripButton1_Click);
+			this->bitCoinTSButton->Enabled = false;
+			this->bitCoinTSButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
+			this->bitCoinTSButton->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->bitCoinTSButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bitCoinTSButton.Image")));
+			this->bitCoinTSButton->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->bitCoinTSButton->Name = L"bitCoinTSButton";
+			this->bitCoinTSButton->Size = System::Drawing::Size(66, 22);
+			this->bitCoinTSButton->Text = L"Bitcoin";
+			this->bitCoinTSButton->Click += gcnew System::EventHandler(this, &Donate::ToolStripButton1_Click);
 			// 
-			// toolStripButton2
+			// liteCoinTSButton
 			// 
-			this->toolStripButton2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
-			this->toolStripButton2->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->toolStripButton2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton2.Image")));
-			this->toolStripButton2->ImageTransparentColor = System::Drawing::Color::Magenta;
-			this->toolStripButton2->Name = L"toolStripButton2";
-			this->toolStripButton2->Size = System::Drawing::Size(71, 22);
-			this->toolStripButton2->Text = L"Litecoin";
-			this->toolStripButton2->Click += gcnew System::EventHandler(this, &Donate::ToolStripButton2_Click);
+			this->liteCoinTSButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
+			this->liteCoinTSButton->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->liteCoinTSButton->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"liteCoinTSButton.Image")));
+			this->liteCoinTSButton->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->liteCoinTSButton->Name = L"liteCoinTSButton";
+			this->liteCoinTSButton->Size = System::Drawing::Size(71, 22);
+			this->liteCoinTSButton->Text = L"Litecoin";
+			this->liteCoinTSButton->Click += gcnew System::EventHandler(this, &Donate::ToolStripButton2_Click);
 			// 
 			// toolStripButton3
 			// 
@@ -166,6 +169,7 @@ namespace PRATHTool {
 			this->bitCoinTextBox->ReadOnly = true;
 			this->bitCoinTextBox->Size = System::Drawing::Size(299, 20);
 			this->bitCoinTextBox->TabIndex = 0;
+			this->bitCoinTextBox->TabStop = false;
 			this->bitCoinTextBox->Text = L"3KwkiTj1QhmmUgHkwfWscTHUDbNd9e4QQH";
 			this->bitCoinTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
@@ -202,6 +206,7 @@ namespace PRATHTool {
 			this->liteCoinTextBox->ReadOnly = true;
 			this->liteCoinTextBox->Size = System::Drawing::Size(299, 20);
 			this->liteCoinTextBox->TabIndex = 0;
+			this->liteCoinTextBox->TabStop = false;
 			this->liteCoinTextBox->Text = L"MDRL7QDPCH6MBMrgbJDL4Ecr3RWUdmtTae";
 			this->liteCoinTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			this->liteCoinTextBox->Visible = false;
@@ -249,6 +254,9 @@ namespace PRATHTool {
 		liteCoinPicture->Visible = false;
 		liteCoinTextBox->Visible = false;
 
+		bitCoinTSButton->Enabled = false;
+		liteCoinTSButton->Enabled = true;
+
 	}
 private: System::Void ToolStripButton2_Click(System::Object^ sender, System::EventArgs^ e) {
 	bitCoinAddress->Visible = false;
@@ -258,6 +266,9 @@ private: System::Void ToolStripButton2_Click(System::Object^ sender, System::Eve
 	liteCoinAddress->Visible = true;
 	liteCoinPicture->Visible = true;
 	liteCoinTextBox->Visible = true;
+
+	bitCoinTSButton->Enabled = true;
+	liteCoinTSButton->Enabled = false;
 
 }
 private: System::Void ToolStripButton3_Click(System::Object^ sender, System::EventArgs^ e) {
