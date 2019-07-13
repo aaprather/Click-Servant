@@ -190,6 +190,7 @@ namespace PRATHTool {
 			this->RandClicksMaxTimeTextBox->Name = L"RandClicksMaxTimeTextBox";
 			this->RandClicksMaxTimeTextBox->Size = System::Drawing::Size(39, 20);
 			this->RandClicksMaxTimeTextBox->TabIndex = 4;
+			this->RandClicksMaxTimeTextBox->TabStop = false;
 			this->RandClicksMaxTimeTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// RandClicksMinTimeTextBox
@@ -203,6 +204,7 @@ namespace PRATHTool {
 			this->RandClicksMinTimeTextBox->Name = L"RandClicksMinTimeTextBox";
 			this->RandClicksMinTimeTextBox->Size = System::Drawing::Size(39, 20);
 			this->RandClicksMinTimeTextBox->TabIndex = 3;
+			this->RandClicksMinTimeTextBox->TabStop = false;
 			this->RandClicksMinTimeTextBox->Text = L"1";
 			this->RandClicksMinTimeTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
@@ -260,6 +262,7 @@ namespace PRATHTool {
 			this->RandDelayMaxTextBox->Name = L"RandDelayMaxTextBox";
 			this->RandDelayMaxTextBox->Size = System::Drawing::Size(39, 20);
 			this->RandDelayMaxTextBox->TabIndex = 18;
+			this->RandDelayMaxTextBox->TabStop = false;
 			this->RandDelayMaxTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// RandDelayMinTextBox
@@ -273,6 +276,7 @@ namespace PRATHTool {
 			this->RandDelayMinTextBox->Name = L"RandDelayMinTextBox";
 			this->RandDelayMinTextBox->Size = System::Drawing::Size(39, 20);
 			this->RandDelayMinTextBox->TabIndex = 17;
+			this->RandDelayMinTextBox->TabStop = false;
 			this->RandDelayMinTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// toolTip1
@@ -292,6 +296,7 @@ namespace PRATHTool {
 			this->ACMaxTimeTextBox->Name = L"ACMaxTimeTextBox";
 			this->ACMaxTimeTextBox->Size = System::Drawing::Size(59, 20);
 			this->ACMaxTimeTextBox->TabIndex = 21;
+			this->ACMaxTimeTextBox->TabStop = false;
 			this->ACMaxTimeTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// ACMinTimeTextBox
@@ -305,6 +310,7 @@ namespace PRATHTool {
 			this->ACMinTimeTextBox->Name = L"ACMinTimeTextBox";
 			this->ACMinTimeTextBox->Size = System::Drawing::Size(59, 20);
 			this->ACMinTimeTextBox->TabIndex = 20;
+			this->ACMinTimeTextBox->TabStop = false;
 			this->ACMinTimeTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// ACHotkeyCheckBox

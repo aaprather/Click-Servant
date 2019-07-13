@@ -131,6 +131,7 @@ namespace PRATHTool {
 			this->AKMaxTextBox->Name = L"AKMaxTextBox";
 			this->AKMaxTextBox->Size = System::Drawing::Size(53, 20);
 			this->AKMaxTextBox->TabIndex = 16;
+			this->AKMaxTextBox->TabStop = false;
 			this->AKMaxTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// AKMinTextBox
@@ -144,6 +145,7 @@ namespace PRATHTool {
 			this->AKMinTextBox->Name = L"AKMinTextBox";
 			this->AKMinTextBox->Size = System::Drawing::Size(53, 20);
 			this->AKMinTextBox->TabIndex = 15;
+			this->AKMinTextBox->TabStop = false;
 			this->AKMinTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// AKDropDown
