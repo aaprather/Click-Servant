@@ -5,6 +5,7 @@
 #include "Profile.h"
 #include "ClickerSettings.h"
 #include "KeyerSettings.h"
+#include "Donate.h"
 
 namespace PRATHTool {
 
@@ -132,6 +133,7 @@ private: System::Windows::Forms::PictureBox^ keyboardInactivePictureBox;
 private: System::Windows::Forms::PictureBox^ cursorActivePictureBox;
 private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 private: System::Windows::Forms::ToolStripLabel^ toolStripLabel12;
+private: System::Windows::Forms::ToolStripButton^ toolStripButton2;
 
 
 
@@ -179,6 +181,7 @@ private: System::Windows::Forms::ToolStripLabel^ toolStripLabel12;
 			this->checkForUpdatesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->toolStripProfileLabel = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->toolStripLabel12 = (gcnew System::Windows::Forms::ToolStripLabel());
+			this->toolStripButton2 = (gcnew System::Windows::Forms::ToolStripButton());
 			this->SaveProfileDialog = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->OpenProfileDialog = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->AKKeyPressCheckTimer = (gcnew System::Windows::Forms::Timer(this->components));
@@ -387,9 +390,9 @@ private: System::Windows::Forms::ToolStripLabel^ toolStripLabel12;
 			// toolStrip1
 			// 
 			this->toolStrip1->BackColor = System::Drawing::Color::Transparent;
-			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
 				this->toolStripDropDownButton1,
-					this->toolStripDropDownButton2, this->toolStripProfileLabel, this->toolStripLabel12
+					this->toolStripDropDownButton2, this->toolStripProfileLabel, this->toolStripLabel12, this->toolStripButton2
 			});
 			this->toolStrip1->Location = System::Drawing::Point(0, 0);
 			this->toolStrip1->Name = L"toolStrip1";
@@ -489,6 +492,17 @@ private: System::Windows::Forms::ToolStripLabel^ toolStripLabel12;
 			this->toolStripLabel12->Name = L"toolStripLabel12";
 			this->toolStripLabel12->Size = System::Drawing::Size(63, 22);
 			this->toolStripLabel12->Text = L"Profile:";
+			// 
+			// toolStripButton2
+			// 
+			this->toolStripButton2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
+			this->toolStripButton2->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->toolStripButton2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton2.Image")));
+			this->toolStripButton2->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButton2->Name = L"toolStripButton2";
+			this->toolStripButton2->Size = System::Drawing::Size(68, 22);
+			this->toolStripButton2->Text = L"Donate";
+			this->toolStripButton2->Click += gcnew System::EventHandler(this, &MyForm::ToolStripButton2_Click);
 			// 
 			// SaveProfileDialog
 			// 
@@ -1312,5 +1326,12 @@ private: System::Windows::Forms::ToolStripLabel^ toolStripLabel12;
 	private: System::Void CheckForUpdatesToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		MessageBox::Show("No updates found", "Checking for updates...");
 	}
-	};
+	private: System::Void ToolStripButton2_Click(System::Object^ sender, System::EventArgs^ e) {
+		Donate DN(1);
+		MyForm::Hide();
+		DN.ShowDialog();
+		MyForm::Show();
+
+	}
+};
 }
