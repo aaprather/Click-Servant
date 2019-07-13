@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClCompile Include="ClickerSettings.cpp" />
     <ClCompile Include="Donate.cpp" />
+    <ClCompile Include="Error.cpp" />
     <ClCompile Include="InputTime.cpp" />
     <ClCompile Include="Key.cpp" />
     <ClCompile Include="KeyerSettings.cpp" />
@@ -152,6 +153,9 @@
       <DeploymentContent>false</DeploymentContent>
     </ClInclude>
     <ClInclude Include="Donate.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Error.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="InputTime.h" />
@@ -171,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Donate.resx">
       <DependentUpon>Donate.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Error.resx">
+      <DependentUpon>Error.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KeyerSettings.resx">
       <DependentUpon>KeyerSettings.h</DependentUpon>
