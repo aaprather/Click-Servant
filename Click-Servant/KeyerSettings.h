@@ -1,5 +1,6 @@
 #pragma once
 #include "Profile.h"
+#include "Error.h"
 
 namespace PRATHTool {
 
@@ -338,6 +339,10 @@ namespace PRATHTool {
 		minimumBoxToolTip->SetToolTip(AKHotkeyCheckBox, "Activate the Interval Keyer by pressing the Right-Shift button.");
 		this->SetDesktopLocation(Point.X, Point.Y);
 	}
+	private: void throwErrorMessage(System::String^ message) {
+		Error e(System::Drawing::Point(this->Location.X+145, this->Location.Y), message);
+		e.ShowDialog();
+	}
 	private: System::Void KeyerSave_Click(System::Object^ sender, System::EventArgs^ e) {
 		try
 		{
@@ -346,12 +351,12 @@ namespace PRATHTool {
 			if (Convert::ToInt32(AKMaxTextBox->Text) < Convert::ToInt32(AKMinTextBox->Text))
 			{
 				countError++;
-				MessageBox::Show("Upper range must be larger than lower range!");
+				throwErrorMessage("Upper range must be larger than lower range!");
 			}
 			else if (Convert::ToInt32(AKMinTextBox->Text) < 1)
 			{
 				countError++;
-				MessageBox::Show("Lower value must be greater than 0");
+				throwErrorMessage("Lower value must be greater than 0");
 			}
 
 			if (countError == 0)
@@ -363,11 +368,11 @@ namespace PRATHTool {
 				this->Close();
 			}
 		}
-		catch(...)
+		catch (...)
 		{
-			MessageBox::Show("Invalid settings!");
+			this->Close();
 		}
-		
+
 
 	}
 	private: System::Void KeyerCancel_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -375,5 +380,5 @@ namespace PRATHTool {
 	}
 
 
-};
+	};
 }
