@@ -113,7 +113,7 @@ namespace PRATHTool {
 			this->AKHotkeyCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->AKHotkeyCheckBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->AKHotkeyCheckBox->Location = System::Drawing::Point(326, 9);
+			this->AKHotkeyCheckBox->Location = System::Drawing::Point(372, 9);
 			this->AKHotkeyCheckBox->Name = L"AKHotkeyCheckBox";
 			this->AKHotkeyCheckBox->Size = System::Drawing::Size(119, 17);
 			this->AKHotkeyCheckBox->TabIndex = 13;
@@ -127,7 +127,7 @@ namespace PRATHTool {
 			this->AKMaxTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->AKMaxTextBox->ForeColor = System::Drawing::Color::LightBlue;
-			this->AKMaxTextBox->Location = System::Drawing::Point(109, 10);
+			this->AKMaxTextBox->Location = System::Drawing::Point(137, 10);
 			this->AKMaxTextBox->Name = L"AKMaxTextBox";
 			this->AKMaxTextBox->Size = System::Drawing::Size(53, 20);
 			this->AKMaxTextBox->TabIndex = 16;
@@ -141,7 +141,7 @@ namespace PRATHTool {
 			this->AKMinTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->AKMinTextBox->ForeColor = System::Drawing::Color::LightBlue;
-			this->AKMinTextBox->Location = System::Drawing::Point(21, 10);
+			this->AKMinTextBox->Location = System::Drawing::Point(19, 10);
 			this->AKMinTextBox->Name = L"AKMinTextBox";
 			this->AKMinTextBox->Size = System::Drawing::Size(53, 20);
 			this->AKMinTextBox->TabIndex = 15;
@@ -163,7 +163,7 @@ namespace PRATHTool {
 					L"F2", L"F3", L"F4", L"F5", L"F6", L"F7", L"F8", L"F9", L"F10", L"F11", L"F12", L"Tab", L"Up Arrow", L"Down Arrow", L"Left Arrow",
 					L"Right Arrow"
 			});
-			this->AKDropDown->Location = System::Drawing::Point(193, 9);
+			this->AKDropDown->Location = System::Drawing::Point(251, 8);
 			this->AKDropDown->Name = L"AKDropDown";
 			this->AKDropDown->Size = System::Drawing::Size(91, 21);
 			this->AKDropDown->TabIndex = 17;
@@ -174,7 +174,7 @@ namespace PRATHTool {
 			this->KeyerSave->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->KeyerSave->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->KeyerSave->Location = System::Drawing::Point(316, 28);
+			this->KeyerSave->Location = System::Drawing::Point(362, 28);
 			this->KeyerSave->Name = L"KeyerSave";
 			this->KeyerSave->Size = System::Drawing::Size(60, 23);
 			this->KeyerSave->TabIndex = 18;
@@ -188,7 +188,7 @@ namespace PRATHTool {
 			this->KeyerCancel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->KeyerCancel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->KeyerCancel->Location = System::Drawing::Point(382, 28);
+			this->KeyerCancel->Location = System::Drawing::Point(428, 28);
 			this->KeyerCancel->Name = L"KeyerCancel";
 			this->KeyerCancel->Size = System::Drawing::Size(60, 23);
 			this->KeyerCancel->TabIndex = 19;
@@ -203,11 +203,11 @@ namespace PRATHTool {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->label4->Location = System::Drawing::Point(11, 33);
+			this->label4->Location = System::Drawing::Point(2, 33);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(63, 13);
+			this->label4->Size = System::Drawing::Size(104, 13);
 			this->label4->TabIndex = 23;
-			this->label4->Text = L"[Minimum]";
+			this->label4->Text = L"[Minimum Range]";
 			// 
 			// label1
 			// 
@@ -216,11 +216,11 @@ namespace PRATHTool {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->label1->Location = System::Drawing::Point(107, 33);
+			this->label1->Location = System::Drawing::Point(124, 33);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(66, 13);
+			this->label1->Size = System::Drawing::Size(107, 13);
 			this->label1->TabIndex = 24;
-			this->label1->Text = L"[Maximum]";
+			this->label1->Text = L"[Maximum Range]";
 			// 
 			// label2
 			// 
@@ -229,7 +229,7 @@ namespace PRATHTool {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->label2->Location = System::Drawing::Point(213, 33);
+			this->label2->Location = System::Drawing::Point(271, 32);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(36, 13);
 			this->label2->TabIndex = 25;
@@ -247,7 +247,7 @@ namespace PRATHTool {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->label3->Location = System::Drawing::Point(94, 15);
+			this->label3->Location = System::Drawing::Point(106, 12);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(11, 13);
 			this->label3->TabIndex = 26;
@@ -260,7 +260,7 @@ namespace PRATHTool {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::LightBlue;
-			this->label5->Location = System::Drawing::Point(74, 16);
+			this->label5->Location = System::Drawing::Point(72, 16);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(20, 13);
 			this->label5->TabIndex = 27;
@@ -273,7 +273,7 @@ namespace PRATHTool {
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::LightBlue;
-			this->label6->Location = System::Drawing::Point(162, 17);
+			this->label6->Location = System::Drawing::Point(190, 17);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(20, 13);
 			this->label6->TabIndex = 28;
@@ -285,7 +285,7 @@ namespace PRATHTool {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(448, 54);
+			this->ClientSize = System::Drawing::Size(493, 54);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label3);
@@ -301,9 +301,9 @@ namespace PRATHTool {
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(464, 93);
+			this->MaximumSize = System::Drawing::Size(509, 93);
 			this->MinimizeBox = false;
-			this->MinimumSize = System::Drawing::Size(464, 93);
+			this->MinimumSize = System::Drawing::Size(509, 93);
 			this->Name = L"KeyerSettings";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"Interval Keyer Settings";

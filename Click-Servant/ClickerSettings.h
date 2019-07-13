@@ -215,7 +215,7 @@ namespace PRATHTool {
 			this->RandClicksCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->RandClicksCheckBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->RandClicksCheckBox->Location = System::Drawing::Point(419, 0);
+			this->RandClicksCheckBox->Location = System::Drawing::Point(460, 4);
 			this->RandClicksCheckBox->Name = L"RandClicksCheckBox";
 			this->RandClicksCheckBox->Size = System::Drawing::Size(149, 17);
 			this->RandClicksCheckBox->TabIndex = 13;
@@ -229,7 +229,7 @@ namespace PRATHTool {
 			this->RandClickSaveButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->RandClickSaveButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->RandClickSaveButton->Location = System::Drawing::Point(218, 14);
+			this->RandClickSaveButton->Location = System::Drawing::Point(260, 12);
 			this->RandClickSaveButton->Name = L"RandClickSaveButton";
 			this->RandClickSaveButton->Size = System::Drawing::Size(60, 23);
 			this->RandClickSaveButton->TabIndex = 15;
@@ -243,7 +243,7 @@ namespace PRATHTool {
 			this->RandClickCancelButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->RandClickCancelButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->RandClickCancelButton->Location = System::Drawing::Point(218, 40);
+			this->RandClickCancelButton->Location = System::Drawing::Point(260, 38);
 			this->RandClickCancelButton->Name = L"RandClickCancelButton";
 			this->RandClickCancelButton->Size = System::Drawing::Size(60, 23);
 			this->RandClickCancelButton->TabIndex = 16;
@@ -258,7 +258,7 @@ namespace PRATHTool {
 			this->RandDelayMaxTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->RandDelayMaxTextBox->ForeColor = System::Drawing::Color::LightBlue;
-			this->RandDelayMaxTextBox->Location = System::Drawing::Point(333, 6);
+			this->RandDelayMaxTextBox->Location = System::Drawing::Point(371, 6);
 			this->RandDelayMaxTextBox->Name = L"RandDelayMaxTextBox";
 			this->RandDelayMaxTextBox->Size = System::Drawing::Size(39, 20);
 			this->RandDelayMaxTextBox->TabIndex = 18;
@@ -272,7 +272,7 @@ namespace PRATHTool {
 			this->RandDelayMinTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->RandDelayMinTextBox->ForeColor = System::Drawing::Color::LightBlue;
-			this->RandDelayMinTextBox->Location = System::Drawing::Point(251, 5);
+			this->RandDelayMinTextBox->Location = System::Drawing::Point(255, 5);
 			this->RandDelayMinTextBox->Name = L"RandDelayMinTextBox";
 			this->RandDelayMinTextBox->Size = System::Drawing::Size(39, 20);
 			this->RandDelayMinTextBox->TabIndex = 17;
@@ -292,7 +292,7 @@ namespace PRATHTool {
 			this->ACMaxTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->ACMaxTimeTextBox->ForeColor = System::Drawing::Color::LightBlue;
-			this->ACMaxTimeTextBox->Location = System::Drawing::Point(119, 6);
+			this->ACMaxTimeTextBox->Location = System::Drawing::Point(153, 6);
 			this->ACMaxTimeTextBox->Name = L"ACMaxTimeTextBox";
 			this->ACMaxTimeTextBox->Size = System::Drawing::Size(59, 20);
 			this->ACMaxTimeTextBox->TabIndex = 21;
@@ -306,7 +306,7 @@ namespace PRATHTool {
 			this->ACMinTimeTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->ACMinTimeTextBox->ForeColor = System::Drawing::Color::LightBlue;
-			this->ACMinTimeTextBox->Location = System::Drawing::Point(8, 6);
+			this->ACMinTimeTextBox->Location = System::Drawing::Point(26, 6);
 			this->ACMinTimeTextBox->Name = L"ACMinTimeTextBox";
 			this->ACMinTimeTextBox->Size = System::Drawing::Size(59, 20);
 			this->ACMinTimeTextBox->TabIndex = 20;
@@ -320,7 +320,7 @@ namespace PRATHTool {
 			this->ACHotkeyCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->ACHotkeyCheckBox->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->ACHotkeyCheckBox->Location = System::Drawing::Point(16, 55);
+			this->ACHotkeyCheckBox->Location = System::Drawing::Point(49, 54);
 			this->ACHotkeyCheckBox->Name = L"ACHotkeyCheckBox";
 			this->ACHotkeyCheckBox->Size = System::Drawing::Size(163, 17);
 			this->ACHotkeyCheckBox->TabIndex = 23;
@@ -347,7 +347,7 @@ namespace PRATHTool {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->label2->Location = System::Drawing::Point(96, 8);
+			this->label2->Location = System::Drawing::Point(125, 8);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(11, 13);
 			this->label2->TabIndex = 25;
@@ -360,7 +360,7 @@ namespace PRATHTool {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->label5->Location = System::Drawing::Point(316, 8);
+			this->label5->Location = System::Drawing::Point(334, 8);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(11, 13);
 			this->label5->TabIndex = 27;
@@ -382,9 +382,9 @@ namespace PRATHTool {
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Controls->Add(this->RandDelayMaxTextBox);
 			this->panel1->Controls->Add(this->RandDelayMinTextBox);
-			this->panel1->Location = System::Drawing::Point(288, 23);
+			this->panel1->Location = System::Drawing::Point(329, 23);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(397, 54);
+			this->panel1->Size = System::Drawing::Size(467, 54);
 			this->panel1->TabIndex = 28;
 			// 
 			// label10
@@ -420,11 +420,11 @@ namespace PRATHTool {
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label8->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->label8->Location = System::Drawing::Point(326, 29);
+			this->label8->Location = System::Drawing::Point(355, 29);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(66, 13);
+			this->label8->Size = System::Drawing::Size(107, 13);
 			this->label8->TabIndex = 30;
-			this->label8->Text = L"[Maximum]";
+			this->label8->Text = L"[Maximum Range]";
 			// 
 			// label9
 			// 
@@ -433,11 +433,11 @@ namespace PRATHTool {
 			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label9->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->label9->Location = System::Drawing::Point(246, 28);
+			this->label9->Location = System::Drawing::Point(237, 28);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(63, 13);
+			this->label9->Size = System::Drawing::Size(104, 13);
 			this->label9->TabIndex = 29;
-			this->label9->Text = L"[Minimum]";
+			this->label9->Text = L"[Minimum Range]";
 			// 
 			// label7
 			// 
@@ -446,7 +446,7 @@ namespace PRATHTool {
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::Color::LightBlue;
-			this->label7->Location = System::Drawing::Point(372, 12);
+			this->label7->Location = System::Drawing::Point(410, 12);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(20, 13);
 			this->label7->TabIndex = 30;
@@ -459,7 +459,7 @@ namespace PRATHTool {
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::LightBlue;
-			this->label6->Location = System::Drawing::Point(290, 10);
+			this->label6->Location = System::Drawing::Point(294, 10);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(20, 13);
 			this->label6->TabIndex = 29;
@@ -472,7 +472,7 @@ namespace PRATHTool {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::LightBlue;
-			this->label3->Location = System::Drawing::Point(69, 10);
+			this->label3->Location = System::Drawing::Point(87, 10);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(20, 13);
 			this->label3->TabIndex = 30;
@@ -485,7 +485,7 @@ namespace PRATHTool {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::LightBlue;
-			this->label4->Location = System::Drawing::Point(179, 12);
+			this->label4->Location = System::Drawing::Point(213, 12);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(20, 13);
 			this->label4->TabIndex = 31;
@@ -498,11 +498,11 @@ namespace PRATHTool {
 			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label12->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->label12->Location = System::Drawing::Point(116, 32);
+			this->label12->Location = System::Drawing::Point(137, 32);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(66, 13);
+			this->label12->Size = System::Drawing::Size(107, 13);
 			this->label12->TabIndex = 33;
-			this->label12->Text = L"[Maximum]";
+			this->label12->Text = L"[Maximum Range]";
 			// 
 			// label13
 			// 
@@ -513,9 +513,9 @@ namespace PRATHTool {
 			this->label13->ForeColor = System::Drawing::Color::DeepSkyBlue;
 			this->label13->Location = System::Drawing::Point(8, 32);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(63, 13);
+			this->label13->Size = System::Drawing::Size(104, 13);
 			this->label13->TabIndex = 32;
-			this->label13->Text = L"[Minimum]";
+			this->label13->Text = L"[Minimum Range]";
 			// 
 			// ClickerSettings
 			// 
@@ -523,7 +523,7 @@ namespace PRATHTool {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(690, 79);
+			this->ClientSize = System::Drawing::Size(796, 79);
 			this->Controls->Add(this->label12);
 			this->Controls->Add(this->label13);
 			this->Controls->Add(this->label4);
@@ -539,9 +539,9 @@ namespace PRATHTool {
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(706, 118);
+			this->MaximumSize = System::Drawing::Size(812, 118);
 			this->MinimizeBox = false;
-			this->MinimumSize = System::Drawing::Size(706, 118);
+			this->MinimumSize = System::Drawing::Size(812, 118);
 			this->Name = L"ClickerSettings";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"Interval Clicker Settings";
