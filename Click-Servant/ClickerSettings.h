@@ -245,7 +245,7 @@ namespace PRATHTool {
 			this->RandClickSaveButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->RandClickSaveButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->RandClickSaveButton->Location = System::Drawing::Point(58, 114);
+			this->RandClickSaveButton->Location = System::Drawing::Point(58, 124);
 			this->RandClickSaveButton->Name = L"RandClickSaveButton";
 			this->RandClickSaveButton->Size = System::Drawing::Size(60, 23);
 			this->RandClickSaveButton->TabIndex = 15;
@@ -259,7 +259,7 @@ namespace PRATHTool {
 			this->RandClickCancelButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->RandClickCancelButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->RandClickCancelButton->Location = System::Drawing::Point(124, 114);
+			this->RandClickCancelButton->Location = System::Drawing::Point(124, 124);
 			this->RandClickCancelButton->Name = L"RandClickCancelButton";
 			this->RandClickCancelButton->Size = System::Drawing::Size(60, 23);
 			this->RandClickCancelButton->TabIndex = 16;
@@ -567,9 +567,9 @@ namespace PRATHTool {
 			// 
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(37, 6);
+			this->pictureBox1->Location = System::Drawing::Point(49, 12);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(191, 19);
+			this->pictureBox1->Size = System::Drawing::Size(146, 17);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 38;
 			this->pictureBox1->TabStop = false;
@@ -578,9 +578,9 @@ namespace PRATHTool {
 			// 
 			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(263, 6);
+			this->pictureBox2->Location = System::Drawing::Point(293, 9);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(239, 28);
+			this->pictureBox2->Size = System::Drawing::Size(178, 23);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox2->TabIndex = 39;
 			this->pictureBox2->TabStop = false;
