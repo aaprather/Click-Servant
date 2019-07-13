@@ -322,7 +322,7 @@ namespace PRATHTool {
 			this->MaximizeBox = false;
 			this->MaximumSize = System::Drawing::Size(509, 114);
 			this->MinimizeBox = false;
-			this->MinimumSize = System::Drawing::Size(509, 93);
+			this->MinimumSize = System::Drawing::Size(509, 114);
 			this->Name = L"KeyerSettings";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"Interval Keyer Settings";
