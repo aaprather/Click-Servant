@@ -16,10 +16,13 @@ namespace PRATHTool {
 	public ref class KeyerSettings : public System::Windows::Forms::Form
 	{
 	private: Profile^ prof;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Drawing::Point Point;
 	public:
-		KeyerSettings(Profile^ f)
+		KeyerSettings(Profile^ f, System::Drawing::Point point)
 		{
 			InitializeComponent();
+
 
 			prof = f;
 
@@ -39,6 +42,7 @@ namespace PRATHTool {
 				prof->AKDROPDOWN = -1;
 
 			AKHotkeyCheckBox->Checked = prof->AKHOTKEY;
+			Point = point;
 
 		}
 
@@ -104,6 +108,7 @@ namespace PRATHTool {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// AKHotkeyCheckBox
@@ -279,13 +284,27 @@ namespace PRATHTool {
 			this->label6->TabIndex = 28;
 			this->label6->Text = L"ms";
 			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->BackColor = System::Drawing::Color::Transparent;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label7->ForeColor = System::Drawing::Color::LightBlue;
+			this->label7->Location = System::Drawing::Point(101, 58);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(295, 13);
+			this->label7->TabIndex = 29;
+			this->label7->Text = L"Confused\? Hover over a component to see a relevant tooltip.\r\n";
+			// 
 			// KeyerSettings
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(493, 54);
+			this->ClientSize = System::Drawing::Size(493, 75);
+			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label3);
@@ -301,7 +320,7 @@ namespace PRATHTool {
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(509, 93);
+			this->MaximumSize = System::Drawing::Size(509, 114);
 			this->MinimizeBox = false;
 			this->MinimumSize = System::Drawing::Size(509, 93);
 			this->Name = L"KeyerSettings";
@@ -317,6 +336,7 @@ namespace PRATHTool {
 		minimumBoxToolTip->SetToolTip(AKMinTextBox, "Enter the lower range value of the desired key interval in milliseconds. For Example: 1000");
 		minimumBoxToolTip->SetToolTip(AKMaxTextBox, "Enter the upper range value of the desired key interval in milliseconds. For Example: 5000");
 		minimumBoxToolTip->SetToolTip(AKHotkeyCheckBox, "Activate the Interval Keyer by pressing the Right-Shift button.");
+		this->SetDesktopLocation(Point.X, Point.Y);
 	}
 	private: System::Void KeyerSave_Click(System::Object^ sender, System::EventArgs^ e) {
 		try

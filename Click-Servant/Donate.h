@@ -14,10 +14,12 @@ namespace PRATHTool {
 	/// </summary>
 	public ref class Donate : public System::Windows::Forms::Form
 	{
+	private: System::Drawing::Point Point;
 	public:
-		Donate(int i)
+		Donate(int i, System::Drawing::Point point)
 		{
 			InitializeComponent();
+			Point = point;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -98,7 +100,7 @@ namespace PRATHTool {
 			});
 			this->toolStrip1->Location = System::Drawing::Point(0, 0);
 			this->toolStrip1->Name = L"toolStrip1";
-			this->toolStrip1->Size = System::Drawing::Size(321, 25);
+			this->toolStrip1->Size = System::Drawing::Size(260, 25);
 			this->toolStrip1->TabIndex = 0;
 			this->toolStrip1->Text = L"toolStrip1";
 			// 
@@ -130,10 +132,9 @@ namespace PRATHTool {
 			this->toolStripButton3->Alignment = System::Windows::Forms::ToolStripItemAlignment::Right;
 			this->toolStripButton3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
 			this->toolStripButton3->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->toolStripButton3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton3.Image")));
 			this->toolStripButton3->ImageTransparentColor = System::Drawing::Color::Magenta;
 			this->toolStripButton3->Name = L"toolStripButton3";
-			this->toolStripButton3->Size = System::Drawing::Size(106, 22);
+			this->toolStripButton3->Size = System::Drawing::Size(90, 22);
 			this->toolStripButton3->Text = L"Return to App";
 			this->toolStripButton3->Click += gcnew System::EventHandler(this, &Donate::ToolStripButton3_Click);
 			// 
@@ -141,7 +142,7 @@ namespace PRATHTool {
 			// 
 			this->bitCoinAddress->BackColor = System::Drawing::Color::Transparent;
 			this->bitCoinAddress->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bitCoinAddress.Image")));
-			this->bitCoinAddress->Location = System::Drawing::Point(71, 28);
+			this->bitCoinAddress->Location = System::Drawing::Point(36, 28);
 			this->bitCoinAddress->Name = L"bitCoinAddress";
 			this->bitCoinAddress->Size = System::Drawing::Size(193, 169);
 			this->bitCoinAddress->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -152,7 +153,7 @@ namespace PRATHTool {
 			// 
 			this->bitCoinPicture->BackColor = System::Drawing::Color::Transparent;
 			this->bitCoinPicture->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bitCoinPicture.Image")));
-			this->bitCoinPicture->Location = System::Drawing::Point(124, 203);
+			this->bitCoinPicture->Location = System::Drawing::Point(89, 203);
 			this->bitCoinPicture->Name = L"bitCoinPicture";
 			this->bitCoinPicture->Size = System::Drawing::Size(84, 62);
 			this->bitCoinPicture->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -164,10 +165,10 @@ namespace PRATHTool {
 			this->bitCoinTextBox->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->bitCoinTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->bitCoinTextBox->ForeColor = System::Drawing::Color::LightBlue;
-			this->bitCoinTextBox->Location = System::Drawing::Point(12, 271);
+			this->bitCoinTextBox->Location = System::Drawing::Point(3, 271);
 			this->bitCoinTextBox->Name = L"bitCoinTextBox";
 			this->bitCoinTextBox->ReadOnly = true;
-			this->bitCoinTextBox->Size = System::Drawing::Size(299, 20);
+			this->bitCoinTextBox->Size = System::Drawing::Size(252, 20);
 			this->bitCoinTextBox->TabIndex = 0;
 			this->bitCoinTextBox->TabStop = false;
 			this->bitCoinTextBox->Text = L"3KwkiTj1QhmmUgHkwfWscTHUDbNd9e4QQH";
@@ -177,7 +178,7 @@ namespace PRATHTool {
 			// 
 			this->liteCoinPicture->BackColor = System::Drawing::Color::Transparent;
 			this->liteCoinPicture->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"liteCoinPicture.Image")));
-			this->liteCoinPicture->Location = System::Drawing::Point(124, 203);
+			this->liteCoinPicture->Location = System::Drawing::Point(89, 203);
 			this->liteCoinPicture->Name = L"liteCoinPicture";
 			this->liteCoinPicture->Size = System::Drawing::Size(84, 62);
 			this->liteCoinPicture->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -188,7 +189,7 @@ namespace PRATHTool {
 			// liteCoinAddress
 			// 
 			this->liteCoinAddress->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"liteCoinAddress.Image")));
-			this->liteCoinAddress->Location = System::Drawing::Point(71, 28);
+			this->liteCoinAddress->Location = System::Drawing::Point(36, 28);
 			this->liteCoinAddress->Name = L"liteCoinAddress";
 			this->liteCoinAddress->Size = System::Drawing::Size(193, 169);
 			this->liteCoinAddress->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -201,10 +202,10 @@ namespace PRATHTool {
 			this->liteCoinTextBox->BackColor = System::Drawing::Color::DarkSlateGray;
 			this->liteCoinTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->liteCoinTextBox->ForeColor = System::Drawing::Color::LightBlue;
-			this->liteCoinTextBox->Location = System::Drawing::Point(12, 271);
+			this->liteCoinTextBox->Location = System::Drawing::Point(3, 271);
 			this->liteCoinTextBox->Name = L"liteCoinTextBox";
 			this->liteCoinTextBox->ReadOnly = true;
-			this->liteCoinTextBox->Size = System::Drawing::Size(299, 20);
+			this->liteCoinTextBox->Size = System::Drawing::Size(252, 20);
 			this->liteCoinTextBox->TabIndex = 0;
 			this->liteCoinTextBox->TabStop = false;
 			this->liteCoinTextBox->Text = L"MDRL7QDPCH6MBMrgbJDL4Ecr3RWUdmtTae";
@@ -218,7 +219,7 @@ namespace PRATHTool {
 			this->BackColor = System::Drawing::SystemColors::Control;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(321, 298);
+			this->ClientSize = System::Drawing::Size(260, 298);
 			this->Controls->Add(this->liteCoinTextBox);
 			this->Controls->Add(this->liteCoinPicture);
 			this->Controls->Add(this->bitCoinTextBox);
@@ -229,11 +230,12 @@ namespace PRATHTool {
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(337, 337);
-			this->MinimumSize = System::Drawing::Size(337, 337);
+			this->MaximumSize = System::Drawing::Size(276, 337);
+			this->MinimumSize = System::Drawing::Size(276, 337);
 			this->Name = L"Donate";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"Support Click-Servant";
+			this->Load += gcnew System::EventHandler(this, &Donate::Donate_Load);
 			this->toolStrip1->ResumeLayout(false);
 			this->toolStrip1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bitCoinAddress))->EndInit();
@@ -273,6 +275,9 @@ private: System::Void ToolStripButton2_Click(System::Object^ sender, System::Eve
 }
 private: System::Void ToolStripButton3_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+private: System::Void Donate_Load(System::Object^ sender, System::EventArgs^ e) {
+	this->SetDesktopLocation(Point.X, Point.Y);
 }
 };
 }
