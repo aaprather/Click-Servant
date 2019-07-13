@@ -131,6 +131,7 @@ private: System::Windows::Forms::PictureBox^ keyboardInactivePictureBox;
 
 private: System::Windows::Forms::PictureBox^ cursorActivePictureBox;
 private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
+private: System::Windows::Forms::ToolStripLabel^ toolStripLabel12;
 
 
 
@@ -177,6 +178,7 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->checkForUpdatesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->toolStripProfileLabel = (gcnew System::Windows::Forms::ToolStripLabel());
+			this->toolStripLabel12 = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->SaveProfileDialog = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->OpenProfileDialog = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->AKKeyPressCheckTimer = (gcnew System::Windows::Forms::Timer(this->components));
@@ -237,12 +239,11 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::Color::Transparent;
-			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->panel2->Controls->Add(this->pictureBox2);
 			this->panel2->Controls->Add(this->linkLabel1);
 			this->panel2->Controls->Add(this->ACStopButton);
 			this->panel2->Controls->Add(this->ACStartButton);
-			this->panel2->Location = System::Drawing::Point(94, 35);
+			this->panel2->Location = System::Drawing::Point(102, 35);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(172, 98);
 			this->panel2->TabIndex = 7;
@@ -315,12 +316,11 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 			// panel3
 			// 
 			this->panel3->BackColor = System::Drawing::Color::Transparent;
-			this->panel3->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->panel3->Controls->Add(this->pictureBox3);
 			this->panel3->Controls->Add(this->linkLabel2);
 			this->panel3->Controls->Add(this->AKStopButton);
 			this->panel3->Controls->Add(this->AKStartButton);
-			this->panel3->Location = System::Drawing::Point(291, 35);
+			this->panel3->Location = System::Drawing::Point(282, 35);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(163, 98);
 			this->panel3->TabIndex = 11;
@@ -387,9 +387,9 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 			// toolStrip1
 			// 
 			this->toolStrip1->BackColor = System::Drawing::Color::Transparent;
-			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->toolStripDropDownButton1,
-					this->toolStripDropDownButton2, this->toolStripProfileLabel
+					this->toolStripDropDownButton2, this->toolStripProfileLabel, this->toolStripLabel12
 			});
 			this->toolStrip1->Location = System::Drawing::Point(0, 0);
 			this->toolStrip1->Name = L"toolStrip1";
@@ -473,12 +473,22 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 			// 
 			this->toolStripProfileLabel->Alignment = System::Windows::Forms::ToolStripItemAlignment::Right;
 			this->toolStripProfileLabel->BackColor = System::Drawing::Color::DodgerBlue;
-			this->toolStripProfileLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
-			this->toolStripProfileLabel->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->toolStripProfileLabel->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripProfileLabel.Image")));
+			this->toolStripProfileLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->toolStripProfileLabel->ForeColor = System::Drawing::Color::LightBlue;
 			this->toolStripProfileLabel->Name = L"toolStripProfileLabel";
-			this->toolStripProfileLabel->Size = System::Drawing::Size(177, 22);
-			this->toolStripProfileLabel->Text = L"No Profile Currently Loaded";
+			this->toolStripProfileLabel->Size = System::Drawing::Size(102, 22);
+			this->toolStripProfileLabel->Text = L"No Profile Loaded";
+			// 
+			// toolStripLabel12
+			// 
+			this->toolStripLabel12->Alignment = System::Windows::Forms::ToolStripItemAlignment::Right;
+			this->toolStripLabel12->BackColor = System::Drawing::Color::DodgerBlue;
+			this->toolStripLabel12->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
+			this->toolStripLabel12->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->toolStripLabel12->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripLabel12.Image")));
+			this->toolStripLabel12->Name = L"toolStripLabel12";
+			this->toolStripLabel12->Size = System::Drawing::Size(63, 22);
+			this->toolStripLabel12->Text = L"Profile:";
 			// 
 			// SaveProfileDialog
 			// 
@@ -1166,7 +1176,7 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 		SaveSettingsToPROFILE();
 		_PROFILE.SaveProfileAs(SaveProfileDialog->FileName);
 
-		toolStripProfileLabel->Text = "Profile Name: " + (System::IO::Path::GetFileNameWithoutExtension(SaveProfileDialog->FileName));
+		toolStripProfileLabel->Text = System::IO::Path::GetFileNameWithoutExtension(SaveProfileDialog->FileName);
 	}
 
 	private: void SaveSettingsToPROFILE()
@@ -1245,7 +1255,7 @@ private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
 		_PROFILE.AKHOTKEY = loadedProfile.AKHOTKEY;
 		_PROFILE.AKDROPDOWN = loadedProfile.AKDROPDOWN;
 		/**/
-		toolStripProfileLabel->Text = "Profile Name: " + OpenProfileDialog->SafeFileName->Replace(".csp", "");
+		toolStripProfileLabel->Text = OpenProfileDialog->SafeFileName->Replace(".csp", "");
 	}
 
 			 /*--------------------------------------------------------------------------------------
