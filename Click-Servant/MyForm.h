@@ -997,7 +997,7 @@ private: System::Windows::Forms::ToolStripButton^ toolStripButton2;
 		return valuesAreGood;
 	}
 	private: System::Void LinkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
-		ClickerSettings CS(% _PROFILE); //Additional Settings link button pop-up
+		ClickerSettings CS(% _PROFILE, System::Drawing::Point(this->Location.X, this->Location.Y)); //Additional Settings link button pop-up
 		MyForm::Hide();
 		CS.ShowDialog();
 		MyForm::Show();
@@ -1318,7 +1318,7 @@ private: System::Windows::Forms::ToolStripButton^ toolStripButton2;
 
 
 	private: System::Void LinkLabel2_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
-		KeyerSettings KS(% _PROFILE); //Additional Settings link button pop-up
+		KeyerSettings KS(% _PROFILE, System::Drawing::Point(this->Location.X, this->Location.Y)); //Additional Settings link button pop-up
 		MyForm::Hide();
 		KS.ShowDialog();
 		MyForm::Show();
@@ -1327,7 +1327,7 @@ private: System::Windows::Forms::ToolStripButton^ toolStripButton2;
 		MessageBox::Show("No updates found", "Checking for updates...");
 	}
 	private: System::Void ToolStripButton2_Click(System::Object^ sender, System::EventArgs^ e) {
-		Donate DN(1);
+		Donate DN(1, System::Drawing::Point(this->Location.X, this->Location.Y));
 		MyForm::Hide();
 		DN.ShowDialog();
 		MyForm::Show();
