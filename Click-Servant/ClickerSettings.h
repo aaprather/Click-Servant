@@ -767,7 +767,7 @@ namespace PRATHTool {
 		toolTip1->SetToolTip(RandDelayMinTextBox, "The interval for each click will be random. Enter the lower range value of the desired click interval in milliseconds. For Example: 1000");
 		toolTip1->SetToolTip(RandDelayMaxTextBox, "The interval for each click will be random. Enter the upper range value of the desired click interval in milliseconds. For Example: 5000");
 
-		toolTip1->SetToolTip(RandClicksCheckBox, "Click multiple times per interval. Each of the multiple clicks will have a random range of clicks, and a random interval for each click.");
+		toolTip1->SetToolTip(RandClicksCheckBox, "Click multiple times per interval. Each interval will click X amount of times and a random interval will be generated for for each sub-click.");
 		this->SetDesktopLocation(Point.X, Point.Y);
 	}
 	};
