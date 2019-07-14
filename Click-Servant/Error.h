@@ -165,8 +165,10 @@ namespace PRATHTool {
 	private: System::Void Error_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->SetDesktopLocation(Point.X+35, Point.Y+35);
 		errorTextBox->Text = ErrorMessage;
+		Console::Beep();
 	}
 	private: System::Void OkButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		
 		this->Close();
 	}
 };
