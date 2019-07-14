@@ -121,19 +121,19 @@ namespace PRATHTool {
 
 	private: System::Windows::Forms::ToolStripSeparator^ toolStripSeparator8;
 	private: System::Windows::Forms::ToolStripLabel^ toolStripLabel3;
-private: System::Windows::Forms::ToolStripLabel^ toolStripLabel4;
-private: System::Windows::Forms::ToolStripLabel^ toolStripLabel9;
-private: System::Windows::Forms::ToolStripLabel^ toolStripLabel10;
-private: System::Windows::Forms::ToolStripLabel^ toolStripLabel11;
-private: System::Windows::Forms::PictureBox^ cursorInactivePictureBox;
-private: System::Windows::Forms::PictureBox^ keyboardInactivePictureBox;
+	private: System::Windows::Forms::ToolStripLabel^ toolStripLabel4;
+	private: System::Windows::Forms::ToolStripLabel^ toolStripLabel9;
+	private: System::Windows::Forms::ToolStripLabel^ toolStripLabel10;
+	private: System::Windows::Forms::ToolStripLabel^ toolStripLabel11;
+	private: System::Windows::Forms::PictureBox^ cursorInactivePictureBox;
+	private: System::Windows::Forms::PictureBox^ keyboardInactivePictureBox;
 
 
 
-private: System::Windows::Forms::PictureBox^ cursorActivePictureBox;
-private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
-private: System::Windows::Forms::ToolStripLabel^ toolStripLabel12;
-private: System::Windows::Forms::ToolStripButton^ toolStripButton2;
+	private: System::Windows::Forms::PictureBox^ cursorActivePictureBox;
+	private: System::Windows::Forms::PictureBox^ keyboardActivePictureBox;
+	private: System::Windows::Forms::ToolStripLabel^ toolStripLabel12;
+	private: System::Windows::Forms::ToolStripButton^ toolStripButton2;
 
 
 
@@ -879,6 +879,90 @@ private: System::Windows::Forms::ToolStripButton^ toolStripButton2;
 		toolStripDropDownButton2->AutoToolTip = false;
 
 	}
+	private: void handleStart(UINT8 i) { //Handle components visually
+		switch (i) {
+		case 0: //Interval Clicker start
+			linkLabel1->Enabled = false; //Interval Clicker Additional Settings Link Button
+			linkLabel2->Enabled = false;
+
+			ACStartButton->Enabled = false;
+			ACStopButton->Enabled = true;
+			ACStartButton->Visible = false;
+			ACStopButton->Visible = true;
+
+			toolStripDropDownButton1->Enabled = false; //Profile Drop Down Button
+			toolStripButton2->Enabled = false; //Donate toolstrip button
+
+			cursorActivePictureBox->Visible = true;
+			cursorInactivePictureBox->Visible = false;
+
+			ACActive = true; //Set the Interval Clicker flag
+
+			break;
+		case 1: //Interval Keyer start
+			linkLabel2->Enabled = false; //Interval Keyer Additional Settings Link Button
+			linkLabel1->Enabled = false;
+
+			AKStartButton->Enabled = false;
+			AKStopButton->Enabled = true;
+			AKStartButton->Visible = false;
+			AKStopButton->Visible = true;
+
+			keyboardActivePictureBox->Visible = true;
+			keyboardInactivePictureBox->Visible = false;
+
+			toolStripDropDownButton1->Enabled = false;
+			toolStripButton2->Enabled = false; //Donate toolstrip button
+
+			AKActive = true;
+
+			break;
+		}
+	}
+
+	private: void handleStop(UINT8 i) { //Handle components visually
+		switch (i) {
+		case 0: //Interval Clicker stop
+			ACStartButton->Enabled = true;
+			ACStopButton->Enabled = false;
+			ACStartButton->Visible = true;
+			ACStopButton->Visible = false;
+
+			if (!AKActive) { //Check to make sure everything has stopped.
+				toolStripDropDownButton1->Enabled = true; //Profile Drop Down Button
+				linkLabel1->Enabled = true; //Interval Clicker Additional Settings Link Button
+				linkLabel2->Enabled = true; //Interval Keyer Additional Settings Link Button
+				toolStripButton2->Enabled = true; //Donate toolstrip button
+			}
+
+			cursorActivePictureBox->Visible = false;
+			cursorInactivePictureBox->Visible = true;
+
+			ACActive = false; //Set the Interval Clicker flag
+
+
+			break;
+		case 1: //Interval Keyer stop
+			AKStartButton->Enabled = true;
+			AKStopButton->Enabled = false;
+			AKStartButton->Visible = true;
+			AKStopButton->Visible = false;
+
+			if (!ACActive) { //Check to make sure everything has stopped.
+				toolStripDropDownButton1->Enabled = true; //Profile Drop Down Button
+				linkLabel2->Enabled = true; //Interval Keyer Additional Settings Link Button
+				linkLabel1->Enabled = true; //Interval Clicker Additional Settings Link Button
+				toolStripButton2->Enabled = true; //Donate toolstrip button
+			}
+
+			keyboardActivePictureBox->Visible = false;
+			keyboardInactivePictureBox->Visible = true;
+
+			AKActive = false;
+
+			break;
+		}
+	}
 
 			 /*::.........................::BEGIN CLICKER SECTION::.........................::*/
 		/*
@@ -889,7 +973,6 @@ private: System::Windows::Forms::ToolStripButton^ toolStripButton2;
 		 *	  this includes any new methods or variables.
 		 *
 		 ::.........................::::.........................::::.........................::*/
-
 	private: System::DateTime ACTime;
 	private: int RandomClickCounter;
 	private: int INCCOUNTER = 0;
@@ -900,25 +983,12 @@ private: System::Windows::Forms::ToolStripButton^ toolStripButton2;
 		{
 			try
 			{
-				linkLabel1->Enabled = false;
-				//label3->BackColor = Color::Chartreuse;
 				updateNextMainClick();
 				ACTimer->Start();
-				ACStartButton->Enabled = false;
-				ACStopButton->Enabled = true;
-				ACActive = true;
-				toolStripDropDownButton1->Enabled = false;
-
-				ACStartButton->Visible = false;
-				ACStopButton->Visible = true;
-
-				cursorActivePictureBox->Visible = true;
-				cursorInactivePictureBox->Visible = false;
+				handleStart(0);
 			}
 			catch (...)
 			{
-				toolStripDropDownButton1->Enabled = true;
-				ACStopButton->Enabled = true;
 				ACStopButton->PerformClick();
 			}
 		}
@@ -959,22 +1029,12 @@ private: System::Windows::Forms::ToolStripButton^ toolStripButton2;
 	}
 
 	private: System::Void ACStopButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		linkLabel1->Enabled = true;
 		RandomClicksTimer->Stop();
 		RandomClicksTimer->Interval = 1; //Reset randomclickTimer interval
 		INCCOUNTER = 0;
 		ACTimer->Stop();
 		clickIntervalTSLabel->Text = "Unscheduled";
-		ACStartButton->Enabled = true;
-		ACStopButton->Enabled = false;
-		ACActive = false;
-		toolStripDropDownButton1->Enabled = true;
-		cursorActivePictureBox->Visible = false;
-		cursorInactivePictureBox->Visible = true;
-
-		ACStartButton->Visible = true;
-		ACStopButton->Visible = false;
-
+		handleStop(0);
 	}
 
 	private: bool checkACValues(System::String^ min, System::String^ max)
@@ -1101,60 +1161,29 @@ private: System::Windows::Forms::ToolStripButton^ toolStripButton2;
 		{
 			try
 			{
-				linkLabel2->Enabled = false;
-
 				Key tk(_PROFILE.AKDROPDOWN);
 				KeyToPress = tk.KeyToString;
-
 				int val = r.Next(Convert::ToInt32(_PROFILE.AKMIN), Convert::ToInt32(_PROFILE.AKMAX));
 				AKTimer->Interval = val;
 				AKTime = DateTime::Now.AddMilliseconds(val);
-
 				keyIntervalTSLabel->Text = val.ToString() + "ms";
-
 				AKTimer->Start();
-
-				AKStartButton->Enabled = false;
-				AKStopButton->Enabled = true;
-				AKActive = true;
-
-				keyboardActivePictureBox->Visible = true;
-				keyboardInactivePictureBox->Visible = false;
-
-				AKStartButton->Visible = false;
-				AKStopButton->Visible = true;
-
-				toolStripDropDownButton1->Enabled = false;
+				handleStart(1);
 			}
 			catch (...)
 			{
-				AKActive = false;
-				AKStopButton->Enabled = true;
 				AKStopButton->PerformClick();
 			}
-
 		}
 	}
 	private: System::Void AKStopButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		linkLabel2->Enabled = true;
 		AKTimer->Stop();
 		keyIntervalTSLabel->Text = "Unscheduled";
-		AKStartButton->Enabled = true;
-		AKStopButton->Enabled = false;
-		AKActive = false;
-		keyboardActivePictureBox->Visible = false;
-		keyboardInactivePictureBox->Visible = true;
+		handleStop(1);
 
-		AKStartButton->Visible = true;
-		AKStopButton->Visible = false;
-
-		toolStripDropDownButton1->Enabled = true;
 	}
 	private: System::Void AKTimer_Tick(System::Object^ sender, System::EventArgs^ e) {
-		//Keypress
-		SendKeys::Send(KeyToPress);
-		//
-
+		SendKeys::Send(KeyToPress); //Keypress
 		int val = r.Next(Convert::ToInt32(_PROFILE.AKMIN), Convert::ToInt32(_PROFILE.AKMAX));
 		AKTimer->Interval = val;
 		AKTime = DateTime::Now.AddMilliseconds(val);
@@ -1285,7 +1314,7 @@ private: System::Windows::Forms::ToolStripButton^ toolStripButton2;
 		cursorCoordsTSLabel->Text = "(X: " + System::Windows::Forms::Cursor::Position.X + ", Y: " + System::Windows::Forms::Cursor::Position.Y + ")";
 
 		Key tk(_PROFILE.AKDROPDOWN);
-		keyTSLabel->Text = (tk.KeyToString)->Replace("{","")->Replace("}","");
+		keyTSLabel->Text = (tk.KeyToString)->Replace("{", "")->Replace("}", "");
 		//_PROFILE.AKDROPDOWN
 
 		int nextClickTimeMs = -1;
@@ -1327,11 +1356,11 @@ private: System::Windows::Forms::ToolStripButton^ toolStripButton2;
 		MessageBox::Show("No updates found", "Checking for updates...");
 	}
 	private: System::Void ToolStripButton2_Click(System::Object^ sender, System::EventArgs^ e) {
-		Donate DN(1, System::Drawing::Point(this->Location.X+145, this->Location.Y));
+		Donate DN(1, System::Drawing::Point(this->Location.X + 145, this->Location.Y));
 		MyForm::Hide();
 		DN.ShowDialog();
 		MyForm::Show();
 
 	}
-};
+	};
 }
