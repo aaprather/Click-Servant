@@ -187,10 +187,11 @@ namespace PRATHTool {
 			this->KeyerSave->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->KeyerSave->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->KeyerSave->Location = System::Drawing::Point(181, 82);
+			this->KeyerSave->Location = System::Drawing::Point(181, 85);
 			this->KeyerSave->Name = L"KeyerSave";
 			this->KeyerSave->Size = System::Drawing::Size(60, 23);
 			this->KeyerSave->TabIndex = 18;
+			this->KeyerSave->TabStop = false;
 			this->KeyerSave->Text = L"Save";
 			this->KeyerSave->UseVisualStyleBackColor = true;
 			this->KeyerSave->Click += gcnew System::EventHandler(this, &KeyerSettings::KeyerSave_Click);
@@ -201,10 +202,11 @@ namespace PRATHTool {
 			this->KeyerCancel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->KeyerCancel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->KeyerCancel->Location = System::Drawing::Point(247, 82);
+			this->KeyerCancel->Location = System::Drawing::Point(247, 85);
 			this->KeyerCancel->Name = L"KeyerCancel";
 			this->KeyerCancel->Size = System::Drawing::Size(60, 23);
 			this->KeyerCancel->TabIndex = 19;
+			this->KeyerCancel->TabStop = false;
 			this->KeyerCancel->Text = L"Cancel";
 			this->KeyerCancel->UseVisualStyleBackColor = true;
 			this->KeyerCancel->Click += gcnew System::EventHandler(this, &KeyerSettings::KeyerCancel_Click);
@@ -308,7 +310,6 @@ namespace PRATHTool {
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::Color::Transparent;
-			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel2->Controls->Add(this->AKMinTextBox);
 			this->panel2->Controls->Add(this->AKMaxTextBox);
 			this->panel2->Controls->Add(this->label6);
@@ -319,16 +320,16 @@ namespace PRATHTool {
 			this->panel2->Controls->Add(this->label3);
 			this->panel2->Controls->Add(this->label1);
 			this->panel2->Controls->Add(this->label2);
-			this->panel2->Location = System::Drawing::Point(7, 26);
+			this->panel2->Location = System::Drawing::Point(7, 35);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(480, 50);
+			this->panel2->Size = System::Drawing::Size(480, 45);
 			this->panel2->TabIndex = 37;
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(165, 7);
+			this->pictureBox1->Location = System::Drawing::Point(165, 5);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(146, 17);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
