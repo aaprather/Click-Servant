@@ -747,11 +747,15 @@ namespace PRATHTool {
 	private: void CheckRandomClicksSetting() {
 		if (RandClicksCheckBox->Checked == 1)
 		{
-			panel1->Enabled = true;
+			for (int i = 0; i < panel1->Controls->Count; i++) {
+				panel1->Controls[i]->Enabled = true;
+			}
 		}
 		else
 		{
-			panel1->Enabled = false;
+			for (int i = 0; i < panel1->Controls->Count; i++) {
+				panel1->Controls[i]->Enabled = false;
+			}
 		}
 	}
 
