@@ -249,6 +249,7 @@ namespace PRATHTool {
 			this->RandClickSaveButton->Name = L"RandClickSaveButton";
 			this->RandClickSaveButton->Size = System::Drawing::Size(60, 23);
 			this->RandClickSaveButton->TabIndex = 15;
+			this->RandClickSaveButton->TabStop = false;
 			this->RandClickSaveButton->Text = L"Save";
 			this->RandClickSaveButton->UseVisualStyleBackColor = true;
 			this->RandClickSaveButton->Click += gcnew System::EventHandler(this, &ClickerSettings::RandClickSaveButton_Click);
@@ -263,6 +264,7 @@ namespace PRATHTool {
 			this->RandClickCancelButton->Name = L"RandClickCancelButton";
 			this->RandClickCancelButton->Size = System::Drawing::Size(60, 23);
 			this->RandClickCancelButton->TabIndex = 16;
+			this->RandClickCancelButton->TabStop = false;
 			this->RandClickCancelButton->Text = L"Cancel";
 			this->RandClickCancelButton->UseVisualStyleBackColor = true;
 			this->RandClickCancelButton->Click += gcnew System::EventHandler(this, &ClickerSettings::RandClickCancelButton_Click);
@@ -385,7 +387,6 @@ namespace PRATHTool {
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::Transparent;
-			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel1->Controls->Add(this->label10);
 			this->panel1->Controls->Add(this->label11);
 			this->panel1->Controls->Add(this->label8);
@@ -549,7 +550,6 @@ namespace PRATHTool {
 			// panel2
 			// 
 			this->panel2->BackColor = System::Drawing::Color::Transparent;
-			this->panel2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->panel2->Controls->Add(this->ACMaxTimeTextBox);
 			this->panel2->Controls->Add(this->ACMinTimeTextBox);
 			this->panel2->Controls->Add(this->label2);
