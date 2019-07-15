@@ -93,7 +93,7 @@ namespace PRATHTool {
 			// errorTextBox
 			// 
 			this->errorTextBox->BackColor = System::Drawing::Color::DarkSlateGray;
-			this->errorTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->errorTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->errorTextBox->ForeColor = System::Drawing::Color::LightBlue;
 			this->errorTextBox->Location = System::Drawing::Point(4, 3);
 			this->errorTextBox->Multiline = true;
