@@ -286,6 +286,7 @@ namespace PRATHTool {
 			this->ACStopButton->Name = L"ACStopButton";
 			this->ACStopButton->Size = System::Drawing::Size(60, 23);
 			this->ACStopButton->TabIndex = 10;
+			this->ACStopButton->TabStop = false;
 			this->ACStopButton->Text = L"Stop";
 			this->ACStopButton->UseVisualStyleBackColor = true;
 			this->ACStopButton->Visible = false;
@@ -302,6 +303,7 @@ namespace PRATHTool {
 			this->ACStartButton->Name = L"ACStartButton";
 			this->ACStartButton->Size = System::Drawing::Size(60, 23);
 			this->ACStartButton->TabIndex = 9;
+			this->ACStartButton->TabStop = false;
 			this->ACStartButton->Text = L"Start";
 			this->ACStartButton->UseVisualStyleBackColor = true;
 			this->ACStartButton->Click += gcnew System::EventHandler(this, &MyForm::ACStartButton_Click);
@@ -360,10 +362,11 @@ namespace PRATHTool {
 			this->AKStopButton->Enabled = false;
 			this->AKStopButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->AKStopButton->Location = System::Drawing::Point(54, 59);
+			this->AKStopButton->Location = System::Drawing::Point(53, 60);
 			this->AKStopButton->Name = L"AKStopButton";
 			this->AKStopButton->Size = System::Drawing::Size(60, 23);
 			this->AKStopButton->TabIndex = 10;
+			this->AKStopButton->TabStop = false;
 			this->AKStopButton->Text = L"Stop";
 			this->AKStopButton->UseVisualStyleBackColor = true;
 			this->AKStopButton->Visible = false;
@@ -379,6 +382,7 @@ namespace PRATHTool {
 			this->AKStartButton->Name = L"AKStartButton";
 			this->AKStartButton->Size = System::Drawing::Size(60, 23);
 			this->AKStartButton->TabIndex = 9;
+			this->AKStartButton->TabStop = false;
 			this->AKStartButton->Text = L"Start";
 			this->AKStartButton->UseVisualStyleBackColor = true;
 			this->AKStartButton->Click += gcnew System::EventHandler(this, &MyForm::AKStartButton_Click);
@@ -628,8 +632,8 @@ namespace PRATHTool {
 			this->keyTSLabel->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
 			this->keyTSLabel->ForeColor = System::Drawing::Color::LightBlue;
 			this->keyTSLabel->Name = L"keyTSLabel";
-			this->keyTSLabel->Size = System::Drawing::Size(65, 22);
-			this->keyTSLabel->Text = L"Unselected";
+			this->keyTSLabel->Size = System::Drawing::Size(37, 22);
+			this->keyTSLabel->Text = L"Unset";
 			// 
 			// toolStripSeparator8
 			// 
