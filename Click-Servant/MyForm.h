@@ -1360,7 +1360,7 @@ namespace PRATHTool {
 		MessageBox::Show("No updates found", "Checking for updates...");
 	}
 	private: System::Void ToolStripButton2_Click(System::Object^ sender, System::EventArgs^ e) {
-		Donate DN(1, System::Drawing::Point(this->Location.X + 145, this->Location.Y));
+		Donate DN(1, System::Drawing::Point(this->Location.X + 25, this->Location.Y));
 		MyForm::Hide();
 		DN.ShowDialog();
 		MyForm::Show();
