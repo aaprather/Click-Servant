@@ -11,13 +11,13 @@
 
 <br></br>
 <br></br>
-![ScreenShot](https://github.com/aaprather/Click-Servant/blob/Development/Screenshots/s11.png)
+![ScreenShot](https://github.com/aaprather/Click-Servant/blob/Development/Screenshots/s1.png)
 
-![ScreenShot](https://github.com/aaprather/Click-Servant/blob/Development/Screenshots/s22.png)
+![ScreenShot](https://github.com/aaprather/Click-Servant/blob/Development/Screenshots/s2.png)
 
-![ScreenShot](https://github.com/aaprather/Click-Servant/blob/Development/Screenshots/s33.png)
-![ScreenShot](https://github.com/aaprather/Click-Servant/blob/Development/Screenshots/s44.png)
-![ScreenShot](https://github.com/aaprather/Click-Servant/blob/Development/Screenshots/s55.png)
-![ScreenShot](https://github.com/aaprather/Click-Servant/blob/Development/Screenshots/s66.png)
+![ScreenShot](https://github.com/aaprather/Click-Servant/blob/Development/Screenshots/s3.png)
+![ScreenShot](https://github.com/aaprather/Click-Servant/blob/Development/Screenshots/s4.png)
+![ScreenShot](https://github.com/aaprather/Click-Servant/blob/Development/Screenshots/s5.png)
+![ScreenShot](https://github.com/aaprather/Click-Servant/blob/Development/Screenshots/s6.png)
 
 </p>
