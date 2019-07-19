@@ -124,7 +124,7 @@ namespace PRATHTool {
 			this->AKHotkeyCheckBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->AKHotkeyCheckBox->ForeColor = System::Drawing::Color::LightGray;
-			this->AKHotkeyCheckBox->Location = System::Drawing::Point(93, 55);
+			this->AKHotkeyCheckBox->Location = System::Drawing::Point(11, 68);
 			this->AKHotkeyCheckBox->Name = L"AKHotkeyCheckBox";
 			this->AKHotkeyCheckBox->Size = System::Drawing::Size(119, 17);
 			this->AKHotkeyCheckBox->TabIndex = 13;
@@ -187,7 +187,7 @@ namespace PRATHTool {
 			this->KeyerSave->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->KeyerSave->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->KeyerSave->Location = System::Drawing::Point(101, 124);
+			this->KeyerSave->Location = System::Drawing::Point(165, 68);
 			this->KeyerSave->Name = L"KeyerSave";
 			this->KeyerSave->Size = System::Drawing::Size(60, 23);
 			this->KeyerSave->TabIndex = 18;
@@ -202,7 +202,7 @@ namespace PRATHTool {
 			this->KeyerCancel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->KeyerCancel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->KeyerCancel->Location = System::Drawing::Point(167, 124);
+			this->KeyerCancel->Location = System::Drawing::Point(231, 68);
 			this->KeyerCancel->Name = L"KeyerCancel";
 			this->KeyerCancel->Size = System::Drawing::Size(60, 23);
 			this->KeyerCancel->TabIndex = 19;
@@ -275,7 +275,7 @@ namespace PRATHTool {
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::Color::LightBlue;
-			this->label7->Location = System::Drawing::Point(20, 160);
+			this->label7->Location = System::Drawing::Point(18, 140);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(295, 13);
 			this->label7->TabIndex = 29;
@@ -287,14 +287,16 @@ namespace PRATHTool {
 			this->panel2->Controls->Add(this->AKMinTextBox);
 			this->panel2->Controls->Add(this->AKMaxTextBox);
 			this->panel2->Controls->Add(this->AKDropDown);
+			this->panel2->Controls->Add(this->KeyerCancel);
 			this->panel2->Controls->Add(this->AKHotkeyCheckBox);
+			this->panel2->Controls->Add(this->KeyerSave);
 			this->panel2->Controls->Add(this->label4);
 			this->panel2->Controls->Add(this->label3);
 			this->panel2->Controls->Add(this->label1);
 			this->panel2->Controls->Add(this->label2);
 			this->panel2->Location = System::Drawing::Point(15, 35);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(306, 83);
+			this->panel2->Size = System::Drawing::Size(306, 102);
 			this->panel2->TabIndex = 37;
 			// 
 			// pictureBox1
@@ -314,18 +316,16 @@ namespace PRATHTool {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(336, 182);
+			this->ClientSize = System::Drawing::Size(336, 162);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->label7);
-			this->Controls->Add(this->KeyerCancel);
-			this->Controls->Add(this->KeyerSave);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(352, 221);
+			this->MaximumSize = System::Drawing::Size(352, 201);
 			this->MinimizeBox = false;
-			this->MinimumSize = System::Drawing::Size(352, 221);
+			this->MinimumSize = System::Drawing::Size(352, 201);
 			this->Name = L"KeyerSettings";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"Interval Keyer Settings";
