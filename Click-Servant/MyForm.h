@@ -176,12 +176,12 @@ namespace PRATHTool {
 			this->toolStripDropDownButton1 = (gcnew System::Windows::Forms::ToolStripDropDownButton());
 			this->saveProfileAsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->loadProfileToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->toolStripButton2 = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripDropDownButton2 = (gcnew System::Windows::Forms::ToolStripDropDownButton());
 			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->checkForUpdatesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->toolStripProfileLabel = (gcnew System::Windows::Forms::ToolStripLabel());
 			this->toolStripLabel12 = (gcnew System::Windows::Forms::ToolStripLabel());
-			this->toolStripButton2 = (gcnew System::Windows::Forms::ToolStripButton());
 			this->SaveProfileDialog = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->OpenProfileDialog = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->AKKeyPressCheckTimer = (gcnew System::Windows::Forms::Timer(this->components));
@@ -396,7 +396,7 @@ namespace PRATHTool {
 			this->toolStrip1->BackColor = System::Drawing::Color::Transparent;
 			this->toolStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
 				this->toolStripDropDownButton1,
-					this->toolStripDropDownButton2, this->toolStripProfileLabel, this->toolStripLabel12, this->toolStripButton2
+					this->toolStripButton2, this->toolStripDropDownButton2, this->toolStripProfileLabel, this->toolStripLabel12
 			});
 			this->toolStrip1->Location = System::Drawing::Point(0, 0);
 			this->toolStrip1->Name = L"toolStrip1";
@@ -439,6 +439,17 @@ namespace PRATHTool {
 			this->loadProfileToolStripMenuItem->Size = System::Drawing::Size(166, 22);
 			this->loadProfileToolStripMenuItem->Text = L"Load Profile";
 			this->loadProfileToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::loadProfileToolStripMenuItem_Click);
+			// 
+			// toolStripButton2
+			// 
+			this->toolStripButton2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
+			this->toolStripButton2->ForeColor = System::Drawing::Color::DeepSkyBlue;
+			this->toolStripButton2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton2.Image")));
+			this->toolStripButton2->ImageTransparentColor = System::Drawing::Color::Magenta;
+			this->toolStripButton2->Name = L"toolStripButton2";
+			this->toolStripButton2->Size = System::Drawing::Size(68, 22);
+			this->toolStripButton2->Text = L"Donate";
+			this->toolStripButton2->Click += gcnew System::EventHandler(this, &MyForm::ToolStripButton2_Click);
 			// 
 			// toolStripDropDownButton2
 			// 
@@ -496,17 +507,6 @@ namespace PRATHTool {
 			this->toolStripLabel12->Name = L"toolStripLabel12";
 			this->toolStripLabel12->Size = System::Drawing::Size(63, 22);
 			this->toolStripLabel12->Text = L"Profile:";
-			// 
-			// toolStripButton2
-			// 
-			this->toolStripButton2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
-			this->toolStripButton2->ForeColor = System::Drawing::Color::DeepSkyBlue;
-			this->toolStripButton2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"toolStripButton2.Image")));
-			this->toolStripButton2->ImageTransparentColor = System::Drawing::Color::Magenta;
-			this->toolStripButton2->Name = L"toolStripButton2";
-			this->toolStripButton2->Size = System::Drawing::Size(68, 22);
-			this->toolStripButton2->Text = L"Donate";
-			this->toolStripButton2->Click += gcnew System::EventHandler(this, &MyForm::ToolStripButton2_Click);
 			// 
 			// SaveProfileDialog
 			// 
@@ -847,7 +847,7 @@ namespace PRATHTool {
 			this->Name = L"MyForm";
 			this->Opacity = 0.99;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Click-Servant  | 2.1.4 |";
+			this->Text = L"Click-Servant - | Development Version |";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
@@ -1061,7 +1061,7 @@ namespace PRATHTool {
 		return valuesAreGood;
 	}
 	private: System::Void LinkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
-		ClickerSettings CS(% _PROFILE, System::Drawing::Point(this->Location.X, this->Location.Y)); //Additional Settings link button pop-up
+		ClickerSettings CS(% _PROFILE, System::Drawing::Point(this->Location.X+75, this->Location.Y)); //Additional Settings link button pop-up
 		MyForm::Hide();
 		CS.ShowDialog();
 		MyForm::Show();
@@ -1351,7 +1351,7 @@ namespace PRATHTool {
 
 
 	private: System::Void LinkLabel2_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
-		KeyerSettings KS(% _PROFILE, System::Drawing::Point(this->Location.X, this->Location.Y)); //Additional Settings link button pop-up
+		KeyerSettings KS(% _PROFILE, System::Drawing::Point(this->Location.X+75, this->Location.Y)); //Additional Settings link button pop-up
 		MyForm::Hide();
 		KS.ShowDialog();
 		MyForm::Show();
