@@ -1,3 +1,9 @@
+## Get Development Version
+
+**Latest Build:** 7/21/2019
+
+ [<img src="https://img.shields.io/badge/Click--Servant.exe-Latest-success.svg">](https://github.com/aaprather/Click-Servant/raw/Development/Click-Servant.exe)
+
 #  - Click-Servant - 
 
 **Click-Servant** is a [C++/CLI](https://docs.microsoft.com/en-us/cpp/dotnet) application that is used to automate mouse clicks & key presses.
@@ -5,12 +11,6 @@ This application supports profile saving/loading so that preferred settings may 
 <p align="center">
 <img src="https://raw.githubusercontent.com/aaprather/Click-Servant/Development/Screenshots/s1.png">
 </p>
-
-## Get the development version 
-
-**Latest Build:** 7/21/2019
-
- [<img src="https://img.shields.io/badge/Click--Servant.exe-Latest-success.svg">](https://github.com/aaprather/Click-Servant/raw/Development/Click-Servant.exe)
 
 
 ## Interval Clicker
