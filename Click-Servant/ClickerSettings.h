@@ -587,10 +587,6 @@ namespace PRATHTool {
 		}
 		return valuesAreGood;
 	}
-	private: void throwErrorMessage(String^ message) {
-		Error e(System::Drawing::Point(this->Location.X + 145, this->Location.Y), message);
-		e.ShowDialog();
-	}
 
 	private: System::Void RandClickSaveButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ RandDelayMinTextBoxText = RandDelayMinTextBox->Text->Replace(" ms", "");
@@ -607,19 +603,20 @@ namespace PRATHTool {
 				if (Convert::ToInt32(RandClicksMaxTimeTextBox->Text) < 1)
 				{
 					countError++;
-					throwErrorMessage("Upper range integer for the number of clicks must be a non-negative number!");
+
+					Error::throwErrorMessage("Upper range integer for the number of clicks must be a non-negative number!",this->Location.X,this->Location.Y);
 				}
 				//Check Random Upper is greater than Random Lower
 				else if (Convert::ToInt32(RandClicksMaxTimeTextBox->Text) < Convert::ToInt32(RandClicksMinTimeTextBox->Text))
 				{
 					countError++;
-					throwErrorMessage("Upper range integer for the number of clicks must be greater than the lower range!");
+					Error::throwErrorMessage("Upper range integer for the number of clicks must be greater than the lower range!", this->Location.X, this->Location.Y);
 				}
 				//Check Random Lower is greater than 1
 				else if (Convert::ToInt32(RandClicksMinTimeTextBox->Text) < 1)
 				{
 					countError++;
-					throwErrorMessage("Lower range number of clicks must be greater or equal to 1!");
+					Error::throwErrorMessage("Lower range number of clicks must be greater or equal to 1!", this->Location.X, this->Location.Y);
 				}
 				//Assign Random Upper --Random Lower MUST be 1 so no assignment for Lower
 				else
@@ -630,7 +627,7 @@ namespace PRATHTool {
 				if (Convert::ToInt32(RandDelayMinTextBoxText) >= Convert::ToInt32(RandDelayMaxTextBoxText))
 				{
 					countError++;
-					throwErrorMessage("Invalid click interval time range! Verify that the time is in milliseconds and the lower range is smaller than the upper range.");
+					Error::throwErrorMessage("Invalid click interval time range! Verify that the time is in milliseconds and the lower range is smaller than the upper range.", this->Location.X, this->Location.Y);
 
 				}
 				//Assign Random Delay Lower & Upper
@@ -643,7 +640,7 @@ namespace PRATHTool {
 				if (checkACValues(ACMinTimeTextBoxText, ACMaxTimeTextBoxText) != true)
 				{
 					countError++;
-					throwErrorMessage("Invalid interval time range! Verify that the time is in milliseconds and the lower range is smaller than the upper range.");
+					Error::throwErrorMessage("Invalid interval time range! Verify that the time is in milliseconds and the lower range is smaller than the upper range.", this->Location.X, this->Location.Y);
 
 				}
 				//Assign interval
@@ -664,7 +661,7 @@ namespace PRATHTool {
 			else if (checkACValues(ACMinTimeTextBoxText, ACMaxTimeTextBoxText) != true)
 			{
 				countError++;
-				throwErrorMessage("Invalid interval time range! Verify that the time is in milliseconds and the lower range is smaller than the upper range.");
+				Error::throwErrorMessage("Invalid interval time range! Verify that the time is in milliseconds and the lower range is smaller than the upper range.", this->Location.X, this->Location.Y);
 
 			}
 			else //Allow user to save settings even if invalid, they will not be usable until fixed.
@@ -683,7 +680,7 @@ namespace PRATHTool {
 		catch (...)
 		{
 			if (RandClicksCheckBox->Checked == true) {
-				throwErrorMessage("Multiple Clicks setting is enabled but the provided variable settings are invalid! Either disable the Multiple Clicks setting or fix incorrect variable settings.");
+				Error::throwErrorMessage("Multiple Clicks setting is enabled but the provided variable settings are invalid! Either disable the Multiple Clicks setting or fix incorrect variable settings.", this->Location.X, this->Location.Y);
 			}
 			//this->Close();
 		}

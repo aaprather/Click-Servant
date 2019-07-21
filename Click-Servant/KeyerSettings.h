@@ -344,10 +344,7 @@ namespace PRATHTool {
 		minimumBoxToolTip->SetToolTip(AKHotkeyCheckBox, "Activate the Interval Keyer by pressing the Right-Shift button.");
 		this->SetDesktopLocation(Point.X, Point.Y);
 	}
-	private: void throwErrorMessage(System::String^ message) {
-		Error e(System::Drawing::Point(this->Location.X + 145, this->Location.Y), message);
-		e.ShowDialog();
-	}
+
 	private: System::Void KeyerSave_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ AKMaxTextBoxText = AKMaxTextBox->Text->Replace(" ms", "");
 		String^ AKMinTextBoxText = AKMinTextBox->Text->Replace(" ms", "");
@@ -359,12 +356,12 @@ namespace PRATHTool {
 			{
 				MessageBox::Show("MAX: " + AKMaxTextBoxText + ", MIN:" + AKMinTextBoxText);
 				countError++;
-				throwErrorMessage("Upper range must be larger than lower range!");
+				Error::throwErrorMessage("Upper range must be larger than lower range!", this->Location.X, this->Location.Y);
 			}
 			else if (Convert::ToInt32(AKMinTextBoxText) < 1)
 			{
 				countError++;
-				throwErrorMessage("Lower value must be greater than 0");
+				Error::throwErrorMessage("Lower value must be greater than 0", this->Location.X, this->Location.Y);
 			}
 
 			if (countError == 0)
@@ -378,7 +375,7 @@ namespace PRATHTool {
 		}
 		catch (...)
 		{
-			throwErrorMessage("The variable settings entered are incorrect or incomplete. Please review variable settings and try again.");
+			Error::throwErrorMessage("The variable settings entered are incorrect or incomplete. Please review variable settings and try again.", this->Location.X, this->Location.Y);
 		}
 
 

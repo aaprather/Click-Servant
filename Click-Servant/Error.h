@@ -163,13 +163,17 @@ namespace PRATHTool {
 		}
 #pragma endregion
 	private: System::Void Error_Load(System::Object^ sender, System::EventArgs^ e) {
-		this->SetDesktopLocation(Point.X+35, Point.Y+35);
+		this->SetDesktopLocation(Point.X + 35, Point.Y + 35);
 		errorTextBox->Text = ErrorMessage;
 		Console::Beep();
 	}
 	private: System::Void OkButton_Click(System::Object^ sender, System::EventArgs^ e) {
-		
+
 		this->Close();
 	}
-};
+	public: static void throwErrorMessage(String^ message, int x, int y) {
+		Error e(System::Drawing::Point(x + 145, y), message);
+		e.ShowDialog();
+	}
+	};
 }
