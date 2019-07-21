@@ -275,7 +275,7 @@ namespace PRATHTool {
 			this->RandDelayMaxTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->RandDelayMaxTextBox->ForeColor = System::Drawing::Color::LightBlue;
-			this->RandDelayMaxTextBox->Location = System::Drawing::Point(11, 84);
+			this->RandDelayMaxTextBox->Location = System::Drawing::Point(121, 84);
 			this->RandDelayMaxTextBox->Name = L"RandDelayMaxTextBox";
 			this->RandDelayMaxTextBox->Size = System::Drawing::Size(62, 20);
 			this->RandDelayMaxTextBox->TabIndex = 18;
@@ -290,7 +290,7 @@ namespace PRATHTool {
 			this->RandDelayMinTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->RandDelayMinTextBox->ForeColor = System::Drawing::Color::LightBlue;
-			this->RandDelayMinTextBox->Location = System::Drawing::Point(112, 84);
+			this->RandDelayMinTextBox->Location = System::Drawing::Point(13, 84);
 			this->RandDelayMinTextBox->Name = L"RandDelayMinTextBox";
 			this->RandDelayMinTextBox->Size = System::Drawing::Size(62, 20);
 			this->RandDelayMinTextBox->TabIndex = 17;
@@ -396,11 +396,11 @@ namespace PRATHTool {
 			this->panel1->Controls->Add(this->label8);
 			this->panel1->Controls->Add(this->label9);
 			this->panel1->Controls->Add(this->RandClicksMinTimeTextBox);
+			this->panel1->Controls->Add(this->RandDelayMinTextBox);
 			this->panel1->Controls->Add(this->label5);
 			this->panel1->Controls->Add(this->RandClicksMaxTimeTextBox);
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Controls->Add(this->RandDelayMaxTextBox);
-			this->panel1->Controls->Add(this->RandDelayMinTextBox);
 			this->panel1->Location = System::Drawing::Point(206, 12);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(206, 135);
