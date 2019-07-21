@@ -3,7 +3,9 @@
 **Click-Servant** is a [C++/CLI](https://docs.microsoft.com/en-us/cpp/dotnet) application that is used to automate mouse clicks & key presses.
 This application supports profile saving/loading so that preferred settings may be shared or used again with ease.
 
-Most up to date build - [Click-Servant.exe](https://github.com/aaprather/Click-Servant/raw/Development/Click-Servant.exe)
+Most up to date build:
+
+ [<img src="https://img.shields.io/badge/Click--Servant.exe-Latest-success.svg">](https://github.com/aaprather/Click-Servant/raw/Development/Click-Servant.exe)
 <p align="center">
 <img src="https://raw.githubusercontent.com/aaprather/Click-Servant/Development/Screenshots/s1.png">
 </p>
@@ -86,3 +88,6 @@ If creating a branch and working on the application, keep these guidelines in mi
  - To display an error to the user, call the *Error.h* static method **throwErrorMessage(String^,int,int)**
     For example: 
      > Error::throwErrorMessage("Test error", this->Location.X, this->Location.Y);
+
+ 
+
