@@ -1,3 +1,4 @@
+
 ## Get Development Version
 
 **Latest Build:** 7/21/2019
@@ -90,7 +91,7 @@ If creating a branch and working on the application, keep these guidelines in mi
  - Check boxes ForeColor must use Light Gray.
  - To display an error to the user, call the *Error.h* static method **throwErrorMessage(String^,int,int)**
     For example: 
-     > Error::throwErrorMessage("Test error", this->Location.X, this->Location.Y);
+    `Error::throwErrorMessage("Test error", this->Location.X, this->Location.Y);`
 
  
 
