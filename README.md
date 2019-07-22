@@ -70,12 +70,12 @@ The **Interval Keyer** currently supports only a *Main Interval*.
 ## Example Profiles
 Below are a list of example profiles that a user could play around with. Simply load these into the application and adjust the settings if needed.
 
- - [Example1.csp](https://github.com/aaprather/Click-Servant/blob/Development/Profiles/Example1.csp)
-  - [Example2.csp](https://github.com/aaprather/Click-Servant/blob/Development/Profiles/Example2.csp)
-  - [Example3.csp](https://github.com/aaprather/Click-Servant/blob/Development/Profiles/Example3.csp)
-  - [Example4.csp](https://github.com/aaprather/Click-Servant/blob/Development/Profiles/Example4.csp)
- -  [Example5.csp](https://github.com/aaprather/Click-Servant/blob/Development/Profiles/Example5.csp)
-  - [Example6.csp](https://github.com/aaprather/Click-Servant/blob/Development/Profiles/Example6.csp)
+ - [Example1.csp](https://github.com/aaprather/Click-Servant/raw/Development/Profiles/Example1.csp)
+  - [Example2.csp](https://github.com/aaprather/Click-Servant/raw/Development/Profiles/Example2.csp)
+  - [Example3.csp](https://github.com/aaprather/Click-Servant/raw/Development/Profiles/Example3.csp)
+  - [Example4.csp](https://github.com/aaprather/Click-Servant/raw/Development/Profiles/Example4.csp)
+ -  [Example5.csp](https://github.com/aaprather/Click-Servant/raw/Development/Profiles/Example5.csp)
+  - [Example6.csp](https://github.com/aaprather/Click-Servant/raw/Development/Profiles/Example6.csp)
 
 ## Contributing
 
