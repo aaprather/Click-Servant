@@ -3,7 +3,7 @@
 
 **Latest Build:** 7/21/2019
 
- [<img src="https://img.shields.io/badge/Click Servant.exe-Download-blue.svg?style=for-the-badge&logo=appveyor">](https://github.com/aaprather/Click-Servant/raw/Development/Click-Servant.exe)
+<a href="https://github.com/prathercc/Click-Servant/raw/Development/Click-Servant.exe"><img src="https://img.shields.io/badge/Click Servant.exe-Download-red.svg?style=plastic&logo=.NET"></a>
 
 #  - Click-Servant - 
 
